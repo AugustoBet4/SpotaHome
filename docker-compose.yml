@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:10.5
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+
+  web:
+    build: .
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/root/dev
