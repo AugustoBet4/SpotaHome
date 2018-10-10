@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin', function () {
+    return view('welcome_admin');
+});
+
+Route::get('admin/login', 'AuthAdmin\LoginController@showLoginForm') -> name('login.admin');
+Route::post('admin/login', 'AuthAdmin\LoginController@login');
+Route::post('admin/logout', 'AuthAdmin\LoginController@logout') -> name('logout.admin');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
