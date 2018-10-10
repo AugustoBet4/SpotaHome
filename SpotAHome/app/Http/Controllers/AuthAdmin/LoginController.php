@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllersadmin\AuthAdmin;
+namespace App\Http\Controllers\AuthAdmin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -55,7 +56,7 @@ class LoginController extends Controller
     */
     protected function guard()
     {
-        return view('admin');
+        return Auth::guard('admin');
     }
 
     /**
@@ -66,8 +67,10 @@ class LoginController extends Controller
     */
     public function logout(Request $request)
     {
-        $this -> guard() -> logout();
-        $request -> session() -> invalidate();
-        return view('/admin');
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return $this->loggedOut($request) ?: redirect('/admin');
     }
 }
