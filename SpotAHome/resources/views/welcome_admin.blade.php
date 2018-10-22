@@ -70,7 +70,7 @@
                     @auth
                         <a href="{{ url('admin/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login.admin') }}">Login</a>
+                        <a href="{{ route('login.admin') }}">Inicia Sesión</a>
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
                 </div>
@@ -78,7 +78,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Backend Laravel
+                    Admin Sesion
                 </div>
 
                 <div class="links">
