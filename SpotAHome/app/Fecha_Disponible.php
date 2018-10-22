@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Comision extends Authenticatable
+class Fecha_Disponible extends Authenticatable
 {
     use Notifiable;
 
