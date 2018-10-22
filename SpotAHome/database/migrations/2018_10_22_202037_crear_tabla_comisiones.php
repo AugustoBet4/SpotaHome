@@ -18,7 +18,7 @@ class CrearTablaComisiones extends Migration
             $table->increments('id_comisiones')->unique();
             $table->string('porcentaje');
             $table->integer('id_TS');
-            $table->intger('ts_usuario');
+            $table->integer('ts_usuario');
             $table->timestamps();
             $table->softDeletes();
         });
