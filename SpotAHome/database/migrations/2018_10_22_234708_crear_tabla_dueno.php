@@ -22,6 +22,7 @@ class CrearTablaDueno extends Migration
              $table->string('genero');
               $table->string('nacionalidad');
                $table->string('usuario');
+               
                 $table->string('contrasena');
 
              $table->timestamps();
