@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaValoracionInquilinoPropiedad extends Migration
+class CrearTablaValoracionDuenoInquilino extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CrearTablaValoracionInquilinoPropiedad extends Migration
      */
     public function up()
     {
-        Schema::create('valoracion_inquilino_propiedad', function (Blueprint $table) {
-            $table->increments('id_valoracion_inquilino_propiedad')->unique();
-            $table->integer('puntuacion');
-            $table->string('comentario');
+        Schema::create('valoracion_dueno_inquilino', function (Blueprint $table) {
+           $table->increments('id_valoracion_dueno_inquilino')->unique();
             $table->integer('id_inquilinos');
-            $table->timestamps();
+            $table->integer('id_dueno');
+            
+           
+
+             $table->timestamps();
             $table->softDeletes();
+
         });
     }
 
@@ -30,6 +33,7 @@ class CrearTablaValoracionInquilinoPropiedad extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('valoracion_inquilino_propiedad');
+        Schema::dropIfExists('valoracion_dueno_inquilino');
+        //
     }
 }

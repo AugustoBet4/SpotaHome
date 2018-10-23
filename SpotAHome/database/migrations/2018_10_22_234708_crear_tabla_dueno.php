@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaInquilinos extends Migration
+class CrearTablaDueno extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CrearTablaInquilinos extends Migration
      */
     public function up()
     {
-        //
-
-        Schema::create('inquilinos', function (Blueprint $table) {
-            $table->increments('id_inquilinos')->unique();
+          Schema::create('dueno', function (Blueprint $table) {
+           $table->increments('id_duenos')->unique();
             $table->string('nombre');
             $table->string('email');
             $table->string('telefono');
             $table->date('fecha_nacimiento');
-            $table->string('genero');
-            $table->string('nacionalidad');
-            $table->string('usuario');
-            $table->string('contraseña');
-            $table->timestamps();
+             $table->string('genero');
+              $table->string('nacionalidad');
+               $table->string('usuario');
+                $table->string('contrasena');
+
+             $table->timestamps();
             $table->softDeletes();
 
         });
@@ -39,6 +38,7 @@ class CrearTablaInquilinos extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('inquilinos');
+         
+         Schema::dropIfExists('dueno');
     }
 }
