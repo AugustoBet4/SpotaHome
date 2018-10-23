@@ -2,12 +2,13 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Khipu extends Authenticatable
+class Empleado extends Authenticatable
 {
+    //
     use Notifiable;
 
     /**
@@ -16,20 +17,16 @@ class Khipu extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id_khipus',
+        'nombre', 'email', 'telefono', 'usuario', 'contrasena',
     ];
-    public function id_pagos(){
-
-        return $this->hasOne('App\Pagos');
-
-    }
-protected $table="khipus";
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-   /* protected $hidden = [
-        'password', 'remember_token',
-    ];*/
+    protected $hidden = [
+        'contrasena',
+    ];
+
+    
 }

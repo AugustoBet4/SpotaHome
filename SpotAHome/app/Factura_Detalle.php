@@ -30,7 +30,7 @@ class Factura_Detalle extends Authenticatable
     }
     public function id_pagos(){
 
-        return $this->hasOne('App\Pago');
+        return $this->hasOne('App\Pagos');
 
     }
     protected $table="factura_detalles";
