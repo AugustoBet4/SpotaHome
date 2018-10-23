@@ -18,6 +18,8 @@ class CrearTablaPropiedadCaracteristicas extends Migration
             $table->increments('id_propiedad_caracteristicas')->unique();
             $table->integer('id_propiedades');
             $table->integer('id_caracteristicas');
+
+            
             $table->timestamps();
             $table->softDeletes();
 

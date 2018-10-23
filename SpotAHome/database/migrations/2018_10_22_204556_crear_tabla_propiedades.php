@@ -15,14 +15,14 @@ class CrearTablaPropiedades extends Migration
     {
         Schema::create('propiedades', function (Blueprint $table) {
             $table->increments('id_propiedades');
-            $table-> dato ('direccion');
-            $table-> dato ('ciudad');
-            $table-> dato ('latitud');
-            $table-> dato ('longitud');
-            $table-> dato ('id_duenos');
-            $table-> dato ('descripcion');
-            $table-> dato ('costo');
-            $table-> dato ('id_fecha_disponibles');
+            $table->string('direccion');
+            $table->string('ciudad');
+            $table->double('latitud', 5, 20);
+            $table->double('longitud', 5, 20);
+            $table->integer('id_duenos');
+            $table->longText('descripcion');
+            $table->double('costo', 10, 5);
+            $table->integer('id_fecha_disponibles');
             $table->timestamps();
             $table->softDeletes();
         });
