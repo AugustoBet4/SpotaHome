@@ -16,13 +16,14 @@ class CrearTablaEmpleado extends Migration
         //
         Schema::create('empleado', function (Blueprint $table) {
             $table->increments('id_empleado')->unique();
-            $table->dato('nombre');
+            $table->string('nombre');
             $table->date('email');
-            $table->dato('telefono');
-            $table->dato('usuario');
-            $table->dato('contraseña');
+            $table->string('telefono');
+            $table->string('usuario');
+            $table->string('contraseña');
             $table->timestamps();
             $table->softDeletes();
+        });
     }
 
     /**

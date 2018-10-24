@@ -20,6 +20,7 @@ class CrearTablaPropiedadCondicion extends Migration
             $table->date('id_inquilino');
             $table->timestamps();
             $table->softDeletes();
+        });
     }
 
     /**

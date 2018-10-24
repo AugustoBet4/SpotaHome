@@ -16,13 +16,14 @@ class CrearTablaAlquiler extends Migration
         //
         Schema::create('alquiler', function (Blueprint $table) {
             $table->increments('id_alquiler')->unique();
-            $table->dato('status_alquiler');
+            $table->string('status_alquiler');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
             $table->integer('id_propiedad');
             $table->integer('id_inquilino');
             $table->timestamps();
             $table->softDeletes();
+        });
     }
 
     /**

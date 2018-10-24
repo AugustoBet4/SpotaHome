@@ -16,11 +16,12 @@ class CrearTablaPagos extends Migration
         //
         Schema::create('pagos', function (Blueprint $table) {
             $table->increments('id_pagos')->unique();
-            $table->double('monto'10,10);
+            $table->decimal('monto',10,10);
             $table->integer('comision');
             $table->date('id_alquiler');
             $table->timestamps();
             $table->softDeletes();
+        });
     }
 
     /**
