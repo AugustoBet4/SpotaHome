@@ -15,8 +15,10 @@ class CrearTablaInquilinosFavoritos extends Migration
     {
         Schema::create('inquilinos_favoritos', function (Blueprint $table) {
             $table->increments('id_inquilinos_favoritos')->unique();
-            $table->integer('id_propiedads');
-            $table->integer('id_inquilinos');
+            $table->integer('id_propiedades')->unsigned();
+            $table->foreign('id_propiedades')->references('id_propiedades')->on('propiedades');
+            $table->integer('id_inquilinos')->unsigned();
+            $table->foreign('id_inquilinos')->references('id_inquilinos')->on('inquilinos');
             $table->timestamps();
             $table->softDeletes();
 

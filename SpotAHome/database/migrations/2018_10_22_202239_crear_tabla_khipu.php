@@ -15,7 +15,8 @@ class CrearTablaKhipu extends Migration
     {
         Schema::create('khipus', function (Blueprint $table) {
             $table->increments('id_khipus')->unique();
-            $table->integer('id_pagos');
+            $table->integer('id_pagos')->unsigned();
+            $table->foreign('id_pagos')->references('id_pagos')->on('pagos');
             $table->timestamps();
             $table->softDeletes();
 

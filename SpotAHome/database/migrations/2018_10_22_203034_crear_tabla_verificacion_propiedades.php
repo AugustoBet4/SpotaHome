@@ -15,8 +15,10 @@ class CrearTablaVerificacionPropiedades extends Migration
     {
         Schema::create('verificacion_propiedades', function (Blueprint $table) {
             $table->increments('id_verificacion_propiedades')->unique();
-            $table->integer('id_propiedads');
-            $table->integer('id_empleado');
+            $table->integer('id_propiedades')->unsigned();
+            $table->foreign('id_propiedades')->references('id_propiedades')->on('propiedades');
+            $table->integer('id_empleado')->unsigned();
+            $table->foreign('id_empleado')->references('id_empleado')->on('empleado');
             $table->timestamps();
             $table->softDeletes();
         });
