@@ -21,6 +21,7 @@
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/laravelcollective/html" />
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/monolog/monolog" />
@@ -79,5 +80,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="popper" level="application" />
+    <orderEntry type="library" name="jquery-3.3.1.slim" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
 </module>
