@@ -17,6 +17,7 @@ class CrearTablaFechaDisponibles extends Migration
             $table->increments('id_fecha_disponibles')->unique();
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
+            $table->integer('id_propiedades');
             $table->timestamps();
             $table->softDeletes();
         });

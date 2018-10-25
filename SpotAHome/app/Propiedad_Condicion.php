@@ -18,5 +18,5 @@ class Propiedad_Condicion extends Authenticatable
      */
     protected $fillable = [
         'id_propiedad_condicion',
-    ]
+    ];
 }

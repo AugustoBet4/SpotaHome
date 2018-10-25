@@ -18,6 +18,7 @@ class CrearTablaValoracionInquilinoPropiedad extends Migration
             $table->integer('puntuacion');
             $table->string('comentario');
             $table->integer('id_inquilinos');
+            $table->integer('id_propiedad');
             $table->timestamps();
             $table->softDeletes();
         });

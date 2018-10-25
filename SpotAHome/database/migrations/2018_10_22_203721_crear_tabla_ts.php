@@ -15,7 +15,6 @@ class CrearTablaTs extends Migration
     {
         Schema::create('TS', function (Blueprint $table) {
             $table->increments('id_ts')->unique();
-            $table->integer('id_usuario');
             $table->integer('id_empleado');
             $table->timestamps();
             $table->softDeletes();

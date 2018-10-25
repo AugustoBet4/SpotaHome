@@ -14,7 +14,7 @@ class CrearTablaCaracteristicas extends Migration
     public function up()
     {
       Schema::create('caracteristicas', function (Blueprint $table) {
-           $table->increments('id_propiedad_caracteristicas')->unique();
+           $table->increments('id_caracteristicas')->unique();
             $table->integer('amueblado');
             $table->integer('estanteria');
             $table->integer('armario');
