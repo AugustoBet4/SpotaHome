@@ -60,7 +60,7 @@ class AgregarForaneas extends Migration
         Schema::table('TS', function (Blueprint $table) {
             $table->foreign('id_empleado')->references('id_empleado')->on('empleado');
         });
-
+        //Pullee para entender que hizo el amigo :0
         Schema::table('propiedad_caracteristicas', function (Blueprint $table) {
             $table->foreign('id_propiedades')->references('id_propiedades')->on('propiedades');
         });
@@ -68,7 +68,7 @@ class AgregarForaneas extends Migration
         Schema::table('propiedad_caracteristicas', function (Blueprint $table) {
             $table->foreign('id_caracteristicas')->references('id_caracteristicas')->on('caracteristicas');
         });
-
+        //
         Schema::table('multimedias', function (Blueprint $table) {
             $table->foreign('id_propiedades')->references('id_propiedades')->on('propiedades');
         });
