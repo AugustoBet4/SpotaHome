@@ -18,6 +18,7 @@ class CrearTablaInquilinos extends Migration
         Schema::create('inquilinos', function (Blueprint $table) {
             $table->increments('id_inquilinos')->unique();
             $table->string('nombre');
+            $table->string('apellidos');
             $table->string('email');
             $table->string('telefono');
             $table->date('fecha_nacimiento');

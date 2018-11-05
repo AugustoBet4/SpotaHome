@@ -16,16 +16,15 @@ class CrearTablaDueno extends Migration
           Schema::create('dueno', function (Blueprint $table) {
            $table->increments('id_duenos')->unique();
             $table->string('nombre');
+            $table->string('apellidos');
             $table->string('email');
             $table->string('telefono');
             $table->date('fecha_nacimiento');
-             $table->string('genero');
-              $table->string('nacionalidad');
-               $table->string('usuario');
-               
-                $table->string('contrasena');
-
-             $table->timestamps();
+            $table->string('genero');
+            $table->string('nacionalidad');
+            $table->string('usuario');
+            $table->string('contrasena');
+            $table->timestamps();
             $table->softDeletes();
 
         });
