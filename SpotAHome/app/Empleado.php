@@ -17,7 +17,7 @@ class Empleado extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nombre', 'email', 'telefono', 'usuario', 'contrasena',
+        'nombre', 'apellidos', 'email', 'telefono', 'usuario', 'contrasena',
     ];
     /**
      * The attributes that should be hidden for arrays.

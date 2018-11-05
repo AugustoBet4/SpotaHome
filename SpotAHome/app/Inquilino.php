@@ -16,7 +16,7 @@ class Inquilino extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id_inquilinos', 'nombre', 'email', 'telefono', 'fecha_nacimiento','genero','nacionalidad','usuario',
+        'id_inquilinos', 'nombre', 'apellidos', 'email', 'telefono', 'fecha_nacimiento','genero','nacionalidad','usuario',
     ];
 
     /**
