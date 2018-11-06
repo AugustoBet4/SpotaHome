@@ -19,10 +19,13 @@
                 </div>
             </li>
             <li >
-                <a href="{{ url('/') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
+                <a href="{{ url('/inquilino') }}"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
             </li>
             <li >
-                <a href="{{ url('/minor') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Minor view</span> </a>
+                <a href="{{ url('/inquilino/historial') }}"><i class="fa fa-history"></i> <span class="nav-label">Historial</span> </a>
+            </li>
+            <li >
+                <a href="{{ url('/inquilino/anular') }}"><i class="fa fa-ban"></i> <span class="nav-label">Anular Reserva</span> </a>
             </li>
         </ul>
 

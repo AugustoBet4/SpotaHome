@@ -13,6 +13,12 @@
 Route::get('/', 'HomeController@index')->name("welcome");
 Route::get('/minor', 'HomeController@minor')->name("minor");
 
+
+Route::get('/inquilino', 'InquilinoController@index')->name("welcome");
+Route::get('/inquilino/historial', 'InquilinoController@historial')->name("historial");
+Route::get('/inquilino/anular', 'InquilinoController@anular')->name("anular");
+
+
 /*
 Route::get('/', function () {
     return view('welcome');

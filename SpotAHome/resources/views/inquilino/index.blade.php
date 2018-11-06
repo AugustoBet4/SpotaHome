@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app_inquilino')
 
-@section('title', 'Main page')
+@section('title', 'Inicio de Inquilino')
 
 @section('content')
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -11,7 +11,7 @@
                                 Welcome to SpotaHome
                             </h1>
                             <small>
-                                It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects.
+                                Pagina de inicio del Inquilino
                             </small>
                         </div>
                     </div>

@@ -16,7 +16,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        @include('layouts.navigation')
+        @include('layouts.navigation_inquilino')
 
         <!-- Page wraper -->
         <div id="page-wrapper" class="gray-bg">
