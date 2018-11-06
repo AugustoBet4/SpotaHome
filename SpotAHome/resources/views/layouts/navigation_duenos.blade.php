@@ -19,10 +19,13 @@
                 </div>
             </li>
             <li >
-                <a href="{{ url('/') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
+                <a href="{{ url('/duenos') }}"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
             </li>
             <li >
-                <a href="{{ route('duenos.index') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Due&ntilde;os</span> </a>
+                <a href="{{ url('/duenos') }}"><i class="fa fa-history"></i> <span class="nav-label">Actualiza tus datos</span> </a>
+            </li>
+            <li >
+                <a href="{{ url('/duenos') }}"><i class="fa fa-ban"></i> <span class="nav-label">Registra una Vivienda</span> </a>
             </li>
         </ul>
 
