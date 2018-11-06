@@ -13,7 +13,6 @@ class CrearTablaPagos extends Migration
      */
     public function up()
     {
-        //
         Schema::create('pagos', function (Blueprint $table) {
             $table->increments('id_pagos')->unique();
             $table->decimal('monto',10,10);

@@ -13,7 +13,6 @@ class CrearTablaAlquiler extends Migration
      */
     public function up()
     {
-        //
         Schema::create('alquiler', function (Blueprint $table) {
             $table->increments('id_alquiler')->unique();
             $table->string('status_alquiler');

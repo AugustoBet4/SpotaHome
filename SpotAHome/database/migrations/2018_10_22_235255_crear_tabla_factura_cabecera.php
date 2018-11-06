@@ -14,20 +14,14 @@ class CrearTablaFacturaCabecera extends Migration
     public function up()
     {
          Schema::create('factura_cabecera', function (Blueprint $table) {
-           $table->increments('id_factura_cabecera')->unique();
-            $table->string('nombre');
-            
-            $table->timestamp('fecha');
-
+             $table->increments('id_factura_cabecera')->unique();
+             $table->string('nombre');
+             $table->timestamp('fecha');
              $table->string('codigo_control');
-              $table->integer('nit');
-
-               $table->integer('autorizacion');
-            
-
+             $table->integer('nit');
+             $table->integer('autorizacion');
              $table->timestamps();
-            $table->softDeletes();
-
+             $table->softDeletes();
         });
     }
 

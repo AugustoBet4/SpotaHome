@@ -13,16 +13,12 @@ class CrearTablaPropiedadCaracteristicas extends Migration
      */
     public function up()
     {
-        //
         Schema::create('propiedad_caracteristicas', function (Blueprint $table) {
             $table->increments('id_propiedad_caracteristicas')->unique();
-            $table->integer('id_propiedades');
+            $table->integer('id_propiedad');
             $table->integer('id_caracteristicas');
-
-            
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 

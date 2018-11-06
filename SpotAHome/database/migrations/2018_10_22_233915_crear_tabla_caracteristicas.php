@@ -13,7 +13,7 @@ class CrearTablaCaracteristicas extends Migration
      */
     public function up()
     {
-      Schema::create('caracteristicas', function (Blueprint $table) {
+        Schema::create('caracteristicas', function (Blueprint $table) {
            $table->increments('id_caracteristicas')->unique();
             $table->integer('amueblado');
             $table->integer('estanteria');
@@ -23,7 +23,8 @@ class CrearTablaCaracteristicas extends Migration
             $table->integer('patio');
             $table->integer('aire_acondicionado');
             $table->integer('deposito');
-
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

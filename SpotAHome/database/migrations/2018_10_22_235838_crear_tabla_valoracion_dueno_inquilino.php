@@ -15,12 +15,11 @@ class CrearTablaValoracionDuenoInquilino extends Migration
     {
         Schema::create('valoracion_dueno_inquilino', function (Blueprint $table) {
             $table->increments('id_valoracion_dueno_inquilino')->unique();
-            $table->integer('id_inquilinos');
+            $table->integer('id_inquilino');
             $table->integer('id_dueno');
             $table->string('comentario');
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 

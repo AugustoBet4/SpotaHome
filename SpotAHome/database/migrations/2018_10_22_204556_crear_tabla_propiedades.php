@@ -13,16 +13,16 @@ class CrearTablaPropiedades extends Migration
      */
     public function up()
     {
-        Schema::create('propiedades', function (Blueprint $table) {
-            $table->increments('id_propiedades');
+        Schema::create('propiedad', function (Blueprint $table) {
+            $table->increments('id_propiedad');
             $table->string('direccion');
             $table->string('ciudad');
             $table->double('latitud', 5, 20);
             $table->double('longitud', 5, 20);
-            $table->integer('id_duenos');
+            $table->integer('id_dueno');
             $table->longText('descripcion');
             $table->double('costo', 10, 5);
-            $table->integer('id_fecha_disponibles');
+            $table->integer('id_fecha_disponibilidad');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -35,6 +35,6 @@ class CrearTablaPropiedades extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('propiedades');
+        Schema::dropIfExists('propiedad');
     }
 }

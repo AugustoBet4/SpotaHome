@@ -14,8 +14,8 @@ class CrearTablaComisiones extends Migration
     public function up()
     {
         //
-        Schema::create('comisiones', function (Blueprint $table) {
-            $table->increments('id_comisiones')->unique();
+        Schema::create('comision', function (Blueprint $table) {
+            $table->increments('id_comision')->unique();
             $table->string('porcentaje');
             $table->integer('id_TS');
             $table->integer('ts_usuario');
@@ -31,6 +31,6 @@ class CrearTablaComisiones extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comisiones');
+        Schema::dropIfExists('comision');
     }
 }

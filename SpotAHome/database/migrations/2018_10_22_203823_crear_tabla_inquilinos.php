@@ -13,10 +13,8 @@ class CrearTablaInquilinos extends Migration
      */
     public function up()
     {
-        //
-
-        Schema::create('inquilinos', function (Blueprint $table) {
-            $table->increments('id_inquilinos')->unique();
+        Schema::create('inquilino', function (Blueprint $table) {
+            $table->increments('id_inquilino')->unique();
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('email');
@@ -28,7 +26,6 @@ class CrearTablaInquilinos extends Migration
             $table->string('contraseña');
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 
@@ -40,6 +37,6 @@ class CrearTablaInquilinos extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('inquilinos');
+        Schema::dropIfExists('inquilino');
     }
 }

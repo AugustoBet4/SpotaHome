@@ -13,12 +13,11 @@ class CrearTablaKhipu extends Migration
      */
     public function up()
     {
-        Schema::create('khipus', function (Blueprint $table) {
-            $table->increments('id_khipus')->unique();
+        Schema::create('khipu', function (Blueprint $table) {
+            $table->increments('id_khipu')->unique();
             $table->integer('id_pagos')->unsigned();
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 
@@ -29,6 +28,6 @@ class CrearTablaKhipu extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('khipus');
+        Schema::dropIfExists('khipu');
     }
 }

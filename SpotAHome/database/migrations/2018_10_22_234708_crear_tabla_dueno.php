@@ -14,7 +14,7 @@ class CrearTablaDueno extends Migration
     public function up()
     {
           Schema::create('dueno', function (Blueprint $table) {
-           $table->increments('id_duenos')->unique();
+           $table->increments('id_dueno')->unique();
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('email');
@@ -26,7 +26,6 @@ class CrearTablaDueno extends Migration
             $table->string('contrasena');
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 

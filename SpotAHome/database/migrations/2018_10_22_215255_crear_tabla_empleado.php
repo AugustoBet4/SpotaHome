@@ -13,7 +13,6 @@ class CrearTablaEmpleado extends Migration
      */
     public function up()
     {
-        //
         Schema::create('empleado', function (Blueprint $table) {
             $table->increments('id_empleado')->unique();
             $table->string('nombre');

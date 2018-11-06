@@ -14,7 +14,7 @@ class CrearTablaCondiciones extends Migration
     public function up()
     {
         //
-        Schema::create('condiciones', function (Blueprint $table) {
+        Schema::create('condicion', function (Blueprint $table) {
             $table->increments('id_condiciones')->unique();
             $table->integer('mascotas_permitidas');
             $table->integer('apto_fumadores');
@@ -24,7 +24,6 @@ class CrearTablaCondiciones extends Migration
             $table->integer('solo_hombres');
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 
@@ -36,6 +35,6 @@ class CrearTablaCondiciones extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('condiciones');
+        Schema::dropIfExists('condicion');
     }
 }

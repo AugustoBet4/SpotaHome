@@ -13,19 +13,19 @@ class AgregarForaneas extends Migration
      */
     public function up()
     {
-        Schema::table('factura_detalles', function (Blueprint $table) {
-           $table->foreign('id_comisiones')->references('id_comisiones')->on('comisiones');
+        Schema::table('factura_detalle', function (Blueprint $table) {
+           $table->foreign('id_comision')->references('id_comision')->on('comision');
         });
 
-        Schema::table('factura_detalles', function (Blueprint $table) {
+        Schema::table('factura_detalle', function (Blueprint $table) {
             $table->foreign('id_factura_cabecera')->references('id_factura_cabecera')->on('factura_cabecera');
          });
 
-        Schema::table('factura_detalles', function (Blueprint $table) {
+        Schema::table('factura_detalle', function (Blueprint $table) {
            $table->foreign('id_pagos')->references('id_pagos')->on('pagos');
         });
 
-        Schema::table('khipus', function (Blueprint $table) {
+        Schema::table('khipu', function (Blueprint $table) {
             $table->foreign('id_pagos')->references('id_pagos')->on('pagos');
         });
 
@@ -34,75 +34,75 @@ class AgregarForaneas extends Migration
         });
 
         Schema::table('alquiler', function (Blueprint $table) {
-            $table->foreign('id_propiedad')->references('id_propiedades')->on('propiedades');
+            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
         });
 
         Schema::table('alquiler', function (Blueprint $table) {
-            $table->foreign('id_inquilino')->references('id_inquilinos')->on('inquilinos');
+            $table->foreign('id_inquilino')->references('id_inquilino')->on('inquilino');
         });
 
-        Schema::table('inquilinos_favoritos', function (Blueprint $table) {
-            $table->foreign('id_inquilinos')->references('id_inquilinos')->on('inquilinos');
+        Schema::table('inquilino_favorito', function (Blueprint $table) {
+            $table->foreign('id_inquilino')->references('id_inquilino')->on('inquilino');
         });
 
-        Schema::table('inquilinos_favoritos', function (Blueprint $table) {
-            $table->foreign('id_propiedades')->references('id_propiedades')->on('propiedades');
+        Schema::table('inquilino_favorito', function (Blueprint $table) {
+            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
         });
 
-        Schema::table('verificacion_propiedades', function (Blueprint $table) {
-            $table->foreign('id_propiedades')->references('id_propiedades')->on('propiedades');
+        Schema::table('verificacion_propiedad', function (Blueprint $table) {
+            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
         });
 
-        Schema::table('verificacion_propiedades', function (Blueprint $table) {
+        Schema::table('verificacion_propiedad', function (Blueprint $table) {
             $table->foreign('id_empleado')->references('id_empleado')->on('empleado');
         });
 
         Schema::table('TS', function (Blueprint $table) {
             $table->foreign('id_empleado')->references('id_empleado')->on('empleado');
         });
-        //Pullee para entender que hizo el amigo :0
+
         Schema::table('propiedad_caracteristicas', function (Blueprint $table) {
-            $table->foreign('id_propiedades')->references('id_propiedades')->on('propiedades');
+            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
         });
 
         Schema::table('propiedad_caracteristicas', function (Blueprint $table) {
             $table->foreign('id_caracteristicas')->references('id_caracteristicas')->on('caracteristicas');
         });
         //
-        Schema::table('multimedias', function (Blueprint $table) {
-            $table->foreign('id_propiedades')->references('id_propiedades')->on('propiedades');
+        Schema::table('multimedia', function (Blueprint $table) {
+            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
         });
 
         Schema::table('valoracion_dueno_inquilino', function (Blueprint $table) {
-            $table->foreign('id_inquilinos')->references('id_inquilinos')->on('inquilinos');
+            $table->foreign('id_inquilino')->references('id_inquilino')->on('inquilino');
         });
 
         Schema::table('valoracion_dueno_inquilino', function (Blueprint $table) {
-            $table->foreign('id_dueno')->references('id_duenos')->on('dueno');
+            $table->foreign('id_dueno')->references('id_dueno')->on('dueno');
         });
 
         Schema::table('valoracion_inquilino_propiedad', function (Blueprint $table) {
-            $table->foreign('id_inquilinos')->references('id_inquilinos')->on('inquilinos');
+            $table->foreign('id_inquilino')->references('id_inquilino')->on('inquilino');
         });
 
         Schema::table('valoracion_inquilino_propiedad', function (Blueprint $table) {
-            $table->foreign('id_propiedad')->references('id_propiedades')->on('propiedades');
+            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
         });
 
         Schema::table('propiedad_condicion', function (Blueprint $table) {
-            $table->foreign('id_condiciones')->references('id_condiciones')->on('condiciones');
+            $table->foreign('id_condiciones')->references('id_condiciones')->on('condicion');
         });
 
         Schema::table('propiedad_condicion', function (Blueprint $table) {
-            $table->foreign('id_propiedad')->references('id_propiedades')->on('propiedades');
+            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
         });
 
-        Schema::table('propiedades', function (Blueprint $table) {
-            $table->foreign('id_duenos')->references('id_duenos')->on('dueno');
+        Schema::table('propiedad', function (Blueprint $table) {
+            $table->foreign('id_dueno')->references('id_dueno')->on('dueno');
         });
 
-        Schema::table('fecha_disponibles', function (Blueprint $table) {
-            $table->foreign('id_propiedades')->references('id_propiedades')->on('propiedades');
+        Schema::table('fecha_disponibilidad', function (Blueprint $table) {
+            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
         });
     }
 

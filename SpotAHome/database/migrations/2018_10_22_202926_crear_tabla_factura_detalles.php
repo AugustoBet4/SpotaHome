@@ -13,10 +13,10 @@ class CrearTablaFacturaDetalles extends Migration
      */
     public function up()
     {
-        Schema::create('factura_detalles', function (Blueprint $table) {
-            $table->increments('id_factura_detalles')->unique();
+        Schema::create('factura_detalle', function (Blueprint $table) {
+            $table->increments('id_factura_detalle')->unique();
             $table->integer('id_factura_cabecera')->unsigned();
-            $table->integer('id_comisiones')->unsigned();
+            $table->integer('id_comision')->unsigned();
             $table->integer('id_pagos')->unsigned();
             $table->timestamps();
             $table->softDeletes();
@@ -30,6 +30,6 @@ class CrearTablaFacturaDetalles extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('factura_detalles');
+        Schema::dropIfExists('factura_detalle');
     }
 }

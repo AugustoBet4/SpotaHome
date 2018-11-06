@@ -13,11 +13,11 @@ class CrearTablaFechaDisponibles extends Migration
      */
     public function up()
     {
-        Schema::create('fecha_disponibles', function (Blueprint $table) {
-            $table->increments('id_fecha_disponibles')->unique();
+        Schema::create('fecha_disponibilidad', function (Blueprint $table) {
+            $table->increments('id_fecha_disponibilidad')->unique();
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
-            $table->integer('id_propiedades');
+            $table->integer('id_propiedad');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +31,6 @@ class CrearTablaFechaDisponibles extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('fecha_disponibles');
+        Schema::dropIfExists('fecha_disponibilidad');
     }
 }

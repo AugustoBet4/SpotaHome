@@ -14,13 +14,12 @@ class CrearTablaMultimedias extends Migration
     public function up()
     {
         //
-        Schema::create('multimedias', function (Blueprint $table) {
-            $table->increments('id_multimedias')->unique();
+        Schema::create('multimedia', function (Blueprint $table) {
+            $table->increments('id_multimedia')->unique();
             $table->string('uri');
-            $table->integer('id_propiedades');
+            $table->integer('id_propiedad');
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 
@@ -32,6 +31,6 @@ class CrearTablaMultimedias extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('multimedias');
+        Schema::dropIfExists('multimedia');
     }
 }

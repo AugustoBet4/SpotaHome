@@ -13,13 +13,12 @@ class CrearTablaInquilinosFavoritos extends Migration
      */
     public function up()
     {
-        Schema::create('inquilinos_favoritos', function (Blueprint $table) {
-            $table->increments('id_inquilinos_favoritos')->unique();
-            $table->integer('id_propiedades')->unsigned();
-            $table->integer('id_inquilinos')->unsigned();
+        Schema::create('inquilino_favorito', function (Blueprint $table) {
+            $table->increments('id_inquilino_favorito')->unique();
+            $table->integer('id_propiedad')->unsigned();
+            $table->integer('id_inquilino')->unsigned();
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 
@@ -30,6 +29,6 @@ class CrearTablaInquilinosFavoritos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inquilinos_favoritos');
+        Schema::dropIfExists('inquilino_favorito');
     }
 }

@@ -15,9 +15,8 @@ class CrearTablaValoracionInquilinoPropiedad extends Migration
     {
         Schema::create('valoracion_inquilino_propiedad', function (Blueprint $table) {
             $table->increments('id_valoracion_inquilino_propiedad')->unique();
-            $table->integer('puntuacion');
             $table->string('comentario');
-            $table->integer('id_inquilinos');
+            $table->integer('id_inquilino');
             $table->integer('id_propiedad');
             $table->timestamps();
             $table->softDeletes();

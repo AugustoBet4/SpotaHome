@@ -13,7 +13,6 @@ class CrearTablaPropiedadCondicion extends Migration
      */
     public function up()
     {
-        //
         Schema::create('propiedad_condicion', function (Blueprint $table) {
             $table->increments('id_propiedad_condicion')->unique();
             $table->integer('id_condiciones');
