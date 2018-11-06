@@ -50,10 +50,6 @@ class AgregarForaneas extends Migration
         });
 
         Schema::table('verificacion_propiedad', function (Blueprint $table) {
-            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
-        });
-
-        Schema::table('verificacion_propiedad', function (Blueprint $table) {
             $table->foreign('id_empleado')->references('id_empleado')->on('empleado');
         });
 
@@ -101,6 +97,10 @@ class AgregarForaneas extends Migration
             $table->foreign('id_dueno')->references('id_dueno')->on('dueno');
         });
 
+        Schema::table('propiedad', function (Blueprint $table){
+            $table->foreign('id_verificacion_propiedad')->references('id_verificacion_propiedad')->on('verificacion_propiedad');
+        });
+
         Schema::table('fecha_disponibilidad', function (Blueprint $table) {
             $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
         });
@@ -113,22 +113,22 @@ class AgregarForaneas extends Migration
      */
     public function down()
     {
-        Schema::table('factura_detalles', function (Blueprint $table) {
+        Schema::table('factura_detalle', function (Blueprint $table) {
             $table->dropForeign(['id_pagos']);
             $table->dropColumn(['id_pagos']);
         });
 
-        Schema::table('factura_detalles', function (Blueprint $table) {
+        Schema::table('factura_detalle', function (Blueprint $table) {
             $table->dropForeign(['id_factura_cabecera']);
             $table->dropColumn(['id_factura_cabecera']);
         });
 
-        Schema::table('factura_detalles', function (Blueprint $table) {
+        Schema::table('factura_detalle', function (Blueprint $table) {
             $table->dropForeign(['id_comision']);
             $table->dropColumn(['id_comision']);
         });
 
-        Schema::table('khipus', function (Blueprint $table) {
+        Schema::table('khipu', function (Blueprint $table) {
             $table->dropForeign(['id_pagos']);
             $table->dropColumn(['id_pagos']);
         });
@@ -148,19 +148,14 @@ class AgregarForaneas extends Migration
             $table->dropColumn(['id_inquilino']);
         });
 
-        Schema::table('inquilinos_favoritos', function (Blueprint $table) {
-            $table->dropForeign(['id_inquilinos']);
-            $table->dropColumn(['id_inquilinos']);
+        Schema::table('inquilino_favorito', function (Blueprint $table) {
+            $table->dropForeign(['id_inquilino']);
+            $table->dropColumn(['id_inquilino']);
         });
 
         Schema::table('inquilinos_favoritos', function (Blueprint $table) {
-            $table->dropForeign(['id_propiedades']);
-            $table->dropColumn(['id_propiedades']);
-        });
-
-        Schema::table('verificacion_propiedades', function (Blueprint $table) {
-            $table->dropForeign(['id_propiedades']);
-            $table->dropColumn(['id_propiedades']);
+            $table->dropForeign(['id_propiedad']);
+            $table->dropColumn(['id_propiedad']);
         });
 
         Schema::table('verificacion_propiedades', function (Blueprint $table) {
@@ -174,8 +169,8 @@ class AgregarForaneas extends Migration
         });
 
         Schema::table('propiedad_caracteristicas', function (Blueprint $table) {
-            $table->dropForeign(['id_propiedades']);
-            $table->dropColumn(['id_propiedades']);
+            $table->dropForeign(['id_propiedad']);
+            $table->dropColumn(['id_propiedad']);
         });
 
         Schema::table('propiedad_caracteristicas', function (Blueprint $table) {
@@ -183,14 +178,14 @@ class AgregarForaneas extends Migration
             $table->dropColumn(['id_caracteristicas']);
         });
 
-        Schema::table('multimedias', function (Blueprint $table) {
-            $table->dropForeign(['id_propiedades']);
-            $table->dropColumn(['id_propiedades']);
+        Schema::table('multimedia', function (Blueprint $table) {
+            $table->dropForeign(['id_propiedad']);
+            $table->dropColumn(['id_propiedad']);
         });
 
         Schema::table('valoracion_dueno_inquilino', function (Blueprint $table) {
-            $table->dropForeign(['id_inquilinos']);
-            $table->dropColumn(['id_inquilinos']);
+            $table->dropForeign(['id_inquilino']);
+            $table->dropColumn(['id_inquilino']);
         });
 
         Schema::table('multivaloracion_dueno_inquilinomedias', function (Blueprint $table) {
@@ -199,8 +194,8 @@ class AgregarForaneas extends Migration
         });
 
         Schema::table('valoracion_inquilino_propiedad', function (Blueprint $table) {
-            $table->dropForeign(['id_inquilinos']);
-            $table->dropColumn(['id_inquilinos']);
+            $table->dropForeign(['id_inquilino']);
+            $table->dropColumn(['id_inquilino']);
         });
 
         Schema::table('valoracion_inquilino_propiedad', function (Blueprint $table) {
@@ -218,14 +213,19 @@ class AgregarForaneas extends Migration
             $table->dropColumn(['id_propiedad']);
         });
 
-        Schema::table('propiedades', function (Blueprint $table) {
-            $table->dropForeign(['id_duenos']);
-            $table->dropColumn(['id_duenos']);
+        Schema::table('propiedad', function (Blueprint $table) {
+            $table->dropForeign(['id_dueno']);
+            $table->dropColumn(['id_dueno']);
         });
 
-        Schema::table('fecha_disponibles', function (Blueprint $table) {
-            $table->dropForeign(['id_propiedades']);
-            $table->dropColumn(['id_propiedades']);
+        Schema::table('propiedad', function (Blueprint $table) {
+            $table->dropForeign(['id_verificacion_propiedad']);
+            $table->dropColumn(['id_verificacion_propiedad']);
+        });
+
+        Schema::table('fecha_disponibilidad', function (Blueprint $table) {
+            $table->dropForeign(['id_propiedad']);
+            $table->dropColumn(['id_propiedad']);
         });
     }
 }

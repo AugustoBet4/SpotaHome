@@ -15,7 +15,7 @@ class CrearTablaTs extends Migration
     {
         Schema::create('TS', function (Blueprint $table) {
             $table->increments('id_ts')->unique();
-            $table->integer('id_empleado');
+            $table->integer('id_empleado')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

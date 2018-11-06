@@ -2,13 +2,12 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class TS extends Authenticatable
+class TS extends Model
 {
-    use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -16,12 +15,14 @@ class TS extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'idTS',
+        'idTS','fecha'
     ];
 
-    public function empleados(){
-        return $this->hasOne('App\Empleado');
-    }
-
     protected $table = "TS";
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = 'id_TS';
+
+    public function empleado(){
+        return $this->belongsTo(Empleado::class);
+    }
 }

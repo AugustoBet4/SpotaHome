@@ -18,8 +18,8 @@ class CrearTablaAlquiler extends Migration
             $table->string('status_alquiler');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
-            $table->integer('id_propiedad');
-            $table->integer('id_inquilino');
+            $table->integer('id_propiedad')->unsigned();
+            $table->integer('id_inquilino')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

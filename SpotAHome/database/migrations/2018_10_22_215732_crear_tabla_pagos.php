@@ -17,7 +17,7 @@ class CrearTablaPagos extends Migration
             $table->increments('id_pagos')->unique();
             $table->decimal('monto',10,10);
             $table->integer('comision');
-            $table->integer('id_alquiler');
+            $table->integer('id_alquiler')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

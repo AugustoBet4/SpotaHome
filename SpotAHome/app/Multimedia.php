@@ -2,13 +2,11 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-
-class Multimedia extends Authenticatable
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+class Multimedia extends Model
 {
-    use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -19,8 +17,13 @@ class Multimedia extends Authenticatable
         'id_multimedias', 'uri',
     ];
 
-    public function propiedad()
-    {
-        return $this->hasMany('App\Propiedad');
+    protected $table = "multimedia";
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = "id_multimedia";
+
+    public function propiedad(){
+        return $this->belongsTo(Propiedad::class);
     }
+
+
 }

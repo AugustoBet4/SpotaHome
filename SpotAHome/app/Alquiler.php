@@ -3,13 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Alquiler extends Authenticatable
+class Alquiler extends Model
 {
-    //
-    use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -19,10 +17,21 @@ class Alquiler extends Authenticatable
     protected $fillable = [
         'status_alquiler', 'fecha_inicio', 'fecha_fin',
     ];
-    public function id_pagos(){
 
-        return $this->hasMany('App\Pagos');
+    protected $table = "alquiler";
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = "id_alquiler";
 
+    public function inquilino(){
+        return $this->belongsTo(Inquilino::class);
+    }
+
+    public function alquiler(){
+        return $this->belongsTo(Propiedad::class);
+    }
+
+    public function pagos(){
+        return $this->hasMany(Pagos::class);
     }
 
 }

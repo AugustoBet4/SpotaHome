@@ -2,13 +2,12 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Factura_Detalle extends Authenticatable
+class Factura_Detalle extends Model
 {
-    use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -18,29 +17,22 @@ class Factura_Detalle extends Authenticatable
     protected $fillable = [
         'id_factura_detalles',
     ];
-    public function id_factura_cabecera(){
 
-        return $this->hasMany('App\Factura_Cabecera');
+    protected $table="factura_detalle";
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = "id_factura_detalle";
 
+    public function factura_cabecera(){
+        return $this->belongsTo(Factura_Cabecera::class);
     }
-    public function id_comision(){
 
-        return $this->hasMany('App\Comision');
-
+    public function comision(){
+        return $this->belongsTo(Comision::class);
     }
-    public function id_pagos(){
 
-        return $this->hasOne('App\Pagos');
-
+    public function pagos(){
+        return $this->hasOne(Pagos::class);
     }
-    protected $table="factura_detalles";
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    /*protected $hidden = [
-        'password', 'remember_token',
-    ];*/
+
 }

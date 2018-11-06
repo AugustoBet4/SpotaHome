@@ -2,13 +2,12 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Fecha_Disponible extends Authenticatable
+class Fecha_Disponible extends Model
 {
-    use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -19,5 +18,11 @@ class Fecha_Disponible extends Authenticatable
         'fecha_inicio', 'fecha_fin',
     ];
 
-    protected $table = "fecha_disponibles";
+    protected $table = "fecha_disponibilidad";
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = "id_fechadisponibilidad";
+
+    public function propiedad(){
+        return $this->belongsTo(Propiedad::class);
+    }
 }

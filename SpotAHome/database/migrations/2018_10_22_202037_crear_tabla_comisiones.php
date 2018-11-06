@@ -17,8 +17,8 @@ class CrearTablaComisiones extends Migration
         Schema::create('comision', function (Blueprint $table) {
             $table->increments('id_comision')->unique();
             $table->string('porcentaje');
-            $table->integer('id_TS');
-            $table->integer('ts_usuario');
+            $table->integer('id_TS')->unsigned();
+            $table->integer('ts_usuario')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

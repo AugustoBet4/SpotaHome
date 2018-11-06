@@ -28,5 +28,11 @@ class Comision extends Authenticatable
         'id_TS', 'ts_usuario',
     ];
 
-    protected $table = "comisiones";
+    protected $table = "comision";
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = "id_comision";
+
+    public function factura_detalle(){
+        return $this->hasMany(Factura_Detalle::class);
+    }
 }

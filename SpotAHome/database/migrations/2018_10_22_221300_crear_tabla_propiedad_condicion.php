@@ -15,8 +15,8 @@ class CrearTablaPropiedadCondicion extends Migration
     {
         Schema::create('propiedad_condicion', function (Blueprint $table) {
             $table->increments('id_propiedad_condicion')->unique();
-            $table->integer('id_condiciones');
-            $table->integer('id_propiedad');
+            $table->integer('id_condiciones')->unsigned();
+            $table->integer('id_propiedad')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

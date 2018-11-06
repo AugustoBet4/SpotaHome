@@ -3,13 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Pagos extends Authenticatable
+class Pagos extends Model
 {
-    //
-    use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -20,15 +18,20 @@ class Pagos extends Authenticatable
         'monto', 'comision',
     ];
 
-    public function id_factura_detalles(){
+    protected $table="pagos";
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = "id_pagos";
 
-        return $this->hasOne('App\Factura_Detalle');
-
+    public function factura_detalle(){
+        return $this->belongsTo(Factura_Detalle::class);
     }
-    public function id_khipus(){
 
-        return $this->hasOne('App\Khipu');
+    public function khipu(){
+        return $this->hasOne(Khipu::class);
+    }
 
+    public function alquiler(){
+        return $this->belongsTo(Alquiler::class);
     }
 
 }

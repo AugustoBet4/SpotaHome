@@ -2,13 +2,13 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Pagination\PaginationServiceProvider;
 
-class Khipu extends Authenticatable
+class Khipu extends Model
 {
-    use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -23,13 +23,13 @@ class Khipu extends Authenticatable
         return $this->hasOne('App\Pagos');
 
     }
-protected $table="khipus";
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-   /* protected $hidden = [
-        'password', 'remember_token',
-    ];*/
+
+    protected $table="khipu";
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = "id_khipu";
+
+    public function pagos(){
+        return $this->belongsTo(Pagos::class);
+    }
+
 }

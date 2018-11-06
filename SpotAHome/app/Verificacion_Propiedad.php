@@ -16,25 +16,22 @@ class Verificacion_Propiedad extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id_verificacion_propiedades',
+        'id_verificacion_propiedades','estado'
     ];
-    public function id_propiedad(){
 
-        return $this->hasOne('App\Propiedad');
+    protected $table = "verificacion_propiedad";
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = 'id_verificacion_propiedad';
+
+
+    public function propiedad(){
+
+        return $this->belongsTo(Propiedad::class);
 
     }
-    public function id_empleado(){
+    public function empleado(){
 
-        return $this->hasMany('App\Empleado');
+        return $this->belongsTo(Empleado::class);
 
     }
-protected $table="verificacion_propiedades";
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-   /* protected $hidden = [
-        'password', 'remember_token',
-    ];*/
 }

@@ -2,13 +2,12 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Condicion extends Authenticatable
+class Condicion extends Model
 {
-    use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +15,7 @@ class Condicion extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id_condiciones', 'mascotas_permitidas', 'apto_fumadores', 'apto_parejas', 'solo_estudiantes','solo_mujeres','solo_hombres',
+        'id_condicion', 'mascotas_permitidas', 'apto_fumadores', 'apto_parejas', 'solo_estudiantes','solo_mujeres','solo_hombres',
     ];
 
     /**
@@ -27,4 +26,12 @@ class Condicion extends Authenticatable
     /*protected $hidden = [
         'password', 'remember_token',
     ];*/
+
+    protected $table = "condicion";
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = "id_condiciones";
+
+    public function propiedad(){
+        return $this->belongsToMany(Propiedad::class);
+    }
 }
