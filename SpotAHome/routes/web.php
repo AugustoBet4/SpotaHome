@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'HomeController@index')->name("welcome");
+Route::get('/minor', 'HomeController@minor')->name("minor");
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,14 +21,17 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('welcome_admin');
 });
+Route::get('/', 'HomeController@index')->name("main");
+Route::get('/minor', 'HomeController@minor')->name("minor");
 
-Route::get('admin/login', 'AuthAdmin\LoginController@showLoginForm') -> name('login.admin');
-Route::post('admin/login', 'AuthAdmin\LoginController@login');
-Route::post('admin/logout', 'AuthAdmin\LoginController@logout') -> name('logout.admin');
+//Route::get('admin/login', 'AuthAdmin\LoginController@showLoginForm') -> name('login.admin');
+//Route::post('admin/login', 'AuthAdmin\LoginController@login');
+//Route::post('admin/logout', 'AuthAdmin\LoginController@logout') -> name('logout.admin');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('admin/home', 'HomeAdminController@index')->name('home.admin');
 
+*/
