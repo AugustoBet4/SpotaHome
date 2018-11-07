@@ -15,6 +15,7 @@ Route::get('/minor', 'HomeController@minor')->name("minor");
 
 Route::resource('duenos','DuenoController');
 
+Route::get('/empleados', 'SesionEmpleadoController@index')->name("sesion");
 
 Route::get('/inquilino', 'InquilinoController@index')->name("welcome");
 Route::get('/inquilino/historial', 'InquilinoController@historial')->name("historial");
