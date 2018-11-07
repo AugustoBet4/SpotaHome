@@ -22,6 +22,9 @@
                 <a href="{{ url('/inquilino') }}"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
             </li>
             <li >
+                <a href="{{ url('/inquilino/busqueda') }}"><i class="fa fa-search"></i> <span class="nav-label">Busqueda</span></a>
+            </li>
+            <li >
                 <a href="{{ url('/inquilino/historial') }}"><i class="fa fa-history"></i> <span class="nav-label">Historial</span> </a>
             </li>
             <li >

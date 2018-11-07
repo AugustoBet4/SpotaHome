@@ -20,6 +20,8 @@ Route::get('/inquilino', 'InquilinoController@index')->name("welcome");
 Route::get('/inquilino/historial', 'InquilinoController@historial')->name("historial");
 Route::get('/inquilino/anular', 'InquilinoController@anular')->name("anular");
 
+Route::get('/inquilino/busqueda', 'InquilinoController@busqueda')->name("busqueda");
+
 
 /*
 Route::get('/', function () {

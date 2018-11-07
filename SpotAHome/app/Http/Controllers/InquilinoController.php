@@ -18,4 +18,9 @@ class InquilinoController extends Controller
     {
         return view('inquilino/anular');
     }
+
+    public function busqueda()
+    {
+        return view('inquilino/busqueda');
+    }
 }
