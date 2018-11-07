@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Dueno;
 
-class TablaDuenoSeeder extends Seeder
+class DuenoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class TablaDuenoSeeder extends Seeder
      */
     public function run()
     {
-        factory(Dueno::class, 50)->create();
+        factory(Dueno::class, 10)->create();
     }
 }

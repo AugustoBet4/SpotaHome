@@ -11,10 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-        $this -> call([
+        $this->call(DuenoTableSeeder::class);
+        /*$this -> call([
             UsersTableSeeder::class,
             AdminsTableSeeder::class,
-        ]);
+        ]);*/
     }
 }

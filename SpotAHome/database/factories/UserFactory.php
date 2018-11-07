@@ -22,3 +22,18 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Dueno::class, function (Faker $faker) {
+
+    return [
+        'nombre'            => $faker->name,
+        'apellidos'         =>$faker->lastName,
+        'email'             => $faker->unique()->safeEmail,
+        'telefono'          => $faker->phoneNumber,
+        'fecha_nacimiento'  =>$faker->dateTime,
+        'genero'            =>$faker->randomElement($array = array('M','F')),
+        'nacionalidad'      =>$faker->country,
+        'usuario'           =>$faker->userName,
+        'contrasena'          => '000', // secret
+    ];
+});
