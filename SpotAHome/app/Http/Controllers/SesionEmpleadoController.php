@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-class HomeController extends Controller
+class SesionEmpleadoController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return view('empleados/sesion');
+
     }
+   /*
 
     public function Historial()
     {
         return view('home/minor');
     }
+   */
 }
