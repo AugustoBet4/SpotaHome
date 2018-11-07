@@ -46,10 +46,10 @@ return [
             'provider' => 'admin',
         ],
 
-        'inquilino' => [
-            'driver' => 'session',
-            'provider' => 'inquilino',
-        ],
+//        'inquilino' => [
+//            'driver' => 'session',
+//            'provider' => 'inquilino',
+//        ],
         
         'api' => [
             'driver' => 'token',
@@ -85,10 +85,10 @@ return [
             'model' => App\Admin::class,
         ],
 
-        'inquilino' => [
-            'driver' => 'eloquent',
-            'model' => App\Inquilino::class,
-        ],
+//        'inquilino' => [
+//            'driver' => 'eloquent',
+//            'model' => App\Inquilino::class,
+//        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
