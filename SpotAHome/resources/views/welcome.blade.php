@@ -47,9 +47,9 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#about" class="page-scroll">Acerca</a></li>
                 <li><a href="#services" class="page-scroll">Como funciona</a></li>
-                <li><a href="#portfolio" class="page-scroll">Contacto</a></li>
-                <li><a href="#team" class="page-scroll">Inicia Sesión</a></li>
-                <li><a href="#contact" class="page-scroll">Registro</a></li>
+                <li><a href="#contact" class="page-scroll">Contacto</a></li>
+                <li><a href="#" class="page-scroll">Inicia Sesión</a></li>
+                <li><a href="#" class="page-scroll">Registro</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -100,21 +100,22 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-4 service"> <img src="landing/img/residential-design.jpg" class="img-responsive" alt="Project Title">
-                <h3>Residential Design</h3>
-                <p></p>
+                <h3>Busca y elige</h3>
+                <p>Busca tu casa perfecta. Nuestras visitas guiadas, y las descripciones detalladas tanto de la propiedad como del barrio te ayudarán a tomar la mejor decisión.</p>
             </div>
             <div class="col-xs-12 col-sm-4 service"> <img src="landing/img/office-design.jpg" class="img-responsive" alt="Project Title">
-                <h3>Office Design</h3>
-                <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam. Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend.</p>
+                <h3>Reserva la propiedad</h3>
+                <p>Cuando haces una reserva, la propiedad queda bloqueada hasta que el propietario responda a tu solicitud con un máximo de 24 horas.</p>
             </div>
             <div class="col-xs-12 col-sm-4 service"> <img src="landing/img/commercial-design.jpg" class="img-responsive" alt="Project Title">
-                <h3>Commercial Design</h3>
-                <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam. Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend.</p>
+                <h3>Confirmación</h3>
+                <p>Tan pronto como el propietario acepte la reserva, cargaremos el importe correspondiente en tu método de pago. A continuación, te pondremos en contacto por email con el propietario.</p>
             </div>
         </div>
     </div>
 </div>
 <!-- Portfolio Section -->
+<!--
 <div id="portfolio">
     <div class="container">
         <div class="section-title text-center center">
@@ -249,7 +250,9 @@
         </div>
     </div>
 </div>
+-->
 <!-- Team Section -->
+<!--
 <div id="team" class="text-center">
     <div class="overlay">
         <div class="container">
@@ -295,34 +298,35 @@
         </div>
     </div>
 </div>
+-->
 <!-- Contact Section -->
 <div id="contact">
     <div class="container">
         <div class="section-title text-center">
-            <h2>Contact Us</h2>
+            <h2>Contactanos</h2>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+            <p>Nuestro objetivo es ofrecer el servicio de alquiler de pisos y habitaciones más seguro y fácil de usar. Desde la solicitud de reserva hasta la confirmación final, estamos aquí para ayudarte.</p>
         </div>
         <div class="col-md-4">
-            <h3>Contact Info</h3>
-            <div class="contact-item"> <span>Address</span>
-                <p>4321 California St,<br>
-                    San Francisco, CA 12345</p>
+            <h3>Información de contacto</h3>
+            <div class="contact-item"> <span>Dirección</span>
+                <p>La Paz, Bolivia<br>
+                    Universidad Catolica Boliviana</p>
             </div>
             <div class="contact-item"> <span>Email</span>
-                <p>info@company.com</p>
+                <p>contacto@spotahome.com</p>
             </div>
-            <div class="contact-item"> <span>Phone</span>
-                <p> +1 123 456 1234</p>
+            <div class="contact-item"> <span>Telefono</span>
+                <p> +591 73892742</p>
             </div>
         </div>
         <div class="col-md-8">
-            <h3>Leave us a message</h3>
+            <h3>Deja un mensaje</h3>
             <form name="sentMessage" id="contactForm" novalidate>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+                            <input type="text" id="name" class="form-control" placeholder="Nombre" required="required">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -334,11 +338,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+                    <textarea name="message" id="message" class="form-control" rows="4" placeholder="Mensaje" required></textarea>
                     <p class="help-block text-danger"></p>
                 </div>
                 <div id="success"></div>
-                <button type="submit" class="btn btn-custom btn-lg">Send Message</button>
+                <button type="submit" class="btn btn-custom btn-lg">Enviar mensaje</button>
             </form>
         </div>
     </div>
