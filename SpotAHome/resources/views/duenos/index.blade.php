@@ -10,6 +10,9 @@
                     <h1>
                         Welcome to SpotaHome
                     </h1>
+                    <h1>
+                        Registrate como dueno
+                    </h1>
                     <small>
                         Pagina de inicio del Due&ntilde;o
                     </small>

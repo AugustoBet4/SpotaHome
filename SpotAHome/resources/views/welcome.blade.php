@@ -62,7 +62,7 @@
             <div class="container">
                 <div class="row">
                     <div class="intro-text">
-                        <h1><strong>Spot</strong><span>AHome</span></h1>
+                        <h1><strong>Spot</strong><span>AHome</span><strong>Bolivia</strong></h1>
                         <p>Bienvenido a tu nuevo hogar</p>
                         <a href="#about" class="btn btn-custom btn-lg page-scroll">Explora</a> </div>
                 </div>

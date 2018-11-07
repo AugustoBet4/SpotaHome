@@ -33,7 +33,7 @@ class Dueno extends Authenticatable
 
     protected $table = "dueno";
     protected $dates = ['deleted_at'];
-    protected $primaryKey = 'id_duenos';
+    protected $primaryKey = 'id_dueno';
 
     public function propiedad(){
         return $this->hasMany(Propiedad::class);
