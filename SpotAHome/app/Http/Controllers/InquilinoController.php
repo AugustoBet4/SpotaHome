@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Alquiler;
+
 class InquilinoController extends Controller
 {
     public function index()
@@ -19,7 +21,14 @@ class InquilinoController extends Controller
 
     public function anular()
     {
-        return view('inquilino/anular');
+        $reservas = Alquiler::orderBy('id_alquiler', 'ASC')->paginate(10);
+        return view('inquilino/anular', compact('reservas'));
+    }
+
+    public function anularReserva($id)
+    {
+        Alquiler::find($id)->delete();
+        return redirect()->route('inquilino.index')->with('success','Registro eliminado satisfactoriamente');
     }
 
     public function busqueda()
