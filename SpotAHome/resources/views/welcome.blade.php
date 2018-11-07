@@ -63,8 +63,8 @@
                 <div class="row">
                     <div class="intro-text">
                         <h1><strong>Spot</strong><span>AHome</span></h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
-                        <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a> </div>
+                        <p>Bienvenido a tu nuevo hogar</p>
+                        <a href="#about" class="btn btn-custom btn-lg page-scroll">Explora</a> </div>
                 </div>
             </div>
         </div>
@@ -74,17 +74,17 @@
 <div id="about">
     <div class="container">
         <div class="section-title text-center center">
-            <h2>Our Story</h2>
+            <h2>Nuestro Servicios</h2>
             <hr>
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-6 text-center"> <img src="landing/img/about.jpg" class="img-responsive" alt=""> </div>
             <div class="col-xs-12 col-md-6">
                 <div class="about-text">
-                    <h3>The Studio</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
-                    <h3>How We Work</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+                    <h3>Inquilino</h3>
+                    <p>Busca facilmente una propiedad en la ciudad que desees. Facil, sin visitas y todo por internet.</p>
+                    <h3>Propietario</h3>
+                    <p>Alquila facilmente cualquier propiedad sin perdidas de tiempo y sin visitas</p>
                 </div>
             </div>
         </div>
@@ -94,14 +94,14 @@
 <div id="services">
     <div class="container">
         <div class="col-md-10 col-md-offset-1 section-title text-center">
-            <h2>Our Services</h2>
+            <h2>Como funciona</h2>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+            <p>SpotAHome es una plataforma donde puedes alquilar una propiedad en cuestion de minutos y sin la necesidad de visitar el lugar.</p>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-4 service"> <img src="landing/img/residential-design.jpg" class="img-responsive" alt="Project Title">
                 <h3>Residential Design</h3>
-                <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam. Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend.</p>
+                <p></p>
             </div>
             <div class="col-xs-12 col-sm-4 service"> <img src="landing/img/office-design.jpg" class="img-responsive" alt="Project Title">
                 <h3>Office Design</h3>
