@@ -5,6 +5,7 @@ use App\Empleado;
 
 class EmpleadosTableSeeder extends Seeder
 {
+    //Seeder funcionando al 100 ahora si
     /**
      * Run the database seeds.
      *
