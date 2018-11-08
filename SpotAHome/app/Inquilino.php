@@ -27,7 +27,7 @@ class Inquilino extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'contrasena',
+        'contraseña',
     ];
 
     protected $table = "inquilino";
