@@ -19,9 +19,9 @@ class Propiedad extends Model
         'direccion', 'ciudad', 'latitud', 'longitud', 'descripcion', 'costo',
     ];
 
-    protected $table = "propiedades";
+    protected $table = "propiedad";
     protected $dates = ['deleted_at'];
-    protected $primaryKey = "id_propiedades";
+    protected $primaryKey = "id_propiedad";
 
     public function condiciones(){
         return $this->belongsToMany(Condicion::class);
