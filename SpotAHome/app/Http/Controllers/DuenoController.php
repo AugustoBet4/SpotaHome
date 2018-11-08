@@ -15,7 +15,7 @@ class DuenoController extends Controller
     }
     public function create(){
 
-        return 'regustrate duenoo';
+        return view('duenos.create');
     }
 
 
