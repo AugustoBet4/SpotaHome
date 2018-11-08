@@ -29,22 +29,24 @@
                                     <th>Nro.</th>
                                     <th>Fecha Inicio</th>
                                     <th>Fecha Fin</th>
-                                    <th>Propiedad</th>
+                                    <th>Opcion</th>
                                 </tr>
                                 </thead>
                                 <tbody>
 
                                 @if($reservas->count())
-                                    @foreach($reservas as $reserva)
+                                    @foreach($reservas as $key=>$reserva)
                                         <tr>
+                                            <td>{{$key+1}}</td>
                                             <td>{{$reserva->fecha_inicio}}</td>
                                             <td>{{$reserva->fecha_fin}}</td>
-                                            <td>{{$reserva->propiedad->direccion}}</td>
+                                            {{--  <td>{{$reserva->propiedad->direccion}}</td>  --}}
                                             <td>
-                                                <form action="{{action('FechasController@anularReserva', $reserva->id_alquiler)}}" method="post">
+                                                {{--  action="{{action('InquilinoController@anularReserva', $reserva->id_alquiler)}}"  --}}
+                                                <form method="post">
                                                     {{csrf_field()}}
                                                     <input name="_method" type="hidden" value="DELETE">
-                                                    <button class="btn btn-danger btn-xs" type="submit"><i class="fas fa-eraser"></i></button>
+                                                    <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-eraser"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach

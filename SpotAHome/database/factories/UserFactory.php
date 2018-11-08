@@ -37,17 +37,42 @@ $factory->define(App\Dueno::class, function (Faker $faker) {
         'contrasena'          => '000', // secret
     ];
 });
+
+$factory->define(App\Inquilino::class, function (Faker $faker) {
+    return [
+        'nombre'            => $faker->name,
+        'apellidos'         =>$faker->lastName,
+        'email'             => $faker->unique()->safeEmail,
+        'telefono'          => $faker->phoneNumber,
+        'fecha_nacimiento'  => $faker->dateTime,
+        'genero'            => $faker->randomElement($array = array('M','F')),
+        'nacionalidad'      => $faker->country,
+        'usuario'           => $faker->userName,
+        'contraseña'          => '000', // secret
+    ];
+});
+    
 $factory->define(App\Propiedad::class, function (Faker $faker) {
 
     return [
         'direccion'         => $faker->address,
-        'ciudad'            =>$faker->city,
+        'ciudad'            => $faker->city,
         'latitud'           => $faker->latitude,
         'longitud'          => $faker->longitude,
-        'id_dueno'          =>$faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
-        'descripcion'       =>$faker->text(100),
-        'costo'             =>$faker->randomNumber($nbDigits= 2),
+        'id_dueno'          => $faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
+        'descripcion'       => $faker->text(100),
+        'costo'             => $faker->randomNumber($nbDigits= 2),
         //'direccion', 'ciudad', 'latitud', 'longitud', 'descripcion', 'costo',
+    ];
+});
+
+$factory->define(App\Alquiler::class, function (Faker $faker) {
+    return [
+        'status_alquiler'   => $faker->randomElement($array = array('M','F')),
+        'fecha_inicio'      => $faker->dateTime,
+        'fecha_fin'         => $faker->dateTime,
+        'id_propiedad'      => $faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
+        'id_inquilino'      => $faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
     ];
 });
 
