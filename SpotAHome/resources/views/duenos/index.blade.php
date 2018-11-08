@@ -11,7 +11,7 @@
                         Bienvenido a SpotaHome
                     </h1>
                     <small>
-                        Registrate Como due&ntilde;o
+                        <a href="#" > tu primera vivienda Aqui</a>
                     </small>
                 </div>
             </div>

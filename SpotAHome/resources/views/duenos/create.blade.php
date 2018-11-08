@@ -37,9 +37,9 @@
                     </div>
                     <div class="form-group">
                         <label for="">Genero</label>
-                        <select>
-                            <option value="1">Masculino</option>
-                            <option value="2">Femenino</option>
+                        <select name="genero" id="genero">
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
                         </select>
                     </div>
                     <div class="form-group">

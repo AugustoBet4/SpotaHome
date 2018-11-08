@@ -18,20 +18,22 @@ class DuenoController extends Controller
 
         return view('duenos.create');
     }
-    public function store()
+    public function store(Request $request)
     {
-       /* $dueno = new Dueno;
-        $dueno->nombre = $request->nombre;
-        $dueno->genero = $request->genero;
-        $dueno->nacionalidad = $request->nacionalidad;
-        $dueno->fecha_nacimiento = $request->fecha_nacimiento;
-        $dueno->email = $request->email;
-        $dueno->telefono = $request->telefono;
-        $dueno->usuario = '';
-        $dueno->contrasena ='';
+        $dueno = new Dueno;
+        $dueno->nombre = $request->input('nombre');
+        $dueno->apellidos = $request->input('apellidos');
+        $dueno->email = $request->input('email');
+        $dueno->telefono = $request->input('telefono');
+        $dueno->fecha_nacimiento = $request->input('fecha_nacimiento');
+        $dueno->genero = $request->input('genero');
+        $dueno->nacionalidad = $request->input('nacionalidad');
+        $dueno->usuario = $request->input('usuario');
+        $dueno->contrasena = $request->input('contrasena');
         $dueno->save();
-        return redirect()->route('duenos.index')->with('info', 'Dueno Registrado');*/
-       return 'guardado';
+        return redirect()->route('duenos.index')->with('info', 'Dueno Registrado');
+       //dd($request->all());
+       //return 'guardado fin';
 
     }
 
