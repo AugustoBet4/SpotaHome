@@ -11,7 +11,8 @@
                         Bienvenido a SpotaHome
                     </h1>
                   </div>
-                <form action="" method="post" role="form">
+                <form action="/duenos" method="POST" role="form">
+                    {{ csrf_field() }}
                     <legend>Registrate Como due&ntilde;o</legend>
                     
                     <div class="form-group">
@@ -54,8 +55,9 @@
                         <input type="password" class="form-control" name="contrasena" id="contrasena">
                     </div>
 
+                    <button type="submit"  class="btn btn-primary">Enviar</button>
                 </form>
-                <button class="btn-primary">Enviar</button>
+
 
             </div>
         </div>

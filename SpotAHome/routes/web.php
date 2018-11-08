@@ -22,6 +22,7 @@ Route::post('sesion','SesionEmpleadoController@login')->name('sesion');
 Route::resource('duenos','DuenoController');
 
 //Route::get('/empleados', 'SesionEmpleadoController@index')->name("sesion");
+Route::post('/duenos','DuenoController@store');
 
 Route::get('/inquilino', 'InquilinoController@index')->name("welcome");
 Route::get('/inquilino/historial', 'InquilinoController@historial')->name("historial");
