@@ -13,12 +13,15 @@
     <div class="heading">
         <h1>Inicia Sesión</h1>
     </div>
-    <form>
-        <div class="form-group">
-            <input type="text" class="form-control" id="username" placeholder="Usuario">
+    <form method="POST" action="{{route('sesion')}}">
+        {{csrf_field()}}
+        <div class="form-group" {{$errors-> has('user') ? 'has-error':''}} >
+            <input type="text" class="form-control" id="user" placeholder="Usuario">
+            {!! $errors->first('user','<span class="help-block">:message</span>') !!}
         </div>
-        <div class="form-group">
-            <input type="password" class="form-control" id="pwd" placeholder="Contraseña">
+        <div class="form-group" {{$errors-> has('pass') ? 'has-error':''}} >
+            <input type="password" class="form-control" id="pass" placeholder="Contraseña">
+            {!! $errors->first('pass','<span class="help-block">:message</span>') !!}
         </div>
         <div class="form-group form-group-btn">
             <button type="submit" class="btn btn-success btn-lg">Ingresar</button>

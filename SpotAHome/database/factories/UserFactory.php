@@ -37,3 +37,14 @@ $factory->define(App\Dueno::class, function (Faker $faker) {
         'contrasena'          => '000', // secret
     ];
 });
+$factory->define(App\Empleado::class, function (Faker $faker) {
+
+    return [
+        'nombre'            => $faker->name,
+        'apellidos'         =>$faker->lastName,
+        'email'             => $faker->unique()->safeEmail,
+        'telefono'          => $faker->phoneNumber,
+        'usuario'           =>$faker->userName,
+        'contrasena'          => '000', // secret
+    ];
+});
