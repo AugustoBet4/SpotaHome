@@ -37,6 +37,20 @@ $factory->define(App\Dueno::class, function (Faker $faker) {
         'contrasena'          => '000', // secret
     ];
 });
+$factory->define(App\Propiedad::class, function (Faker $faker) {
+
+    return [
+        'direccion'         => $faker->address,
+        'ciudad'            =>$faker->city,
+        'latitud'           => $faker->latitude,
+        'longitud'          => $faker->longitude,
+        'id_dueno'          =>$faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
+        'descripcion'       =>$faker->text(100),
+        'costo'             =>$faker->randomNumber($nbDigits= 2),
+        //'direccion', 'ciudad', 'latitud', 'longitud', 'descripcion', 'costo',
+    ];
+});
+
 $factory->define(App\Empleado::class, function (Faker $faker) {
 
     return [
