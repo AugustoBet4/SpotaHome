@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Alquiler;
+use App\Propiedad;
 
 class InquilinoController extends Controller
 {
@@ -33,7 +34,8 @@ class InquilinoController extends Controller
 
     public function busqueda()
     {
-      //configuaración
+      //**********************************
+      //configuaración generacion del mapa
         $config = array();
         $config['center'] = 'auto';
         $config['map_width'] = 550;
@@ -56,6 +58,10 @@ class InquilinoController extends Controller
         \Gmaps::add_marker($marker);
 
         $map = \Gmaps::create_map();
-        return view('inquilino/busqueda', compact('map'));
+
+        //******************************************
+
+        $propiedad = Propiedad::orderBy('id_propiedades', 'ASC')->paginate(10);
+        return view('inquilino/busqueda', compact('map', 'propiedad'));
     }
 }

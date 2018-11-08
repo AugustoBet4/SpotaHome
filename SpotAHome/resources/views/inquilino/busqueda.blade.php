@@ -13,7 +13,39 @@
               <br>
           </div>
             <div class="col-md-6">
+                Busca tu Propiedad
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
 
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover dataTables-example" >
+                                <thead>
+                                <tr>
+                                    <th>Ciudad</th>
+                                    <th>Direccion</th>
+                                    <th>Costo</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                @if($propiedad->count())
+                                    @foreach($propiedad as $prop)
+                                        <tr>
+                                            <td>{{$prop->ciudad}}</td>
+                                            <td>{{$reserva->direccion}}</td>
+                                            <td>{{$reserva->costo}}</td>
+                                        </tr>
+                                    @endforeach
+                                @else
+
+                                @endif
+                                </tbody>
+                            </table>
+                        </div>
+                        {{ $propiedad->links() }}
+                    </div>
+                </div>
             </div>
             <div class="col-md-6">
               {!!$map['html']!!}

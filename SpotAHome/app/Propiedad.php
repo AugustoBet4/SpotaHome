@@ -27,9 +27,9 @@ class Propiedad extends Model
         return $this->hasMany('App\Fecha_Disponible');
     }
 
-    protected $table = "propiedad";
+    protected $table = "propiedades";
     protected $dates = ['deleted_at'];
-    protected $primaryKey = "id_propiedad";
+    protected $primaryKey = "id_propiedades";
 
     public function condiciones(){
         return $this->belongsToMany(Condicion::class);
