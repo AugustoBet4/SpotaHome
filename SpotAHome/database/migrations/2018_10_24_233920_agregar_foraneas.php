@@ -51,6 +51,7 @@ class AgregarForaneas extends Migration
 
         Schema::table('verificacion_propiedad', function (Blueprint $table) {
             $table->foreign('id_empleado')->references('id_empleado')->on('empleado');
+            $table->integer(id_propiedad)->unsigned();
         });
 
         Schema::table('TS', function (Blueprint $table) {
@@ -101,7 +102,7 @@ class AgregarForaneas extends Migration
             $table->foreign('id_verificacion_propiedad')->references('id_verificacion_propiedad')->on('verificacion_propiedad');
         });
 
-        
+
     }
 
     /**
