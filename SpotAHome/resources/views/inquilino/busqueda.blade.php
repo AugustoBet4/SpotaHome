@@ -38,6 +38,9 @@
                                         </tr>
                                     @endforeach
                                 @else
+                                <tr>
+                                    <td colspan="12" class="text-center">No se han registrado propiedades</td>
+                                </tr>
 
                                 @endif
                                 </tbody>
