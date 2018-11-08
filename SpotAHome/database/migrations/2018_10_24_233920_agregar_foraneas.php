@@ -101,9 +101,7 @@ class AgregarForaneas extends Migration
             $table->foreign('id_verificacion_propiedad')->references('id_verificacion_propiedad')->on('verificacion_propiedad');
         });
 
-        Schema::table('fecha_disponibilidad', function (Blueprint $table) {
-            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
-        });
+        
     }
 
     /**
