@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Genero</label>
-                        <select name="genero" id="genero">
+                        <select name="genero" id="genero" class="select2_demo form-control">
                             <option value="masculino">Masculino</option>
                             <option value="femenino">Femenino</option>
                         </select>
@@ -53,6 +53,10 @@
                     <div class="form-group">
                         <label for="">Contrase&ntilde;a</label>
                         <input type="password" class="form-control" name="contrasena" id="contrasena">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ingrese nuevamente su Contrase&ntilde;a</label>
+                        <input type="password" class="form-control" name="contrasena2" id="contrasena2">
                     </div>
 
                     <button type="submit"  class="btn btn-primary">Enviar</button>
