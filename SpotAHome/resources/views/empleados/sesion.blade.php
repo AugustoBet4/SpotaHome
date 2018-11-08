@@ -15,13 +15,13 @@
     </div>
     <form method="POST" action="{{route('sesion')}}">
         {{csrf_field()}}
-        <div class="form-group" {{$errors-> has('user') ? 'has-error':''}} >
-            <input type="text" class="form-control" id="user" placeholder="Usuario">
-            {!! $errors->first('user','<span class="help-block">:message</span>') !!}
+        <div class="form-group" >
+            <input type="text" class="form-control" id="usuario" placeholder="Usuario" required>
+            {!! $errors->first('usuario','<span id="span-error">:message</span>') !!}
         </div>
-        <div class="form-group" {{$errors-> has('pass') ? 'has-error':''}} >
-            <input type="password" class="form-control" id="pass" placeholder="Contraseña">
-            {!! $errors->first('pass','<span class="help-block">:message</span>') !!}
+        <div class="form-group">
+            <input type="password" class="form-control" id="contrasena" placeholder="Contraseña" required>
+            {!! $errors->first('contrasena','<span id="span-error">:message</span>') !!}
         </div>
         <div class="form-group form-group-btn">
             <button type="submit" class="btn btn-success btn-lg">Ingresar</button>
@@ -29,7 +29,10 @@
         <div class="clearfix"></div>
         <div class="checkbox">
             <label>
+                <!--
                 <input type="checkbox">Recuerdame?</label>
+                -->
+            </label>
         </div>
     </form>
 </div>
