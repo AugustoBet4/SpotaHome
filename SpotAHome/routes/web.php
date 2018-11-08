@@ -14,14 +14,25 @@
 Route::get('/', 'HomeController@index')->name("welcome");
 //Route::get('/minor', 'HomeController@minor')->name("minor");
 //Sesion de empleados
-Route::get('/empleados', function (){
-   return view('empleados.sesion');
-});
-Route::post('sesion','SesionEmpleadoController@login')->name('sesion');
 
+Route::get('/empleados',function (){
+    return view('empleados/sesion');
+});
+//Route::get('/empleados', 'SesionEmpleadoController@index');
+Route::post('sesion','SesionEmpleadoController@login')->name('sesion');
+//Route::post('cerrarsesion','SesionEmpleadoController@logout')->name('cerrarsesion');
+Route::get('/empleados/dashboard','DashboardController@index')->name('dashboard');
+
+Route::resource('empleados/propiedad','PropiedadEmpleadoController');
+
+
+//Fin empleados
+
+//Dueños
 Route::resource('duenos','DuenoController');
 
 //Route::get('/empleados', 'SesionEmpleadoController@index')->name("sesion");
+Route::post('/duenos','DuenoController@store');
 
 Route::get('/inquilino', 'InquilinoController@index')->name("welcome");
 Route::get('/inquilino/historial', 'InquilinoController@historial')->name("historial");

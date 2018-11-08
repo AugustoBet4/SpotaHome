@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Inquilino;
 
 class InquilinoTableSeeder extends Seeder
 {
@@ -11,6 +12,6 @@ class InquilinoTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Inquilino::class, 10)->create();
+        factory(Inquilino::class, 10)->create();
     }
 }

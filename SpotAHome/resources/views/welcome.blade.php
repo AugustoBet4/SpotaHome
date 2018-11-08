@@ -50,7 +50,7 @@
                 <li><a href="#contact" class="page-scroll">Contacto</a></li>
                 <li><a href="#" class="page-scroll">Inicia Sesión</a></li>
                 <li><a href="#" class="page-scroll">Registrate</a></li>
-                <li><a href="{{route('duenos.index')}}" class="page-scroll">Registrate como Propietario</a></li>
+                <li><a href="{{route('duenos.create')}}" class="page-scroll">Registrate como Propietario</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -63,7 +63,7 @@
             <div class="container">
                 <div class="row">
                     <div class="intro-text">
-                        <h1><strong>Spot</strong><span>AHome</span><strong>Bolivia</strong></h1>
+                        <h1><strong>SPOT</strong><span>AHOME</span><strong>Bolivia</strong></h1>
                         <p>Bienvenido a tu nuevo hogar</p>
                         <a href="#about" class="btn btn-custom btn-lg page-scroll">Explora</a> </div>
                 </div>
