@@ -5,9 +5,12 @@ html{
 body{
     background-color: transparent;
 }
+#span-error{
+    color: yellow;
+}
 
 #log-in-form{
-    margin: 230px auto 0;
+    margin: 100px auto 0;
     padding: 10px;
     color: white;
     height: auto;

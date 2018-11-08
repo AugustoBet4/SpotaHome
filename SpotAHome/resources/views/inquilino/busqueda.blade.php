@@ -33,8 +33,8 @@
                                     @foreach($propiedad as $prop)
                                         <tr>
                                             <td>{{$prop->ciudad}}</td>
-                                            <td>{{$reserva->direccion}}</td>
-                                            <td>{{$reserva->costo}}</td>
+                                            <td>{{$prop->direccion}}</td>
+                                            <td>{{$prop->costo}}</td>
                                         </tr>
                                     @endforeach
                                 @else
