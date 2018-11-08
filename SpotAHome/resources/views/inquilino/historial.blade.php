@@ -35,11 +35,12 @@
                                 <tbody>
 
                                 @if($historial->count())
-                                    @foreach($historial as $reserva)
+                                    @foreach($historial as $key=>$reserva)
                                         <tr>
+                                            <td>{{$key+1}}</td>
                                             <td>{{$reserva->fecha_inicio}}</td>
                                             <td>{{$reserva->fecha_fin}}</td>
-                                            <td>{{$reserva->propiedad->direccion}}</td>
+                                            {{--  <td>{{$reserva->propiedad->direccion}}</td>  --}}
                                         </tr>
                                     @endforeach
                                 @else
