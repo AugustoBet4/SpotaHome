@@ -8,13 +8,10 @@
             <div class="col-lg-12">
                 <div class="text-center m-t-lg">
                     <h1>
-                        Welcome to SpotaHome
-                    </h1>
-                    <h1>
-                        Registrate como dueno
+                        Bienvenido a SpotaHome
                     </h1>
                     <small>
-                        Pagina de inicio del Due&ntilde;o
+                        Registrate Como due&ntilde;o
                     </small>
                 </div>
             </div>

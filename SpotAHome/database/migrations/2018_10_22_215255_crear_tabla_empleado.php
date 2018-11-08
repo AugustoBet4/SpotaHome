@@ -17,10 +17,10 @@ class CrearTablaEmpleado extends Migration
             $table->increments('id_empleado')->unique();
             $table->string('nombre');
             $table->string('apellidos');
-            $table->date('email');
+            $table->string('email');
             $table->string('telefono');
             $table->string('usuario');
-            $table->string('contraseña');
+            $table->string('contrasena');
             $table->timestamps();
             $table->softDeletes();
         });

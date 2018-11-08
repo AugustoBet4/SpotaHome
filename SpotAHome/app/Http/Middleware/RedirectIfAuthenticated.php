@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Empleado;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,6 +25,11 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check() && $guard == 'admin') {
             return redirect('/admin/home');
         }
+
+        if(Empleado::guard($guard)->check() && $guard == 'web'){
+
+        }
+
         return $next($request);
     }
 }

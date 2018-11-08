@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2029e6bbc47a0b3861f24d03c3c8df6f",
+    "content-hash": "12662a3fa9ffb14ff9b99060aa495dd0",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -313,56 +313,6 @@
             "time": "2018-03-08T01:11:30+00:00"
         },
         {
-            "name": "farhanwazir/laravelgooglemaps",
-            "version": "2.3.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/farhanwazir/laravelgooglemaps.git",
-                "reference": "8451e3b0de386e3b779c142692b71645ea75357e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/farhanwazir/laravelgooglemaps/zipball/8451e3b0de386e3b779c142692b71645ea75357e",
-                "reference": "8451e3b0de386e3b779c142692b71645ea75357e",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "5.*",
-                "php": ">=5.6.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "FarhanWazir\\GoogleMaps\\": "src/FarhanWazir/GoogleMaps/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Farhan Wazir",
-                    "email": "seejee1@gmail.com",
-                    "role": "Author"
-                }
-            ],
-            "description": "Laravel Google Map package for 5.x. You can use all google map features in laravel.",
-            "keywords": [
-                "gmap",
-                "google",
-                "googlemap",
-                "laravel",
-                "map"
-            ],
-            "time": "2018-03-30T21:00:53+00:00"
-        },
-        {
             "name": "fideloper/proxy",
             "version": "4.0.0",
             "source": {
@@ -415,77 +365,6 @@
                 "trusted proxy"
             ],
             "time": "2018-02-07T20:20:57+00:00"
-        },
-        {
-            "name": "genealabs/laravel-maps",
-            "version": "0.5.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GeneaLabs/laravel-maps.git",
-                "reference": "a554778df0be1214f0d41ae2d248ebf79ece0029"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GeneaLabs/laravel-maps/zipball/a554778df0be1214f0d41ae2d248ebf79ece0029",
-                "reference": "a554778df0be1214f0d41ae2d248ebf79ece0029",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.5 - 5.7",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "codedungeon/phpunit-result-printer": "*",
-                "fzaninotto/faker": "~1.4",
-                "mockery/mockery": "0.9.*",
-                "orchestra/database": "3.7.x-dev@dev",
-                "orchestra/testbench": "^3.7",
-                "orchestra/testbench-browser-kit": "^3.7",
-                "orchestra/testbench-dusk": "3.7.x-dev@dev",
-                "php-coveralls/php-coveralls": "*",
-                "phpmd/phpmd": "*",
-                "phpunit/phpunit": "*",
-                "sebastian/phpcpd": "*",
-                "symfony/thanks": "^1.0"
-            },
-            "suggest": {
-                "geocoder-php/GeocoderLaravel": "If you need to geocode addresses and don't already have marker coordinates, use this package. It provides geocoding functionality optimized for Laravel."
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "GeneaLabs\\LaravelMaps\\Providers\\Service"
-                    ],
-                    "aliases": {
-                        "Map": "GeneaLabs\\LaravelMaps\\Facades\\Map"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GeneaLabs\\LaravelMaps\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mike Bronner",
-                    "email": "mike@genealabs.com",
-                    "role": "developer"
-                }
-            ],
-            "description": "Eay - peasy map integration for Laravel.",
-            "keywords": [
-                "biostall",
-                "googlemaps",
-                "laravel",
-                "phpgmaps"
-            ],
-            "time": "2018-10-05T23:22:37+00:00"
         },
         {
             "name": "genealabs/phpgmaps",
@@ -2656,6 +2535,56 @@
             "time": "2017-07-22T11:58:36+00:00"
         },
         {
+            "name": "farhanwazir/laravelgooglemaps",
+            "version": "2.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/farhanwazir/laravelgooglemaps.git",
+                "reference": "8451e3b0de386e3b779c142692b71645ea75357e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/farhanwazir/laravelgooglemaps/zipball/8451e3b0de386e3b779c142692b71645ea75357e",
+                "reference": "8451e3b0de386e3b779c142692b71645ea75357e",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.*",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FarhanWazir\\GoogleMaps\\": "src/FarhanWazir/GoogleMaps/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Farhan Wazir",
+                    "email": "seejee1@gmail.com",
+                    "role": "Author"
+                }
+            ],
+            "description": "Laravel Google Map package for 5.x. You can use all google map features in laravel.",
+            "keywords": [
+                "gmap",
+                "google",
+                "googlemap",
+                "laravel",
+                "map"
+            ],
+            "time": "2018-03-30T21:00:53+00:00"
+        },
+        {
             "name": "filp/whoops",
             "version": "2.3.1",
             "source": {
@@ -2765,6 +2694,77 @@
                 "fixtures"
             ],
             "time": "2018-07-12T10:23:15+00:00"
+        },
+        {
+            "name": "genealabs/laravel-maps",
+            "version": "0.5.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GeneaLabs/laravel-maps.git",
+                "reference": "a554778df0be1214f0d41ae2d248ebf79ece0029"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GeneaLabs/laravel-maps/zipball/a554778df0be1214f0d41ae2d248ebf79ece0029",
+                "reference": "a554778df0be1214f0d41ae2d248ebf79ece0029",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.5 - 5.7",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "*",
+                "fzaninotto/faker": "~1.4",
+                "mockery/mockery": "0.9.*",
+                "orchestra/database": "3.7.x-dev@dev",
+                "orchestra/testbench": "^3.7",
+                "orchestra/testbench-browser-kit": "^3.7",
+                "orchestra/testbench-dusk": "3.7.x-dev@dev",
+                "php-coveralls/php-coveralls": "*",
+                "phpmd/phpmd": "*",
+                "phpunit/phpunit": "*",
+                "sebastian/phpcpd": "*",
+                "symfony/thanks": "^1.0"
+            },
+            "suggest": {
+                "geocoder-php/GeocoderLaravel": "If you need to geocode addresses and don't already have marker coordinates, use this package. It provides geocoding functionality optimized for Laravel."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "GeneaLabs\\LaravelMaps\\Providers\\Service"
+                    ],
+                    "aliases": {
+                        "Map": "GeneaLabs\\LaravelMaps\\Facades\\Map"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeneaLabs\\LaravelMaps\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bronner",
+                    "email": "mike@genealabs.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Eay - peasy map integration for Laravel.",
+            "keywords": [
+                "biostall",
+                "googlemaps",
+                "laravel",
+                "phpgmaps"
+            ],
+            "time": "2018-10-05T23:22:37+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",

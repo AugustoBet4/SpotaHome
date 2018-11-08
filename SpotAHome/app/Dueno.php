@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dueno extends Authenticatable
 {
-    use Notifiable;
+   use Notifiable;
     use SoftDeletes;
 
     /**

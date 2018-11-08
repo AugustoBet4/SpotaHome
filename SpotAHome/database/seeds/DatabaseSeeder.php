@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(DuenoTableSeeder::class);
         $this->call(InquilinoTableSeeder::class);
+        $this->call(PropiedadTableSeeder::class);
+        $this->call(EmpleadosTableSeeder::class);
+
         /*$this -> call([
             UsersTableSeeder::class,
             AdminsTableSeeder::class,

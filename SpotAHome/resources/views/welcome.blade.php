@@ -49,7 +49,8 @@
                 <li><a href="#services" class="page-scroll">Como funciona</a></li>
                 <li><a href="#contact" class="page-scroll">Contacto</a></li>
                 <li><a href="#" class="page-scroll">Inicia Sesión</a></li>
-                <li><a href="#" class="page-scroll">Registro</a></li>
+                <li><a href="#" class="page-scroll">Registrate</a></li>
+                <li><a href="{{route('duenos.index')}}" class="page-scroll">Registrate como Propietario</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
