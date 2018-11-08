@@ -51,7 +51,6 @@ class AgregarForaneas extends Migration
 
         Schema::table('verificacion_propiedad', function (Blueprint $table) {
             $table->foreign('id_empleado')->references('id_empleado')->on('empleado');
-            $table->integer(id_propiedad)->unsigned();
         });
 
         Schema::table('TS', function (Blueprint $table) {
@@ -98,8 +97,12 @@ class AgregarForaneas extends Migration
             $table->foreign('id_dueno')->references('id_dueno')->on('dueno');
         });
 
-        Schema::table('propiedad', function (Blueprint $table){
-            $table->foreign('id_verificacion_propiedad')->references('id_verificacion_propiedad')->on('verificacion_propiedad');
+        Schema::table('verificacion_propiedad', function (Blueprint $table){
+            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
+        });
+
+        Schema::table('fecha_disponibilidad', function (Blueprint $table){
+            $table->foreign('id_propiedad')->references('id_propiedad')->on('propiedad');
         });
 
 
@@ -217,12 +220,12 @@ class AgregarForaneas extends Migration
             $table->dropColumn(['id_dueno']);
         });
 
-        Schema::table('propiedad', function (Blueprint $table) {
-            $table->dropForeign(['id_verificacion_propiedad']);
-            $table->dropColumn(['id_verificacion_propiedad']);
+        Schema::table('fecha_disponibilidad', function (Blueprint $table) {
+            $table->dropForeign(['id_propiedad']);
+            $table->dropColumn(['id_propiedad']);
         });
 
-        Schema::table('fecha_disponibilidad', function (Blueprint $table) {
+        Schema::table('verificacion_propiedad', function (Blueprint $table) {
             $table->dropForeign(['id_propiedad']);
             $table->dropColumn(['id_propiedad']);
         });

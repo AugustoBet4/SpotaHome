@@ -19,14 +19,6 @@ class Propiedad extends Model
         'direccion', 'ciudad', 'latitud', 'longitud', 'descripcion', 'costo',
     ];
 
-    public function duenos(){
-        return $this->hasMany('App\Duenos');
-    }
-
-    public function fecha_disponible(){
-        return $this->hasMany('App\Fecha_Disponible');
-    }
-
     protected $table = "propiedades";
     protected $dates = ['deleted_at'];
     protected $primaryKey = "id_propiedades";

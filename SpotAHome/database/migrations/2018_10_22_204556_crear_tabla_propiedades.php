@@ -22,8 +22,6 @@ class CrearTablaPropiedades extends Migration
             $table->integer('id_dueno');
             $table->longText('descripcion');
             $table->double('costo', 10, 5);
-            $table->integer('id_fecha_disponibilidad')->unsigned();
-            $table->integer('id_verificacion_propiedad')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

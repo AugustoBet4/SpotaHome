@@ -17,6 +17,7 @@ class CrearTablaVerificacionPropiedades extends Migration
             $table->increments('id_verificacion_propiedad')->unique();
             $table->boolean('estado');
             $table->integer('id_empleado')->unsigned();
+            $table->integer('id_propiedad')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });
