@@ -25,7 +25,7 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Nuevo Libro</h3>
+                            <h3 class="panel-title">Edicion de propiedad</h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
