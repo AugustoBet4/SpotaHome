@@ -61,7 +61,7 @@ class InquilinoController extends Controller
 
         //******************************************
 
-        $propiedad = Propiedad::orderBy('id_propiedad', 'ASC')->paginate(10);
+        //$propiedad = Propiedad::orderBy('id_propiedad', 'ASC')->paginate(10);
         return view('inquilino/busqueda', compact('map', 'propiedad'));
     }
 }
