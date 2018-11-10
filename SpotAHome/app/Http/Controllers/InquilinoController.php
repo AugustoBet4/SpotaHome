@@ -29,9 +29,10 @@ class InquilinoController extends Controller
 
     public function reservas()
     {
-        $user = \Auth::inquilino()->id;
-        $reservas = Alquiler::where('id_inquilino', $user)->orderBy('id_alquiler', 'ASC')->paginate(10);
-        return view('inquilino/reservas', compact('reservas'));
+        $user = Auth::id();
+        $reservas = Alquiler::where('id_inquilino', $user)->where('status_alquiler', 'Reservado')->orderBy('id_alquiler', 'ASC')->paginate(10);
+        $historicas = Alquiler::where('id_inquilino', $user)->where('status_alquiler', 'Finalizado')->orderBy('id_alquiler', 'ASC')->paginate(10);
+        return view('inquilino/reservas', compact('reservas'), compact('historicas'));
     }
 
     public function anularReserva($id)

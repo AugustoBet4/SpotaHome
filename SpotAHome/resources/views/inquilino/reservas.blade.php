@@ -73,7 +73,51 @@
                         </div>
                         <div id="tab-2" class="tab-pane">
                             <div class="panel-body">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-content">
 
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover dataTables-example" >
+                                                <thead>
+                                                <tr>
+                                                    <th>Nro.</th>
+                                                    <th>Fecha Inicio</th>
+                                                    <th>Fecha Fin</th>
+                                                    <th>Opcion</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                @if($historicas->count())
+                                                    @foreach($historicas as $key=>$historia)
+                                                        <tr>
+                                                            <td>{{$key+1}}</td>
+                                                            <td>{{$historia->fecha_inicio}}</td>
+                                                            <td>{{$historia->fecha_fin}}</td>
+                                                            {{--  <td>{{$reserva->propiedad->direccion}}</td>  --}}
+                                                            <td>
+                                                                {{--  action="{{action('InquilinoController@anularReserva', $reserva->id_alquiler)}}"  --}}
+                                                                <form method="post">
+                                                                    {{csrf_field()}}
+                                                                    <input name="_method" type="hidden" value="DELETE">
+                                                                    <button class="btn btn-danger btn-xs" type="submit">
+                                                                        <i class="fa fa-eraser"></i>
+                                                                    </button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @else
+                                                    <tr>
+                                                        <td colspan="12" class="text-center">No tiene reservas activas. Ve al buscador y reliza una :D</td>
+                                                    </tr>
+                                                @endif
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        {{ $historicas->links() }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
