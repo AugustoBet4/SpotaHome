@@ -44,7 +44,7 @@ Auth::routes();
 Route::get('/inquilino', 'InquilinoController@index')->name("welcome");
 Route::get('/inquilino/reservas', 'InquilinoController@reservas')->name("reservas");
 Route::get('/inquilino/busqueda', 'InquilinoController@busqueda')->name("busqueda");
-
+Route::get('/inquilino/propiedades', 'InquilinoController@busqueda_prop')->name("propiedades");
 /*
 Route::get('/', function () {
     return view('welcome');

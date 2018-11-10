@@ -16,7 +16,7 @@ class Propiedad extends Model
      * @var array
      */
     protected $fillable = [
-        'direccion', 'ciudad', 'latitud', 'longitud', 'descripcion', 'costo',
+        'direccion', 'ciudad', 'zona', 'latitud', 'longitud', 'descripcion', 'costo',
     ];
 
     protected $table = "propiedad";
