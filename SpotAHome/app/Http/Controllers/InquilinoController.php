@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Alquiler;
 use App\Propiedad;
+use Illuminate\Support\Facades\Auth;
 
 class InquilinoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:inquilino');
+    }
+
     public function index()
     {
         return view('inquilino/index');
@@ -20,16 +27,17 @@ class InquilinoController extends Controller
         return view('inquilino/historial', compact('historial'));
     }
 
-    public function anular()
+    public function reservas()
     {
-        $reservas = Alquiler::orderBy('id_alquiler', 'ASC')->paginate(10);
-        return view('inquilino/anular', compact('reservas'));
+        $user = \Auth::inquilino()->id;
+        $reservas = Alquiler::where('id_inquilino', $user)->orderBy('id_alquiler', 'ASC')->paginate(10);
+        return view('inquilino/reservas', compact('reservas'));
     }
 
     public function anularReserva($id)
     {
         Alquiler::find($id)->delete();
-        return redirect()->route('inquilino.index')->with('success','Registro eliminado satisfactoriamente');
+        return redirect()->route('inquilino.reservas')->with('success','Registro eliminado satisfactoriamente');
     }
 
     public function busqueda()

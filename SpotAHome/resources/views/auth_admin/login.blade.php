@@ -8,7 +8,7 @@
                 <div class="card-header"> Admin Backend Login </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login.admin') }}">
+                    <form method="POST" action="{{ route('login.inquilino') }}">
                         @csrf
 
                         <div class="form-group row">

@@ -26,6 +26,10 @@ class RedirectIfAuthenticated
             return redirect('/admin/home');
         }
 
+        if (Auth::guard($guard)->check() && $guard == 'inquilino') {
+            return redirect('/inquilino/');
+        }
+
      /*
       *
       *    if (Empleado::guard($guard)->check()) {

@@ -18,7 +18,7 @@ class Inquilino extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id_inquilinos', 'nombre', 'apellidos', 'email', 'telefono', 'fecha_nacimiento','genero','nacionalidad','usuario',
+        'nombre', 'apellidos', 'email', 'telefono', 'fecha_nacimiento','genero','nacionalidad','usuario',
     ];
 
     /**
@@ -33,6 +33,10 @@ class Inquilino extends Authenticatable
     protected $table = "inquilino";
     protected $dates = ['deleted_at'];
     protected $primaryKey = "id_inquilino";
+
+    public function getAuthPassword() {
+        return $this->contraseña;
+    }
 
     public function valoracion_dueno_inquilino(){
         return $this->hasMany(Valoracion_Dueno_Inquilino::class);

@@ -6,7 +6,7 @@
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <section class="content">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-12">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <strong>Error!</strong> Revise los campos obligatorios.<br><br>

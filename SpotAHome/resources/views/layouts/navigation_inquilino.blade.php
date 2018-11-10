@@ -25,10 +25,7 @@
                 <a href="{{ url('/inquilino/busqueda') }}"><i class="fa fa-search"></i> <span class="nav-label">Busqueda</span></a>
             </li>
             <li >
-                <a href="{{ url('/inquilino/historial') }}"><i class="fa fa-history"></i> <span class="nav-label">Historial</span> </a>
-            </li>
-            <li >
-                <a href="{{ url('/inquilino/anular') }}"><i class="fa fa-ban"></i> <span class="nav-label">Anular Reserva</span> </a>
+                <a href="{{ url('/inquilino/reservas') }}"><i class="fa fa-ban"></i> <span class="nav-label">Reservas</span> </a>
             </li>
         </ul>
 
