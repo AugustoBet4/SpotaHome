@@ -31,6 +31,10 @@ class Dueno extends Authenticatable
         'contrasena',
     ];
 
+    public function getAuthPassword() {
+        return $this->contrasena;
+    }
+
     protected $table = "dueno";
     protected $dates = ['deleted_at'];
     protected $primaryKey = 'id_dueno';

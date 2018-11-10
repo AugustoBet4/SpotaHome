@@ -5,14 +5,9 @@
                 <div class="dropdown profile-element">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
-                            <span class="block m-t-xs">
-                                <strong class="font-bold">Example user</strong>
-                            </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
+                                <strong class="font-bold">{{$user->nombre}}</strong>
                         </span>
                     </a>
-                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="#">Logout</a></li>
-                    </ul>
                 </div>
                 <div class="logo-element">
                     Logo :v
@@ -25,7 +20,11 @@
                 <a href="{{ url('/inquilino/busqueda') }}"><i class="fa fa-search"></i> <span class="nav-label">Busqueda</span></a>
             </li>
             <li >
-                <a href="{{ url('/inquilino/reservas') }}"><i class="fa fa-ban"></i> <span class="nav-label">Reservas</span> </a>
+                <a href="#"><i class="fa fa-calendar"></i><span class="nav-label">Reservas</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="{{ url('/inquilino/reservas') }}">Reservas Actuales</a></li>
+                    <li><a href="{{ url('/inquilino/historial') }}">Reservas Historicas</a></li>
+                </ul>
             </li>
         </ul>
 

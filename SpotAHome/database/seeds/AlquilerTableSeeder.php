@@ -12,6 +12,6 @@ class AlquilerTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Alquiler::class, 10)->create();
+        factory(Alquiler::class, 1000)->create();
     }
 }
