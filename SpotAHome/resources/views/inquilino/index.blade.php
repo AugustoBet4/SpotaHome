@@ -8,11 +8,14 @@
                     <div class="col-lg-12">
                         <div class="text-center m-t-lg">
                             <h1>
-                                Welcome to SpotaHome
+                                Bienvenido a SpotaHome
                             </h1>
                             <small>
                                 Pagina de inicio del Inquilino
                             </small>
+                            <p>
+                                Es una placer verte de nuevo: {{$user->nombre}}
+                            </p>
                         </div>
                     </div>
                 </div>

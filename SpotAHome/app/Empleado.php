@@ -35,6 +35,10 @@ class Empleado extends Authenticatable
     protected $dates = ['deleted_at'];
     protected $primaryKey = 'id_empleado';
 
+    public function getAuthPassword() {
+        return $this->contrasena;
+    }
+
     public function verificacion_propiedad(){
         return $this->hasMany(Verificacion_Propiedad::class);
     }

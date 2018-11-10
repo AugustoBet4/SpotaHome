@@ -16,23 +16,22 @@ class InquilinoController extends Controller
 
     public function index()
     {
-        return view('inquilino/index');
-    }
-
-    public function historial()
-    {
-//        $user = \Auth::inquilino()->id;
-//        $historial = Alquiler::where('id_inquilino', $user)->orderBy('id_alquiler', 'ASC')->paginate(10);
-        $historial = Alquiler::orderBy('id_alquiler', 'ASC')->paginate(10);
-        return view('inquilino/historial', compact('historial'));
+        $user = Auth::user();
+        return view('inquilino/index', compact('user'));
     }
 
     public function reservas()
     {
-        $user = Auth::id();
-        $reservas = Alquiler::where('id_inquilino', $user)->where('status_alquiler', 'Reservado')->orderBy('id_alquiler', 'ASC')->paginate(10);
-        $historicas = Alquiler::where('id_inquilino', $user)->where('status_alquiler', 'Finalizado')->orderBy('id_alquiler', 'ASC')->paginate(10);
-        return view('inquilino/reservas', compact('reservas'), compact('historicas'));
+        $user = Auth::user();
+        $reservas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', 'Reservado')->orderBy('id_alquiler', 'ASC')->paginate(10);
+        return view('inquilino/reservas', compact('reservas', 'user'));
+    }
+
+    public function historial()
+    {
+        $user = Auth::user();
+        $historicas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', 'Finalizado')->orderBy('id_alquiler', 'ASC')->paginate(10);
+        return view('inquilino/historial', compact( 'historicas','user'));
     }
 
     public function anularReserva($id)
@@ -43,6 +42,7 @@ class InquilinoController extends Controller
 
     public function busqueda()
     {
+        $user = Auth::user();
       //**********************************
       //configuaración generacion del mapa
         $config = array();
@@ -70,8 +70,8 @@ class InquilinoController extends Controller
 
         //******************************************
 
-        //$propiedad = Propiedad::orderBy('id_propiedad', 'ASC')->paginate(10);
-        return view('inquilino/busqueda', compact('map', 'propiedad'));
+        $propiedad = Propiedad::orderBy('id_propiedad', 'ASC')->paginate(10);
+        return view('inquilino/busqueda', compact('map', 'propiedad', 'user'));
     }
 
     public function busqueda_prop()

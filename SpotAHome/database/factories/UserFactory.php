@@ -34,7 +34,7 @@ $factory->define(App\Dueno::class, function (Faker $faker) {
         'genero'            =>$faker->randomElement($array = array('M','F')),
         'nacionalidad'      =>$faker->country,
         'usuario'           =>$faker->userName,
-        'contrasena'          => '000', // secret
+        'contrasena'        => bcrypt('000'), // secret
     ];
 });
 
@@ -69,7 +69,7 @@ $factory->define(App\Propiedad::class, function (Faker $faker) {
 
 $factory->define(App\Alquiler::class, function (Faker $faker) {
     return [
-        'status_alquiler'   => $faker->randomElement($array = array('M','F')),
+        'status_alquiler'   => $faker->randomElement($array = array('Reservado','Finalizado')),
         'fecha_inicio'      => $faker->dateTime,
         'fecha_fin'         => $faker->dateTime,
         'id_propiedad'      => $faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
@@ -85,6 +85,6 @@ $factory->define(App\Empleado::class, function (Faker $faker) {
         'email'             => $faker->unique()->safeEmail,
         'telefono'          => $faker->phoneNumber,
         'usuario'           =>$faker->userName,
-        'contrasena'          => '000', // secret
+        'contrasena'        => bcrypt('000'), // secret
     ];
 });
