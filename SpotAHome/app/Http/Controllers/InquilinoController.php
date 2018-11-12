@@ -82,7 +82,8 @@ class InquilinoController extends Controller
         $propiedad =  Propiedad::find($id);
         $baseurl = "https://www.google.com/maps/dir/?api=1";
         $fin = $baseurl . "&destination=" . $propiedad->latitud . "," . $propiedad->longitud . "";
-        return view('inquilino/direcciones',compact('fin', 'user', 'propiedad'));
+        return redirect($fin);
+//        return view('inquilino/direcciones',compact('fin', 'user', 'propiedad'));
     }
 
 }
