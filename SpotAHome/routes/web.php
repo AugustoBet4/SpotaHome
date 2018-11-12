@@ -34,16 +34,23 @@ Route::resource('duenos','DuenoController');
 //Route::get('/empleados', 'SesionEmpleadoController@index')->name("sesion");
 Route::post('/duenos','DuenoController@store');
 
+
+//Inquilinos
+
+Route::resource('inquilino/','AlquilerController');
+Route::resource('inquilino/','PropiedadController');
+Route::resource('inquilino/', 'ValoracionPropiedadController');
+
 Route::get('inquilino/login', 'AuthInquilino\LoginController@showLoginForm') -> name('login.inquilino');
 Route::post('inquilino/login','AuthInquilino\LoginController@login')->name('inquilino.sesion');
 Route::post('inquilino/logout', 'AuthInquilino\LoginController@logout') -> name('logout.inquilino');
 
-
 Auth::routes();
 
-Route::get('/inquilino', 'InquilinoController@index')->name("welcome");
+Route::get('/inquilino', 'InquilinoController@index')->name("inquilino.index");
 Route::get('/inquilino/reservas', 'InquilinoController@reservas')->name("reservas");
 Route::get('/inquilino/historial', 'InquilinoController@historial')->name("historial");
+Route::get('/inquilino/direcciones/{id}', 'InquilinoController@location')->name("direcciones");
 Route::get('/inquilino/busqueda', 'InquilinoController@busqueda')->name("busqueda");
 Route::get('/inquilino/propiedades', 'InquilinoController@busqueda_prop')->name("propiedades");
 /*

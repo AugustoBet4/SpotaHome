@@ -15,7 +15,7 @@ class Valoracion_Inquilino_Propiedad extends Model
      * @var array
      */
     protected $fillable = [
-        'puntuacion', 'comentario',
+        'puntuacion', 'comentario', 'id_inquilino', 'id_propiedad',
     ];
 
     protected $table = "valoracion_inquilino_propiedad";

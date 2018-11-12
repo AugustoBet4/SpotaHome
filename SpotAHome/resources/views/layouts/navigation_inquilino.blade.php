@@ -5,7 +5,7 @@
                 <div class="dropdown profile-element">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
-                                <strong class="font-bold">{{$user->nombre}}</strong>
+                                <strong class="font-bold">{{ $user->nombre }}</strong>
                         </span>
                     </a>
                 </div>

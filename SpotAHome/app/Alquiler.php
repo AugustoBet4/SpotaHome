@@ -26,7 +26,7 @@ class Alquiler extends Model
         return $this->belongsTo(Inquilino::class);
     }
 
-    public function alquiler(){
+    public function propiedad(){
         return $this->belongsTo(Propiedad::class);
     }
 

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Alquiler;
+use App\Inquilino;
 use App\Propiedad;
+use App\Valoracion_Inquilino_Propiedad;
 use Illuminate\Support\Facades\Auth;
 
 class InquilinoController extends Controller
@@ -23,21 +25,15 @@ class InquilinoController extends Controller
     public function reservas()
     {
         $user = Auth::user();
-        $reservas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', 'Reservado')->orderBy('id_alquiler', 'ASC')->paginate(10);
+        $reservas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', 'Reservado')->orderBy('id_alquiler', 'ASC')->whereNull('deleted_at')->paginate(10);
         return view('inquilino/reservas', compact('reservas', 'user'));
     }
 
     public function historial()
     {
         $user = Auth::user();
-        $historicas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', 'Finalizado')->orderBy('id_alquiler', 'ASC')->paginate(10);
+        $historicas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', 'Finalizado')->orderBy('id_alquiler', 'ASC')->whereNull('deleted_at')->paginate(10);
         return view('inquilino/historial', compact( 'historicas','user'));
-    }
-
-    public function anularReserva($id)
-    {
-        Alquiler::find($id)->delete();
-        return redirect()->route('inquilino.reservas')->with('success','Registro eliminado satisfactoriamente');
     }
 
     public function busqueda()
@@ -76,7 +72,17 @@ class InquilinoController extends Controller
 
     public function busqueda_prop()
     {
-        return view('inquilino/propiedades');
+        $user = Auth::user();
+        return view('inquilino/propiedades', compact('user'));
+    }
+
+    public function location($id)
+    {
+        $user = Auth::user();
+        $propiedad =  Propiedad::find($id);
+        $baseurl = "https://www.google.com/maps/dir/?api=1";
+        $fin = $baseurl . "&destination=" . $propiedad->latitud . "," . $propiedad->longitud . "";
+        return view('inquilino/direcciones',compact('fin', 'user', 'propiedad'));
     }
 
 }
