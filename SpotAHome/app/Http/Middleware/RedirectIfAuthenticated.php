@@ -29,6 +29,9 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check() && $guard == 'inquilino') {
             return redirect('/inquilino/');
         }
+       /* if (Auth::guard($guard)->check()) {
+            return redirect('/duenos/');
+        }*/
 
      /*
       *

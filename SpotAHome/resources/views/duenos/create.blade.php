@@ -1,4 +1,4 @@
-@extends('layouts.app_duenos')
+@extends('layouts.app_duenosregistro')
 
 @section('title', 'Inicio de duenos')
 

@@ -22,14 +22,16 @@ Route::get('/empleados',function (){
 Route::post('sesion','SesionEmpleadoController@login')->name('sesion');
 //Route::post('cerrarsesion','SesionEmpleadoController@logout')->name('cerrarsesion');
 Route::get('/empleados/dashboard','DashboardController@index')->name('dashboard');
+Route::get('/duenos','DashboardDuenoController@index')->name('index');
 
 Route::resource('empleados/propiedad','PropiedadEmpleadoController');
+Route::resource('empleados/duenos','DuenoController');
 
 
 //Fin empleados
 
 //Dueños
-Route::resource('duenos','DuenoController');
+//Route::resource('duenos','DuenoController');
 
 //Route::get('/empleados', 'SesionEmpleadoController@index')->name("sesion");
 Route::post('/duenos','DuenoController@store');
