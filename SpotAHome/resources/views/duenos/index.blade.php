@@ -11,7 +11,7 @@
                         Bienvenido a SpotaHome
                     </h1>
                     <small>
-                        <a href="#" > tu primera vivienda Aqui</a>
+                        <a href="#}" > Revisa tus viviendas</a>
                     </small>
                 </div>
             </div>
