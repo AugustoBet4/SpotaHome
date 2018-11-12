@@ -38,8 +38,8 @@
                     <div class="form-group">
                         <label for="">Genero</label>
                         <select name="genero" id="genero" class="select2_demo form-control">
-                            <option value="masculino">Masculino</option>
-                            <option value="femenino">Femenino</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
                         </select>
                     </div>
                     <div class="form-group">
