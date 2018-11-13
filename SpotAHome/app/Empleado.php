@@ -36,7 +36,7 @@ class Empleado extends Authenticatable
     protected $primaryKey = 'id_empleado';
 
     public function getAuthPassword() {
-        return $this->contrasena;
+        return $this->contraseña;
     }
 
     public function verificacion_propiedad(){
