@@ -16,7 +16,7 @@ class DuenoController extends Controller
     public function index()
     {
 
-       $duenos = Dueno::orderBy('id_dueno','DESC')->paginate(10);
+       $duenos = Dueno::orderBy('id_dueno','ASC')->paginate(10);
         return view ('empleados.dueno',compact('duenos'));
         /*$user = Auth::user();
         //return view('duenos.index', compact('user'));
@@ -50,12 +50,27 @@ class DuenoController extends Controller
        //return 'guardado fin';
 
     }
-    /*public  function show(){
+    public  function show($id){
 
+        $dueno = Dueno::find($id);
+        return view('empleados.showdueno', compact('dueno'));
+    }
+    public function destroy($id){
+        $dueno = Dueno::find($id);
+        $dueno->delete();
+        return back();
 
-
-        return 'duenos losta';
-    }*/
+    }
+    public function edit ($id){
+        $dueno = Dueno::find($id);
+        return view('empleados.editdueno', compact('dueno'));
+    }
+    public function update(Request $request, $id)
+    {
+        $this->validate($request,['nombre' => 'required','apellidos' => 'required','genero' => 'required','nacionalidad' => 'required','fecha_nacimiento' => 'required','email' => 'required','telefono' => 'required']);
+        Dueno::find($id)->update($request->all());
+        return redirect()->route('duenos.index')->with('success','Due&ntilde;o actualizado');
+    }
 
 
 

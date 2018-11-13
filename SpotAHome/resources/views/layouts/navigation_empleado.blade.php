@@ -26,7 +26,7 @@
             </li>
             <li >
             <li >
-                <a href="{{ url('/empleados/duenos') }}"><i class="fa fa-search"></i> <span class="nav-label">Due&ntilde;os</span></a>
+                <a href="{{ url('/empleados/duenos') }}"><i class="fa fa-search"></i> <span class="nav-label">Administrar Due&ntilde;os</span></a>
             </li>
             <li >
                 <a href="{{ url('/empleados/historial') }}"><i class="fa fa-history"></i> <span class="nav-label">Estadisticas</span> </a>

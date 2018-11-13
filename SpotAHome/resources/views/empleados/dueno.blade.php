@@ -10,15 +10,16 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="pull-left"><h1>Listado de due&ntilde;os</h1></div>
-                            <div class="pull-right">
+                            <div class="col-sm-4">
                             </div>
                                 <div class="table-container">
                                     <table class="table table-hover table-striped">
                                         <thead>
                                         <tr>
-                                        <th width="20px">ID</th>
-                                        <th width="5000px">Nombre</th>
-                                        <th width="5px">Genero</th>
+                                            <th width="20px">ID</th>
+                                            <th width="250px">Nombre</th>
+                                            <th width="250px">Apellidos</th>
+                                            <th width="250px">E-mail</th>
 
                                         </tr>
                                         </thead>
@@ -31,16 +32,22 @@
                                             {{$dueno->nombre}}
                                             </strong>
                                             </td>
+                                            <td>
+                                                <strong>
+                                                    {{$dueno->apellidos}}
+                                                </strong>
+                                            </td>
 
-                                        <td>{{$dueno->genero}}</td>
+                                        <td>{{$dueno->email}}</td>
                                             <td>
-                                                <a href="#" class="btn btn-link">Ver</a>
+                                                <a href="{{action('DuenoController@show', $dueno->id_dueno)}}" class="btn btn-link">Ver</a>
                                             </td>
                                             <td>
-                                                <a href="#" class="btn btn-link">Editar</a>
+                                                <a href="{{action('DuenoController@edit', $dueno->id_dueno)}}" class="btn btn-link">Editar</a>
                                             </td>
                                             <td>
-                                                <form action="#" method="post">
+                                                <form action="{{action('DuenoController@destroy', $dueno->id_dueno)}}" method="post">
+                                                    {{csrf_field()}}
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button class="btn btn-link">Borrar</button>
                                 </form>
