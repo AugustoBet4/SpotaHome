@@ -55,6 +55,11 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'empleado' => [
+            'driver' => 'session',
+            'provider' => 'empleado',
+        ],
     ],
 
     /*
@@ -88,6 +93,11 @@ return [
         'inquilino' => [
             'driver' => 'eloquent',
             'model' => App\Inquilino::class,
+        ],
+
+        'inquilino' => [
+            'driver' => 'eloquent',
+            'model' => App\Empleado::class,
         ],
 
         // 'users' => [
