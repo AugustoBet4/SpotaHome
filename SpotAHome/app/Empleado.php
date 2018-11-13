@@ -20,7 +20,7 @@ class Empleado extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nombre', 'apellidos', 'email', 'telefono', 'usuario', 'contrasena',
+        'nombre', 'apellidos', 'email', 'telefono', 'usuario', 'contraseña',
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -28,7 +28,7 @@ class Empleado extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'contrasena',
+        'contraseña',
     ];
 
     protected $table = "empleado";

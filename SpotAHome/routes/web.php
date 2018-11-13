@@ -15,18 +15,23 @@ Route::get('/', 'HomeController@index')->name("welcome");
 //Route::get('/minor', 'HomeController@minor')->name("minor");
 //Sesion de empleados
 
-Route::get('/empleados',function (){
-    return view('empleados/sesion');
-});
-//Route::get('/empleados', 'SesionEmpleadoController@index');
-Route::post('sesion','SesionEmpleadoController@login')->name('sesion');
+//Route::get('/empleados',function (){return view('empleados/sesion');});
+Route::get('/empleados', 'SesionEmpleadoController@index')->name("empleados.index");
+Route::get('/empleados/dashboard', 'SesionEmpleadoController@index');
+//Route::post('sesion','SesionEmpleadoController@login')->name('sesion');
 //Route::post('cerrarsesion','SesionEmpleadoController@logout')->name('cerrarsesion');
+
+//Dashboard general empleado
 Route::get('/empleados/dashboard','DashboardController@index')->name('dashboard');
 Route::get('/duenos','DashboardDuenoController@index')->name('index');
-
 Route::resource('empleados/propiedad','PropiedadEmpleadoController');
 Route::resource('empleados/duenos','DuenoController');
 
+
+
+Route::get('empleados/login', 'AuthEmpleado\LoginController@showLoginForm') -> name('login.empleado');
+Route::post('empleados/login','AuthEmpleado\LoginController@login')->name('empleado.sesion');
+Route::post('empleados/logout', 'AuthEmpleado\LoginController@logout') -> name('logout.empleado');
 
 //Fin empleados
 

@@ -95,7 +95,7 @@ return [
             'model' => App\Inquilino::class,
         ],
 
-        'inquilino' => [
+        'empleado' => [
             'driver' => 'eloquent',
             'model' => App\Empleado::class,
         ],
