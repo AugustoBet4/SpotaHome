@@ -19,7 +19,7 @@
 
 
     </style>
-    {!!$map['js']!!}
+
     <div class="text-center m-t-lg">
 
 
@@ -29,24 +29,29 @@
     </div>
       <div class="centrar">
         <br><br><br><br><br><br><br>
-        <div class="row">
+        <form class = "form-group" method="post" action="/inquilino/propiedades">
+          @csrf
+          <div class="row">
 
-            <div class="col-md-3"></div>
-            <div class="col-md-3" >
-              <div class="form-group">
-                <select class="form-control" id="sel1">
-                  <option>La Paz</option>
-                  <option>Cochabamba</option>
-                  <option>Santa Cruz</option>
+              <div class="col-md-3"></div>
+              <div class="col-md-3" >
+                <div class="form-group">
+                  <select class="form-control" id="sel1" name="ciudad">
 
-                </select>
+
+                    <option>La Paz</option>
+                    <option>Cochabamba</option>
+                    <option>Santa Cruz</option>
+
+                  </select>
+                </div>
               </div>
-            </div>
 
-            <div class="col-md-3">
-              <a   href="{{action('InquilinoController@busqueda_prop')}}" class="btn btn-primary" >Buscar</a>
-            </div>
-        </div>
+              <div class="col-md-3">
+                <button type="submit" class="btn btn-primary" >Buscar</button>
+              </div>
+          </div>
+        </form>
       </div>
     </div>
 @endsection

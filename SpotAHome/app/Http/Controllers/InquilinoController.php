@@ -7,6 +7,7 @@ use App\Inquilino;
 use App\Propiedad;
 use App\Valoracion_Inquilino_Propiedad;
 use Illuminate\Support\Facades\Auth;
+use Request;
 
 class InquilinoController extends Controller
 {
@@ -41,7 +42,7 @@ class InquilinoController extends Controller
         $user = Auth::user();
       //**********************************
       //configuaración generacion del mapa
-        $config = array();
+        /*$config = array();
         $config['center'] = 'auto';
         $config['map_width'] = 550;
         $config['map_height'] = 400;
@@ -65,7 +66,7 @@ class InquilinoController extends Controller
         $map = \Gmaps::create_map();
 
         //******************************************
-
+        */
 
         return view('inquilino/busqueda', compact('map', 'propiedad', 'user'));
     }
@@ -73,7 +74,8 @@ class InquilinoController extends Controller
     public function busqueda_prop()
     {
         $user = Auth::user();
-        $propiedad = Propiedad::orderBy('id_propiedad', 'ASC')->paginate(10);
+        $ciudad = request::input('ciudad');
+        $propiedad = Propiedad::where('ciudad', '=', $ciudad)->orderBy('id_propiedad', 'ASC')->paginate(10);
         return view('inquilino/propiedades', compact('user', 'propiedad'));
     }
 
