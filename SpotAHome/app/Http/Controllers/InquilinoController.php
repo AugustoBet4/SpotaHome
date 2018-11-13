@@ -89,4 +89,10 @@ class InquilinoController extends Controller
 //        return view('inquilino/direcciones',compact('fin', 'user', 'propiedad'));
     }
 
+    public function anularReserva($id)
+    {
+        Alquiler::find($id)->delete();
+        return redirect()->route('reservas')->with('success','Registro eliminado logicamente');
+    }
+
 }

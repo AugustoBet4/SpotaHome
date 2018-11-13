@@ -41,14 +41,13 @@
                                                 <td>{{$reserva->fecha_fin}}</td>
                                                 {{--  <td>{{$reserva->propiedad->direccion}}</td>  --}}
                                                 <td>
-                                                    {{--  action="{{action('InquilinoController@anularReserva', $reserva->id_alquiler)}}"  --}}
-                                                    {{--<form method="post" action="{{ action('AlquilerController@destroy', $reserva->id_alquiler) }}">--}}
-                                                        {{--{{csrf_field()}}--}}
-                                                        {{--<input name="_method" type="hidden" value="DELETE">--}}
-                                                        {{--<button class="btn btn-danger btn-xs" type="submit">--}}
-                                                            {{--<i class="fa fa-eraser"></i> Anular--}}
-                                                        {{--</button>--}}
-                                                    {{--</form>--}}
+                                                    <form method="post" action="{{ action('InquilinoController@anularReserva', $reserva->id_alquiler) }}">
+                                                        {{csrf_field()}}
+                                                        <input name="_method" type="hidden" value="DELETE">
+                                                        <button class="btn btn-danger btn-xs" type="submit">
+                                                            <i class="fa fa-eraser"></i> Anular Reserva
+                                                        </button>
+                                                    </form>
                                                     {{--<form method="post" action="{{ action('PropiedadController@show', $reserva->id_propiedad) }}">--}}
                                                         {{--{{csrf_field()}}--}}
                                                         {{--<input name="_method" type="hidden" value="DELETE">--}}
@@ -59,6 +58,8 @@
                                                     <form method="post">
                                                         <button class="btn btn-warning btn-xs" type="button" onclick="window.location='{{ action('InquilinoController@location', $reserva->id_propiedad) }}'">
                                                             <i class="fa fa-map-signs"></i>Como llegar
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

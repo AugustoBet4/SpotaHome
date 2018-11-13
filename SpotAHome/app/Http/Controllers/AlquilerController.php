@@ -17,7 +17,7 @@ class AlquilerController extends Controller
     public function index()
     {
         $alquiler = Alquiler::orderBy('id_alquiler','ASC')->paginate(10);
-        return view ('inquielino.reserva',compact('alquiler'));
+        return view ('inquilino.reserva',compact('alquiler'));
     }
 
     /**
@@ -45,7 +45,7 @@ class AlquilerController extends Controller
      */
     public function show($id)
     {
-        $propiedades=Propiedad::find($id);
+        $propiedades=Alquiler::find($id);
         return view('empleados.show',compact('propiedades'));
     }
 
