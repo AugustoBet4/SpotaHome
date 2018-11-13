@@ -28,7 +28,7 @@ class Empleado extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'contraseña',
+        'contrasena',
     ];
 
     protected $table = "empleado";
@@ -36,7 +36,7 @@ class Empleado extends Authenticatable
     protected $primaryKey = 'id_empleado';
 
     public function getAuthPassword() {
-        return $this->contraseña;
+        return $this->contrasena;
     }
 
     public function verificacion_propiedad(){
