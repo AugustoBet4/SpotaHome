@@ -41,6 +41,7 @@ Route::post('/duenos','DuenoController@store');
 
 Route::resource('inquilino/reservas','AlquilerController');
 Route::resource('inquilino/historial', 'ValoracionPropiedadController');
+Route::resource('inquilino/enviarConsulta', 'ConsultaController');
 
 Route::get('inquilino/login', 'AuthInquilino\LoginController@showLoginForm') -> name('login.inquilino');
 Route::post('inquilino/login','AuthInquilino\LoginController@login')->name('inquilino.sesion');
@@ -51,6 +52,7 @@ Auth::routes();
 Route::get('/inquilino', 'InquilinoController@index')->name("inquilino.index");
 Route::get('/inquilino/reservas', 'InquilinoController@reservas')->name("reservas");
 Route::get('/inquilino/reservas/{id}', 'InquilinoController@anularReserva')->name("anular");
+Route::get('/inquilino/consulta/{id}', 'InquilinoController@consulta')->name("consulta");
 Route::get('/inquilino/historial', 'InquilinoController@historial')->name("historial");
 Route::get('/inquilino/direcciones/{id}', 'InquilinoController@location')->name("direcciones");
 Route::get('/inquilino/busqueda', 'InquilinoController@busqueda')->name("busqueda");

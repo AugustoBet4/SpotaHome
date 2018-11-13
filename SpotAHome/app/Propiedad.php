@@ -58,4 +58,8 @@ class Propiedad extends Model
     public function verificacion_propiedad(){
         return $this->hasOne(Verificacion_Propiedad::class);
     }
+
+    public function consulta(){
+        return $this->hasMany(Consulta::class);
+    }
 }

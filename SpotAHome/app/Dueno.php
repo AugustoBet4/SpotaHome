@@ -47,4 +47,8 @@ class Dueno extends Authenticatable
         return $this->hasMany(Valoracion_Dueno_Inquilino::class);
     }
 
+    public function consulta(){
+        return $this->hasMany(Consulta::class);
+    }
+
 }

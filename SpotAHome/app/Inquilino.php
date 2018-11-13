@@ -54,4 +54,8 @@ class Inquilino extends Authenticatable
         return $this->hasMany(Valoracion_Inquilino_Propiedad::class);
     }
 
+    public function consulta(){
+        return $this->hasMany(Consulta::class);
+    }
+
 }

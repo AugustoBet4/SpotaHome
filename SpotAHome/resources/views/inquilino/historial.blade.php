@@ -88,13 +88,12 @@
 
                             <div class="form row">
                                 <input type="hidden" name="id_propiedad" class="form-control input-sm" id="id_propiedad" value="{{ $historia->id_propiedad }}">
-                                <label for="id_inquilino">Nombre: </label>
                                 <input type="hidden" name="id_inquilino" class="form-control input-sm" id="id_inquilino" value="{{ $user->id_inquilino }}">
                                 <label for="puntuacion">Puntuación: </label>
-                                <input type="text" name="puntuacion" class="form-control input-sm" id="puntuacion" value="4">
+                                <input type="text" name="puntuacion" class="form-control input-sm" id="puntuacion" placeholder="Ponga una puntuacion a su estancia sobre 100 pts." pattern="[0-99]" size="1" maxlength="2" required>
                                 <div class="form-group">
                                     <label for="comentario">Comentario: </label>
-                                    <input type="text" name="comentario" class="form-control input-sm" id="comentario">
+                                    <input type="text" name="comentario" class="form-control input-sm" id="comentario" placeholder="Ingrese un comentario" required>
                                 </div>
                             </div>
 

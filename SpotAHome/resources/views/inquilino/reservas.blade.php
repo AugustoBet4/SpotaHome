@@ -8,9 +8,9 @@
             <div class="col-lg-12">
                 <div class="text-center">
                     <h1>
-                        Historial de Reservas
+                        Reservas Actualmente Validas
                     </h1>
-                    <small>Aqui podra ver un listado historico de todas las reservas que tiene en el sistema.</small>
+                    <small>Aqui podra ver un listado de todas las reservas que tiene en el sistema.</small>
                 </div>
             </div>
         </div>
@@ -41,23 +41,29 @@
                                                 <td>{{$reserva->fecha_fin}}</td>
                                                 {{--  <td>{{$reserva->propiedad->direccion}}</td>  --}}
                                                 <td>
-                                                    <form method="post" action="{{ action('InquilinoController@anularReserva', $reserva->id_alquiler) }}">
+                                                    <form method="post"
+                                                          action="{{ action('InquilinoController@anularReserva', $reserva->id_alquiler) }}">
                                                         {{csrf_field()}}
                                                         <input name="_method" type="hidden" value="DELETE">
                                                         <button class="btn btn-danger btn-xs" type="submit">
                                                             <i class="fa fa-eraser"></i> Anular Reserva
                                                         </button>
                                                     </form>
+                                                    <button type="button" class="btn btn-primary btn-xs"
+                                                            onclick="window.location='{{ action('InquilinoController@consulta', $reserva->id_propiedad) }}'">
+                                                        <i class="fa fa-comments-o"></i> Enviar Consulta
+                                                    </button>
                                                     {{--<form method="post" action="{{ action('PropiedadController@show', $reserva->id_propiedad) }}">--}}
-                                                        {{--{{csrf_field()}}--}}
-                                                        {{--<input name="_method" type="hidden" value="DELETE">--}}
-                                                        {{--<button class="btn btn-primary btn-xs" type="submit">--}}
-                                                            {{--<i class="fa fa-cart-plus"></i>Añadir a reserva--}}
-                                                        {{--</button>--}}
+                                                    {{--{{csrf_field()}}--}}
+                                                    {{--<input name="_method" type="hidden" value="DELETE">--}}
+                                                    {{--<button class="btn btn-primary btn-xs" type="submit">--}}
+                                                    {{--<i class="fa fa-cart-plus"></i>Añadir a reserva--}}
+                                                    {{--</button>--}}
                                                     {{--</form>--}}
                                                     <form method="post">
-                                                        <button class="btn btn-warning btn-xs" type="button" onclick="window.location='{{ action('InquilinoController@location', $reserva->id_propiedad) }}'">
-                                                            <i class="fa fa-map-signs"></i>Como llegar
+                                                        <button class="btn btn-warning btn-xs" type="button"
+                                                                onclick="window.location='{{ action('InquilinoController@location', $reserva->id_propiedad) }}'">
+                                                            <i class="fa fa-map-signs"></i> Como llegar
                                                         </button>
                                                     </form>
                                                 </td>

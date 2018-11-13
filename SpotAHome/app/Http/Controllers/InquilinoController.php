@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Alquiler;
+use App\Dueno;
 use App\Inquilino;
 use App\Propiedad;
 use App\Valoracion_Inquilino_Propiedad;
@@ -93,6 +94,13 @@ class InquilinoController extends Controller
     {
         Alquiler::find($id)->delete();
         return redirect()->route('reservas')->with('success','Registro eliminado logicamente');
+    }
+
+    public function consulta($id)
+    {
+        $user = Auth::user();
+        $propiedad = Propiedad::find($id);
+        return view('inquilino/enviarConsulta', compact('user', 'propiedad'));
     }
 
 }
