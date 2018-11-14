@@ -18,13 +18,15 @@
                     </div>
                     <div align="center">
                         <head>
+                            <!--
                             <script type='text/javascript'>
                                 var centreGot = false;
                             </script>
-                           {{$map['js']->mapa}}
+                           {{$map['js']}}
+                                -->
                         </head>
                         <body>
-                        {{$map['html']->mapa}}
+                        {{$map['html']}}
                         </body>
                     </div>
                 </div>

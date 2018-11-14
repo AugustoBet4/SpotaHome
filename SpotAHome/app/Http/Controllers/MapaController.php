@@ -29,6 +29,6 @@ class MapaController extends Controller
 
         $map = app('map')->create_map();
         //echo "<html><head><script type='text/javascript'>var centreGot = false;</script>".$map['js']."</head><body>".$map['html']."</body></html>";
-        return view('empleados/mapa');
+        return view('empleados/mapa', compact('map'));
     }
 }

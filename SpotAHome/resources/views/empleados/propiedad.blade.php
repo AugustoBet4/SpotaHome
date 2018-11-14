@@ -40,11 +40,7 @@
                                                 <td>{{$propiedad->direccion}}</td>
                                                 <td>{{$propiedad->ciudad}}</td>
                                                 <td>{{$propiedad->zona}}</td>
-                                                <td>{{$propiedad->id_dueno}}</td>
-                                                <td>{{$propiedad = \App\Propiedad::whereHas('id_dueno',function ($q){
-                                                $q->where('id_dueno','=','id_dueno');
-                                                $q->select('nombre');
-                                                })->get()}}</td>
+                                                <td>{{$propiedad->nombre}}</td>
                                                 <td>{{$propiedad->descripcion}}</td>
                                                 <td>{{$propiedad->costo}}</td>
                                                 <td><a class="btn btn-primary btn-xs" href="{{action('PropiedadEmpleadoController@edit', $propiedad->id_propiedad)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Propiedad;
+use App\Dueno;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PropiedadEmpleadoController extends Controller
 {
@@ -14,8 +16,15 @@ class PropiedadEmpleadoController extends Controller
      */
     public function index()
     {
-        $propiedades = Propiedad::orderBy('id_propiedad','DESC')->paginate(10);
-        return view ('empleados.propiedad',compact('propiedades'));
+        //$propiedades = Propiedad::orderBy('id_propiedad','ASC')->paginate(10);
+       // $duenos=Dueno::orderBy('id_propiedad','ASC');
+        $propiedades = DB::table('propiedad')
+            ->join('dueno','propiedad.id_dueno','=','dueno.id_dueno')
+            ->select('propiedad.id_propiedad','propiedad.direccion','propiedad.ciudad','propiedad.zona','dueno.nombre','propiedad.descripcion','propiedad.costo')
+            ->orderBy('id_propiedad','ASC')
+            ->paginate(10);
+
+        return view ('empleados.propiedad',compact('propiedades','duenos'));
     }
 
     /**
@@ -44,15 +53,11 @@ class PropiedadEmpleadoController extends Controller
     public function show($id)
     {
         $propiedades=Propiedad::find($id);
-        $duenos = DB::table('propiedad')
-            ->join('dueno','propiedad.id_dueno','dueno.id_dueno')
-            ->select('nombre')
+        $duenos = DB::table('dueno')
+            ->join('propiedad','propiedad.id_dueno','=',$id)
+            ->select('dueno.nombre')
             ->get();
-        $dueno = Post::whereHas('id_duenos',function ($q){
-            $q->where('id_duenos','=','id_duenos');
-            $q->select('nombre');
-        })->get();
-        return view('empleados.show',compact('propiedades'));
+        return view('empleados.show',compact('propiedades', 'duenos'));
     }
 
     /**
@@ -64,7 +69,12 @@ class PropiedadEmpleadoController extends Controller
     public function edit($id)
     {
         $propiedades=Propiedad::find($id);
-        return view('empleados.edit',compact('propiedades'));
+        $duenos = DB::table('dueno')
+            ->join('propiedad','propiedad.id_dueno','=','dueno.id_dueno')
+            ->select('dueno.nombre')
+            ->get();
+
+        return view('empleados.edit',compact('propiedades', 'duenos'));
     }
 
     public function update(Request $request, $id)
@@ -86,3 +96,4 @@ class PropiedadEmpleadoController extends Controller
         return redirect()->route('propiedad.index')->with('success','Registro eliminado logicamente');
     }
 }
+

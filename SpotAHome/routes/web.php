@@ -38,6 +38,7 @@ Route::get('/empleados/dashboard', 'SesionEmpleadoController@index');
 Route::get('/empleados/dashboard','DashboardController@index')->name('dashboard');
 Route::get('/duenos','DashboardDuenoController@index')->name('index');
 //Route::get('/empleados/mapa', 'MapaController@mapa');
+
 Route::get('/empleados/mapa', function(){
     $config = array();
     $config['center'] = '-16.4897, -68.1193';
