@@ -21,7 +21,7 @@ class PropiedadDuenoController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $propiedades = Propiedad::where('id_dueno', $user->id_dueno)->whereNull('deleted_at')->paginate(10);
+        $propiedades = Propiedad::where('id_dueno', $user->id_dueno)->whereNull('deleted_at')->orderBy('direccion','ASC')->paginate(10);
         return view('duenos/propiedad', compact('propiedades', 'user'));
         //return 'holo';
     }
@@ -41,10 +41,9 @@ class PropiedadDuenoController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,['direccion' => 'required','ciudad' => 'required','latitud' => 'required','longitud' => 'required','costo' => 'required','descripcion' => 'required','zona' => 'required']);
-
         //$this->validate($request,['fecha_inicio' => 'required','fecha_fin' => 'required']);
         Propiedad::find($id)->update($request->all());
-        //Fecha_Disponible::find($id)->update($request->all());
+       // Fecha_Disponible::where('id_propiedad','=',$id);
 
         return redirect()->route('propiedad.index')->with('success','Propiedad actualizada');
     }
@@ -76,6 +75,20 @@ class PropiedadDuenoController extends Controller
         //dd($request->all());
        // return 'Store';
 
+    }
+    public function fecha($id){
+
+        $propiedades = Propiedad::find($id);
+
+        $fechas = Fecha_Disponible::where('id_propiedad','=',$id)->get()->first();
+        return view('duenos.editfechas', compact('propiedades', 'fechas'));
+
+    }
+    public function updatefechas(Request $request, $id){
+
+        /*$this->validate($request,['fecha_inicio' => 'required','fecha_fin' => 'required']);
+        Fecha_Disponible::find($id)->update($request->all());*/
+         return'fechas actualizadas';
     }
 
 }

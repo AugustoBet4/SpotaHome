@@ -35,12 +35,15 @@ Route::post('duenos/login','AuthDueno\LoginController@login')->name('dueno.sesio
 Route::post('duenos/logout', 'AuthDueno\LoginController@logout') -> name('logout.dueno');
 
 Auth::routes();
+Route::get('/duenos/fecha_propiedad {id}', 'PropiedadDuenoController@fecha');
 
 Route::get('/duenos', 'SesionDuenoController@index');
 
 Route::resource('duenos/propiedad','PropiedadDuenoController');
 
 Route::post('/hola','PropiedadDuenoController@store');
+Route::post('/fechas','PropiedadDuenoController@updatefechas');
+Route::resource('duenos/fechas','PropiedadFechasController');
 
 
 

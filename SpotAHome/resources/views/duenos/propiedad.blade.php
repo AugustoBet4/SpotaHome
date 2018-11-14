@@ -47,6 +47,9 @@
                                                 <a href="{{action('PropiedadDuenoController@edit', $propiedad->id_propiedad)}}" class="btn btn-link">Editar</a>
                                             </td>
                                             <td>
+                                                <a href="{{action('PropiedadFechasController@edit', $propiedad->id_propiedad)}}" class="btn btn-link">Editar fechas</a>
+                                            </td>
+                                            <td>
                                                 <form action="#" method="post">
                                                     {{csrf_field()}}
                                                     <input type="hidden" name="_method" value="DELETE">
