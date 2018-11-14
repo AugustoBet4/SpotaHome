@@ -17,7 +17,7 @@
       {
         display:block;
         height:35px;
-        width:95px;
+        width:110px;
       }
     </style>
     <form class = "form-group" method="post" action="/inquilino/propiedades">
@@ -57,6 +57,7 @@
             <option>Cochabamba</option>
             <option>Santa Cruz</option>
           </select>
+          <br><br>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-9" id="estilo1">
@@ -67,6 +68,7 @@
                           <thead>
                           <tr>
                               <th>Nro.</th>
+                              <th></th>
                               <th>Ciudad</th>
                               <th>Zona</th>
                               <th>Descripcion</th>
@@ -77,8 +79,10 @@
                           <tbody>
                           @if($propiedad->count())
                               @foreach($propiedad as $key=>$prop)
+
                                   <tr>
                                       <td>{{$key+1}}</td>
+                                      <td><img src="https://img.elcomercio.pe/files/ec_article_multimedia_gallery/uploads/2017/03/21/58d17dd823f81.jpeg" width='150'>
                                       <td>{{$prop->ciudad}}</td>
                                       <td>{{$prop->zona}}</td>
                                       <td>{{$prop->descripcion}}</td>
@@ -86,6 +90,7 @@
                                       <!--<td><a class="btn btn-warning" href="{{action('InquilinoController@busqueda_prop', $prop->id_propiedad)}}" ></a></td>-->
 
                                   </tr>
+
                               @endforeach
                           @else
                               <tr>
@@ -95,8 +100,9 @@
                           @endif
                           </tbody>
                       </table>
+
                   </div>
-                  
+
               </div>
         </div>
       </div>

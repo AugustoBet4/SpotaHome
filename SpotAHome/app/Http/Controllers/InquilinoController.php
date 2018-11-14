@@ -72,9 +72,11 @@ class InquilinoController extends Controller
         //******************************************
         */
         $propiedad = DB::table('propiedad')
-
-                                ->orderBy('id_propiedad', 'asc')
+                                //->join ('multimedia', 'multimedia.id_propiedad', '=', 'propiedad.id_propiedad' )
+                                ->orderBy('propiedad.id_propiedad', 'asc')
                                 ->get();
+        //echo $propiedad;
+        //$propiedad = Propiedad::where('multimedia')->orderBy('id_propiedad', 'ASC')->paginate(10);
         return view('inquilino/propiedades', compact('user', 'propiedad'));
     }
 
@@ -93,7 +95,7 @@ class InquilinoController extends Controller
                                 ->where('ciudad', '=', $ciudad)
                                 ->where('costo', '>=', $min)
                                 ->where('costo', '<=', $max)
-                                
+
                                 ->get();
 
 

@@ -45,6 +45,7 @@ class Propiedad extends Model
 
     public function multimedia(){
         return $this->hasMany(Multimedia::class);
+
     }
 
     public function caracteristicas(){
