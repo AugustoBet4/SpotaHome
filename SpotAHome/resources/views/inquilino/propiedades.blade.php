@@ -30,7 +30,7 @@
             <br>
             <label>Precio Min</label>
             <select class="form-control" id="sel1" name="min">
-              <option>Min</option>
+
               <option>0</option>
               <option>500</option>
               <option>1000</option>
@@ -42,17 +42,17 @@
           <div class="form-group">
             <label>Precio Max</label>
             <select class="form-control" id="sel1" name="max">
-              <option>Max</option>
-              <option>500</option>
-              <option>1000</option>
-              <option>1500</option>
-              <option>2000</option>
+
               <option>2500</option>
+              <option>2000</option>
+              <option>1500</option>
+              <option>1000</option>
+              <option>500</option>
             </select>
 
           </div>
           <select class="form-control" id="sel1" name="ciudad">
-            
+
             <option>La Paz</option>
             <option>Cochabamba</option>
             <option>Santa Cruz</option>

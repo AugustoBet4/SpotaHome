@@ -84,14 +84,8 @@ class InquilinoController extends Controller
         echo $min;
         echo $max;
 
-        if($min == 'Min'|| $max == 'Max')
-        {
-          $propiedad = Propiedad::where('ciudad', '=', $ciudad)->orderBy('id_propiedad', 'ASC')->paginate(10);
-        }
-        if($min != 'Min')
-        {
-          $propiedad = Propiedad::where('ciudad', '=', $ciudad)->where('costo', '>=', $min)->orderBy('id_propiedad', 'ASC')->paginate(10);
-        }
+        $propiedad = Propiedad::where('ciudad', '=', $ciudad)->orderBy('id_propiedad', 'ASC')->paginate(10);
+
 
 
         return view('inquilino/propiedades', compact('user', 'propiedad'));
