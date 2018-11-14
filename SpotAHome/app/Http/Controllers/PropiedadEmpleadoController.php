@@ -69,12 +69,17 @@ class PropiedadEmpleadoController extends Controller
     public function edit($id)
     {
         $propiedades=Propiedad::find($id);
+
         $duenos = DB::table('dueno')
-            ->join('propiedad','propiedad.id_dueno','=','dueno.id_dueno')
-            ->select('dueno.nombre')
+            ->select('dueno.id_dueno','dueno.nombre')
             ->get();
 
-        return view('empleados.edit',compact('propiedades', 'duenos'));
+        $selected = DB::table('dueno')
+            ->join('propiedad','propiedad.id_dueno','=','dueno.id_dueno')
+            ->select('dueno.id_dueno','dueno.nombre')
+            ->get();
+
+        return view('empleados.edit',compact('propiedades', 'duenos','selected'));
     }
 
     public function update(Request $request, $id)
