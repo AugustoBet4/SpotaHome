@@ -10,6 +10,8 @@ use App\Valoracion_Inquilino_Propiedad;
 use Illuminate\Support\Facades\Auth;
 use Request;
 
+
+
 class InquilinoController extends Controller
 {
 
@@ -65,18 +67,33 @@ class InquilinoController extends Controller
         \Gmaps::add_marker($marker);
 
         $map = \Gmaps::create_map();
-
+        ->where('costo', '>', $min)
         //******************************************
         */
 
         return view('inquilino/busqueda', compact('map', 'propiedad', 'user'));
     }
 
-    public function busqueda_prop()
+    public function busqueda_prop(Request $request)
     {
         $user = Auth::user();
         $ciudad = request::input('ciudad');
-        $propiedad = Propiedad::where('ciudad', '=', $ciudad)->orderBy('id_propiedad', 'ASC')->paginate(10);
+        echo $ciudad;
+        $min = request::input('min');
+        $max = request::input('max');
+        echo $min;
+        echo $max;
+
+        if($min == 'Min'|| $max == 'Max')
+        {
+          $propiedad = Propiedad::where('ciudad', '=', $ciudad)->orderBy('id_propiedad', 'ASC')->paginate(10);
+        }
+        if($min != 'Min')
+        {
+          $propiedad = Propiedad::where('ciudad', '=', $ciudad)->where('costo', '>=', $min)->orderBy('id_propiedad', 'ASC')->paginate(10);
+        }
+
+
         return view('inquilino/propiedades', compact('user', 'propiedad'));
     }
 

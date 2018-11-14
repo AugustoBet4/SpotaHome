@@ -89,7 +89,7 @@ Route::get('/inquilino/reservas/{id}', 'InquilinoController@anularReserva')->nam
 Route::get('/inquilino/consulta/{id}', 'InquilinoController@consulta')->name("consulta");
 Route::get('/inquilino/historial', 'InquilinoController@historial')->name("historial");
 Route::get('/inquilino/direcciones/{id}', 'InquilinoController@location')->name("direcciones");
-Route::get('/inquilino/busqueda', 'InquilinoController@busqueda')->name("busqueda");
+Route::get('/inquilino/busqueda', 'InquilinoController@busqueda_prop')->name("busqueda");
 Route::post('/inquilino/propiedades', 'InquilinoController@busqueda_prop')->name("propiedades");
 /*
 Route::get('/', function () {
