@@ -25,7 +25,7 @@
                 <a href="{{ url('/duenos') }}"><i class="fa fa-history"></i> <span class="nav-label">Actualiza tus datos</span> </a>
             </li>
             <li >
-                <a href="{{ url('/duenos') }}"><i class="fa fa-ban"></i> <span class="nav-label">Registra una Vivienda</span> </a>
+                <a href="{{ url('/duenos/propiedad') }}"><i class="fa fa-ban"></i> <span class="nav-label">Registra una Vivienda</span> </a>
             </li>
         </ul>
 
