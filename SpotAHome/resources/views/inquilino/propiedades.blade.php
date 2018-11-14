@@ -96,7 +96,7 @@
                           </tbody>
                       </table>
                   </div>
-                  {{ $propiedad->links() }}
+                  
               </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ use App\Propiedad;
 use App\Valoracion_Inquilino_Propiedad;
 use Illuminate\Support\Facades\Auth;
 use Request;
-
+Use DB;
 
 
 class InquilinoController extends Controller
@@ -71,8 +71,11 @@ class InquilinoController extends Controller
         ->where('costo', '>', $min)
         //******************************************
         */
+        $propiedad = DB::table('propiedad')
 
-        return view('inquilino/busqueda', compact('map', 'propiedad', 'user'));
+                                ->orderBy('id_propiedad', 'asc')
+                                ->get();
+        return view('inquilino/propiedades', compact('user', 'propiedad'));
     }
 
     public function busqueda_prop(Request $request)
@@ -85,8 +88,13 @@ class InquilinoController extends Controller
         echo $min;
         echo $max;
 
-        $propiedad = Propiedad::where('ciudad', '=', $ciudad)->orderBy('id_propiedad', 'ASC')->paginate(10);
-
+      //  $propiedad = Propiedad::where('ciudad', '=', $ciudad)->where('costo', '=', $min)->where('costo', '=', $max)->orderBy('id_propiedad', 'ASC')->paginate(10);
+        $propiedad = DB::table('propiedad')
+                                ->where('ciudad', '=', $ciudad)
+                                ->where('costo', '>=', $min)
+                                ->where('costo', '<=', $max)
+                                
+                                ->get();
 
 
         return view('inquilino/propiedades', compact('user', 'propiedad'));
