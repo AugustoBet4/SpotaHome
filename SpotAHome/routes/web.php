@@ -51,7 +51,7 @@ Route::resource('duenos/fechas','PropiedadFechasController');
 
 //Route::get('/empleados',function (){return view('empleados/sesion');});
 Route::get('/empleados', 'SesionEmpleadoController@index')->name("empleados.index");
-Route::post('/empleados/duenos','DuenoEmpleadoController@store');
+Route::post('/duenos','DuenoEmpleadoController@store');
 Route::resource('empleados/duenos','DuenoEmpleadoController');
 Route::get('/empleados/dashboard', 'SesionEmpleadoController@index');
 //Route::post('sesion','SesionEmpleadoController@login')->name('sesion');
