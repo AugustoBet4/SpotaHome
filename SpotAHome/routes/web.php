@@ -37,6 +37,9 @@ Auth::routes();
 
 Route::get('/duenos', 'SesionDuenoController@index');
 
+Route::resource('duenos/propiedad','PropiedadDuenoController');
+
+
 
 
 
