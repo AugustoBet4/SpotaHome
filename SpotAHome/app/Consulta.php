@@ -10,7 +10,7 @@ class Consulta extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'consulta', 'id_inquilino', 'id_dueno', 'id_propiedad',
+        'consulta', 'id_inquilino', 'id_dueno', 'id_propiedad', 'estado'
     ];
 
     protected $table = "consultas";

@@ -19,6 +19,7 @@ class CreateConsultasTable extends Migration
             $table->integer('id_propiedad')->unsigned();
             $table->integer('id_inquilino')->unsigned();
             $table->string('consulta');
+            $table->string('estado');
             $table->timestamps();
             $table->softDeletes();
         });

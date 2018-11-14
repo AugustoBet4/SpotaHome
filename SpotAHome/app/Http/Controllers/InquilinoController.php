@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Alquiler;
+use App\Consulta;
 use App\Dueno;
 use App\Inquilino;
 use App\Propiedad;
@@ -112,6 +113,13 @@ class InquilinoController extends Controller
         $user = Auth::user();
         $propiedad = Propiedad::find($id);
         return view('inquilino/enviarConsulta', compact('user', 'propiedad'));
+    }
+
+    public function getConsulta()
+    {
+        $user = Auth::user();
+        $consultas = Consulta::where('id_inquilino', $user->id_inquilino)->orderBy('id_consultas', 'ASC')->whereNull('deleted_at')->paginate(10);
+        return view('inquilino/consultas', compact('user', 'consultas'));
     }
 
 }

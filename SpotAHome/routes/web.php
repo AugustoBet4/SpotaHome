@@ -100,6 +100,7 @@ Route::get('/inquilino', 'InquilinoController@index')->name("inquilino.index");
 Route::get('/inquilino/reservas', 'InquilinoController@reservas')->name("reservas");
 Route::get('/inquilino/reservas/{id}', 'InquilinoController@anularReserva')->name("anular");
 Route::get('/inquilino/consulta/{id}', 'InquilinoController@consulta')->name("consulta");
+Route::get('/inquilino/consultas', 'InquilinoController@getConsulta')->name("consultas");
 Route::get('/inquilino/historial', 'InquilinoController@historial')->name("historial");
 Route::get('/inquilino/direcciones/{id}', 'InquilinoController@location')->name("direcciones");
 Route::get('/inquilino/busqueda', 'InquilinoController@busqueda_prop')->name("busqueda");

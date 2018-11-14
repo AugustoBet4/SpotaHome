@@ -40,6 +40,8 @@
                                    value="{{ $user->id_inquilino }}">
                             <input type="hidden" name="id_dueno" class="form-control input-sm" id="id_dueno"
                                    value="{{ $propiedad->id_dueno }}">
+                            <input type="hidden" name="estado" class="form-control input-sm" id="estado"
+                                   value="PENDIENTE">
                             <div class="form-group">
                                 <label for="Nombre">Nombre: </label>
                                 <input type="text" name="nombre" class="form-control input-sm" id="nombre" value="{{ $user->nombre }}" readonly>
