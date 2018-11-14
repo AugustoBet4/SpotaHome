@@ -10,19 +10,18 @@ use App\Valoracion_Inquilino_Propiedad;
 use Illuminate\Support\Facades\Auth;
 use Request;
 
-
-class SesionEmpleadoController extends Controller
+class SesionDuenoController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth:empleado');
+        $this->middleware('auth:dueno');
     }
 
     public function index()
     {
         $user = Auth::user();
-        return view('empleados/index', compact('user'));
+        return view('duenos/index', compact('user'));
     }
 
 

@@ -1,6 +1,6 @@
 @extends('layouts.app_duenos')
 
-@section('title', 'Inicio de duenos')
+@section('title', 'Inicio de Empleado')
 
 @section('content')
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -11,8 +11,11 @@
                         Bienvenido a SpotaHome
                     </h1>
                     <small>
-                        <a href="#}" > Revisa tus viviendas</a>
+                        Pagina de inicio del Empleado
                     </small>
+                    <p>
+                        Es una placer verte de nuevo: {{$user->nombre}}
+                    </p>
                 </div>
             </div>
         </div>

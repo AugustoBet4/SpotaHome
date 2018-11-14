@@ -29,7 +29,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
-                                <form method="POST" action="{{action('DuenoController@update', $dueno->id_dueno)}}"  role="form">
+                                <form method="POST" action="{{action('DuenoEmpleadoController@update', $dueno->id_dueno)}}"  role="form">
                                     {{ csrf_field() }}
                                     <input name="_method" type="hidden" value="PATCH">
                                     <div class="row">

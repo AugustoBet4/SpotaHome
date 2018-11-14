@@ -17,7 +17,7 @@
                             <h2>
                                 {{$dueno->apellidos}}
                             </h2>
-                            <a href="{{action('DuenoController@edit', $dueno->id_dueno)}}" class="btn btn-default pull-right">Editar</a>
+                            <a href="{{action('DuenoEmpleadoController@edit', $dueno->id_dueno)}}" class="btn btn-default pull-right">Editar</a>
                             <p>
                                 <h>Genero:</h> {{$dueno->genero}}<br>
                                 <h>Pais de Procedencia:</h>  {{$dueno->nacionalidad}}<br>

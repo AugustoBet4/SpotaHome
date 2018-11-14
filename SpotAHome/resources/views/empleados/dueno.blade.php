@@ -40,13 +40,13 @@
 
                                         <td>{{$dueno->email}}</td>
                                             <td>
-                                                <a href="{{action('DuenoController@show', $dueno->id_dueno)}}" class="btn btn-link">Ver</a>
+                                                <a href="{{action('DuenoEmpleadoController@show', $dueno->id_dueno)}}" class="btn btn-link">Ver</a>
                                             </td>
                                             <td>
-                                                <a href="{{action('DuenoController@edit', $dueno->id_dueno)}}" class="btn btn-link">Editar</a>
+                                                <a href="{{action('DuenoEmpleadoController@edit', $dueno->id_dueno)}}" class="btn btn-link">Editar</a>
                                             </td>
                                             <td>
-                                                <form action="{{action('DuenoController@destroy', $dueno->id_dueno)}}" method="post">
+                                                <form action="{{action('DuenoEmpleadoController@destroy', $dueno->id_dueno)}}" method="post">
                                                     {{csrf_field()}}
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button class="btn btn-link">Borrar</button>

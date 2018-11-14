@@ -18,7 +18,7 @@ Route::get('/', 'HomeController@index')->name("welcome");
 
 //Resources
 Route::resource('empleados/propiedad','PropiedadEmpleadoController');
-Route::resource('empleados/duenos','DuenoController');
+Route::resource('empleados/duenos','DuenoEmpleadoController');
 
 //Login Empleados
 
@@ -27,16 +27,29 @@ Route::post('empleados/login','AuthEmpleado\LoginController@login')->name('emple
 Route::post('empleados/logout', 'AuthEmpleado\LoginController@logout') -> name('logout.empleado');
 
 Auth::routes();
+//Login Duenos y vistas
+
+Route::get('duenos/login', 'AuthDueno\LoginController@showLoginForm') -> name('login.dueno');
+Route::post('duenos/login','AuthDueno\LoginController@login')->name('dueno.sesion');
+Route::post('duenos/logout', 'AuthDueno\LoginController@logout') -> name('logout.dueno');
+
+Auth::routes();
+
+Route::get('/duenos', 'SesionDuenoController@index')->name("duenos.index");
+
+
+
 
 //Demas rutas empleados
 
 //Route::get('/empleados',function (){return view('empleados/sesion');});
 Route::get('/empleados', 'SesionEmpleadoController@index')->name("empleados.index");
+Route::post('/duenos','DuenoEmpleadoController@store');
+Route::resource('duenos','DuenoEmpleadoController');
 Route::get('/empleados/dashboard', 'SesionEmpleadoController@index');
 //Route::post('sesion','SesionEmpleadoController@login')->name('sesion');
 //Route::post('cerrarsesion','SesionEmpleadoController@logout')->name('cerrarsesion');
 Route::get('/empleados/dashboard','DashboardController@index')->name('dashboard');
-Route::get('/duenos','DashboardDuenoController@index')->name('index');
 //Route::get('/empleados/mapa', 'MapaController@mapa');
 
 Route::get('/empleados/mapa', function(){
@@ -65,10 +78,10 @@ Route::get('/empleados/mapa', function(){
 //Fin empleados
 
 //Dueños
-//Route::resource('duenos','DuenoController');
+
 
 //Route::get('/empleados', 'SesionEmpleadoController@index')->name("sesion");
-Route::post('/duenos','DuenoController@store');
+
 
 
 //Inquilinos

@@ -33,6 +33,10 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check() && $guard == 'empleado') {
             return redirect('/empleado/');
         }
+        if (Auth::guard($guard)->check() && $guard == 'dueno') {
+            return redirect('/dueno/');
+        }
+
        /* if (Auth::guard($guard)->check()) {
             return redirect('/duenos/');
         }*/
