@@ -35,7 +35,7 @@ Route::post('duenos/logout', 'AuthDueno\LoginController@logout') -> name('logout
 
 Auth::routes();
 
-Route::get('/duenos', 'SesionDuenoController@index')->name("duenos.index");
+Route::get('/duenos', 'SesionDuenoController@index');
 
 
 

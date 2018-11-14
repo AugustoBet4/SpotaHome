@@ -11,7 +11,7 @@
                         Bienvenido a SpotaHome
                     </h1>
                     <small>
-                        Pagina de inicio del Empleado
+                        Pagina de inicio del Due&ntilde;o
                     </small>
                     <p>
                         Es una placer verte de nuevo: {{$user->nombre}}

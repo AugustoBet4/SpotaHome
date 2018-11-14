@@ -16,6 +16,7 @@
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/fideloper/proxy" />
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/filp/whoops" />
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/genealabs/laravel-maps" />
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/genealabs/phpgmaps" />
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/SpotAHome/vendor/jakub-onderka/php-console-color" />

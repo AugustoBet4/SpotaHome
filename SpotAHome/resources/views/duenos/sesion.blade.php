@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inicio de Sesión</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="login-duenos/styles.css">
+    <link rel="stylesheet" type="text/css" href="login-empleado/styles.css">
 </head>
 <body>
 <div class="container" id="log-in-form">
@@ -19,7 +19,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form method="POST" action="#">
+                        <form method="POST" action="{{ route('login.dueno') }}">
                             @csrf
 
                             <div class="form-group row">

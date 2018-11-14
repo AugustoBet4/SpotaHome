@@ -10,7 +10,6 @@ use App\Valoracion_Inquilino_Propiedad;
 use Illuminate\Support\Facades\Auth;
 use Request;
 
-
 class SesionEmpleadoController extends Controller
 {
 

@@ -60,6 +60,11 @@ return [
             'driver' => 'session',
             'provider' => 'empleado',
         ],
+
+        'dueno' => [
+            'driver' => 'session',
+            'provider' => 'dueno',
+        ],
     ],
 
     /*
@@ -98,6 +103,11 @@ return [
         'empleado' => [
             'driver' => 'eloquent',
             'model' => App\Empleado::class,
+        ],
+
+        'dueno' => [
+            'driver' => 'eloquent',
+            'model' => App\Dueno::class,
         ],
 
         // 'users' => [

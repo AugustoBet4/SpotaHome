@@ -78,6 +78,7 @@
       <path value="$PROJECT_DIR$/SpotAHome/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/SpotAHome/vendor/genealabs/phpgmaps" />
       <path value="$PROJECT_DIR$/SpotAHome/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/genealabs/laravel-maps" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
