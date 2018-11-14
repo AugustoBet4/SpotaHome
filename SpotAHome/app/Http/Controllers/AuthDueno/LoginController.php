@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\AuthEmpleado;
+namespace App\Http\Controllers\AuthDueno;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;

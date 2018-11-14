@@ -44,8 +44,8 @@ Route::get('/duenos', 'SesionDuenoController@index');
 
 //Route::get('/empleados',function (){return view('empleados/sesion');});
 Route::get('/empleados', 'SesionEmpleadoController@index')->name("empleados.index");
-Route::post('/duenos','DuenoEmpleadoController@store');
-Route::resource('duenos','DuenoEmpleadoController');
+Route::post('/empleados/duenos','DuenoEmpleadoController@store');
+Route::resource('empleados/duenos','DuenoEmpleadoController');
 Route::get('/empleados/dashboard', 'SesionEmpleadoController@index');
 //Route::post('sesion','SesionEmpleadoController@login')->name('sesion');
 //Route::post('cerrarsesion','SesionEmpleadoController@logout')->name('cerrarsesion');

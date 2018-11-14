@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\AuthAdmin;
+namespace App\Http\Controllers\AuthDueno;
 
 use App\User;
 use App\Http\Controllers\Controller;

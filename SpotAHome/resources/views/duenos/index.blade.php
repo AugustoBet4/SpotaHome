@@ -15,7 +15,7 @@
                     </small>
                     <p>
                         Es una placer verte de nuevo: {{$user->nombre}}
-                    </p>
+                    <p>
                 </div>
             </div>
         </div>
