@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Dueno;
 use Auth;
 use App\Http\Requests\DuenoRequest;
-class DuenoController extends Controller
+class DuenoEmpleadoController extends Controller
 {
    /* public function __construct()
     {
