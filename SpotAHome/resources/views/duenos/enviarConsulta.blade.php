@@ -1,4 +1,4 @@
-@extends('layouts.app_inquilino')
+@extends('layouts.app_duenos')
 
 @section('title', 'Respuesta a una consulta')
 

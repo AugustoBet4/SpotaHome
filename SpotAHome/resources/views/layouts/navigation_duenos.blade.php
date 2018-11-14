@@ -27,6 +27,10 @@
             <li >
                 <a href="{{ url('/duenos/propiedad') }}"><i class="fa fa-ban"></i> <span class="nav-label">Registra una Vivienda</span> </a>
             </li>
+
+            <li >
+                <a href="{{ url('/duenos/consultas') }}"><i class="fa fa-sticky-note"></i> <span class="nav-label">Consultas</span></a>
+            </li>
         </ul>
 
     </div>
