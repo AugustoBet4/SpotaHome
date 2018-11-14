@@ -9,7 +9,7 @@
                 <div class="col-md-10 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <a href="#" class="btn btn-success btn-block">Agregar Propiedad</a>
+                            <a href="{{action('PropiedadDuenoController@create')}}" class="btn btn-success btn-block">Agregar Propiedad</a>
                             <div class="pull-left"><h1>Listado de Propiedades</h1></div>
                             <div class="col-sm-4">
                             </div>
