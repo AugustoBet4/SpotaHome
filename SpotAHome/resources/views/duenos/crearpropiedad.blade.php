@@ -40,6 +40,14 @@
                         <input type="number" class="form-control" name="costo" id="costo" placeholder="Precio">
                     </div>
                     <div class="form-group">
+                        <label for="">Fecha Inicio Disponible</label>
+                        <input type="date" class="form-control" name="fecha_inicio" id="fecha_inicio">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Fecha Fin Disponible</label>
+                        <input type="date" class="form-control" name="fecha_fin" id="fecha_fin">
+                    </div>
+                    <div class="form-group">
                         <label for="">Fecha de Nacimiento</label>
                         <textarea type="date" class="form-control" name="descripcion" id="descripcion" >Descripcion</textarea>
                         <input type="number" class="hidden" name="id_dueno" id="id_dueno" value="{{$user->id_dueno}}">

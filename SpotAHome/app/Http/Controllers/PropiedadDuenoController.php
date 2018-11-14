@@ -58,6 +58,7 @@ class PropiedadDuenoController extends Controller
 
         //dd($request->all());
        $propiedad = new Propiedad;
+       $fechas = new Fecha_Disponible;
         $propiedad ->direccion = $request->input('direccion');
         $propiedad ->ciudad = $request->input('ciudad');
         $propiedad ->latitud = $request->input('latitud');
@@ -67,7 +68,11 @@ class PropiedadDuenoController extends Controller
         $propiedad ->zona = $request->input('zona');
         $propiedad ->costo = $request->input('costo');
         $propiedad ->save();
-        return redirect()->route('propiedad.index')->with('info', 'Casa Registrado');
+        $fechas->fecha_inicio = $request->input('fecha_inicio');
+        $fechas->fecha_fin = $request->input('fecha_fin');
+        $fechas->id_propiedad = $propiedad->id_propiedad;
+        $fechas->save();
+        return redirect()->route('propiedad.index')->with('info', 'Casa Registrada');
         //dd($request->all());
        // return 'Store';
 
