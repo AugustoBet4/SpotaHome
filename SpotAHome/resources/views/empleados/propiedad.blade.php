@@ -25,7 +25,6 @@
                                     <th>Ciudad</th>
                                     <th>Zona</th>
                                     <th>Dueño</th>
-                                    <th>Prueba</th>
                                     <th>Descripcion</th>
                                     <th>Costo</th>
                                     <th>Editar</th>
