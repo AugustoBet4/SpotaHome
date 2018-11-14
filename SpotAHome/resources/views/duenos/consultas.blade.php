@@ -30,7 +30,7 @@
                                         <th>Fecha</th>
                                         <th>Consulta</th>
                                         <th>Estado</th>
-                                        <th>Respuesta</th>
+                                        <th>Acciones</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -42,18 +42,21 @@
                                                 <td>{{$consulta->consulta}}</td>
                                                 @if($consulta->estado === "PENDIENTE")
                                                     <td> <span class="label label-default"><i class="fa fa-clock-o"></i> {{ $consulta->estado }}</span></td>
-                                                    <td>Esperando respuesta</td>
-                                                @elseif($consulta->estado === 'RECHAZADO')
-                                                    <td> <span class="label label-danger"><i class="fa fa-times"></i> {{ $consulta->estado }}</span></td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-primary btn-xs"
+                                                                onclick="window.location='{{ action('DuenoController@consulta', $consulta->id_consultas) }}'">
+                                                            <i class="fa fa-comments-o"></i> Responder Consulta
+                                                        </button>
+                                                    </td>
                                                 @else
                                                     <td> <span class="label label-primary"><i class="fa fa-check"></i> {{ $consulta->estado }}</span></td>
-                                                    <td>{{ $consulta->respuesta }}</td>
+                                                    <td> <span class="label label-default"><i class="fa fa-check"></i> Gracias por responder la consulta</span></td>
                                                 @endif
                                             </tr>
                                         @endforeach
                                     @else
                                         <tr>
-                                            <td colspan="12" class="text-center">No tiene consultas realizadas.
+                                            <td colspan="12" class="text-center">No tiene consultas.
                                             </td>
                                         </tr>
                                     @endif

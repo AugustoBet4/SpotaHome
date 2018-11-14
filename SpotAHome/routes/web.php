@@ -44,7 +44,9 @@ Route::resource('duenos/propiedad','PropiedadDuenoController');
 Route::post('/hola','PropiedadDuenoController@store');
 Route::post('/fechas','PropiedadDuenoController@updatefechas');
 Route::resource('duenos/fechas','PropiedadFechasController');
-
+Route::get('/duenos/consultas', 'DuenoController@getConsulta')->name('duenos.consultas');
+Route::get('duenos/consulta/{id}', 'DuenoController@consulta');
+Route::resource('duenos/enviarConsulta', 'ConsultaController');
 
 
 //Demas rutas empleados
