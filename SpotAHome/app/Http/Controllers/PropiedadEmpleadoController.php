@@ -44,6 +44,14 @@ class PropiedadEmpleadoController extends Controller
     public function show($id)
     {
         $propiedades=Propiedad::find($id);
+        $duenos = DB::table('propiedad')
+            ->join('dueno','propiedad.id_dueno','dueno.id_dueno')
+            ->select('nombre')
+            ->get();
+        $dueno = Post::whereHas('id_duenos',function ($q){
+            $q->where('id_duenos','=','id_duenos');
+            $q->select('nombre');
+        })->get();
         return view('empleados.show',compact('propiedades'));
     }
 

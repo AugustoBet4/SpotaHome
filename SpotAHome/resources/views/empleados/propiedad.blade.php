@@ -3,6 +3,7 @@
 @section('title', 'Inicio de Empleado')
 
 @section('content')
+
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <section class="content">
@@ -22,9 +23,9 @@
                                     <thead>
                                     <th>Direccion</th>
                                     <th>Ciudad</th>
-                                    <th>Latitud</th>
-                                    <th>Longitud</th>
+                                    <th>Zona</th>
                                     <th>Dueño</th>
+                                    <th>Prueba</th>
                                     <th>Descripcion</th>
                                     <th>Costo</th>
                                     <th>Editar</th>
@@ -38,9 +39,12 @@
                                             <tr>
                                                 <td>{{$propiedad->direccion}}</td>
                                                 <td>{{$propiedad->ciudad}}</td>
-                                                <td>{{$propiedad->latitud}}</td>
-                                                <td>{{$propiedad->longitud}}</td>
+                                                <td>{{$propiedad->zona}}</td>
                                                 <td>{{$propiedad->id_dueno}}</td>
+                                                <td>{{$propiedad = \App\Propiedad::whereHas('id_dueno',function ($q){
+                                                $q->where('id_dueno','=','id_dueno');
+                                                $q->select('nombre');
+                                                })->get()}}</td>
                                                 <td>{{$propiedad->descripcion}}</td>
                                                 <td>{{$propiedad->costo}}</td>
                                                 <td><a class="btn btn-primary btn-xs" href="{{action('PropiedadEmpleadoController@edit', $propiedad->id_propiedad)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
