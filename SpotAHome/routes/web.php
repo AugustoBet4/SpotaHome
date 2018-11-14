@@ -28,6 +28,7 @@ Route::post('empleados/logout', 'AuthEmpleado\LoginController@logout') -> name('
 
 Auth::routes();
 //Login Duenos y vistas
+Route::post('/propiedades','PropiedadDuenoController@store');
 
 Route::get('duenos/login', 'AuthDueno\LoginController@showLoginForm') -> name('login.dueno');
 Route::post('duenos/login','AuthDueno\LoginController@login')->name('dueno.sesion');
@@ -39,7 +40,7 @@ Route::get('/duenos', 'SesionDuenoController@index');
 
 Route::resource('duenos/propiedad','PropiedadDuenoController');
 
-
+Route::post('/hola','PropiedadDuenoController@store');
 
 
 

@@ -79,6 +79,18 @@
                                     <label for="" class="col-form-label">Descripcion</label>
                                     <textarea name="descripcion" id="descripcion" class="form-control input-sm"  placeholder="Descripcion">{{$propiedades->descripcion}}</textarea>
                                 </div>
+
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Disponibilidad</h3>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-form-label">Fecha Inicio</label>
+                                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control input-sm" value="{{$fechas->fecha_inicio}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-form-label">Fecha Fin</label>
+                                    <input type="date" name="fecha_fin" id="fecha_fin" class="form-control input-sm" value="{{$fechas->fecha_fin}}">
+                                </div>
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-6 col-md-6">
                                         <input type="submit"  value="Actualizar" class="btn btn-success btn-block">

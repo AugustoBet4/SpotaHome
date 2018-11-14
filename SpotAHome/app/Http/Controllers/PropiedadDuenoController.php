@@ -7,6 +7,8 @@ use App\Dueno;
 use App\Propiedad;
 use Auth;
 use App\Inquilino;
+use App\Fecha_Disponible;
+use Illuminate\Support\Facades\DB;
 
 class PropiedadDuenoController extends Controller
 {
@@ -26,17 +28,49 @@ class PropiedadDuenoController extends Controller
     public function edit($id)
     {
         $propiedades = Propiedad::find($id);
-        return view('duenos.editpropiedad', compact('propiedades'));
+
+        $fechas = Fecha_Disponible::where('id_propiedad','=',$id)->get()->first();
+
+        return view('duenos.editpropiedad', compact('propiedades', 'fechas'));
         /*$user = Auth::user();
         $propiedades = Propiedad::where('id_dueno', $user->id_dueno)->whereNull('deleted_at')->paginate(10);
         return view('duenos/propiedad', compact('propiedades', 'user'));*/
         //return 'holo';
     }
+
     public function update(Request $request, $id)
     {
         $this->validate($request,['direccion' => 'required','ciudad' => 'required','latitud' => 'required','longitud' => 'required','costo' => 'required','descripcion' => 'required','zona' => 'required']);
+
+        //$this->validate($request,['fecha_inicio' => 'required','fecha_fin' => 'required']);
         Propiedad::find($id)->update($request->all());
+        //Fecha_Disponible::find($id)->update($request->all());
+
         return redirect()->route('propiedad.index')->with('success','Propiedad actualizada');
+    }
+    public function create(){
+        $user = Auth::user();
+
+        return view('duenos.crearpropiedad', compact('user'));
+    }
+    public function store(Request $request)
+    {
+
+        //dd($request->all());
+       $propiedad = new Propiedad;
+        $propiedad ->direccion = $request->input('direccion');
+        $propiedad ->ciudad = $request->input('ciudad');
+        $propiedad ->latitud = $request->input('latitud');
+        $propiedad ->longitud = $request->input('longitud');
+        $propiedad ->id_dueno = $request->input('id_dueno');
+        $propiedad ->descripcion = $request->input('descripcion');
+        $propiedad ->zona = $request->input('zona');
+        $propiedad ->costo = $request->input('costo');
+        $propiedad ->save();
+        return redirect()->route('propiedad.index')->with('info', 'Casa Registrado');
+        //dd($request->all());
+       // return 'Store';
+
     }
 
 }
