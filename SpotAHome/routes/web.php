@@ -68,7 +68,7 @@ Route::get('/empleados/dashboard','DashboardController@index')->name('dashboard'
 Route::get('/empleados/mapa/{id}', 'MapaEmpleadoController@location')->name("empleado.mapa");
 Route::get('/empleados/mapageneral', 'MapaEmpleadoController@mapageneral')->name("empleado.mapageneral");
 //Route::get('empleados/mapa/{id}', 'PropiedadEmpleadoController@datosmapa');
-/*
+
 Route::get('empleados/propiedad/mapa', function(){
     $config = array();
     $config['center'] = '-16.4897, -68.1193';
@@ -89,7 +89,7 @@ Route::get('empleados/propiedad/mapa', function(){
     $map = app('map')->create_map();
     echo "<html><head><script type='text/javascript'>var centreGot = false;</script>".$map['js']."</head><body>".$map['html']."</body></html>";
 })->name('empleados.mapa');
-*/
+
 //Fin empleados
 
 //Dueños

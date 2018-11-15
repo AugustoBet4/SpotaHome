@@ -13,7 +13,7 @@
                             <div class="pull-right">
 
                                 <div class="btn-group">
-                                    <a href="{{ route('propiedad.create') }}" class="btn btn-info" >Añadir Propiedad</a>
+                                    <a href="{{ url('empleados/propiedad/create') }}" class="btn btn-info" >Añadir Propiedad</a>
                                 </div>
                                 <div class="btn-group">
                                     <a href="{{ route('empleado.mapageneral') }}" class="btn btn-info" >VerMapa</a>

@@ -36,7 +36,9 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,['consulta' => 'required']);
+        Consulta::create($request->all());
+        return redirect()->route('inquilino.index')->with('success','Propiedad registrada');
     }
 
     /**
