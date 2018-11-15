@@ -63,10 +63,12 @@
                                                 <input type="text" name="id_dueno" id="id_dueno" class="form-control input-sm" value="{//{$propiedades->id_dueno}}">
                                                 -->
                                                 <select  class="form-control" name="id_dueno" id="id_dueno">
-                                                    <option></option>
+                                                    <option>
+                                                        <?php echo $selected; ?>
 
+                                                    </option>
                                                     @foreach($duenos as $dueno)
-                                                        <option value="{{ $dueno->id_dueno }}" {!! ($selected ? "selected=\"selected\"" : "") !!}> {{ $dueno->nombre }}</option>
+                                                        <option value="{{ $dueno->id_dueno }}"> {{ $dueno->nombre }}</option>
                                                     @endforeach
 
                                                 </select>
