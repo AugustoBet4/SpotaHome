@@ -84,11 +84,11 @@ class PropiedadDuenoController extends Controller
         return view('duenos.editfechas', compact('propiedades', 'fechas'));
 
     }
-    public function updatefechas(Request $request, $id){
+    public  function show($id){
 
-        /*$this->validate($request,['fecha_inicio' => 'required','fecha_fin' => 'required']);
-        Fecha_Disponible::find($id)->update($request->all());*/
-         return'fechas actualizadas';
+        $propiedad = Propiedad::find($id);
+        $fechas = Fecha_Disponible::where('id_propiedad','=',$id)->get()->first();
+        return view('duenos.showpropiedad', compact('propiedad', 'fechas'));
     }
 
 }

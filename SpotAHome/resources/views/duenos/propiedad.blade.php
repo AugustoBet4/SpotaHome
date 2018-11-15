@@ -41,7 +41,7 @@
 
                                             <td>{{$propiedad->costo}}</td>
                                             <td>
-                                                <a href="#" class="btn btn-link">Ver</a>
+                                                <a href="{{action('PropiedadDuenoController@show', $propiedad->id_propiedad)}}" class="btn btn-link">Ver</a>
                                             </td>
                                             <td>
                                                 <a href="{{action('PropiedadDuenoController@edit', $propiedad->id_propiedad)}}" class="btn btn-link">Editar</a>
