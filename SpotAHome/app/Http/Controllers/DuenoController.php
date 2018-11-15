@@ -6,8 +6,13 @@ use App\Consulta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ConsultaController extends Controller
+class DuenoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:dueno');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -70,9 +75,7 @@ class ConsultaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[ 'respuesta'=>'required']);
-        Consulta::find($id)->update($request->all());
-        return redirect()->route('duenos.consultas')->with('success','Registro actualizado satisfactoriamente');
+        //
     }
 
     /**
@@ -89,14 +92,14 @@ class ConsultaController extends Controller
     public function getConsulta()
     {
         $user = Auth::user();
-        $consultas = Consulta::where('id_dueno', $user)->orderBy('id_consultas', 'ASC')->whereNull('deleted_at')->paginate(10);
+        $consultas = Consulta::where('id_dueno', $user->id_dueno)->orderBy('id_consultas', 'ASC')->whereNull('deleted_at')->paginate(10);
         return view('duenos/consultas', compact('user', 'consultas'));
     }
 
     public function consulta($id)
     {
         $user = Auth::user();
-        $propiedad = Propiedad::find($id);
-        return view('duenos/enviarConsulta', compact('user', 'propiedad'));
+        $consulta = Consulta::find($id);
+        return view('duenos/enviarConsulta', compact('user', 'consulta'));
     }
 }

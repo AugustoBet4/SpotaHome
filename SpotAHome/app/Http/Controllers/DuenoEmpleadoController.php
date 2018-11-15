@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Dueno;
 use Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\DuenoRequest;
 class DuenoEmpleadoController extends Controller
 {
@@ -43,7 +44,7 @@ class DuenoEmpleadoController extends Controller
         $dueno->genero = $request->input('genero');
         $dueno->nacionalidad = $request->input('nacionalidad');
         $dueno->usuario = $request->input('usuario');
-        $dueno->contrasena = $request->input('contrasena');
+        $dueno->contrasena = Hash::make($request->input('contrasena'));
         $dueno->save();
         return redirect()->route('welcome')->with('info', 'Dueno Registrado');
        //dd($request->all());

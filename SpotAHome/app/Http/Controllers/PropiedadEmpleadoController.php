@@ -18,6 +18,9 @@ class PropiedadEmpleadoController extends Controller
     {
         //$propiedades = Propiedad::orderBy('id_propiedad','ASC')->paginate(10);
        // $duenos=Dueno::orderBy('id_propiedad','ASC');
+        $duenos = DB::table('dueno')
+            ->select('dueno.id_dueno','dueno.nombre')
+            ->get();
         $propiedades = DB::table('propiedad')
             ->join('dueno','propiedad.id_dueno','=','dueno.id_dueno')
             ->select('propiedad.id_propiedad','propiedad.direccion','propiedad.ciudad','propiedad.zona','dueno.nombre','propiedad.descripcion','propiedad.costo')
@@ -34,7 +37,10 @@ class PropiedadEmpleadoController extends Controller
      */
     public function create()
     {
-        return view('empleados.create');
+        $duenos = DB::table('dueno')
+            ->select('dueno.id_dueno','dueno.nombre')
+            ->get();
+        return view('empleados.create', compact('duenos'));
     }
 
     public function store(Request $request)
@@ -76,6 +82,7 @@ class PropiedadEmpleadoController extends Controller
 
         $selected = DB::table('dueno')
             ->join('propiedad','propiedad.id_dueno','=','dueno.id_dueno')
+            ->where('propiedad.id_propiedad','=',$id)
             ->select('dueno.id_dueno','dueno.nombre')
             ->get();
 

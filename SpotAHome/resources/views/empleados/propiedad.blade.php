@@ -12,11 +12,10 @@
                         <div class="panel-body">
                             <div class="pull-left"><h1>Listado de propiedades</h1></div>
                             <div class="pull-right">
-                                <!--
+
                                 <div class="btn-group">
                                     <a href="{{ route('propiedad.create') }}" class="btn btn-info" >Añadir Propiedad</a>
                                 </div>
-                                -->
                             </div>
                             <div class="table-container">
                                 <table id="mytable" class="table table-bordred table-striped">

@@ -35,20 +35,25 @@ Route::post('duenos/login','AuthDueno\LoginController@login')->name('dueno.sesio
 Route::post('duenos/logout', 'AuthDueno\LoginController@logout') -> name('logout.dueno');
 
 Auth::routes();
+Route::get('/duenos/fecha_propiedad {id}', 'PropiedadDuenoController@fecha');
 
 Route::get('/duenos', 'SesionDuenoController@index');
 
 Route::resource('duenos/propiedad','PropiedadDuenoController');
 
 Route::post('/hola','PropiedadDuenoController@store');
-
+Route::post('/fechas','PropiedadDuenoController@updatefechas');
+Route::resource('duenos/fechas','PropiedadFechasController');
+Route::get('/duenos/consultas', 'DuenoController@getConsulta')->name('duenos.consultas');
+Route::get('duenos/consulta/{id}', 'DuenoController@consulta');
+Route::resource('duenos/enviarConsulta', 'ConsultaController');
 
 
 //Demas rutas empleados
 
 //Route::get('/empleados',function (){return view('empleados/sesion');});
 Route::get('/empleados', 'SesionEmpleadoController@index')->name("empleados.index");
-Route::post('/empleados/duenos','DuenoEmpleadoController@store');
+Route::post('/duenos','DuenoEmpleadoController@store');
 Route::resource('empleados/duenos','DuenoEmpleadoController');
 Route::get('/empleados/dashboard', 'SesionEmpleadoController@index');
 //Route::post('sesion','SesionEmpleadoController@login')->name('sesion');

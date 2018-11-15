@@ -58,7 +58,12 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="id_dueno" id="id_dueno" class="form-control input-sm" placeholder="Dueño">
+                                                <select  class="form-control" name="id_dueno" id="id_dueno">
+                                                    <option>Selecciona uno</option>
+                                                    @foreach($duenos as $dueno)
+                                                        <option value="{{ $dueno->id_dueno }}" > {{ $dueno->nombre }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
