@@ -3,7 +3,6 @@
 @section('title', 'Inicio de Empleado')
 
 @section('content')
-
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <section class="content">
@@ -16,6 +15,10 @@
                                 <div class="btn-group">
                                     <a href="{{ route('propiedad.create') }}" class="btn btn-info" >Añadir Propiedad</a>
                                 </div>
+                                <div class="btn-group">
+                                    <a href="{{ route('empleado.mapageneral') }}" class="btn btn-info" >VerMapa</a>
+                                </div>
+
                             </div>
                             <div class="table-container">
                                 <table id="mytable" class="table table-bordred table-striped">
@@ -27,6 +30,7 @@
                                     <th>Descripcion</th>
                                     <th>Costo</th>
                                     <th>Editar</th>
+                                    <th>Ver en Mapa</th>
                                     <!--
                                     <th>Eliminar</th>
                                     -->
@@ -42,16 +46,19 @@
                                                 <td>{{$propiedad->descripcion}}</td>
                                                 <td>{{$propiedad->costo}}</td>
                                                 <td><a class="btn btn-primary btn-xs" href="{{action('PropiedadEmpleadoController@edit', $propiedad->id_propiedad)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
-                                                <!--
+                                            <!--
                                                 <td>
-                                                    <form action="{{action('PropiedadEmpleadoController@edit', $propiedad->id_propiedad)}}" method="post">
-                                                        {{csrf_field()}}
-
-                                                        <input name="_method" type="hidden" value="DELETE">
-
-                                                        <button class="btn btn-danger btn-xs" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
-                                                    </form>
-                                                </td>
+                                                    <form action="{//{action('PropiedadEmpleadoController@edit', $propiedad->id_propiedad)}}" method="post">
+                                                        {//{csrf_field()}}
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <button class="btn btn-danger btn-xs" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
+                                            </form>
+                                        </td>
+-->
+                                                <td>
+                                                    <a class="btn btn-primary btn-xs" href="{{action('MapaEmpleadoController@location', $propiedad->id_propiedad)}}" ><span class="glyphicon glyphicon-flag "></span></a>
+                                                <!--
+                                                    <a class="btn btn-primary btn-xs" href="{{route('empleados.mapa')}}" ><span class="glyphicon glyphicon-flag "></span></a>
                                                 -->
                                             </tr>
                                         @endforeach
@@ -69,6 +76,6 @@
                     </div>
                 </div>
             </section>
-            </div>
+        </div>
     </div>
 @endsection

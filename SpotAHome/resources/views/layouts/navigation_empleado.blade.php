@@ -22,7 +22,7 @@
                 <a href="{{ url('/empleados/dashboard') }}"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
             </li>
             <li >
-                <a href="{{ url('/empleados/propiedades/propiedad') }}"><i class="fa fa-search"></i> <span class="nav-label">Propiedades</span></a>
+                <a href="{{ url('/empleados/propiedad') }}"><i class="fa fa-search"></i> <span class="nav-label">Propiedades</span></a>
             </li>
             <li >
             <li >

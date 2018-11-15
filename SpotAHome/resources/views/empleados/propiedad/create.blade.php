@@ -58,12 +58,7 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <select  class="form-control" name="id_dueno" id="id_dueno">
-                                                    <option>Selecciona uno</option>
-                                                    @foreach($duenos as $dueno)
-                                                        <option value="{{ $dueno->id_dueno }}" > {{ $dueno->nombre }}</option>
-                                                    @endforeach
-                                                </select>
+                                                <input type="text" name="id_dueno" id="id_dueno" class="form-control input-sm" placeholder="Dueño">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
@@ -78,12 +73,12 @@
                                     </div>
 
 
-                                        <div class="col-xs-12 col-sm-12 col-md-12">
-                                            <input type="submit"  value="Guardar" class="btn btn-success btn-block">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <input type="submit"  value="Guardar" class="btn btn-success btn-block">
 
-                                            <a href="{{ route('propiedad.index') }}" class="btn btn-info btn-block" >Atrás</a>
+                                        <a href="{{ route('propiedad.index') }}" class="btn btn-info btn-block" >Atrás</a>
 
-                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>

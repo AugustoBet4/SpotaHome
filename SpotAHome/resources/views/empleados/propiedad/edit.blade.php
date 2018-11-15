@@ -59,16 +59,14 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                               <!--
-                                                <input type="text" name="id_dueno" id="id_dueno" class="form-control input-sm" value="{//{$propiedades->id_dueno}}">
-                                                -->
+                                                <!--
+                                                 <input type="text" name="id_dueno" id="id_dueno" class="form-control input-sm" value="{//{$propiedades->id_dueno}}">
+                                                 -->
                                                 <select  class="form-control" name="id_dueno" id="id_dueno">
-                                                    <option>
-                                                        <?php echo $selected; ?>
+                                                    <option></option>
 
-                                                    </option>
                                                     @foreach($duenos as $dueno)
-                                                        <option value="{{ $dueno->id_dueno }}"> {{ $dueno->nombre }}</option>
+                                                        <option value="{{ $dueno->id_dueno }}" {!! ($selected ? "selected=\"selected\"" : "") !!}> {{ $dueno->nombre }}</option>
                                                     @endforeach
 
                                                 </select>
@@ -99,6 +97,6 @@
                     </div>
                 </div>
             </section>
-    </div>
+        </div>
     </div>
 @endsection

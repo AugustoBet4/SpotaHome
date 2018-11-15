@@ -17,8 +17,9 @@ Route::get('/', 'HomeController@index')->name("welcome");
 //Empleados
 
 //Resources
-Route::resource('empleados/propiedad','PropiedadEmpleadoController');
 Route::resource('empleados/duenos','DuenoEmpleadoController');
+Route::resource('empleados/propiedad','PropiedadEmpleadoController');
+//Route::resource('empleados/mapa','PropiedadEmpleadoController');
 
 //Login Empleados
 
@@ -27,6 +28,9 @@ Route::post('empleados/login','AuthEmpleado\LoginController@login')->name('emple
 Route::post('empleados/logout', 'AuthEmpleado\LoginController@logout') -> name('logout.empleado');
 
 Auth::routes();
+
+Route::post('empleados/logout', 'AuthEmpleado\LoginController@logout') -> name('logout.empleado');
+
 //Login Duenos y vistas
 Route::post('/propiedades','PropiedadDuenoController@store');
 
@@ -59,11 +63,16 @@ Route::get('/empleados/dashboard', 'SesionEmpleadoController@index');
 //Route::post('sesion','SesionEmpleadoController@login')->name('sesion');
 //Route::post('cerrarsesion','SesionEmpleadoController@logout')->name('cerrarsesion');
 Route::get('/empleados/dashboard','DashboardController@index')->name('dashboard');
-//Route::get('/empleados/mapa', 'MapaController@mapa');
+//Route::get('/empleados/mapa/{id}', 'PropiedadEmpleadoController@mapa')->name('empleados.mapita');
 
-Route::get('/empleados/mapa', function(){
+Route::get('/empleados/mapa/{id}', 'MapaEmpleadoController@location')->name("empleado.mapa");
+Route::get('/empleados/mapageneral', 'MapaEmpleadoController@mapageneral')->name("empleado.mapageneral");
+//Route::get('empleados/mapa/{id}', 'PropiedadEmpleadoController@datosmapa');
+/*
+Route::get('empleados/propiedad/mapa', function(){
     $config = array();
     $config['center'] = '-16.4897, -68.1193';
+  //  $config['center'] = $datos;
     $config['zoom'] = 'auto';
     $config['onboundschanged'] = 'if (!centreGot) {
             var mapCentre = map.getCenter();
@@ -72,18 +81,15 @@ Route::get('/empleados/mapa', function(){
             });
         }
         centreGot = true;';
-
     app('map')->initialize($config);
-
     // set up the marker ready for positioning
     // once we know the users location
     $marker = array();
     app('map')->add_marker($marker);
-
     $map = app('map')->create_map();
     echo "<html><head><script type='text/javascript'>var centreGot = false;</script>".$map['js']."</head><body>".$map['html']."</body></html>";
-});
-
+})->name('empleados.mapa');
+*/
 //Fin empleados
 
 //Dueños
