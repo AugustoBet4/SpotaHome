@@ -60,35 +60,33 @@
           <br><br>
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-9" id="estilo1">
+        <div class="col-md-8" id="estilo1">
           <div class="ibox float-e-margins">
               <div class="ibox-content">
                   <div class="table-responsive-sm">
                       <table class="table table-striped table-bordered table-hover dataTables-example table-responsive">
                           <thead>
-                          <tr>
-                              <th>Nro.</th>
-                              <th></th>
-                              <th>Ciudad</th>
-                              <th>Zona</th>
-                              <th>Descripcion</th>
-                              <th>Costo</th>
 
-                          </tr>
                           </thead>
                           <tbody>
                           @if($propiedad->count())
                               @foreach($propiedad as $key=>$prop)
 
                                   <tr>
-                                      <td>{{$key+1}}</td>
-                                      <td><img src="https://img.elcomercio.pe/files/ec_article_multimedia_gallery/uploads/2017/03/21/58d17dd823f81.jpeg" width='150'>
-                                      <td>{{$prop->ciudad}}</td>
-                                      <td>{{$prop->zona}}</td>
-                                      <td>{{$prop->descripcion}}</td>
-                                      <td>{{$prop->costo}}</td>
-                                      <!--<td><a class="btn btn-warning" href="{{action('InquilinoController@busqueda_prop', $prop->id_propiedad)}}" ></a></td>-->
-
+                                    <th width="150"><img src="https://img.elcomercio.pe/files/ec_article_multimedia_gallery/uploads/2017/03/21/58d17dd823f81.jpeg" width='250'></th>
+                                    <th rowspan="2" colspan="2" width="400">{{$prop->descripcion}}</th>
+                                  </tr>
+                                  <tr>
+                                    <td>{{$prop->ciudad}}</td>
+                                  </tr>
+                                  <tr>
+                                    <td>{{$prop->zona}}</td>
+                                    <td ><h3>{{$prop->costo}} Bs.</h3></td>
+                                    <td align="center">
+                                      <button type="button" class="btn btn-primary"
+                                        onclick="window.location='{{ action('InquilinoController@getPropiedad', $prop->id_propiedad) }}'">
+                                        <i class="fas fa-eye">Ver</i>
+                                    </td>
                                   </tr>
 
                               @endforeach

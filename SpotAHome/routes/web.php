@@ -109,6 +109,7 @@ Route::get('/inquilino/historial', 'InquilinoController@historial')->name("histo
 Route::get('/inquilino/direcciones/{id}', 'InquilinoController@location')->name("direcciones");
 Route::get('/inquilino/busqueda', 'InquilinoController@busqueda')->name("busqueda");
 Route::post('/inquilino/propiedades', 'InquilinoController@busqueda_prop')->name("propiedades");
+Route::get('/inquilino/prop_vista/{id}', 'InquilinoController@getPropiedad')->name("vista_prop");
 /*
 Route::get('/', function () {
     return view('welcome');

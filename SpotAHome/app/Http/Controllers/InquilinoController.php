@@ -69,6 +69,7 @@ class InquilinoController extends Controller
 
         $map = \Gmaps::create_map();
         ->where('costo', '>', $min)
+        <td><img src="https://img.elcomercio.pe/files/ec_article_multimedia_gallery/uploads/2017/03/21/58d17dd823f81.jpeg" width='150'>
         //******************************************
         */
         $propiedad = DB::table('propiedad')
@@ -130,6 +131,37 @@ class InquilinoController extends Controller
         $user = Auth::user();
         $consultas = Consulta::where('id_inquilino', $user->id_inquilino)->orderBy('id_consultas', 'ASC')->whereNull('deleted_at')->paginate(10);
         return view('inquilino/consultas', compact('user', 'consultas'));
+    }
+
+    public function getPropiedad($id)
+    {
+        $propiedad = Propiedad::find($id);
+        $user = Auth::user();
+        $config = array();
+        $config['center'] = 'auto';
+        $config['map_width'] = 550;
+        $config['map_height'] = 400;
+        $config['zoom'] = 15;
+        $config['onboundschanged'] = 'if (!centreGot) {
+            var mapCentre = map.getCenter();
+            marker_0.setOptions({
+                position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
+
+            });
+        }
+        centreGot = true;';
+
+        \Gmaps::initialize($config);
+
+        // Colocar el marcador
+        // Una vez se conozca la posición del usuario
+        $marker = array();
+        
+        \Gmaps::add_marker($marker);
+
+        $map = \Gmaps::create_map();
+
+        return view('inquilino/prop_vista', compact('user', 'propiedad', 'map'));
     }
 
 }
