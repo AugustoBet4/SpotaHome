@@ -28,6 +28,7 @@
                                 <h>Fechas Disponibles:</h> del {{$fechas->fecha_inicio}} al {{$fechas->fecha_fin}}<br>
                             </p>
                             </div>
+                            <iframe width="729" height="547" src="https://www.youtube.com/embed/F4e06PWs4Es" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
