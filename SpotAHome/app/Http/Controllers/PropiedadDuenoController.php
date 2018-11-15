@@ -90,5 +90,11 @@ class PropiedadDuenoController extends Controller
         $fechas = Fecha_Disponible::where('id_propiedad','=',$id)->get()->first();
         return view('duenos.showpropiedad', compact('propiedad', 'fechas'));
     }
+    public function destroy($id){
+        $propiedad = Propiedad::find($id);
+        $propiedad->delete();
+        return back();
+
+    }
 
 }
