@@ -39,11 +39,11 @@
                   <div class="form row">
 
 
-                        <h2><b>{{ $propiedad->descripcion}}</b></h2>
+                        <h2><b>{{ $propiedad->direccion}}</h3></b></h2>
 
                         <h4>{{ $propiedad->ciudad}}&nbsp;&nbsp;{{ $propiedad->zona}}</h4>
                         <br><br>
-
+                        <h4>{{ $propiedad->descripcion}}</h4>
                         <h1>Bs.{{ $propiedad->costo}}</h1>
 
 

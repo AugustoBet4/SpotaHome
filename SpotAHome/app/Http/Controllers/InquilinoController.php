@@ -85,11 +85,11 @@ class InquilinoController extends Controller
     {
         $user = Auth::user();
         $ciudad = request::input('ciudad');
-        echo $ciudad;
+        //echo $ciudad;
         $min = request::input('min');
         $max = request::input('max');
-        echo $min;
-        echo $max;
+        //echo $min;
+        //echo $max;
 
       //  $propiedad = Propiedad::where('ciudad', '=', $ciudad)->where('costo', '=', $min)->where('costo', '=', $max)->orderBy('id_propiedad', 'ASC')->paginate(10);
         $propiedad = DB::table('propiedad')
@@ -139,7 +139,7 @@ class InquilinoController extends Controller
         $user = Auth::user();
         $config = array();
         $config['center'] = 'auto';
-        $config['map_width'] = 550;
+        $config['map_width'] = 500;
         $config['map_height'] = 400;
         $config['zoom'] = 15;
         $config['onboundschanged'] = 'if (!centreGot) {
@@ -156,7 +156,7 @@ class InquilinoController extends Controller
         // Colocar el marcador
         // Una vez se conozca la posición del usuario
         $marker = array();
-        
+
         \Gmaps::add_marker($marker);
 
         $map = \Gmaps::create_map();
