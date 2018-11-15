@@ -29,7 +29,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
-                                <form method="POST" action="{{ route('propiedad.store') }}"  role="form">
+                                <form method="POST" action="{{ action('PropiedadEmpleadoController@store') }}"  role="form">
                                     {{ csrf_field() }}
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
@@ -57,9 +57,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" name="id_dueno" id="id_dueno" class="form-control input-sm" placeholder="Dueño">
-                                            </div>
+                                            <input type="text" name="zona" id="zona" class="form-control input-sm" placeholder="Zona">
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
@@ -67,7 +65,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <select  class="form-control" name="id_dueno" id="id_dueno">
+                                            <option>Seleccione uno</option>
 
+                                            @foreach($duenos as $dueno)
+                                                <option value="{{ $dueno->id_dueno }}"> {{ $dueno->nombre }}</option>
+                                            @endforeach
+
+                                        </select>
+                                    </div>
                                     <div class="form-group">
                                         <textarea name="descripcion" id="descripcion" class="form-control input-sm" placeholder="Descripcion"></textarea>
                                     </div>
@@ -76,7 +83,7 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <input type="submit"  value="Guardar" class="btn btn-success btn-block">
 
-                                        <a href="{{ route('propiedad.index') }}" class="btn btn-info btn-block" >Atrás</a>
+                                        <a href="{{ route('empleados.propiedad.index') }}" class="btn btn-info btn-block" >Atrás</a>
 
                                     </div>
                                 </form>
@@ -89,3 +96,4 @@
         </div>
     </div>
 @endsection
+n

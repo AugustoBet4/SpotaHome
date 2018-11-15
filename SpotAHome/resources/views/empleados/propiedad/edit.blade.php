@@ -29,7 +29,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
-                                <form method="POST" action="{{ route('propiedad.update',$propiedades->id_propiedad) }}"  role="form">
+                                <form method="POST" action="{{ action('PropiedadEmpleadoController@update',$propiedades->id_propiedad) }}"  role="form">
                                     {{ csrf_field() }}
                                     <input name="_method" type="hidden" value="PATCH">
                                     <div class="row">
@@ -86,7 +86,7 @@
                                             <input type="submit"  value="Actualizar" class="btn btn-success btn-block">
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <a href="{{ route('propiedad.index') }}" class="btn btn-info btn-block" >Atrás</a>
+                                            <a href="{{ route('empleados.propiedad.index') }}" class="btn btn-info btn-block" >Atrás</a>
                                         </div>
 
                                     </div>

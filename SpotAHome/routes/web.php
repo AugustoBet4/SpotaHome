@@ -26,10 +26,9 @@ Route::resource('empleados/propiedad','PropiedadEmpleadoController');
 Route::get('empleados/login', 'AuthEmpleado\LoginController@showLoginForm') -> name('login.empleado');
 Route::post('empleados/login','AuthEmpleado\LoginController@login')->name('empleado.sesion');
 Route::post('empleados/logout', 'AuthEmpleado\LoginController@logout') -> name('logout.empleado');
-
 Auth::routes();
 
-Route::post('empleados/logout', 'AuthEmpleado\LoginController@logout') -> name('logout.empleado');
+Route::get('empleados/propiedad', 'PropiedadEmpleadoController@index') -> name('empleados.propiedad.index');
 
 //Login Duenos y vistas
 Route::post('/propiedades','PropiedadDuenoController@store');

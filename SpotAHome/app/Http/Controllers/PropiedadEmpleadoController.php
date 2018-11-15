@@ -45,9 +45,10 @@ class PropiedadEmpleadoController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request,['direccion' => 'required','ciudad' => 'required','latitud' => 'required','longitud' => 'required','id_dueno' => 'required','descripcion' => 'required','costo' => 'required']);
+        $this->validate($request,['direccion' => 'required','ciudad' => 'required','latitud' => 'required','longitud' => 'required','id_dueno' => 'required','descripcion' => 'required','costo' => 'required','zona' => 'required']);
         Propiedad::create($request->all());
         return redirect()->route('empleados.propiedad.index')->with('success','Propiedad registrada');
+       // return redirect()->url('empleados/propiedad/index')->with('success','Propiedad registrada');
     }
 
     /**
@@ -95,6 +96,7 @@ class PropiedadEmpleadoController extends Controller
         $this->validate($request,['direccion' => 'required','ciudad' => 'required','latitud' => 'required','longitud' => 'required','id_dueno' => 'required','descripcion' => 'required','costo' => 'required']);
         Propiedad::find($id)->update($request->all());
         return redirect()->route('empleados.propiedad.index')->with('success','Propiedad actualizada');
+        //return redirect()->route('empleados/propiedad/index')->with('success','Propiedad actualizada');
     }
 
     /**
