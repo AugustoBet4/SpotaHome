@@ -50,6 +50,8 @@ Route::resource('duenos/fechas','PropiedadFechasController');
 Route::get('/duenos/consultas', 'DuenoController@getConsulta')->name('duenos.consultas');
 Route::get('duenos/consulta/{id}', 'DuenoController@consulta');
 Route::resource('duenos/enviarConsulta', 'ConsultaController');
+Route::get('/duenos/mapa/{id}', 'MapaDuenoController@location')->name("dueno.mapa");
+Route::get('/duenos/mapageneral/{id}', 'MapaDuenoController@mapageneral')->name("dueno.mapageneral");
 
 
 //Demas rutas empleados

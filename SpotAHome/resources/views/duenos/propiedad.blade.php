@@ -9,7 +9,15 @@
                 <div class="col-md-10 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <a href="{{action('PropiedadDuenoController@create')}}" class="btn btn-success btn-block">Agregar Propiedad</a>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <a href="{{action('PropiedadDuenoController@create')}}" class="btn btn-success btn-block">Agregar Propiedad</a>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <a href="{{ route('dueno.mapageneral', $user->id_dueno) }}" class="btn btn-info btn-block" >Ver Mapa</a>
+                                </div>
+
+                            </div>
                             <div class="pull-left"><h1>Listado de Propiedades</h1></div>
                             <div class="col-sm-4">
                             </div>
@@ -44,6 +52,9 @@
                                                 <a href="{{action('PropiedadDuenoController@show', $propiedad->id_propiedad)}}" class="btn btn-link">Ver</a>
                                             </td>
                                             <td>
+                                                <a href="{{action('MapaDuenoController@location', $propiedad->id_propiedad)}}" class="btn btn-link">Ubicacion</a>
+                                            </td>
+                                            <td>
                                                 <a href="{{action('PropiedadDuenoController@edit', $propiedad->id_propiedad)}}" class="btn btn-link">Editar</a>
                                             </td>
                                             <td>
@@ -54,6 +65,7 @@
                                                     {{csrf_field()}}
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <button class="btn btn-link">Borrar</button>
+                                                </form>
                                             </td>
 
                                         </tr>
