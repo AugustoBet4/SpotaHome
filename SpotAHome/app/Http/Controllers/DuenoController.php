@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Alquiler;
 use App\Consulta;
+use App\Propiedad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class DuenoController extends Controller
 {
@@ -101,5 +104,19 @@ class DuenoController extends Controller
         $user = Auth::user();
         $consulta = Consulta::find($id);
         return view('duenos/enviarConsulta', compact('user', 'consulta'));
+    }
+    public function reservas()
+    {
+        $user = Auth::user();
+
+        $reservas = DB::table('alquiler')
+            ->join('propiedad', 'propiedad.id_propiedad', '=', 'alquiler.id_propiedad')
+            ->where('propiedad.id_dueno', '=', $user->id_dueno)
+            ->select('alquiler.fecha_inicio', 'alquiler.fecha_fin', 'alquiler.status_alquiler', 'propiedad.direccion', 'alquiler.id_alquiler', 'propiedad.id_dueno')
+            ->orderBy('alquiler.id_alquiler', 'ASC')
+            ->paginate(10);
+
+        return view('duenos/reservas', compact('user','reservas'));
+
     }
 }

@@ -18,17 +18,24 @@
                     Logo :v
                 </div>
             </li>
-            <li >
+
+            <li>
                 <a href="{{ url('/duenos') }}"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
             </li>
-            <li >
+
+            <li>
                 <a href="{{ url('/duenos') }}"><i class="fa fa-history"></i> <span class="nav-label">Actualiza tus datos</span> </a>
             </li>
-            <li >
+
+            <li>
                 <a href="{{ url('/duenos/propiedad') }}"><i class="fa fa-ban"></i> <span class="nav-label">Registra una Vivienda</span> </a>
             </li>
 
-            <li >
+            <li>
+                <a href="{{ url('/duenos/reservas') }}"><i class="fa fa-calendar-check-o"></i> <span class="nav-label">Reservas</span></a>
+            </li>
+
+            <li>
                 <a href="{{ url('/duenos/consultas') }}"><i class="fa fa-sticky-note"></i> <span class="nav-label">Consultas</span></a>
             </li>
         </ul>
