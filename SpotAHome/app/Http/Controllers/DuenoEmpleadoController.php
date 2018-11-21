@@ -68,7 +68,7 @@ class DuenoEmpleadoController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $this->validate($request,['nombre' => 'required','apellidos' => 'required','genero' => 'required','nacionalidad' => 'required','fecha_nacimiento' => 'required','email' => 'required','telefono' => 'required']);
+        $this->validate($request,['nombre' => 'required','apellidos' => 'required','genero' => 'required','nacionalidad' => 'required','fecha_nacimiento' => 'required|date_format:Y-m-d|before:yesterday','email' => 'required','telefono' => 'required']);
         Dueno::find($id)->update($request->all());
         return redirect()->route('duenos.index')->with('success','Due&ntilde;o actualizado');
     }
