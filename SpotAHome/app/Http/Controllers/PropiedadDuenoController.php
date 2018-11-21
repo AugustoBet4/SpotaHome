@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Alquiler;
+use App\Multimedia;
 use Illuminate\Http\Request;
 use App\Dueno;
 use App\Propiedad;
@@ -10,6 +11,9 @@ use App\Inquilino;
 use App\Fecha_Disponible;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\PropiedadRequest;
+use Illuminate\Support\Facades\Input;
+use PhpParser\Node\Expr\AssignOp\Mul;
+
 
 class PropiedadDuenoController extends Controller
 {
@@ -57,8 +61,9 @@ class PropiedadDuenoController extends Controller
     {
 
         //dd($request->all());
-       $propiedad = new Propiedad;
-       $fechas = new Fecha_Disponible;
+        $propiedad = new Propiedad;
+        $fechas = new Fecha_Disponible;
+        $multimedia = new Multimedia;
         $propiedad ->direccion = $request->input('direccion');
         $propiedad ->ciudad = $request->input('ciudad');
         $propiedad ->latitud = $request->input('latitud');
@@ -72,9 +77,16 @@ class PropiedadDuenoController extends Controller
         $fechas->fecha_fin = $request->input('fecha_fin');
         $fechas->id_propiedad = $propiedad->id_propiedad;
         $fechas->save();
+
+        $image = $request->file('imagen');
+        $image->move('uploads', $image->getClientOriginalName());
+        $multimedia->uri = $image->getClientOriginalName();
+        $multimedia->id_propiedad = $propiedad->id_propiedad;
+        $multimedia->save();
         return redirect()->route('propiedad.index')->with('info', 'Casa Registrada');
+
         //dd($request->all());
-       // return 'Store';
+       //return 'Store';
 
     }
     public function fecha($id){
@@ -89,7 +101,8 @@ class PropiedadDuenoController extends Controller
 
         $propiedad = Propiedad::find($id);
         $fechas = Fecha_Disponible::where('id_propiedad','=',$id)->get()->first();
-        return view('duenos.showpropiedad', compact('propiedad', 'fechas'));
+        $multimedia = Multimedia::where('id_propiedad','=',$id)->get()->first();
+        return view('duenos.showpropiedad', compact('propiedad', 'fechas', 'multimedia'));
     }
     public function destroy($id){
         $propiedad = Propiedad::find($id);

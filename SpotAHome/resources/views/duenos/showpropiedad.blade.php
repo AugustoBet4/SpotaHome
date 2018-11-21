@@ -27,6 +27,13 @@
                                 <h>Costo:</h> {{$propiedad->costo}}<br>
                                 <h>Fechas Disponibles:</h> del {{$fechas->fecha_inicio}} al {{$fechas->fecha_fin}}<br>
                             </p>
+                                @if (empty($multimedia->uri))
+                                    <div class="panel-body">
+                                        <h1> No Subiste imagenes xd</h1>
+                                    </div>
+                                @else
+                                <img src="{{ URL::to('/uploads/' . $multimedia->uri) }}"/>
+                                @endif
                             </div>
                             <iframe width="729" height="547" src="https://www.youtube.com/embed/F4e06PWs4Es" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>

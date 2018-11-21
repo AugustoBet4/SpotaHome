@@ -27,6 +27,11 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Edicion de Disponibilidad</h3>
                         </div>
+                        @if (empty($fechas->fecha_inicio))
+                            <div class="panel-body">
+                                <h1> No hay registro de Fechas !!</h1>
+                            </div>
+                        @else
                         <div class="panel-body">
                             <div class="table-container">
                                 <form method="POST" action="{{action('PropiedadFechasController@update', $fechas->id_fecha_disponibilidad)}}"  role="form">
@@ -54,6 +59,7 @@
                                 </form>
                             </div>
                         </div>
+                        @endif
 
                     </div>
                 </div>
