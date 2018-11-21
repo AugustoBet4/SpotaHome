@@ -30,7 +30,7 @@ class InquilinoController extends Controller
     public function reservas()
     {
         $user = Auth::user();
-        $reservas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', 'Reservado')->orderBy('id_alquiler', 'ASC')->whereNull('deleted_at')->paginate(10);
+        $reservas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', 'Reservado')->orderBy('id_alquiler', 'DESC')->whereNull('deleted_at')->paginate(10);
         return view('inquilino/reservas', compact('reservas', 'user'));
     }
 
@@ -44,34 +44,7 @@ class InquilinoController extends Controller
     public function busqueda()
     {
         $user = Auth::user();
-      //**********************************
-      //configuaración generacion del mapa
-        /*$config = array();
-        $config['center'] = 'auto';
-        $config['map_width'] = 550;
-        $config['map_height'] = 400;
-        $config['zoom'] = 15;
-        $config['onboundschanged'] = 'if (!centreGot) {
-            var mapCentre = map.getCenter();
-            marker_0.setOptions({
-                position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
 
-            });
-        }
-        centreGot = true;';
-
-        \Gmaps::initialize($config);
-
-        // Colocar el marcador
-        // Una vez se conozca la posición del usuario
-        $marker = array();
-        \Gmaps::add_marker($marker);
-
-        $map = \Gmaps::create_map();
-        ->where('costo', '>', $min)
-        <td><img src="https://img.elcomercio.pe/files/ec_article_multimedia_gallery/uploads/2017/03/21/58d17dd823f81.jpeg" width='150'>
-        //******************************************
-        */
         $propiedad = DB::table('propiedad')
                                 //->join ('multimedia', 'multimedia.id_propiedad', '=', 'propiedad.id_propiedad' )
                                 ->orderBy('propiedad.id_propiedad', 'asc')
@@ -85,13 +58,9 @@ class InquilinoController extends Controller
     {
         $user = Auth::user();
         $ciudad = request::input('ciudad');
-        //echo $ciudad;
         $min = request::input('min');
         $max = request::input('max');
-        //echo $min;
-        //echo $max;
-
-      //  $propiedad = Propiedad::where('ciudad', '=', $ciudad)->where('costo', '=', $min)->where('costo', '=', $max)->orderBy('id_propiedad', 'ASC')->paginate(10);
+        //  $propiedad = Propiedad::where('ciudad', '=', $ciudad)->where('costo', '=', $min)->where('costo', '=', $max)->orderBy('id_propiedad', 'ASC')->paginate(10);
         $propiedad = DB::table('propiedad')
                                 ->where('ciudad', '=', $ciudad)
                                 ->where('costo', '>=', $min)
@@ -160,8 +129,9 @@ class InquilinoController extends Controller
         \Gmaps::add_marker($marker);
 
         $map = \Gmaps::create_map();
-
         return view('inquilino/prop_vista', compact('user', 'propiedad', 'map'));
     }
+
+
 
 }

@@ -46,6 +46,7 @@
                         <h4>{{ $propiedad->descripcion}}</h4>
                         <h1>Bs.{{ $propiedad->costo}}</h1>
                         <br><br>
+
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Reservar</button>
                   </div>
 
@@ -63,22 +64,31 @@
 
                   </div>
                   <div class="modal-body">
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
-
-                          <form method="POST" action="{{ action('ValoracionPropiedadController@store') }}" role="form">
+                          <form method="POST" action="{{ action('AlquilerController@store') }}" role="form">
                               {{ csrf_field() }}
 
                               <div class="form row">
-                                <div  class="col-md-12">
-                                  <input type="hidden" name="id_propiedad" class="form-control input-sm" id="id_propiedad">
-                                  <input type="hidden" name="id_inquilino" class="form-control input-sm" id="id_inquilino">
-                                  <label for="puntuacion">Fecha de Inicio: </label>
-                                  <input type="date" name="puntuacion" class="form-control input-sm" id="puntuacion"  required>
+
+                                  <input type="hidden" name="id_propiedad" class="form-control input-sm" id="id_propiedad"  value="{{ $propiedad->id_propiedad }}">
+                                  <input type="hidden" name="id_inquilino" class="form-control input-sm" id="id_inquilino"  value="{{ $user->id_inquilino }}">
+                                  <input type="hidden" name="status_alquiler" class="form-control input-sm" id="status_alquiler" value="Reservado">
+                                  <label for="fecha_inicio">Fecha de Inicio: </label>
+                                  <input type="date" name="fecha_inicio" class="form-control input-sm" id="fecha_inicio"  required>
                                   <div class="form-group">
-                                      <label for="comentario">Fecha Final: </label>
-                                      <input type="date" name="comentario" class="form-control input-sm" id="comentario"  required>
+                                      <label for="fecha_fin">Fecha Final: </label>
+                                      <input type="date" name="fecha_fin" class="form-control input-sm" id="fecha_fin"  required>
                                   </div>
-                                </div>
+
                               </div>
 
                               <div class="form-group col-md-6">

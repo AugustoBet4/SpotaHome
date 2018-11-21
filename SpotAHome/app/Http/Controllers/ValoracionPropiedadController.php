@@ -26,8 +26,10 @@ class ValoracionPropiedadController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request,['comentario' => 'required','puntuacion' => 'required']);
+        $this->validate($request,['comentario' => 'required',
+                                  'puntuacion' => 'required']);
         Valoracion_Inquilino_Propiedad::create($request->all());
+        
         return redirect()->route('historial')->with('success','Comentario registrada');
     }
 
