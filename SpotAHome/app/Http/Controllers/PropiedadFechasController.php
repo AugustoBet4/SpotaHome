@@ -32,7 +32,10 @@ class PropiedadFechasController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request,['fecha_inicio' => 'required','fecha_fin' => 'required']);
+
+
+        $this->validate($request,[ 'fecha_inicio'=>'required|date|date_format:Y-m-d|after:yesterday',
+            'fecha_fin'=>'required|date_format:Y-m-d|after:fecha_inicio',]);
        Fecha_Disponible::find($id)->update($request->all());
         return redirect()->route('propiedad.index')->with('success','Fechas actualizadas');
     }

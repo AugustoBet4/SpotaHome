@@ -9,6 +9,7 @@ use Auth;
 use App\Inquilino;
 use App\Fecha_Disponible;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\PropiedadRequest;
 
 class PropiedadDuenoController extends Controller
 {
@@ -52,7 +53,7 @@ class PropiedadDuenoController extends Controller
 
         return view('duenos.crearpropiedad', compact('user'));
     }
-    public function store(Request $request)
+    public function store(PropiedadRequest $request)
     {
 
         //dd($request->all());

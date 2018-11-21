@@ -11,6 +11,16 @@
                         Bienvenido a SpotaHome
                     </h1>
                   </div>
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <strong>Error!</strong> Revise los campos obligatorios.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="/duenos" method="POST" role="form">
                     {{ csrf_field() }}
                     <legend>Registrate Como due&ntilde;o</legend>

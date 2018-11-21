@@ -33,7 +33,7 @@ class DuenoEmpleadoController extends Controller
 
         return view('duenos.create');
     }
-    public function store(Request $request)
+    public function store(DuenoRequest $request)
     {
         $dueno = new Dueno;
         $dueno->nombre = $request->input('nombre');
