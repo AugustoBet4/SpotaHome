@@ -27,7 +27,9 @@
           <div class="row">
             <br>
             <div class="col-md-6">
-              <img src="https://img.elcomercio.pe/files/ec_article_multimedia_gallery/uploads/2017/03/21/58d17dd823f81.jpeg" width='500'>
+              @foreach ($multimedia as $multi)
+                <img src="{{ $multi->uri }}" width='500'>
+              @endforeach
               <br><br>
               <h2>Ubicacion</h2>
               {!!$map['html']!!}
@@ -45,6 +47,11 @@
                         <br><br>
                         <h4>{{ $propiedad->descripcion}}</h4>
                         <h1>Bs.{{ $propiedad->costo}}</h1>
+
+
+
+
+
                         <br><br>
 
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Reservar</button>

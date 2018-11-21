@@ -11,6 +11,7 @@ use App\Valoracion_Inquilino_Propiedad;
 use Illuminate\Support\Facades\Auth;
 use Request;
 Use DB;
+use App\Multimedia;
 
 
 class InquilinoController extends Controller
@@ -47,6 +48,7 @@ class InquilinoController extends Controller
 
         $propiedad = DB::table('propiedad')
                                 //->join ('multimedia', 'multimedia.id_propiedad', '=', 'propiedad.id_propiedad' )
+
                                 ->orderBy('propiedad.id_propiedad', 'asc')
                                 ->get();
         //echo $propiedad;
@@ -98,13 +100,14 @@ class InquilinoController extends Controller
     public function getConsulta()
     {
         $user = Auth::user();
-        $consultas = Consulta::where('id_inquilino', $user->id_inquilino)->orderBy('id_consultas', 'ASC')->whereNull('deleted_at')->paginate(10);
+        $consultas = Consulta::where('id_inquilino',  $user->id_inquilino)->orderBy('id_consultas', 'ASC')->whereNull('deleted_at')->paginate(10);
         return view('inquilino/consultas', compact('user', 'consultas'));
     }
 
     public function getPropiedad($id)
     {
         $propiedad = Propiedad::find($id);
+
         $user = Auth::user();
         $config = array();
         $config['center'] = 'auto';
@@ -127,9 +130,12 @@ class InquilinoController extends Controller
         $marker = array();
 
         \Gmaps::add_marker($marker);
-
+        $multimedia = DB::table('multimedia')
+                                ->where('id_propiedad', '=', $id)
+                                ->get();
+        echo $multimedia;
         $map = \Gmaps::create_map();
-        return view('inquilino/prop_vista', compact('user', 'propiedad', 'map'));
+        return view('inquilino/prop_vista', compact('user', 'propiedad', 'map', 'multimedia'));
     }
 
 
