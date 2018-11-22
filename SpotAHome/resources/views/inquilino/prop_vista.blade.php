@@ -28,12 +28,12 @@
             <br>
             <div class="col-md-6">
               @foreach ($multimedia as $multi)
-                <img src="{{ $multi->uri }}" width='500'>
+                <img src="{{ URL::to('/uploads/' . $multi->uri) }}" width='500'>
               @endforeach
               <br><br>
               <h2>Ubicacion</h2>
               {!!$map['html']!!}
-            </div
+            </div>
             <div class="col-md-3">
 
                   {{ csrf_field() }}
@@ -41,7 +41,7 @@
                   <div class="form row">
 
 
-                        <h2><b>{{ $propiedad->direccion}}</h3></b></h2>
+                        <h2><b>{{ $propiedad->direccion}}</b></h2>
 
                         <h4>{{ $propiedad->ciudad}}&nbsp;&nbsp;{{ $propiedad->zona}}</h4>
                         <br><br>
@@ -111,5 +111,5 @@
               </div>
           </div>
       </div>
-
+    </div>
 @endsection

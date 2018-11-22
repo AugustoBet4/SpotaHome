@@ -1,6 +1,6 @@
 @extends('layouts.app_duenosregistro')
 
-@section('title', 'Inicio de duenos')
+@section('title', 'Registro Dueno')
 
 @section('content')
     <div class="wrapper wrapper-content animated fadeInRight">
