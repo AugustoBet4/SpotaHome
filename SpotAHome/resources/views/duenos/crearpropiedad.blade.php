@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Agrega Imagenes</label>
-                        <input type="file" class="-file-photo-o" name="imagen" id="imagen">
+                        <input accept="image/*" type="file" class="-file-photo-o" name="imagen" id="imagen">
                     </div>
                     <button type="submit"  class="btn btn-primary">Crear</button>
                 </form>

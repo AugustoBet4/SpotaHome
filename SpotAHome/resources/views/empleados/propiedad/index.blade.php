@@ -16,6 +16,7 @@
                                 <!--
                                 <form method="get" action="{{ action('PropiedadEmpleadoController@busqueda') }}">
                                 -->
+                                    <!--
                                 <div class="col-md-2 col-md-offset-0" align="center">
                                     <input type="text" id="costo" name="costo" placeholder="costo" class="form-control input-sm">
                                 </div>
@@ -46,7 +47,6 @@
                                 <div class="col-md-2 col-md-offset-0">
                                    <!--
                                     <button type="submit" class="btn btn-primary" >Buscar</button>
--->
                                     <a href="{{action('PropiedadEmpleadoController@busqueda') }}" class="btn btn-info" >Buscar</a>
 
                                 </div>
