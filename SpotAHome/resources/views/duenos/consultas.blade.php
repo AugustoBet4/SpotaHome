@@ -1,6 +1,6 @@
 @extends('layouts.app_duenos')
 
-@section('title', 'Anulacion de Reserva')
+@section('title', 'Consultas')
 
 @section('content')
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -69,4 +69,5 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection

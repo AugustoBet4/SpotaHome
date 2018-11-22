@@ -43,9 +43,13 @@
                                                     <td>
                                                         <span class="label label-primary"><i class="fa fa-calendar-check-o"></i> {{ $reserva->status_alquiler }}</span>
                                                     </td>
-                                                @else
+                                                @elseif($reserva->status_alquiler == "Finalizado")
                                                     <td>
                                                         <span class="label label-info"><i class="fa fa-check"></i> {{ $reserva->status_alquiler }}</span>
+                                                    </td>
+                                                @else
+                                                    <td>
+                                                        <span class="label label-danger"><i class="fa fa-check"></i> {{ $reserva->status_alquiler }}</span>
                                                     </td>
                                                 @endif
                                             <td>{{ $reserva->direccion }}</td>

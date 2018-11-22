@@ -29,6 +29,7 @@ Route::post('empleados/logout', 'AuthEmpleado\LoginController@logout') -> name('
 Auth::routes();
 
 Route::get('empleados/propiedad', 'PropiedadEmpleadoController@index') -> name('empleados.propiedad.index');
+Route::get('empleados/propiedad/busqueda', 'PropiedadEmpleadoController@busqueda') -> name('empleados.propiedad.busqueda');
 
 //Login Duenos y vistas
 Route::post('/propiedades','PropiedadDuenoController@store');
@@ -103,7 +104,8 @@ Route::get('empleados/propiedad/mapa', function(){
 
 //Inquilinos
 
-Route::resource('inquilino/reservas','AlquilerController');
+Route::resource('inquilino/busqueda','AlquilerController');
+
 Route::resource('inquilino/historial', 'ValoracionPropiedadController');
 Route::resource('inquilino/enviarConsulta', 'ConsultaController');
 

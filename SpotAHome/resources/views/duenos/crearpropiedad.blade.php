@@ -1,6 +1,6 @@
 @extends('layouts.app_duenos')
 
-@section('title', 'Inicio de Empleado')
+@section('title', 'Crear Propiedad')
 
 @section('content')
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -21,7 +21,7 @@
                        SpotaHome Bolivia
                     </h1>
                 </div>
-                <form action="/propiedades" method="POST" role="form">
+                <form action="/propiedades" method="POST" role="form" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <legend>Registrate Tu Vivienda</legend>
 
@@ -61,6 +61,10 @@
                         <label for="">Fecha de Nacimiento</label>
                         <textarea type="date" class="form-control" name="descripcion" id="descripcion" >Descripcion</textarea>
                         <input type="number" class="hidden" name="id_dueno" id="id_dueno" value="{{$user->id_dueno}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Agrega Imagenes</label>
+                        <input type="file" class="-file-photo-o" name="imagen" id="imagen">
                     </div>
                     <button type="submit"  class="btn btn-primary">Crear</button>
                 </form>

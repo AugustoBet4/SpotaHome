@@ -28,7 +28,7 @@ class DuenoRequest extends FormRequest
 
             'nombre' => 'required',
             'apellidos'=> 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:dueno,email',
             'telefono' => 'required',
             'fecha_nacimiento' => 'required|date_format:Y-m-d|before:yesterday',
             'genero' => 'required',

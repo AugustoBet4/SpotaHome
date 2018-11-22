@@ -10,56 +10,11 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div align="center">
-                                <h1>Listado de propiedades</h1>
-                            </div>
-                            <div align="center">
-                                <!--
-                                <form method="get" action="{{ action('PropiedadEmpleadoController@busqueda') }}">
-                                -->
-                                <div class="col-md-2 col-md-offset-0" align="center">
-                                    <input type="text" id="costo" name="costo" placeholder="costo" class="form-control input-sm">
-                                </div>
-                                <div class="col-md-3 col-md-offset-0">
-                                    <select  class="form-control" name="ciudad" id="ciudad">
-                                        <option>Seleccione ciudad</option>
-                                        @foreach($ciudades as $ciudad)
-                                            <option value="{{ $ciudad->id_propiedad }}"> {{ $ciudad->ciudad }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-3 col-md-offset-0">
-                                    <select  class="form-control" name="zona" id="zona">
-                                        <option>Seleccione zona</option>
-                                        @foreach($zonas as $zona)
-                                            <option value="{{ $zona->id_propiedad }}"> {{ $zona->zona }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-2 col-md-offset-0">
-                                    <select  class="form-control" name="estado" id="estado">
-                                        <option>Seleccione estado</option>
-                                        @foreach($estados as $estado)
-                                            <option value="{{ $estado->id_propiedad }}"> {{ $estado->status_alquiler }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-2 col-md-offset-0">
-                                   <!--
-                                    <button type="submit" class="btn btn-primary" >Buscar</button>
--->
-                                    <a href="{{action('PropiedadEmpleadoController@busqueda') }}" class="btn btn-info" >Buscar</a>
-
-                                </div>
-                                    <!--
-                            </form>
-                            -->
+                                <h1>Listado de busqueda</h1>
                             </div>
                             <div class="pull-right">
                                 <div class="btn-group">
-                                    <a href="{{ url('empleados/propiedad/create') }}" class="btn btn-info" >Añadir Propiedad</a>
-                                </div>
-                                <div class="btn-group">
-                                    <a href="{{ route('empleado.mapageneral') }}" class="btn btn-info" >VerMapa</a>
+                                    <a href="{{ url('empleados/propiedad/index') }}" class="btn btn-info" >Volver</a>
                                 </div>
                             </div>
                             <div class="table-container">

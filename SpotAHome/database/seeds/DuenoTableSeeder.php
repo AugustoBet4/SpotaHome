@@ -12,6 +12,6 @@ class DuenoTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Dueno::class, 10)->create();
+        factory(Dueno::class, 1)->create();
     }
 }
