@@ -38,7 +38,7 @@ class InquilinoController extends Controller
     public function historial()
     {
         $user = Auth::user();
-        $historicas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', 'Finalizado')->orderBy('id_alquiler', 'ASC')->whereNull('deleted_at')->paginate(10);
+        $historicas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', '!=','Reservado')->orwhere('status_alquiler', 'Finalizado')->orwhere('status_alquiler', 'Anulado')->orderBy('id_alquiler', 'ASC')->whereNull('deleted_at')->paginate(10);
         return view('inquilino/historial', compact( 'historicas','user'));
     }
 

@@ -79,9 +79,9 @@ class AlquilerController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request,['direccion' => 'required','ciudad' => 'required','latitud' => 'required','longitud' => 'required','id_dueno' => 'required','descripcion' => 'required','costo' => 'required']);
-        Propiedad::find($id)->update($request->all());
-        return redirect()->route('inquilino.reservas')->with('success','Reserva actualizada');
+        $this->validate($request,['status_alquiler' => 'required']);
+        Alquiler::find($id)->update($request->all());
+        return redirect()->route('reservas')->with('success','Reserva actualizada');
     }
 
     /**

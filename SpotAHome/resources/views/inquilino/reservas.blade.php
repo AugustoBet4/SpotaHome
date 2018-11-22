@@ -42,9 +42,16 @@
                                                 {{--  <td>{{$reserva->propiedad->direccion}}</td>  --}}
                                                 <td>
                                                     <form method="post"
-                                                          action="{{ action('InquilinoController@anularReserva', $reserva->id_alquiler) }}">
+                                                          action="{{ action('AlquilerController@update', $reserva->id_alquiler) }}">
                                                         {{csrf_field()}}
-                                                        <input name="_method" type="hidden" value="DELETE">
+                                                        <input name="_method" type="hidden" value="PUT">
+                                                        <input type="hidden" name="id_alquiler" id="id_alquiler" value="{{ $reserva->id_alquiler }}">
+                                                        <input type="hidden" name="status_alquiler" id="status_alquiler" value="Anulado">
+                                                        <input type="hidden" name="fecha_inicio" id="fecha_inicio" value="{{ $reserva->fecha_inicio }}">
+                                                        <input type="hidden" name="fecha_fin" id="fecha_fin" value="{{ $reserva->fecha_fin }}">
+                                                        <input type="hidden" name="id_propiedad" id="id_propiedad" value="{{ $reserva->id_propiedad }}">
+                                                        <input type="hidden" name="id_inquilino" id="id_inquilino" value="{{ $user->id_inquilino }}">
+
                                                         <button class="btn btn-danger btn-xs" type="submit">
                                                             <i class="fa fa-eraser"></i> Anular Reserva
                                                         </button>
