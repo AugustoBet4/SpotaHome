@@ -140,7 +140,7 @@ class InquilinoController extends Controller
         $map = \Gmaps::create_map();
         return view('inquilino/prop_vista', compact('user', 'propiedad', 'map', 'multimedia'));
     }
-
+  
 
 
 }

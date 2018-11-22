@@ -108,6 +108,7 @@ Route::resource('inquilino/busqueda','AlquilerController');
 
 Route::resource('inquilino/historial', 'ValoracionPropiedadController');
 Route::resource('inquilino/enviarConsulta', 'ConsultaController');
+Route::resource('inquilino', 'RegistroInquilino');
 
 Route::get('inquilino/login', 'AuthInquilino\LoginController@showLoginForm') -> name('login.inquilino');
 Route::post('inquilino/login','AuthInquilino\LoginController@login')->name('inquilino.sesion');
