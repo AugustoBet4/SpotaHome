@@ -51,9 +51,12 @@ class InquilinoController extends Controller
 
                                 ->orderBy('propiedad.id_propiedad', 'asc')
                                 ->get();
+        $multimedia = DB::table('multimedia')
+                                ->orderBy('id_propiedad', 'asc')
+                                ->get();
         //echo $propiedad;
         //$propiedad = Propiedad::where('multimedia')->orderBy('id_propiedad', 'ASC')->paginate(10);
-        return view('inquilino/propiedades', compact('user', 'propiedad'));
+        return view('inquilino/propiedades', compact('user', 'propiedad', 'multimedia'));
     }
 
     public function busqueda_prop(Request $request)

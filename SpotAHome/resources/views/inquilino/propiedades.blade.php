@@ -73,7 +73,11 @@
                               @foreach($propiedad as $key=>$prop)
 
                                   <tr>
-                                    <th width="150"><img src="https://img.elcomercio.pe/files/ec_article_multimedia_gallery/uploads/2017/03/21/58d17dd823f81.jpeg" width='250'></th>
+                                    <th width="150">
+                                      @foreach ($multimedia as $multi)
+                                        <img src="{{ $multi->uri }}" width='250'>
+                                      @endforeach
+                                    </th>
                                     <th rowspan="2" colspan="2" width="400">{{$prop->descripcion}}</th>
                                   </tr>
                                   <tr>

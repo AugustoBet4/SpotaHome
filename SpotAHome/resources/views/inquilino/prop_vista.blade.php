@@ -23,7 +23,7 @@
     <div class="text-center m-t-lg">
     </div>
       <div class="centrar">
-        <form method="POST" action="{{ action('ConsultaController@store') }}" role="form">
+        <form method="POST" action="" role="form">
           <div class="row">
             <br>
             <div class="col-md-6">
