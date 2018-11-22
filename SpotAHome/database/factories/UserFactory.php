@@ -60,7 +60,7 @@ $factory->define(App\Propiedad::class, function (Faker $faker) {
         'latitud'           => ' -16.563247',
         'longitud'          => ' -68.099965',
         'id_dueno'          => '1',
-        'descripcion'       => 'Hermosa Casita en Lugar Caliente con vista a las monta&ntilde;as',
+        'descripcion'       => 'Hermosa Casita en Lugar Caliente con vista a las montañas',
         'costo'             => '400',
         'zona'              => 'Mallasilla',
         //'direccion', 'ciudad', 'latitud', 'longitud', 'descripcion', 'costo',
