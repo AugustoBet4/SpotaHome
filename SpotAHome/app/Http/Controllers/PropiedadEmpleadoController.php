@@ -122,10 +122,14 @@ class PropiedadEmpleadoController extends Controller
     }
     public function busqueda(Request $request)
     {
-        $ciudad = request::select('ciudad');
+        //$ciudad = request::input('ciudad');
         $costo = request::input('costo');
-        $zona = request::select('zona');
-        $estado = request::select('estado');
+        $ciudad = $request->get('ciudad');
+        $zona = $request->get('zona');
+        $estado = $request->get('estado');
+        $zona = 'Mallasilla';
+        $ciudad = 'La Paz';
+        $estado = 'Finalizado';
         //  $propiedad = Propiedad::where('ciudad', '=', $ciudad)->where('costo', '=', $min)->where('costo', '=', $max)->orderBy('id_propiedad', 'ASC')->paginate(10);
         $propiedades = DB::table('propiedad')
             ->join('alquiler','alquiler.id_propiedad','=','propiedad.id_propiedad')
@@ -135,10 +139,7 @@ class PropiedadEmpleadoController extends Controller
             ->orWhere('alquiler.status_alquiler', '<=', $estado)
             ->select('propiedad.direccion','propiedad.ciudad','propiedad.zona','propiedad.dueno','propiedad.descripcion','propiedad.costo','alquiler.status_alquiler')
             ->get();
-
-
         return view('empleados.propiedad.busqueda', compact( 'propiedades'));
     }
-
 }
 

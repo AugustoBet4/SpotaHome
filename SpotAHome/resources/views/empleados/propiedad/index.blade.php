@@ -13,7 +13,9 @@
                                 <h1>Listado de propiedades</h1>
                             </div>
                             <div align="center">
-
+                                <!--
+                                <form method="get" action="{{ action('PropiedadEmpleadoController@busqueda') }}">
+                                -->
                                 <div class="col-md-2 col-md-offset-0" align="center">
                                     <input type="text" id="costo" name="costo" placeholder="costo" class="form-control input-sm">
                                 </div>
@@ -34,7 +36,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-md-offset-0">
-                                    <select  class="form-control" name="estadp" id="estado">
+                                    <select  class="form-control" name="estado" id="estado">
                                         <option>Seleccione estado</option>
                                         @foreach($estados as $estado)
                                             <option value="{{ $estado->id_propiedad }}"> {{ $estado->status_alquiler }}</option>
@@ -42,10 +44,15 @@
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-md-offset-0">
-                                    <a href="{{ action('PropiedadEmpleadoController@busqueda') }}" class="btn btn-info" >Buscar</a>
-                                </div>
-                                </div>
+                                   <!--
+                                    <button type="submit" class="btn btn-primary" >Buscar</button>
+-->
+                                    <a href="{{action('PropiedadEmpleadoController@busqueda') }}" class="btn btn-info" >Buscar</a>
 
+                                </div>
+                                    <!--
+                            </form>
+                            -->
                             </div>
                             <div class="pull-right">
                                 <div class="btn-group">
