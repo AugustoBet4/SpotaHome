@@ -49,7 +49,7 @@
                 <li><a href="#services" class="page-scroll">Como funciona</a></li>
                 <li><a href="#contact" class="page-scroll">Contacto</a></li>
                 <li><a href="#" class="page-scroll">Inicia Sesión</a></li>
-                <li><a href="{{route('inquilino.create')}}" class="page-scroll">Registrate</a></li>
+                <li><a href="{{action('RegistroInquilino@create')}}" class="page-scroll">Registrate</a></li>
                 <li><a href="{{route('duenos.create')}}" class="page-scroll">Registrate como Propietario</a></li>
             </ul>
         </div>

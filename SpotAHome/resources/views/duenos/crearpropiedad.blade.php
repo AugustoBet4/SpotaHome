@@ -39,11 +39,11 @@
                     </div>
                     <div class="form-group">
                         <label for="">Latitud</label>
-                        <input type="number" class="form-control" name="latitud" id="latitud" placeholder="">
+                        <input type="text" class="form-control" name="latitud" id="latitud" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="">Longitud</label>
-                        <input type="number" class="form-control" name="longitud" id="longitud" placeholder="">
+                        <input type="text" class="form-control" name="longitud" id="longitud" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="">Costo</label>

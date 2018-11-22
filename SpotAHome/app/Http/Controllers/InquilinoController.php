@@ -72,9 +72,11 @@ class InquilinoController extends Controller
                                 ->where('costo', '<=', $max)
 
                                 ->get();
+        $multimedia = DB::table('multimedia')
+                                ->orderBy('id_propiedad', 'asc')
+                                ->get();
 
-
-        return view('inquilino/propiedades', compact('user', 'propiedad'));
+        return view('inquilino/propiedades', compact('user', 'propiedad', 'multimedia'));
     }
 
     public function location($id)
@@ -136,11 +138,11 @@ class InquilinoController extends Controller
         $multimedia = DB::table('multimedia')
                                 ->where('id_propiedad', '=', $id)
                                 ->get();
-        echo $multimedia;
+        //echo $multimedia;
         $map = \Gmaps::create_map();
         return view('inquilino/prop_vista', compact('user', 'propiedad', 'map', 'multimedia'));
     }
-  
+
 
 
 }

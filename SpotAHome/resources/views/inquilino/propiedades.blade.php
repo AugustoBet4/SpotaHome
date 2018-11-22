@@ -75,7 +75,9 @@
                                   <tr>
                                     <th width="150">
                                       @foreach ($multimedia as $multi)
-                                        <img src="{{ $multi->uri }}" width='250'>
+                                        @if($multi->id_propiedad == $prop->id_propiedad)
+                                          <img src="{{ URL::to('/uploads/' . $multi->uri) }}" width='250'>
+                                        @endif
                                       @endforeach
                                     </th>
                                     <th rowspan="2" colspan="2" width="400">{{$prop->descripcion}}</th>
