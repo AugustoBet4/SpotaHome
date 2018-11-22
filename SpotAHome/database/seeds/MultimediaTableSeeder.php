@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Alquiler;
+use App\Multimedia;
 
-class AlquilerTableSeeder extends Seeder
+class MultimediaTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class AlquilerTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Alquiler::class, 1)->create();
+        factory(Multimedia::class, 1)->create();
     }
 }

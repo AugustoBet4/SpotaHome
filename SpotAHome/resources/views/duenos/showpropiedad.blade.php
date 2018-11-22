@@ -1,6 +1,6 @@
 @extends('layouts.app_duenos')
 
-@section('title', 'Inicio de Empleado')
+@section('title', 'Dueno')
 
 @section('content')
 
@@ -25,7 +25,11 @@
                                 <h>Latitud:</h>  {{$propiedad->latitud}}<br>
                                 <h>Longitud:</h>  {{$propiedad->longitud}}<br>
                                 <h>Costo:</h> {{$propiedad->costo}}<br>
+                                @if (empty($fechas->fecha_inicio))
+                                    <h1>No registraste fechas</h1>
+                                @else
                                 <h>Fechas Disponibles:</h> del {{$fechas->fecha_inicio}} al {{$fechas->fecha_fin}}<br>
+                                @endif
                             </p>
                                 @if (empty($multimedia->uri))
                                     <div class="panel-body">

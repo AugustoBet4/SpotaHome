@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Alquiler;
-
-class AlquilerTableSeeder extends Seeder
+use App\Fecha_Disponible;
+class FechasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +11,6 @@ class AlquilerTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Alquiler::class, 1)->create();
+        factory(Fecha_Disponible::class, 1)->create();
     }
 }

@@ -12,6 +12,6 @@ class InquilinoTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Inquilino::class, 10)->create();
+        factory(Inquilino::class, 1)->create();
     }
 }
