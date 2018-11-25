@@ -6,50 +6,74 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <div class="invoice-title">
-                <h2>Factura</h2><h3 class="pull-right">Orden # 12345</h3>
-            </div>
             <hr>
             <div class="row">
                 <div class="col-xs-6">
                     <address>
-                        <strong>Pagado por:</strong><br>
-                        paulinho<br>
-                        1234 Sur<br>
-                        4B<br>
-                        Bolivia
+                        <strong><h2>SpotAHome</h2></strong><br>
+                        Empresa X<br>
+                        CASA MATRIZ 25 de Mayo<br>
+                        2031, La Paz Bolivia<br>
                     </address>
                 </div>
                 <div class="col-xs-6 text-right">
-                    <address>
-                        <strong>Entregado a:</strong><br>
-                        paulinho<br>
-                        1234 Sur<br>
-                        4B<br>
-                        Bolivia
-                    </address>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <address>
-                        <strong>Metodo de Pago:</strong><br>
-                        Paypal<br>
-                        *****@email.com
-                    </address>
-                </div>
-                <div class="col-xs-6 text-right">
-                    <address>
-                        <strong>Fecha de la orden:</strong><br>
-                        {{ date('d-m-Y H:i:s') }}<br><br>
-                    </address>
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-right"><strong>NIT: </strong></td>
+                                            <td class="text-right">1002623025</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right"><strong>Nº FACTURA: </strong></td>
+                                            <td class="text-right">3033</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right"><strong>Nº AUTORIZACION: </strong></td>
+                                            <td class="text-right">59040011010</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="invoice-title">
+        <h1><center>Factura</center></h1>
+    </div>
+
     <div class="row">
         <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-condensed">
+                            <tbody>
+                            <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                            <tr>
+                                <td><strong>Fecha: </strong></td>
+                                <td class="text-center">{{ date('d-m-Y H:i:s') }}</td>
+                                <td><strong>NIT/CI: </strong></td>
+                                <td>1020457026</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Señor(es): </strong></td>
+                                <td>Wanda Pinto Ortiz</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"><strong>Resumen de la orden</strong></h3>
@@ -92,6 +116,59 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <tbody>
+                                    <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                    <tr>
+                                        <td><strong>Codigo de Control</strong></td>
+                                        <td class="text-center">33-CF-BD-EB-FC</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <tbody>
+                                    <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                    <tr>
+                                        <td><strong>Fecha limite de emision:</strong></td>
+                                        <td class="text-center">{{ date('d-m-Y H:i:s') }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <div class="col-md-12" style="width: 220px">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+            <strong>Esta factura contribuye al desarrollo del pais, el uso ilicito de esta sera sancionada de acuerdo a la ley.</strong>
+    <br><br>
     <button onClick="window.print()">Imprimir</button>
     <center><a href="{{ url('/factura/form') }}" class="btn btn-info" role="button">Regresar</a></center>
 </div>
