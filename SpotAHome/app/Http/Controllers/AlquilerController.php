@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Dueno;
 use App\Propiedad;
 use Illuminate\Http\Request;
 use App\Alquiler;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class AlquilerController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -77,10 +81,33 @@ class AlquilerController extends Controller
         return view('inquilino.edit',compact('propiedades'));
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request, $id)
     {
         $this->validate($request,['status_alquiler' => 'required']);
         Alquiler::find($id)->update($request->all());
+        $infos = DB::table('dueno')
+            ->join('propiedad', 'propiedad.id_dueno', '=', 'dueno.id_dueno')
+            ->join('alquiler', 'alquiler.id_propiedad', '=', 'propiedad.id_propiedad')
+            ->where('alquiler.id_alquiler' , '=', $request->id_alquiler)
+            ->where('propiedad.id_propiedad', '=', $request->id_propiedad)
+            ->select('dueno.nombre', 'dueno.apellidos', 'dueno.email', 'propiedad.direccion', 'alquiler.fecha_inicio', 'alquiler.fecha_fin')
+            ->get();
+        foreach ($infos as $info) {
+            $to_name = $info->nombre;
+            $to_mail = $info->email;
+        }
+
+        $data = array('infos' => $infos);
+        Mail::send('emails.mail', $data, function ($message) use ($to_name, $to_mail){
+            $message->to($to_mail, $to_name)
+                    ->subject('Anulacion de reserva');
+            $message->from('augusto.bet4@gmail.com', 'SpotaHome');
+        });
         return redirect()->route('reservas')->with('success','Reserva actualizada');
     }
 
