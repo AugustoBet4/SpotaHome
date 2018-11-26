@@ -10,7 +10,7 @@
  width: 680px;
 }
 </style>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2wWrl2vnRoSBrdBO4XRo6gyit7_19Kts&libraries=places">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv_Nsw2rI4L7szqzr37l_76Dy1GM2KBRI&libraries=places">
 </script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
 </script>
@@ -37,7 +37,7 @@ draggable: true
 
 
 
-google.maps.event.addListener(marker, 'dragend', function() {
+/*google.maps.event.addListener(marker, 'dragend', function() {
 
 geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
 if (status == google.maps.GeocoderStatus.OK) {
@@ -59,7 +59,8 @@ infowindow.setContent(results[0].formatted_address);
 infowindow.open(map, marker);
 }
 }
-});
+});*/
+
 var searchBox = new google.maps.places.SearchBox(document.getElementById('searchmap'));
 google.maps.event.addListener(searchBox,'places_changed', function(){
   var places = searchBox.getPlaces();
@@ -107,11 +108,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
                 <form action="/propiedades" method="POST" role="form" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <legend>Registrate Tu Vivienda</legend>
-
                     <div class="form-group">
+                        <div id="myMap"></div>
                         <label for="">Localiza tu vivienda en el Mapa</label>
                         <!--input type="text" id="searchmap" value="" class="form-control"-->
-                        <div id="myMap"></div>
                     </div>
 
 
