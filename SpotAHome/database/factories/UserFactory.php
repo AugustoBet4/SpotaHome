@@ -63,6 +63,7 @@ $factory->define(App\Propiedad::class, function (Faker $faker) {
         'descripcion'       => 'Hermosa Casita en Lugar Caliente con vista a las montañas',
         'costo'             => '400',
         'zona'              => 'Mallasilla',
+        'estadia_max'       => '3',
         //'direccion', 'ciudad', 'latitud', 'longitud', 'descripcion', 'costo',
     ];
 });
