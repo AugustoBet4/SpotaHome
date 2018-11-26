@@ -3,6 +3,91 @@
 @section('title', 'Editar Propiedad')
 
 @section('content')
+    <style>
+        #myMap {
+            height: 350px;
+            width: 580px;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv_Nsw2rI4L7szqzr37l_76Dy1GM2KBRI&libraries=places">
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        var map;
+        var marker;
+        var myLatlng = new google.maps.LatLng(-16.563247,-68.099965);
+        var geocoder = new google.maps.Geocoder();
+        var infowindow = new google.maps.InfoWindow();
+        function initialize(){
+            var mapOptions = {
+                zoom: 18,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById("myMap"), mapOptions);
+
+            marker = new google.maps.Marker({
+                map: map,
+                position: myLatlng,
+                draggable: true
+            });
+
+
+
+            /*google.maps.event.addListener(marker, 'dragend', function() {
+
+            geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+            $('#direccion').val(results[0].formatted_address);
+            infowindow.setContent(results[0].formatted_address);
+            infowindow.open(map, marker);
+            }
+            }
+            });
+            });
+
+            geocoder.geocode({'latLng': myLatlng }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+            $('#latitud,#longitud').show();
+            $('#direccion').val(results[0].formatted_address);
+            infowindow.setContent(results[0].formatted_address);
+            infowindow.open(map, marker);
+            }
+            }
+            });*/
+
+            var searchBox = new google.maps.places.SearchBox(document.getElementById('searchmap'));
+            google.maps.event.addListener(searchBox,'places_changed', function(){
+                var places = searchBox.getPlaces();
+                var bounds = new google.maps.LatLngBounds();
+                var i, place;
+                for(i=0; place=places[i];i++){
+                    bounds.extend(place.geometry.location);
+                    marker.setPosition(place.geometry.location);
+                }
+                map.fitBounds(bounds);
+                map.setZoom(15);
+            });
+
+            google.maps.event.addListener(marker, 'position_changed',function(){
+                var lat = marker.getPosition().lat();
+                var long = marker.getPosition().lng();
+                $('#latitud').val(lat);
+                $('#longitud').val(long);
+            });
+
+
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+
+
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <section class="content">
@@ -34,30 +119,36 @@
                                 <input name="_method" type="hidden" value="PATCH">
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="form-group" id="myMap">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+
                                         <div class="form-group">
                                             <label for="" class="col-form-label">Direccion</label>
                                             <input type="text" name="direccion" id="direccion" class="form-control input-sm" value="{{$propiedades->direccion}}">
                                         </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-6">
                                         <div class="form-group">
                                             <label for="" class="col-form-label">Ciudad</label>
                                             <input type="text" name="ciudad" id="ciudad" class="form-control input-sm" value="{{$propiedades->ciudad}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-form-label">Latitud</label>
+                                            <input type="text" name="latitud" id="latitud" class="form-control input-sm" value="{{$propiedades->latitud}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-form-label">Longitud</label>
+                                            <input type="text" name="longitud" id="longitud" class="form-control input-sm" value="{{$propiedades->longitud}}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-6 col-md-6">
-                                        <div class="form-group">
-                                            <label for="" class="col-form-label">Latitud</label>
-                                            <input type="text" name="latitud" id="latitud" class="form-control input-sm" value="{{$propiedades->latitud}}">
-                                        </div>
+
                                     </div>
                                     <div class="col-xs-6 col-sm-6 col-md-6">
-                                        <div class="form-group">
-                                            <label for="" class="col-form-label">Longitud</label>
-                                            <input type="text" name="longitud" id="longitud" class="form-control input-sm" value="{{$propiedades->longitud}}">
-                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="row">
