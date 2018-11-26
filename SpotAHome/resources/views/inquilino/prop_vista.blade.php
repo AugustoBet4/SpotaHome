@@ -24,6 +24,16 @@
     </div>
       <div class="centrar">
         <form method="POST" action="" role="form">
+        @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <strong>Las Fechas son invalidas</strong> <br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
           <div class="row">
             <br>
             <div class="col-md-6">
@@ -71,15 +81,7 @@
 
                   </div>
                   <div class="modal-body">
-                    @if (count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                    
 
                           <form method="POST" action="{{ action('AlquilerController@store') }}" role="form">
                               {{ csrf_field() }}
@@ -91,9 +93,19 @@
                                   <input type="hidden" name="status_alquiler" class="form-control input-sm" id="status_alquiler" value="Reservado">
                                   <label for="fecha_inicio">Fecha de Inicio: </label>
                                   <input type="date" name="fecha_inicio" class="form-control input-sm" id="fecha_inicio"  required>
+                                    @foreach ($errors->get('fecha_inicio') as $error)
+                                        <div class="alert alert-danger">
+                                            <li>{{ $error }}</li>
+                                        </div>    
+                                    @endforeach
                                   <div class="form-group">
                                       <label for="fecha_fin">Fecha Final: </label>
                                       <input type="date" name="fecha_fin" class="form-control input-sm" id="fecha_fin"  required>
+                                        @foreach ($errors->get('fecha_fin') as $error)
+                                            <div class="alert alert-danger">
+                                                <li>{{ $error }}</li>
+                                            </div>      
+                                        @endforeach
                                   </div>
 
                               </div>

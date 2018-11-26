@@ -9,6 +9,7 @@ use App\Alquiler;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\FechasRequest;
 
 class AlquilerController extends Controller
 {
@@ -40,13 +41,9 @@ class AlquilerController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(Request $request)
+    public function store(FechasRequest $request)
     {
-      /*$this->validate($request,['status_alquiler' => 'required',
-                                'fecha_inicio' => 'required|date|date_format:Y-m-d|after:yesterday',
-                                'fecha_fin' => 'required|date_format:Y-m-d|after:fecha_inicio']);
-
-      Alquiler::create($request->all());*/
+      
       $alquiler = new Alquiler;
       $alquiler ->status_alquiler = $request->input('status_alquiler');
       $alquiler ->fecha_inicio = $request->input('fecha_inicio');
@@ -54,7 +51,7 @@ class AlquilerController extends Controller
       $alquiler ->id_propiedad = $request->input('id_propiedad');
       $alquiler ->id_inquilino = $request->input('id_inquilino');
       $alquiler ->save();
-      return redirect()->route('busqueda')->with('success','Reserva registrada');
+      return redirect()->route('reservas')->with('success','Reserva registrada');
     }
 
 
