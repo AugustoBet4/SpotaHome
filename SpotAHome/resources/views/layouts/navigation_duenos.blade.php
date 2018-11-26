@@ -23,12 +23,12 @@
                 <a href="{{ url('/duenos') }}"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
             </li>
 
-            <li>
+            <!--li>
                 <a href="{{ url('/duenos') }}"><i class="fa fa-history"></i> <span class="nav-label">Actualiza tus datos</span> </a>
-            </li>
+            </li-->
 
             <li>
-                <a href="{{ url('/duenos/propiedad') }}"><i class="fa fa-ban"></i> <span class="nav-label">Registra una Vivienda</span> </a>
+                <a href="{{ url('/duenos/propiedad') }}"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Administra Viviendas</span> </a>
             </li>
 
             <li>
