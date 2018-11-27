@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests\PropiedadRequest;
 use Illuminate\Support\Facades\Input;
 use PhpParser\Node\Expr\AssignOp\Mul;
+use JsValidator;
 
 
 class PropiedadDuenoController extends Controller
