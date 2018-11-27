@@ -79,6 +79,10 @@
       <path value="$PROJECT_DIR$/SpotAHome/vendor/genealabs/phpgmaps" />
       <path value="$PROJECT_DIR$/SpotAHome/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/SpotAHome/vendor/genealabs/laravel-maps" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/farhanwazir/laravelgooglemaps" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/simplesoftwareio/simple-qrcode" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

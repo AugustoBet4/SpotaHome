@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdcd1f81-b499-4c52-a7d3-71fa2819bfee" name="Default" comment="Mapa en editar vivienda">
-      <change beforePath="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/PropiedadDuenoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/PropiedadDuenoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/create.blade.php" afterDir="false" />
+    <list default="true" id="bdcd1f81-b499-4c52-a7d3-71fa2819bfee" name="Default" comment="mini cambio a modelo de propiedad, migracion y seed&#10;agregando campo de estadia maxima">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpotAHome/app/Alquiler.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/app/Alquiler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/AlquilerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/AlquilerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpotAHome/resources/views/inquilino/prop_vista.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/resources/views/inquilino/prop_vista.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/SpotAHome/vendor/beyondcode/laravel-dump-server/" />
     <ignored path="$PROJECT_DIR$/SpotAHome/vendor/composer/" />
@@ -134,54 +135,94 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="8" />
-          <entry key="php" value="1456" />
-          <entry key="txt" value="70" />
+          <entry key="php" value="2088" />
+          <entry key="txt" value="156" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="8" />
-          <entry key="Blade" value="404" />
-          <entry key="PHP" value="1052" />
-          <entry key="PLAIN_TEXT" value="70" />
+          <entry key="Blade" value="561" />
+          <entry key="PHP" value="1527" />
+          <entry key="PLAIN_TEXT" value="156" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="15" />
+          <entry key="php" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="3" />
-          <entry key="PHP" value="12" />
+          <entry key="Blade" value="5" />
+          <entry key="PHP" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.16" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.43" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="SpotaHome" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/inquilino/busqueda.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Controllers/AlquilerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="113" column="74" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
+            <state relative-caret-position="149">
+              <caret line="51" column="101" selection-start-line="51" selection-start-column="101" selection-end-line="51" selection-end-column="101" />
+              <folding>
+                <element signature="e#40#54#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/create.blade.php">
+        <entry file="file://$PROJECT_DIR$/SpotAHome/app/Propiedad.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="49" column="91" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="91" />
+            <state relative-caret-position="272">
+              <caret line="18" column="110" selection-start-line="18" selection-start-column="99" selection-end-line="18" selection-end-column="110" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Controllers/ConsultaController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Requests/FechasRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="28" column="74" selection-start-line="26" selection-start-column="12" selection-end-line="28" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/inquilino/prop_vista.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="101" column="26" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -202,11 +243,13 @@
         <option value="$PROJECT_DIR$/SpotAHome/resources/views/duenos/propiedad.blade.php" />
         <option value="$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php" />
         <option value="$PROJECT_DIR$/SpotAHome/.env" />
-        <option value="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/AlquilerController.php" />
         <option value="$PROJECT_DIR$/SpotAHome/resources/views/emails/mail.blade.php" />
         <option value="$PROJECT_DIR$/SpotAHome/app/Propiedad.php" />
         <option value="$PROJECT_DIR$/SpotAHome/database/migrations/2018_10_22_204556_crear_tabla_propiedades.php" />
         <option value="$PROJECT_DIR$/SpotAHome/database/factories/UserFactory.php" />
+        <option value="$PROJECT_DIR$/SpotAHome/app/Alquiler.php" />
+        <option value="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/AlquilerController.php" />
+        <option value="$PROJECT_DIR$/SpotAHome/resources/views/inquilino/prop_vista.blade.php" />
       </list>
     </option>
   </component>
@@ -311,19 +354,23 @@
       <path value="$PROJECT_DIR$/SpotAHome/vendor/genealabs/phpgmaps" />
       <path value="$PROJECT_DIR$/SpotAHome/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/SpotAHome/vendor/genealabs/laravel-maps" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/farhanwazir/laravelgooglemaps" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/simplesoftwareio/simple-qrcode" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -340,18 +387,6 @@
               <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
               <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
-              <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
-              <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -367,30 +402,12 @@
               <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="duenos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
-              <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
-              <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="jsvalidation" type="462c0819:PsiDirectoryNode" />
+              <item name="inquilino" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -413,18 +430,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/SpotaHome.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/php.xml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/AlquilerController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/FacturaController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Propiedad.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/composer.json</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/composer.lock</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/config/app.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/database/factories/UserFactory.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/database/migrations/2018_10_22_204556_crear_tabla_propiedades.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/factura/create.blade.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/inquilino/prop_vista.blade.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/empleados/propiedad/index.blade.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/welcome.blade.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -432,11 +443,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/codigo_control/AllegedRC4.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/codigo_control/CodigoControlV7.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/codigo_control/Verhoeff.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Requests/FechasRequest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/emails/mail.blade.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -553,7 +559,9 @@
       <workItem from="1543186767701" duration="6148000" />
       <workItem from="1543199363272" duration="644000" />
       <workItem from="1543201411586" duration="3916000" />
-      <workItem from="1543205620377" duration="317000" />
+      <workItem from="1543205620377" duration="657000" />
+      <workItem from="1543331254494" duration="231000" />
+      <workItem from="1543331515684" duration="2819000" />
     </task>
     <task id="LOCAL-00001" summary="Correcciones Dueno Empleado">
       <created>1542891919596</created>
@@ -576,19 +584,26 @@
       <option name="project" value="LOCAL" />
       <updated>1543205122594</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="mini cambio a modelo de propiedad, migracion y seed&#10;agregando campo de estadia maxima">
+      <created>1543206119115</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1543206119115</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13208000" />
+    <option name="totallyTimeSpent" value="16594000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22550336" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4983871" visible="true" weight="0.20726173" />
       <window_info id="Structure" order="1" weight="0.24962178" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5016129" side_tool="true" weight="0.204236" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -599,7 +614,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32947975" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32803467" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32903227" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32947975" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -607,28 +622,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22550336" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32947975" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32803467" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32947975" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -640,7 +633,8 @@
     <MESSAGE value="Correcciones Dueno Empleado" />
     <MESSAGE value="Mapa en crear propiedad con latitud y longitud" />
     <MESSAGE value="Al anular una reserva se envia correo al dueno" />
-    <option name="LAST_COMMIT_MESSAGE" value="Al anular una reserva se envia correo al dueno" />
+    <MESSAGE value="mini cambio a modelo de propiedad, migracion y seed&#10;agregando campo de estadia maxima" />
+    <option name="LAST_COMMIT_MESSAGE" value="mini cambio a modelo de propiedad, migracion y seed&#10;agregando campo de estadia maxima" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/empleados/propiedad/index.blade.php">
@@ -691,8 +685,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="113" column="74" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
+        <state relative-caret-position="238">
+          <caret line="113" column="92" selection-start-line="113" selection-start-column="92" selection-end-line="113" selection-end-column="92" />
         </state>
       </provider>
     </entry>
@@ -740,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Controllers/AlquilerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="102" column="9" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpotAHome/database/migrations/2018_10_22_215255_crear_tabla_empleado.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -756,10 +743,10 @@
     <entry file="file://$PROJECT_DIR$/SpotAHome/database/migrations/2018_10_22_202545_crear_tabla_condiciones.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpotAHome/app/Propiedad.php">
+    <entry file="file://$PROJECT_DIR$/SpotAHome/database/factories/UserFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="106" selection-start-line="18" selection-start-column="106" selection-end-line="18" selection-end-column="106" />
+        <state relative-caret-position="442">
+          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -770,10 +757,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpotAHome/database/factories/UserFactory.php">
+    <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/inquilino/busqueda.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Requests/FechasRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+        <state relative-caret-position="402">
+          <caret line="28" column="74" selection-start-line="26" selection-start-column="12" selection-end-line="28" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Controllers/ConsultaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/app/Alquiler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/app/Propiedad.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="110" selection-start-line="18" selection-start-column="99" selection-end-line="18" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Controllers/AlquilerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="51" column="101" selection-start-line="51" selection-start-column="101" selection-end-line="51" selection-end-column="101" />
+          <folding>
+            <element signature="e#40#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/inquilino/prop_vista.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="101" column="26" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
         </state>
       </provider>
     </entry>

@@ -41,16 +41,16 @@ class AlquilerController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(FechasRequest $request)
+    public function store(Request $request)
     {
-      
-      $alquiler = new Alquiler;
-      $alquiler ->status_alquiler = $request->input('status_alquiler');
-      $alquiler ->fecha_inicio = $request->input('fecha_inicio');
-      $alquiler ->fecha_fin = $request->input('fecha_fin');
-      $alquiler ->id_propiedad = $request->input('id_propiedad');
-      $alquiler ->id_inquilino = $request->input('id_inquilino');
-      $alquiler ->save();
+        $propiedad = Propiedad::find($request->id_propiedad);
+        $estadia = $propiedad->estadia_max;
+
+
+        $this->validate($request,['status_alquiler' => 'required',
+            'fecha_inicio' => 'required|date|date_format:Y-m-d|after:yesterday',
+            'fecha_fin' => 'required|date_format:Y-m-d|after:fecha_inicio|before:'.$estadia.' months']);
+        Alquiler::create($request->all());
       return redirect()->route('reservas')->with('success','Reserva registrada');
     }
 
