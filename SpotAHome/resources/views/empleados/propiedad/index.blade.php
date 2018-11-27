@@ -47,7 +47,7 @@
                                 <div class="col-md-2 col-md-offset-0">
                                    <!--
                                     <button type="submit" class="btn btn-primary" >Buscar</button>
-                                    <a href="{{action('PropiedadEmpleadoController@busqueda') }}" class="btn btn-info" >Buscar</a>
+                                    <a href="{{action('Propiedad4EmpleadoController@busqueda') }}" class="btn btn-info" >Buscar</a>
 
                                 </div>
                                     <!--

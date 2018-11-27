@@ -45,12 +45,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about" class="page-scroll">Acerca</a></li>
-                <li><a href="#services" class="page-scroll">Como funciona</a></li>
-                <li><a href="#contact" class="page-scroll">Contacto</a></li>
-                <li><a href="#" class="page-scroll">Inicia Sesión</a></li>
-                <li><a href="{{action('RegistroInquilino@create')}}" class="page-scroll">Registrate</a></li>
-                <li><a href="{{route('duenos.create')}}" class="page-scroll">Registrate como Propietario</a></li>
+                <li><a href="{{action('RegistroInquilino@create')}}" class="page-scroll">Registrate como Inquilino</a></li>
+                <li><a href="{{route('duenos.create')}}" class="page-scroll">Registrate como Dueño</a></li>
+                <li><a href="{{url('/inquilino/login')}}" class="page-scroll">Inicia Sesion Inquilino</a></li>
+                <li><a href="{{url('/duenos/login')}}" class="page-scroll">Inicia Sesion Dueño</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
