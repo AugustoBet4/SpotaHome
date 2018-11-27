@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\inquilino;
 use Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\InquilinoRequest;
 
 class RegistroInquilino extends Controller
 {
@@ -36,7 +37,7 @@ class RegistroInquilino extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InquilinoRequest $request)
     {
       $inquilino = new Inquilino;
       $inquilino->nombre = $request->input('nombre');
@@ -48,7 +49,7 @@ class RegistroInquilino extends Controller
       $inquilino->nacionalidad = $request->input('nacionalidad');
       $inquilino->usuario = $request->input('usuario');
       $inquilino->contraseña = Hash::make($request->input('contrasena'));
-      $inquilino->save();
+      $inquilino->save(); 
       return redirect()->route('welcome')->with('info', 'Inquilino Registrado');
     }
 
