@@ -19,7 +19,7 @@
                 </div>
             </li>
             <li >
-                <a href="{{ url('/duenos') }}"><i class="fa fa-home"></i> <span class="nav-label">Tienes Cuenta? Inicia Sesion</span></a>
+                <a href="{{url('/duenos/login')}}"><i class="fa fa-home"></i> <span class="nav-label">Tienes Cuenta? Inicia Sesion</span></a>
             </li>
             <li >
                 <a href="/"><i class="fa fa-history"></i> <span class="nav-label">Volver</span> </a>
