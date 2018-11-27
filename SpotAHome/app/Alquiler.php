@@ -15,7 +15,7 @@ class Alquiler extends Model
      * @var array
      */
     protected $fillable = [
-        'status_alquiler', 'fecha_inicio', 'fecha_fin',
+        'status_alquiler', 'fecha_inicio', 'fecha_fin', 'id_propiedad', 'id_inquilino'
     ];
 
     protected $table = "alquiler";
