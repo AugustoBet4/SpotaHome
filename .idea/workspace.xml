@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdcd1f81-b499-4c52-a7d3-71fa2819bfee" name="Default" comment="Al anular una reserva se envia correo al dueno">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpotAHome/app/Propiedad.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/app/Propiedad.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpotAHome/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpotAHome/database/migrations/2018_10_22_204556_crear_tabla_propiedades.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/database/migrations/2018_10_22_204556_crear_tabla_propiedades.php" afterDir="false" />
+    <list default="true" id="bdcd1f81-b499-4c52-a7d3-71fa2819bfee" name="Default" comment="Mapa en editar vivienda">
+      <change beforePath="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/PropiedadDuenoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/PropiedadDuenoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/create.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/SpotAHome/vendor/beyondcode/laravel-dump-server/" />
     <ignored path="$PROJECT_DIR$/SpotAHome/vendor/composer/" />
@@ -168,30 +167,21 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpotAHome/database/migrations/2018_10_22_204556_crear_tabla_propiedades.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SpotAHome/database/factories/UserFactory.php">
+        <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+            <state relative-caret-position="123">
+              <caret line="113" column="74" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpotAHome/app/Propiedad.php">
+        <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="106" selection-start-line="18" selection-start-column="106" selection-end-line="18" selection-end-column="106" />
+            <state relative-caret-position="219">
+              <caret line="49" column="91" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -334,7 +324,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -351,19 +340,57 @@
               <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
               <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
               <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="factories" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
+              <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
+              <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
+              <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="duenos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
+              <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
+              <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="jsvalidation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -371,6 +398,132 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/AlquilerController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/FacturaController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Propiedad.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/composer.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/composer.lock</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/config/app.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/database/factories/UserFactory.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/database/migrations/2018_10_22_204556_crear_tabla_propiedades.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/factura/create.blade.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/inquilino/prop_vista.blade.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/codigo_control/AllegedRC4.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/codigo_control/CodigoControlV7.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/codigo_control/Verhoeff.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Requests/FechasRequest.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/emails/mail.blade.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -427,13 +580,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13204000" />
+    <option name="totallyTimeSpent" value="13208000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20121029" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22550336" />
       <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -454,6 +607,28 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22550336" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32947975" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32803467" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32947975" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -516,8 +691,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="113" column="92" selection-start-line="113" selection-start-column="92" selection-end-line="113" selection-end-column="92" />
+        <state relative-caret-position="123">
+          <caret line="113" column="74" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -569,9 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="102" column="9" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#54#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

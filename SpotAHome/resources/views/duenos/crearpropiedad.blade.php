@@ -105,7 +105,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                        SpotaHome Bolivia
                     </h1>
                 </div>
-                <form action="/propiedades" method="POST" role="form" enctype="multipart/form-data">
+                <form action="/propiedades" method="POST" role="form" enctype="multipart/form-data" id="prop-form">
                     {{ csrf_field() }}
                     <legend>Registrate Tu Vivienda</legend>
                     <div class="form-group">
@@ -117,48 +117,67 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
                     <div class="form-group">
                         <label for="">Direccion</label>
-                        <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dir. Vivienda / Av. Ejemplo Esq. Ejmplo">
+                        <input required type="text" class="form-control" name="direccion" id="direccion" placeholder="Dir. Vivienda / Av. Ejemplo Esq. Ejmplo">
                     </div>
                     <div class="form-group">
-                        <label for="">Ciudad</label>
-                        <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder="Ciudad de la Vivienda">
+                        <label for="">Departamento</label>
+                        <select class="select2_demo form-control" id="ciudad" name="ciudad">
+                            <option value="La Paz">La Paz</option>
+                            <option value="Santa Cruz">Santa Cruz</option>
+                            <option value="Cochabamba">Cochabamba</option>
+                            <option value="Tarija">Tarija</option>
+                            <option value="Potosi">Potosi</option>
+                            <option value="Oruro">Oruro</option>
+                            <option value="Sucre">Sucre</option>
+                            <option value="Beni">Beni</option>
+                            <option value="Pando">Pando</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="">Zona</label>
-                        <input type="text" class="form-control" name="zona" id="zona" placeholder="Zona de la Vivienda">
+                        <input required type="text" class="form-control" name="zona" id="zona" placeholder="Zona de la Vivienda">
                     </div>
                     <div class="form-group">
                         <label for="">Latitud</label>
-                        <input type="text" class="form-control" name="latitud" id="latitud" placeholder="">
+                        <input required type="text" class="form-control" name="latitud" id="latitud" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="">Longitud</label>
-                        <input type="text" class="form-control" name="longitud" id="longitud" placeholder="">
+                        <input required type="text" class="form-control" name="longitud" id="longitud" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="">Costo</label>
-                        <input type="number" class="form-control" name="costo" id="costo" placeholder="Precio">
+                        <input required type="number" class="form-control" name="costo" id="costo" placeholder="Precio">
                     </div>
                     <div class="form-group">
                         <label for="">Fecha Inicio Disponible</label>
-                        <input type="date" class="form-control" name="fecha_inicio" id="fecha_inicio">
+                        <input required min="2018-11-27" type="date" class="form-control" name="fecha_inicio" id="fecha_inicio">
                     </div>
                     <div class="form-group">
                         <label for="">Fecha Fin Disponible</label>
-                        <input type="date" class="form-control" name="fecha_fin" id="fecha_fin">
+                        <input required min="2019-02-27" type="date" class="form-control" name="fecha_fin" id="fecha_fin">
                     </div>
                     <div class="form-group">
-                        <label for="">Fecha de Nacimiento</label>
-                        <textarea type="date" class="form-control" name="descripcion" id="descripcion" >Descripcion</textarea>
-                        <input type="number" class="hidden" name="id_dueno" id="id_dueno" value="{{$user->id_dueno}}">
+                        <label for="">Descripci&oacute;n</label>
+                        <textarea type="date" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion"></textarea>
+                        <input required type="number" class="hidden" name="id_dueno" id="id_dueno" value="{{$user->id_dueno}}">
                     </div>
                     <div class="form-group">
                         <label for="">Agrega Imagenes</label>
-                        <input accept="image/*" type="file" class="-file-photo-o" name="imagen" id="imagen">
+                        <input required accept="image/*" type="file" class="-file-photo-o" name="imagen" id="imagen">
                     </div>
                     <button type="submit"  class="btn btn-primary">Crear</button>
                 </form>
             </div>
         </div>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+        {!! JsValidator::formRequest('App\Http\Requests\PropiedadRequest','#prop-form'); !!}
+
+
+
     </div>
 @endsection
