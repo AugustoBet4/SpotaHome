@@ -26,6 +26,9 @@
                     <li><a href="{{ url('/inquilino/historial') }}">Reservas Historicas</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="{{ url('/factura/form') }}"><i class="fa fa-money"></i> <span class="nav-label">Comprar</span></a>
+            </li>
             <li >
                 <a href="{{ url('/inquilino/consultas') }}"><i class="fa fa-sticky-note"></i> <span class="nav-label">Consultas</span></a>
             </li>

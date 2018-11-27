@@ -4,28 +4,37 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Propiedad;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\codigo_control\CodigoControlV7;
 
 class FacturaController extends Controller
 {
     //
+
+    public function __construct()
+    {
+        $this->middleware('auth:inquilino');
+    }
+
     public function factura()
     {
         //
 
+        $user = Auth::user();
         $num = Propiedad::count();
         $prop = Propiedad::all();
-        return view('factura.add', ['num'=>$num, 'prop'=>$prop]);
+        return view('factura.add', ['num'=>$num, 'prop'=>$prop, 'user'=>$user]);
     }
 
     public function fin($id)
     {
         //
+        $user = Auth::user();
         $item = Propiedad::find($id);
         $num = Propiedad::count();
         $prop = Propiedad::all();
         $cod = $this->codigo_control();
-        return view('factura.create', ['num'=>$num, 'item'=>$item, 'cod'=>$cod]);
+        return view('factura.create', ['num'=>$num, 'item'=>$item, 'cod'=>$cod, 'user'=>$user]);
     }
 
     public function codigo_control(){

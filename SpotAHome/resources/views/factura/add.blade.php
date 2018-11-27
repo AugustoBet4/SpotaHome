@@ -1,6 +1,6 @@
-@extends('layouts.app_empleado')
+@extends('layouts.app_inquilino')
 
-@section('title', 'Inicio de Empleado')
+@section('title', 'Compra de lugar')
 
 @section('content')
     <div class="wrapper wrapper-content animated fadeInRight">

@@ -66,7 +66,7 @@
                             </tr>
                             <tr>
                                 <td><strong>Señor(es): </strong></td>
-                                <td>Wanda Pinto Ortiz</td>
+                                <td>{{ $user->nombre.' '.$user->apellidos }}</td>
                             </tr>
                             </tbody>
                         </table>
