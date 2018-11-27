@@ -117,10 +117,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
                     <div class="form-group">
                         <label for="">Direccion</label>
-                        <input required type="text" class="form-control" name="direccion" id="direccion" placeholder="Dir. Vivienda / Av. Ejemplo Esq. Ejmplo">
+                        <input required value="{{old('direccion')}}" type="text" class="form-control" name="direccion" id="direccion" placeholder="Dir. Vivienda / Av. Ejemplo Esq. Ejmplo">
                     </div>
                     <div class="form-group">
-                        <label for="">Departamento</label>
+                        <label for="">Ciudad</label>
                         <select class="select2_demo form-control" id="ciudad" name="ciudad">
                             <option value="La Paz">La Paz</option>
                             <option value="Santa Cruz">Santa Cruz</option>
@@ -135,36 +135,40 @@ google.maps.event.addDomListener(window, 'load', initialize);
                     </div>
                     <div class="form-group">
                         <label for="">Zona</label>
-                        <input required type="text" class="form-control" name="zona" id="zona" placeholder="Zona de la Vivienda">
+                        <input required type="text" value="{{old('zona')}}" class="form-control" name="zona" id="zona" placeholder="Zona de la Vivienda">
                     </div>
                     <div class="form-group">
                         <label for="">Latitud</label>
-                        <input required type="text" class="form-control" name="latitud" id="latitud" placeholder="">
+                        <input readonly required value="{{old('latitud')}}"  type="text" class="form-control" name="latitud" id="latitud" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="">Longitud</label>
-                        <input required type="text" class="form-control" name="longitud" id="longitud" placeholder="">
+                        <input readonly required value="{{old('longitud')}}"  type="text" class="form-control" name="longitud" id="longitud" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="">Costo</label>
-                        <input required type="number" class="form-control" name="costo" id="costo" placeholder="Precio">
+                        <input required value="{{old('costo')}}" type="number" class="form-control" name="costo" id="costo" placeholder="Precio">
                     </div>
                     <div class="form-group">
                         <label for="">Fecha Inicio Disponible</label>
-                        <input required min="2018-11-27" type="date" class="form-control" name="fecha_inicio" id="fecha_inicio">
+                        <input required value="{{old('fecha_inicio')}}" type="date" class="form-control" name="fecha_inicio" id="fecha_inicio">
                     </div>
                     <div class="form-group">
                         <label for="">Fecha Fin Disponible</label>
-                        <input required min="2019-02-27" type="date" class="form-control" name="fecha_fin" id="fecha_fin">
+                        <input required value="{{old('fecha_fin')}}"  type="date" class="form-control" name="fecha_fin" id="fecha_fin">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Estadia Maxima en Meses</label>
+                        <input value="1" required value="{{old('estadia_max')}}" min="1" type="number" class="form-control" name="estadia_max" id="estadia_max">
                     </div>
                     <div class="form-group">
                         <label for="">Descripci&oacute;n</label>
-                        <textarea type="date" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion"></textarea>
-                        <input required type="number" class="hidden" name="id_dueno" id="id_dueno" value="{{$user->id_dueno}}">
+                        <textarea value="{{old('descripcion')}}" type="date" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion"></textarea>
+                        <input type="number" class="hidden" name="id_dueno" id="id_dueno" value="{{$user->id_dueno}}">
                     </div>
                     <div class="form-group">
                         <label for="">Agrega Imagenes</label>
-                        <input required accept="image/*" type="file" class="-file-photo-o" name="imagen" id="imagen">
+                        <input accept="image/*" type="file" class="-file-photo-o" name="imagen" id="imagen">
                     </div>
                     <button type="submit"  class="btn btn-primary">Crear</button>
                 </form>

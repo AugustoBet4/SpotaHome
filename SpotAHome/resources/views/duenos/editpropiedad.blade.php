@@ -131,15 +131,30 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="col-form-label">Ciudad</label>
-                                            <input type="text" name="ciudad" id="ciudad" class="form-control input-sm" value="{{$propiedades->ciudad}}">
+                                            <select class="select2_demo form-control" id="ciudad" name="ciudad">
+                                                <option value="La Paz">La Paz</option>
+                                                <option value="Santa Cruz">Santa Cruz</option>
+                                                <option value="Cochabamba">Cochabamba</option>
+                                                <option value="Tarija">Tarija</option>
+                                                <option value="Potosi">Potosi</option>
+                                                <option value="Oruro">Oruro</option>
+                                                <option value="Sucre">Sucre</option>
+                                                <option value="Beni">Beni</option>
+                                                <option value="{{$propiedades->ciudad}}" hidden selected>{{$propiedades->ciudad}}</option>
+                                                <option value="Pando">Pando</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="col-form-label">Latitud</label>
-                                            <input type="text" name="latitud" id="latitud" class="form-control input-sm" value="{{$propiedades->latitud}}">
+                                            <input readonly type="text" name="latitud" id="latitud" class="form-control input-sm" value="{{$propiedades->latitud}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="col-form-label">Longitud</label>
-                                            <input type="text" name="longitud" id="longitud" class="form-control input-sm" value="{{$propiedades->longitud}}">
+                                            <input readonly type="text" name="longitud" id="longitud" class="form-control input-sm" value="{{$propiedades->longitud}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-form-label">Estadia Maxima en Meses</label>
+                                            <input type="number" name="estadia_max" id="estadia_max" class="form-control input-sm" value="{{$propiedades->estadia_max}}">
                                         </div>
                                     </div>
                                 </div>

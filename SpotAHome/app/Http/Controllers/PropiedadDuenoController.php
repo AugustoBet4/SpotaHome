@@ -73,6 +73,7 @@ class PropiedadDuenoController extends Controller
         $propiedad ->descripcion = $request->input('descripcion');
         $propiedad ->zona = $request->input('zona');
         $propiedad ->costo = $request->input('costo');
+        $propiedad->estadia_max= $request->input('estadia_max');
         $propiedad ->save();
         $fechas->fecha_inicio = $request->input('fecha_inicio');
         $fechas->fecha_fin = $request->input('fecha_fin');
