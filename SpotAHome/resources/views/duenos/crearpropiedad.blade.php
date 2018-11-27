@@ -17,7 +17,7 @@
 <script type="text/javascript">
 var map;
 var marker;
-var myLatlng = new google.maps.LatLng(-16.563247,-68.099965);
+var myLatlng = new google.maps.LatLng(-16.530190, -68.100796);
 var geocoder = new google.maps.Geocoder();
 var infowindow = new google.maps.InfoWindow();
 function initialize(){

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdcd1f81-b499-4c52-a7d3-71fa2819bfee" name="Default" comment="Validaciones y correcciones gnral.">
+    <list default="true" id="bdcd1f81-b499-4c52-a7d3-71fa2819bfee" name="Default" comment="Validacion Propiedad y adicion de estadia maxima">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/PropiedadDuenoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/PropiedadDuenoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpotAHome/app/Http/Requests/PropiedadRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/app/Http/Requests/PropiedadRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/editpropiedad.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/SpotAHome/resources/views/duenos/editpropiedad.blade.php" afterDir="false" />
     </list>
@@ -108,13 +106,13 @@
         <counts>
           <entry key="env" value="4" />
           <entry key="js" value="4" />
-          <entry key="php" value="16" />
+          <entry key="php" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="4" />
-          <entry key="Blade" value="13" />
+          <entry key="Blade" value="20" />
           <entry key="JavaScript" value="4" />
           <entry key="PHP" value="3" />
         </counts>
@@ -122,16 +120,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="2" />
-          <entry key="php" value="1107" />
-          <entry key="txt" value="119" />
+          <entry key="php" value="1536" />
+          <entry key="txt" value="184" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="2" />
-          <entry key="Blade" value="1017" />
+          <entry key="Blade" value="1446" />
           <entry key="PHP" value="90" />
-          <entry key="PLAIN_TEXT" value="119" />
+          <entry key="PLAIN_TEXT" value="184" />
         </counts>
       </usages-collector>
     </session>
@@ -173,47 +171,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="49" column="91" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/editpropiedad.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="142" column="95" selection-start-line="142" selection-start-column="95" selection-end-line="142" selection-end-column="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="133" column="33" lean-forward="true" selection-start-line="123" selection-start-column="24" selection-end-line="133" selection-end-column="33" />
+            <state relative-caret-position="323">
+              <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Requests/PropiedadRequest.php">
+        <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/editpropiedad.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Controllers/PropiedadDuenoController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="75" column="64" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
+            <state relative-caret-position="-187">
+              <caret line="160" column="10" lean-forward="true" selection-start-line="160" selection-start-column="10" selection-end-line="160" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -237,10 +208,12 @@
         <option value="$PROJECT_DIR$/SpotAHome/database/migrations/2018_10_22_204556_crear_tabla_propiedades.php" />
         <option value="$PROJECT_DIR$/SpotAHome/database/factories/UserFactory.php" />
         <option value="$PROJECT_DIR$/SpotAHome/.env" />
-        <option value="$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php" />
         <option value="$PROJECT_DIR$/SpotAHome/app/Http/Requests/PropiedadRequest.php" />
         <option value="$PROJECT_DIR$/SpotAHome/app/Http/Controllers/PropiedadDuenoController.php" />
+        <option value="$PROJECT_DIR$/SpotAHome/resources/views/duenos/create.blade.php" />
+        <option value="$PROJECT_DIR$/SpotAHome/resources/views/layouts/navigation_duenosregistro.blade.php" />
         <option value="$PROJECT_DIR$/SpotAHome/resources/views/duenos/editpropiedad.blade.php" />
+        <option value="$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php" />
       </list>
     </option>
   </component>
@@ -346,6 +319,10 @@
       <path value="$PROJECT_DIR$/SpotAHome/vendor/genealabs/phpgmaps" />
       <path value="$PROJECT_DIR$/SpotAHome/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/SpotAHome/vendor/genealabs/laravel-maps" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/farhanwazir/laravelgooglemaps" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/SpotAHome/vendor/simplesoftwareio/simple-qrcode" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -425,6 +402,14 @@
               <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpotaHome" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpotaHome" type="462c0819:PsiDirectoryNode" />
+              <item name="SpotAHome" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -462,10 +447,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/FacturaController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/factura/add.blade.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/factura/create.blade.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/layouts/navigation_inquilino.blade.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Controllers/RegistroInquilino.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/resources/views/inquilino/create.blade.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -473,6 +456,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotAHome/app/Http/Requests/InquilinoRequest.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -590,7 +574,7 @@
       <workItem from="1543199363272" duration="644000" />
       <workItem from="1543201411586" duration="3916000" />
       <workItem from="1543205620377" duration="317000" />
-      <workItem from="1543332074382" duration="2992000" />
+      <workItem from="1543332074382" duration="5858000" />
     </task>
     <task id="LOCAL-00001" summary="Correcciones Dueno Empleado">
       <created>1542891919596</created>
@@ -620,11 +604,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543294406960</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Validacion Propiedad y adicion de estadia maxima">
+      <created>1543335289543</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1543335289544</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Validacion Duenos Corregida">
+      <created>1543335873467</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1543335873467</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16588000" />
+    <option name="totallyTimeSpent" value="19454000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -637,7 +635,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22885907" />
       <window_info id="Structure" order="1" weight="0.24962178" />
@@ -654,7 +651,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32803467" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32947975" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32803467" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -694,7 +691,9 @@
     <MESSAGE value="Mapa en crear propiedad con latitud y longitud" />
     <MESSAGE value="Al anular una reserva se envia correo al dueno" />
     <MESSAGE value="Validaciones y correcciones gnral." />
-    <option name="LAST_COMMIT_MESSAGE" value="Validaciones y correcciones gnral." />
+    <MESSAGE value="Validacion Propiedad y adicion de estadia maxima" />
+    <MESSAGE value="Validacion Duenos Corregida" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validacion Duenos Corregida" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/empleados/propiedad/index.blade.php">
@@ -819,13 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Controllers/PropiedadDuenoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="75" column="64" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Requests/PropiedadRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -833,24 +825,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/SpotAHome/app/Http/Controllers/PropiedadDuenoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="49" column="91" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="91" />
+        <state relative-caret-position="357">
+          <caret line="75" column="64" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php">
+    <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="133" column="33" lean-forward="true" selection-start-line="123" selection-start-column="24" selection-end-line="133" selection-end-column="33" />
+        <state relative-caret-position="442">
+          <caret line="50" column="23" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/layouts/app_duenosregistro.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/layouts/navigation_duenosregistro.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="68" column="112" selection-start-line="68" selection-start-column="112" selection-end-line="68" selection-end-column="112" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/editpropiedad.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="142" column="95" selection-start-line="142" selection-start-column="95" selection-end-line="142" selection-end-column="95" />
+        <state relative-caret-position="-187">
+          <caret line="160" column="10" lean-forward="true" selection-start-line="160" selection-start-column="10" selection-end-line="160" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpotAHome/resources/views/duenos/crearpropiedad.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
         </state>
       </provider>
     </entry>
