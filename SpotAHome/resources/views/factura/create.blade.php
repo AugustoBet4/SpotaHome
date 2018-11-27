@@ -130,7 +130,7 @@
                                     <!-- foreach ($order->lineItems as $line) or some such thing here -->
                                     <tr>
                                         <td><strong>Codigo de Control</strong></td>
-                                        <td class="text-center">33-CF-BD-EB-FC</td>
+                                        <td class="text-center">{{ $cod }}</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -157,7 +157,7 @@
                     <div class="col-md-12" style="width: 220px">
                         <div class="panel panel-default">
                             <div class="panel-body">
-
+                                {!! QrCode::size(200)->generate('SpotAHome Empresa X: Direccion - '.$item->direccion.' Total - '.$item->costo); !!}
                             </div>
                         </div>
                     </div>
