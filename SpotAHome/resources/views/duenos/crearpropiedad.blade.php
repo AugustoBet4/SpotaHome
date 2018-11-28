@@ -111,7 +111,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                     <div class="form-group">
                         <div id="myMap"></div>
                         <label for="">Localiza tu vivienda en el Mapa</label>
-                        <!--input type="text" id="searchmap" value="" class="form-control"-->
+                        <input type="text" id="searchmap" value="" class="form-control">
                     </div>
 
 

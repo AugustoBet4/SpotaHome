@@ -48,6 +48,7 @@ Route::resource('duenos/propiedad','PropiedadDuenoController');
 Route::post('/hola','PropiedadDuenoController@store');
 Route::post('/fechas','PropiedadDuenoController@updatefechas');
 Route::resource('duenos/fechas','PropiedadFechasController');
+Route::resource('duenos/foto','PropiedadFotoController');
 Route::get('/duenos/consultas', 'DuenoController@getConsulta')->name('duenos.consultas');
 Route::get('duenos/consulta/{id}', 'DuenoController@consulta');
 Route::get('duenos/reservas', 'DuenoController@reservas');
