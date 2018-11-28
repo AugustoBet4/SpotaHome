@@ -10,6 +10,8 @@ use Auth;
 use App\Inquilino;
 use App\Fecha_Disponible;
 use Illuminate\Support\Facades\DB;
+use Storage;
+use Embed;
 
 class PropiedadFotoController extends Controller
 {
@@ -33,11 +35,24 @@ class PropiedadFotoController extends Controller
 
     public function update(Request $request, $id)
     {
+        $multi = Multimedia::find($id);
+        $oldimage=$multi->uri;
+        $this->validate($request,['imagen'=> 'image','youtube']);
+        if ($request->hasFile('imagen')){
+            $image = $request->file('imagen');
+            $image->move('uploads', $image->getClientOriginalName());
+            Multimedia::where('id_multimedia', $id)->update(array('uri' => $image->getClientOriginalName() ));
+            Storage::delete($oldimage);
+        }
+        $video = $request->input('youtube');
+        if($request->input('youtube') != null){
+            $video = preg_replace("#.*youtube\.com/watch\?v=#" , "", $video);
+            $videolegal= "https://www.youtube.com/embed/$video";
+            Multimedia::where('id_multimedia', $id)->update(array('youtube' => $videolegal));
+        }else{
 
-        $this->validate($request,['imagen'=> 'required|image']);
-        $image = $request->file('imagen');
-        $image->move('uploads', $image->getClientOriginalName());
-        Multimedia::where('id_multimedia', $id)->update(array('uri' => $image->getClientOriginalName() ));
+            Multimedia::where('id_multimedia', $id)->update(array('youtube' => $video));
+        }
         return redirect()->route('propiedad.index')->with('success','Foto actualizada');
     }
     public function create(){

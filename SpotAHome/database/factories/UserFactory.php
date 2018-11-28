@@ -104,6 +104,7 @@ $factory->define(App\Multimedia::class, function (Faker $faker) {
 
     return [
         'uri'               => 'prueba.jpg',
+        'youtube'           =>'https://www.youtube.com/embed/F4e06PWs4Es',
         'id_propiedad'      => '1',
     ];
 

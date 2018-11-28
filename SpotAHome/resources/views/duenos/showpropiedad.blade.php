@@ -28,18 +28,27 @@
                                 @if (empty($fechas->fecha_inicio))
                                     <h1>No registraste fechas</h1>
                                 @else
-                                <h>Fechas Disponibles:</h> del {{$fechas->fecha_inicio}} al {{$fechas->fecha_fin}}<br>
+                                <h>Fechas Disponibles:</h> del {{$fechas->fecha_inicio}} al {{$fechas->fecha_fin}}<br></p>
                                 @endif
-                            </p>
+                            <h3>Fotograf&iacute;a</h3>
+                                <br>
                                 @if (empty($multimedia->uri))
                                     <div class="panel-body">
-                                        <h1> No Subiste imagenes xd</h1>
+                                        <h1> No Subiste fotografia</h1>
                                     </div>
                                 @else
                                 <img width="500px" height="300px" src="{{ URL::to('/uploads/' . $multimedia->uri) }}"/>
                                 @endif
                             </div>
-                            <iframe width="700" height="500" src="https://www.youtube.com/embed/F4e06PWs4Es" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <h3>Video</h3>
+                            <br>
+                            @if (empty($multimedia->youtube))
+                                <div class="panel-body">
+                                    <h1> No Agregaste Enlace</h1>
+                                </div>
+                            @else
+                                <iframe width="500" height="300" src="{{$multimedia->youtube}}" ></iframe>
+                            @endif
                         </div>
                     </div>
                 </div>

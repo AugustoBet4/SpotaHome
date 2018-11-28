@@ -14,7 +14,7 @@ class Multimedia extends Model
      * @var array
      */
     protected $fillable = [
-        'id_multimedias', 'uri',
+        'id_multimedias', 'uri', 'youtube',
     ];
 
     protected $table = "multimedia";

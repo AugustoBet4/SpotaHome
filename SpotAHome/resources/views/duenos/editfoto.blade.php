@@ -43,7 +43,23 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <label for="">Cambia la Imagen</label>
-                                            <input accept="image/*" type="file" class="-file-photo-o" name="imagen" id="imagen">
+                                            <input class="form-control input-sm" accept="image/*" type="file" class="-file-photo-o" name="imagen" id="imagen">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label for="">Cambia o Agrega un Video de YouTube(Opcional)</label>
+                                            @if (empty($foto->youtube))
+                                                <div class="panel-body">
+                                                    <input class="form-control input-sm" type="url" name="youtube" id="youtube"
+                                                           placeholder="https://youtube.com/mivideo"
+                                                           pattern="https://.*">
+                                                </div>
+                                            @else
+                                                                   <input class="form-control input-sm" type="url" name="youtube" id="youtube"
+                                                    placeholder="https://youtube.com/mivideo"
+                                                    pattern="https://.*" value="{{$foto->youtube}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="row">

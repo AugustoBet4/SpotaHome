@@ -17,6 +17,7 @@ class CrearTablaMultimedias extends Migration
         Schema::create('multimedia', function (Blueprint $table) {
             $table->increments('id_multimedia')->unique();
             $table->string('uri');
+            $table->string('youtube')->nullable();
             $table->integer('id_propiedad')->unsigned();
             $table->timestamps();
             $table->softDeletes();

@@ -62,7 +62,7 @@
                                             </td>
                                             <td>
                                             <td>
-                                                <a href="{{action('PropiedadFotoController@edit',$propiedad->id_propiedad )}}" class="btn btn-link">Editar fotograf&iacute;a</a>
+                                                <a href="{{action('PropiedadFotoController@edit',$propiedad->id_propiedad )}}" class="btn btn-link">Editar Multimedia</a>
                                             </td>
                                             <td>
                                                 <form action="{{action('PropiedadDuenoController@destroy', $propiedad->id_propiedad)}}" method="post">

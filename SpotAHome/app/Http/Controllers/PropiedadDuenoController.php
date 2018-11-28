@@ -79,10 +79,17 @@ class PropiedadDuenoController extends Controller
         $fechas->fecha_fin = $request->input('fecha_fin');
         $fechas->id_propiedad = $propiedad->id_propiedad;
         $fechas->save();
-
         $image = $request->file('imagen');
         $image->move('uploads', $image->getClientOriginalName());
         $multimedia->uri = $image->getClientOriginalName();
+        $video = $request->input('youtube');
+        if($request->input('youtube') != null){
+            $video = preg_replace("#.*youtube\.com/watch\?v=#" , "", $video);
+            $videolegal= "https://www.youtube.com/embed/$video";
+            $multimedia->youtube = $videolegal;
+        }else{
+            $multimedia->youtube = $video;
+        }
         $multimedia->id_propiedad = $propiedad->id_propiedad;
         $multimedia->save();
         return redirect()->route('propiedad.index')->with('info', 'Casa Registrada');

@@ -168,8 +168,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
                     </div>
                     <div class="form-group">
                         <label for="">Agrega Imagenes</label>
-                        <input accept="image/*" type="file" class="-file-photo-o" name="imagen" id="imagen">
+                        <input accept="image/*" type="file" class="-file-photo-o" name="imagen" id="imagen" required>
                     </div>
+                    <div class="form-group">
+                        <label for="">Agrega Un Vide de YouTube (Opcional)</label>
+                        <input class="form-control input-sm" type="url" name="youtube" id="youtube"
+                               placeholder="https://youtube.com/mivideo"
+                               pattern="https://.*" value="{{old('youtube')}}">                    </div>
                     <button type="submit"  class="btn btn-primary">Crear</button>
                 </form>
             </div>
