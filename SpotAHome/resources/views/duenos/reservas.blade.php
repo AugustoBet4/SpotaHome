@@ -50,6 +50,7 @@
                                                 @else
                                                     <td>
                                                         <span class="label label-danger"><i class="fa fa-check"></i> {{ $reserva->status_alquiler }}</span>
+                                                        <span class="label label-indo"> Fecha de Anulacion: {{ date('Y-m-d', strtotime($reserva->updated_at)) }}</span>
                                                     </td>
                                                 @endif
                                             <td>{{ $reserva->direccion }}</td>

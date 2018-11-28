@@ -112,7 +112,7 @@ class DuenoController extends Controller
         $reservas = DB::table('alquiler')
             ->join('propiedad', 'propiedad.id_propiedad', '=', 'alquiler.id_propiedad')
             ->where('propiedad.id_dueno', '=', $user->id_dueno)
-            ->select('alquiler.fecha_inicio', 'alquiler.fecha_fin', 'alquiler.status_alquiler', 'propiedad.direccion', 'alquiler.id_alquiler', 'propiedad.id_dueno')
+            ->select('alquiler.fecha_inicio', 'alquiler.fecha_fin', 'alquiler.status_alquiler', 'propiedad.direccion', 'alquiler.id_alquiler', 'propiedad.id_dueno', 'alquiler.updated_at')
             ->orderBy('alquiler.id_alquiler', 'ASC')
             ->paginate(10);
 
