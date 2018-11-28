@@ -30,6 +30,8 @@
                                 @else
                                 <h>Fechas Disponibles:</h> del {{$fechas->fecha_inicio}} al {{$fechas->fecha_fin}}<br></p>
                                 @endif
+                                <h3>Descripci&oacute;n</h3>
+                                <p>{{$propiedad->descripcion}}</p><br>
                             <h3>Fotograf&iacute;a</h3>
                                 <br>
                                 @if (empty($multimedia->uri))
