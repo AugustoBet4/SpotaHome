@@ -54,9 +54,13 @@ class InquilinoController extends Controller
         $multimedia = DB::table('multimedia')
                                 ->orderBy('id_propiedad', 'asc')
                                 ->get();
+
+        $fechas = DB::table('fecha_disponibilidad')
+                            ->orderBy('id_fecha_disponibilidad', 'asc')
+                            ->get();
         //echo $propiedad;
         //$propiedad = Propiedad::where('multimedia')->orderBy('id_propiedad', 'ASC')->paginate(10);
-        return view('inquilino/propiedades', compact('user', 'propiedad', 'multimedia'));
+        return view('inquilino/propiedades', compact('user', 'propiedad', 'multimedia', 'fechas'));
     }
 
     public function busqueda_prop(Request $request)
@@ -65,18 +69,25 @@ class InquilinoController extends Controller
         $ciudad = request::input('ciudad');
         $min = request::input('min');
         $max = request::input('max');
+        $startdate = request::input('startDate');
+        $enddate = request::input('endDate');
+
         //  $propiedad = Propiedad::where('ciudad', '=', $ciudad)->where('costo', '=', $min)->where('costo', '=', $max)->orderBy('id_propiedad', 'ASC')->paginate(10);
         $propiedad = DB::table('propiedad')
                                 ->where('ciudad', '=', $ciudad)
                                 ->where('costo', '>=', $min)
                                 ->where('costo', '<=', $max)
-
+                                
                                 ->get();
         $multimedia = DB::table('multimedia')
                                 ->orderBy('id_propiedad', 'asc')
                                 ->get();
-
-        return view('inquilino/propiedades', compact('user', 'propiedad', 'multimedia'));
+        $fechas = DB::table('fecha_disponibilidad')
+                                ->whereBetween('fecha_inicio', [$startdate, $enddate])
+                                
+                                ->get();                                
+        
+        return view('inquilino/propiedades', compact('user', 'propiedad', 'multimedia', 'fechas'));
     }
 
     public function location($id)
