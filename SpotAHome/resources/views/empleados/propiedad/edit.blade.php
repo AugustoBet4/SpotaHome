@@ -59,17 +59,7 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <!--
-                                                 <input type="text" name="id_dueno" id="id_dueno" class="form-control input-sm" value="{//{$propiedades->id_dueno}}">
-                                                 -->
-                                                <select  class="form-control" name="id_dueno" id="id_dueno">
-                                                    <option></option>
-
-                                                    @foreach($duenos as $dueno)
-                                                        <option value="{{ $dueno->id_dueno }}" {!! ($selected ? "selected=\"selected\"" : "") !!}> {{ $dueno->nombre }}</option>
-                                                    @endforeach
-
-                                                </select>
+                                                <input type="text" name="zona" id="zona" class="form-control input-sm" value="{{$propiedades->zona}}">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
@@ -78,6 +68,27 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <select  class="form-control" name="id_dueno" id="id_dueno">
+
+                                                        @foreach($duenos as $dueno)
+                                                            <option value="{{ $dueno->id_dueno }}" {!! ($selected ? "selected=\"selected\"" : "") !!}> {{ $dueno->nombre }}</option>
+                                                        @endforeach
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name="estadia_max" id="estadia_max" class="form-control input-sm" value="{{$propiedades->estadia_max}}">
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <textarea name="descripcion" id="descripcion" class="form-control input-sm"  placeholder="Descripcion">{{$propiedades->descripcion}}</textarea>
                                     </div>

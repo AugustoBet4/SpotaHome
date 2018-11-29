@@ -14,7 +14,7 @@
                             </div>
                             <div class="pull-right">
                                 <div class="btn-group">
-                                    <a href="{{ url('empleados/propiedad/index') }}" class="btn btn-info" >Volver</a>
+                                    <a href="{{ route('empleados.propiedad.index') }}" class="btn btn-info" >Volver</a>
                                 </div>
                             </div>
                             <div class="table-container">
@@ -26,7 +26,9 @@
                                     <th>Dueño</th>
                                     <th>Descripcion</th>
                                     <th>Costo</th>
+                                    <!--
                                     <th>Estado</th>
+                                    -->
                                     <th>Editar</th>
                                     <th>Ver en Mapa</th>
                                     <!--
@@ -43,7 +45,9 @@
                                                 <td>{{$propiedad->nombre}}</td>
                                                 <td>{{$propiedad->descripcion}}</td>
                                                 <td>{{$propiedad->costo}}</td>
-                                                <td>{{$propiedad->status_alquiler}}</td>
+                                                <!--
+                                                <td>{//{$propiedad->status_alquiler}}</td>
+                                                -->
                                                 <td><a class="btn btn-primary btn-xs" href="{{action('PropiedadEmpleadoController@edit', $propiedad->id_propiedad)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                                             <!--
                                                 <td>
@@ -71,7 +75,6 @@
                                 </table>
                             </div>
                         </div>
-                        {{ $propiedades->links() }}
                     </div>
                 </div>
             </section>
