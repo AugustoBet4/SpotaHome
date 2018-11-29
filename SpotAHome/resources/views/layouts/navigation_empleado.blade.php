@@ -32,7 +32,7 @@
                 <a href="{{ url('/empleados/estadisticas') }}"><i class="fa fa-history"></i> <span class="nav-label">Estadisticas</span> </a>
             </li>
             <li >
-                <a href="{{ url('/empleados/empleados') }}"><i class="fa fa-pencil-square"></i> <span class="nav-label">Empleados</span> </a>
+                <a href="{{ url('/empleados/empleado') }}"><i class="fa fa-pencil-square"></i> <span class="nav-label">Empleados</span> </a>
             </li>
         </ul>
 

@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Notifications\Notifiable;
 
-class Empleado extends Authenticatable
+class Empleado extends Model
 {
     use Notifiable;
     use SoftDeletes;
@@ -28,7 +28,7 @@ class Empleado extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'contrasena',
+        'contrasena'
     ];
 
     protected $table = "empleado";
