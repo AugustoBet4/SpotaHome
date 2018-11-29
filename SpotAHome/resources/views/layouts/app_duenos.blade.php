@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
+    <link rel="icon" type="image/png" href="{!! asset('icon.png') !!}" />
 
 </head>
 <body>

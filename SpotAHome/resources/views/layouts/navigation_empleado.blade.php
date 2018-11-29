@@ -6,8 +6,8 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">Example user</strong>
-                            </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
+                                <strong class="font-bold">Bienvenido</strong>
+                            </span> <span class="text-muted text-xs block">Empleado<b class="caret"></b></span>
                         </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -25,14 +25,17 @@
                 <a href="{{ url('/empleados/propiedad') }}"><i class="fa fa-search"></i> <span class="nav-label">Propiedades</span></a>
             </li>
             <li >
-            <li >
-                <a href="{{ url('/empleados/duenos') }}"><i class="fa fa-search"></i> <span class="nav-label">Administrar Due&ntilde;os</span></a>
+                <a href="{{ url('/empleados/inquilino') }}"><i class="fa fa-address-book-o"></i> <span class="nav-label">Inquilino</span></a>
             </li>
             <li >
-                <a href="{{ url('/empleados/historial') }}"><i class="fa fa-history"></i> <span class="nav-label">Estadisticas</span> </a>
+            <li >
+                <a href="{{ url('/empleados/duenos') }}"><i class="fa fa-book"></i> <span class="nav-label">Administrar Due&ntilde;os</span></a>
             </li>
             <li >
-                <a href="{{ url('/empleados/anular') }}"><i class="fa fa-ban"></i> <span class="nav-label">Homecheckers</span> </a>
+                <a href="{{ url('/empleados/estadisticas') }}"><i class="fa fa-history"></i> <span class="nav-label">Estadisticas</span> </a>
+            </li>
+            <li >
+                <a href="{{ url('/empleados/empleado') }}"><i class="fa fa-pencil-square"></i> <span class="nav-label">Empleados</span> </a>
             </li>
         </ul>
 

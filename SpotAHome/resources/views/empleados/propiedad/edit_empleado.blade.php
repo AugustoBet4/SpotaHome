@@ -25,79 +25,55 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Edicion de propiedad</h3>
+                            <h3 class="panel-title">Edicion de empleado</h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
-                                <form method="POST" action="{{ action('PropiedadEmpleadoController@update',$propiedades->id_propiedad) }}"  role="form">
+                                <form method="POST" action="{{ action('EmpleadoController@update',$empleados->id_empleado) }}"  role="form">
                                     {{ csrf_field() }}
                                     <input name="_method" type="hidden" value="PATCH">
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="direccion" id="direccion" class="form-control input-sm" value="{{$propiedades->direccion}}">
+                                                <input type="text" name="nombre" id="nombre" class="form-control input-sm" value="{{$empleados->nombre}}">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="ciudad" id="ciudad" class="form-control input-sm" value="{{$propiedades->ciudad}}">
+                                                <input type="text" name="apellidos" id="apellidos" class="form-control input-sm" value="{{$empleados->apellidos}}">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="latitud" id="latitud" class="form-control input-sm" value="{{$propiedades->latitud}}">
+                                                <input type="text" name="email" id="email" class="form-control input-sm" value="{{$empleados->email}}">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="longitud" id="longitud" class="form-control input-sm" value="{{$propiedades->longitud}}">
+                                                <input type="text" name="telefono" id="telefono" class="form-control input-sm" value="{{$empleados->telefono}}">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="zona" id="zona" class="form-control input-sm" value="{{$propiedades->zona}}">
+                                                <input type="text" name="usuario" id="usuario" class="form-control input-sm" value="{{$empleados->usuario}}">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="costo" id="costo" class="form-control input-sm" value="{{$propiedades->costo}}">
+                                                <input type="password" name="contrasena" id="contrasena" class="form-control input-sm" value="{{$empleados->contrasena}}">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group">
-                                                <div class="form-group">
-                                                    <select  class="form-control" name="id_dueno" id="id_dueno">
-
-                                                        @foreach($duenos as $dueno)
-                                                            <option value="{{ $dueno->id_dueno }}" {!! ($selected ? "selected=\"selected\"" : "") !!}> {{ $dueno->nombre }}</option>
-                                                        @endforeach
-
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" name="estadia_max" id="estadia_max" class="form-control input-sm" value="{{$propiedades->estadia_max}}">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <textarea name="descripcion" id="descripcion" class="form-control input-sm"  placeholder="Descripcion">{{$propiedades->descripcion}}</textarea>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <input type="submit"  value="Actualizar" class="btn btn-success btn-block">
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <a href="{{ route('empleados.propiedad.index') }}" class="btn btn-info btn-block" >Atrás</a>
+                                            <a href="{{ action('EmpleadoController@index') }}" class="btn btn-info btn-block" >Atrás</a>
                                         </div>
 
                                     </div>

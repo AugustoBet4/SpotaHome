@@ -9,7 +9,7 @@ use App\Http\Controllers\codigo_control\CodigoControlV7;
 
 class FacturaController extends Controller
 {
-    //
+    //gg
 
     public function __construct()
     {
@@ -18,7 +18,7 @@ class FacturaController extends Controller
 
     public function factura()
     {
-        //
+        //gg
 
         $user = Auth::user();
         $num = Propiedad::count();

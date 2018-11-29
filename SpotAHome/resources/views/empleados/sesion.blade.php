@@ -9,13 +9,13 @@
     <link rel="stylesheet" type="text/css" href="login-empleado/styles.css">
 </head>
 <body>
-<div class="container" id="log-in-form">
+<div class="container" id="log-in-form" align="center">
     <div class="heading">
         <h1>Inicia Sesión Empleado</h1>
     </div>
-    <div class="container">
+    <div class="container" align="center">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="card">
 
                     <div class="card-body">
@@ -50,9 +50,9 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                            <div class="col-md-8 col-md-offset-3">
+                                <div class="col-md-8 offset-md-3">
+                                    <button type="submit" class="btn btn-success " >
                                         {{ __('Login') }}
                                     </button>
 

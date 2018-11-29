@@ -6,7 +6,7 @@
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <section class="content">
-                <div class="col-md-10 col-md-offset-2">
+                <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="pull-left"><h1>Listado de due&ntilde;os</h1></div>

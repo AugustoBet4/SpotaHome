@@ -25,75 +25,52 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Nueva propiedad</h3>
+                            <h3 class="panel-title">Nuevo empleado</h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
-                                <form method="POST" action="{{ action('PropiedadEmpleadoController@store') }}"  role="form">
+                                <form method="POST" action="{{ action('EmpleadoController@store') }}"  role="form">
                                     {{ csrf_field() }}
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="direccion" id="direccion" class="form-control input-sm" placeholder="Direccion">
+                                                <input type="text" name="nombre" id="nombre" class="form-control input-sm" placeholder="Nombre">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="ciudad" id="ciudad" class="form-control input-sm" placeholder="Ciudad">
+                                                <input type="text" name="apellidos" id="apellidos" class="form-control input-sm" placeholder="Apellidos">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="latitud" id="latitud" class="form-control input-sm" placeholder="Latitud">
+                                                <input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="longitud" id="longitud" class="form-control input-sm" placeholder="Longitud">
+                                                <input type="text" name="telefono" id="telefono" class="form-control input-sm" placeholder="Telefono">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <input type="text" name="zona" id="zona" class="form-control input-sm" placeholder="Zona">
+                                            <input type="text" name="usuario" id="usuario" class="form-control input-sm" placeholder="Usuario">
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="costo" id="costo" class="form-control input-sm" placeholder="Costo">
+                                                <input type="password" name="contrasena" id="contrasena" class="form-control input-sm" placeholder="Contraseña">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group">
-                                                <select  class="form-control" name="id_dueno" id="id_dueno">
-                                                    <option>Seleccione uno</option>
-
-                                                    @foreach($duenos as $dueno)
-                                                        <option value="{{ $dueno->id_dueno }}"> {{ $dueno->nombre }}</option>
-                                                    @endforeach
-
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" name="estadia_max" id="estadia_max" class="form-control input-sm" placeholder="Estadia Maxima">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <textarea name="descripcion" id="descripcion" class="form-control input-sm" placeholder="Descripcion"></textarea>
                                     </div>
 
 
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <input type="submit"  value="Guardar" class="btn btn-success btn-block">
 
-                                        <a href="{{ route('empleados.propiedad.index') }}" class="btn btn-info btn-block" >Atrás</a>
+                                        <a href="{{ action('EmpleadoController@index') }}" class="btn btn-info btn-block" >Atrás</a>
 
                                     </div>
                                 </form>
