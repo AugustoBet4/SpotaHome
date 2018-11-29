@@ -126,7 +126,7 @@
 <style>
     #myMap {
         height: 350px;
-        width: 580px;
+        width: 500px;
     }
 </style>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv_Nsw2rI4L7szqzr37l_76Dy1GM2KBRI&libraries=places">

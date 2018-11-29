@@ -85,7 +85,7 @@
                                        id="status_alquiler" value="Reservado">
                                 <input type="hidden" name="estadia" class="form-control input-sm" id="estadia">
                                 <label for="fecha_inicio">Fecha de Inicio: </label>
-                                <input type="date" name="fecha_inicio" min='2018-11-28' class="form-control input-sm" id="fecha_inicio" 
+                                <input type="date" name="fecha_inicio" min='2018-11-29' class="form-control input-sm" id="fecha_inicio" 
                                 value="{{old('fecha_inicio')}}" required>
                                 @foreach ($errors->get('fecha_inicio') as $error)
                                     <div class="alert alert-danger">
