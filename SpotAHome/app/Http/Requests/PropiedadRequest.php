@@ -34,7 +34,7 @@ class PropiedadRequest extends FormRequest
             'costo'=> 'required',
             'fecha_inicio'=> 'required|date|date_format:Y-m-d|after:yesterday',
             'fecha_fin'=> 'required|date_format:Y-m-d|after:fecha_inicio',
-            'estadia_max'=>'required',
+            'estadia_max'=>'required|numeric|min:1|max:12',
             'imagen'=> 'required|image',
 
         ];

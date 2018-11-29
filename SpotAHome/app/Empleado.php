@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Notifications\Notifiable;
 
-class Empleado extends Model
+class Empleado extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
