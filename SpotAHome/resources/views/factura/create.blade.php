@@ -50,6 +50,13 @@
         <h1><center>Factura</center></h1>
     </div>
 
+
+    <?php
+    $tz = 'America/La_Paz';
+    $timestamp = time();
+    $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
+    $dt->setTimestamp($timestamp);
+    ?>
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -60,7 +67,7 @@
                             <!-- foreach ($order->lineItems as $line) or some such thing here -->
                             <tr>
                                 <td><strong>Fecha: </strong></td>
-                                <td class="text-center">{{ date('d-m-Y H:i:s') }}</td>
+                                <td class="text-center">{{ $dt->format('d-m-Y H:i:s') }}</td>
                                 <td><strong>NIT/CI: </strong></td>
                                 <td>1020457026</td>
                             </tr>
@@ -154,7 +161,7 @@
                     </div>
                 </div>
                 <div class="col-xs-6 text-right">
-                    <div class="col-md-12" style="width: 220px">
+                    <div class="col-md-12" style="width: 290px">
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 {!! QrCode::size(200)->generate('SpotAHome Empresa X: Direccion - '.$item->direccion.' Total - '.$item->costo); !!}
@@ -169,6 +176,6 @@
 
             <strong>Esta factura contribuye al desarrollo del pais, el uso ilicito de esta sera sancionada de acuerdo a la ley.</strong>
     <br><br>
-    <button onClick="window.print()">Imprimir</button>
+    <button class="btn btn-info" onClick="window.print()">Imprimir</button>
     <center><a href="{{ url('/factura/form') }}" class="btn btn-info" role="button">Regresar</a></center>
 </div>
