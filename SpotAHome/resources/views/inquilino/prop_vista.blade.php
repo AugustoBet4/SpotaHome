@@ -35,11 +35,12 @@
                             <img src="{{ URL::to('/uploads/' . $multi->uri) }}" width='500'>
                         @endforeach
                         <br><br>
+                        
                         <h2>Ubicacion</h2>
-                        {!!$map['html']!!}
+                            {!!$map['html']!!}
                     </div>
                     
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         {{ csrf_field() }}
                         <div class="form row">
                             <h2><b>{{ $propiedad->direccion}}</b></h2>
@@ -55,9 +56,9 @@
                             <br><br>
                             <h2>Video</h2>
                             @foreach ($multimedia as $multi)
-                                
-                                <iframe width="500" height="315" frameborder="0" allowfullscreen=""   src="{{ $multi->youtube }}">
+                                <iframe  width="500" height="315" src="{{$multi->youtube}}" allowfullscreen></iframe>
                             @endforeach
+                           
                         </div>
                     </div>
                     
@@ -84,7 +85,8 @@
                                        id="status_alquiler" value="Reservado">
                                 <input type="hidden" name="estadia" class="form-control input-sm" id="estadia">
                                 <label for="fecha_inicio">Fecha de Inicio: </label>
-                                <input type="date" name="fecha_inicio" class="form-control input-sm" id="fecha_inicio" required>
+                                <input type="date" name="fecha_inicio" min='2018-11-28' class="form-control input-sm" id="fecha_inicio" 
+                                value="{{old('fecha_inicio')}}" required>
                                 @foreach ($errors->get('fecha_inicio') as $error)
                                     <div class="alert alert-danger">
                                         <li>{{ $error }}</li>
@@ -92,8 +94,10 @@
                                 @endforeach
                                 <div class="form-group">
                                     <label for="fecha_fin">Fecha Final: </label>
-                                    <input type="date" name="fecha_fin" class="form-control input-sm" id="fecha_fin"
-                                           required>
+                                    @foreach ($fechas as $fecha)
+                                        <input type="date" name="fecha_fin"  max="{{$fecha->fecha_fin}}" class="form-control input-sm" id="fecha_fin" 
+                                        value="{{old('fecha_fin')}}" required>
+                                    @endforeach    
                                     @foreach ($errors->get('fecha_fin') as $error)
                                         <div class="alert alert-danger">
                                             <li>{{ $error }}</li>

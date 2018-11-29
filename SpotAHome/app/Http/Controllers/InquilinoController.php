@@ -149,9 +149,13 @@ class InquilinoController extends Controller
         $multimedia = DB::table('multimedia')
                                 ->where('id_propiedad', '=', $id)
                                 ->get();
+
+        $fechas = DB::table('fecha_disponibilidad')
+                                ->orderBy('id_fecha_disponibilidad', 'asc')
+                                ->get();
         //echo $multimedia;
         $map = \Gmaps::create_map();
-        return view('inquilino/prop_vista', compact('user', 'propiedad', 'map', 'multimedia'));
+        return view('inquilino/prop_vista', compact('user', 'propiedad', 'map', 'multimedia', 'fechas'));
     }
 
 
