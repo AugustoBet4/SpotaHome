@@ -38,6 +38,7 @@
                         <h2>Ubicacion</h2>
                         {!!$map['html']!!}
                     </div>
+                    
                     <div class="col-md-3">
                         {{ csrf_field() }}
                         <div class="form row">
@@ -51,8 +52,15 @@
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                 Reservar
                             </button>
+                            <br><br>
+                            <h2>Video</h2>
+                            @foreach ($multimedia as $multi)
+                                
+                                <iframe width="500" height="315" frameborder="0" allowfullscreen=""   src="{{ $multi->youtube }}">
+                            @endforeach
                         </div>
                     </div>
+                    
                 </div>
             </form>
         </div>
