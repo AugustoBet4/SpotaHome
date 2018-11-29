@@ -29,7 +29,7 @@ Route::post('empleados/logout', 'AuthEmpleado\LoginController@logout') -> name('
 Auth::routes();
 
 Route::get('empleados/propiedad', 'PropiedadEmpleadoController@index') -> name('empleados.propiedad.index');
-Route::get('empleados/propiedad/busqueda', 'PropiedadEmpleadoController@busqueda') -> name('empleados.propiedad.busqueda');
+Route::get('empleados/busqueda', 'PropiedadEmpleadoController@busqueda') -> name('empleados.busqueda');
 
 //Login Duenos y vistas
 Route::post('/propiedades','PropiedadDuenoController@store');
