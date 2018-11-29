@@ -6,8 +6,8 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">Example user</strong>
-                            </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
+                                <strong class="font-bold">Bienvenido</strong>
+                            </span> <span class="text-muted text-xs block">Empleado<b class="caret"></b></span>
                         </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
