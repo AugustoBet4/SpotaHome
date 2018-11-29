@@ -25,6 +25,9 @@
                 <a href="{{ url('/empleados/propiedad') }}"><i class="fa fa-search"></i> <span class="nav-label">Propiedades</span></a>
             </li>
             <li >
+                <a href="{{ url('/empleados/inquilino') }}"><i class="fa fa-address-book-o"></i> <span class="nav-label">Inquilino</span></a>
+            </li>
+            <li >
             <li >
                 <a href="{{ url('/empleados/duenos') }}"><i class="fa fa-book"></i> <span class="nav-label">Administrar Due&ntilde;os</span></a>
             </li>
