@@ -13,6 +13,7 @@ class InquilinoEmpleadoController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * //Commit solo porque si
      */
     public function index()
     {
