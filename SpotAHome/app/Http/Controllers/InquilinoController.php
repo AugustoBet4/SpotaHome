@@ -41,12 +41,11 @@ class InquilinoController extends Controller
         $historicas = Alquiler::where('id_inquilino', $user->id_inquilino)->where('status_alquiler', '!=','Reservado')->orwhere('status_alquiler', 'Finalizado')->orwhere('status_alquiler', 'Anulado')->orderBy('id_alquiler', 'ASC')->whereNull('deleted_at')->paginate(10);
         return view('inquilino/historial', compact( 'historicas','user'));
     }
-
     public function busqueda()
     {
         $user = Auth::user();
 
-        $propiedad = DB::table('propiedad')
+        /*$propiedad = DB::table('propiedad')
                                 //->join ('multimedia', 'multimedia.id_propiedad', '=', 'propiedad.id_propiedad' )
 
                                 ->orderBy('propiedad.id_propiedad', 'asc')
@@ -57,11 +56,13 @@ class InquilinoController extends Controller
 
         $fechas = DB::table('fecha_disponibilidad')
                             ->orderBy('id_fecha_disponibilidad', 'asc')
-                            ->get();
+                            ->get();*/
         //echo $propiedad;
         //$propiedad = Propiedad::where('multimedia')->orderBy('id_propiedad', 'ASC')->paginate(10);
-        return view('inquilino/propiedades', compact('user', 'propiedad', 'multimedia', 'fechas'));
+        return view('inquilino/busqueda', compact('user'));
     }
+
+    
 
     public function busqueda_prop(Request $request)
     {

@@ -97,24 +97,25 @@
         </div> 
       </table>
       <script>
-        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-        $('#startDate').datepicker({
+          var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+          $('#startDate').datepicker({
+              format: 'yyyy-mm-dd',
+              
+              minDate: today,
+              maxDate: function () {
+                  return $('#endDate').val();
+              }
+          });
+          $('#endDate').datepicker({
             format: 'yyyy-mm-dd',
-            
-            minDate: today,
-            maxDate: function () {
-                return $('#endDate').val();
-            }
-        });
-        $('#endDate').datepicker({
-          format: 'yyyy-mm-dd',
-            
-            minDate: function () {
-                return $('#startDate').val();
-            }
-        });
-    </script>
-      <div class="row">  
+              
+              minDate: function () {
+                  return $('#startDate').val();
+              }
+          });
+      </script>
+      <div class="row">
+        <div class="col-md-2"></div>  
         <div class="col-md-8" id="estilo1">
           <div class="ibox float-e-margins">
               <div class="ibox-content">
@@ -170,14 +171,17 @@
                                           <i class="far fa-eye">Ver</i>
                                       </td>
                                     </tr>
+                                  @else  
+                                    <tr>
+                                      <td >No se encontraron Propiedades</td>
+                                    </tr>
                                   @endif  
                                 @endforeach
                               @endforeach
                           @else
-                              <tr>
-                                  <td colspan="12" class="text-center">
-                                  </td>
-                              </tr>
+                            <tr>
+                              <td >No se encontraron Propiedades</td>
+                            </tr>
                           @endif
                           </tbody>
                       </table>

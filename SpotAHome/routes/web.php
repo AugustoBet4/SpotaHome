@@ -125,6 +125,7 @@ Route::get('/inquilino/consultas', 'InquilinoController@getConsulta')->name("con
 Route::get('/inquilino/historial', 'InquilinoController@historial')->name("historial");
 Route::get('/inquilino/direcciones/{id}', 'InquilinoController@location')->name("direcciones");
 Route::get('/inquilino/busqueda', 'InquilinoController@busqueda')->name("busqueda");
+Route::post('/inquilino/propiedades', 'InquilinoController@busqueda2')->name("busqueda2");
 Route::post('/inquilino/propiedades', 'InquilinoController@busqueda_prop')->name("propiedades");
 Route::get('/inquilino/prop_vista/{id}', 'InquilinoController@getPropiedad')->name("vista_prop");
 /*
