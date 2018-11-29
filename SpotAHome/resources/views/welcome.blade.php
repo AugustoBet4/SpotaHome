@@ -17,6 +17,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css"  href="landing/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="landing/fonts/font-awesome/css/font-awesome.css">
+    <link rel="icon" type="image/png" href="{!! asset('icon.png') !!}" />
 
     <!-- Stylesheet
         ================================================== -->

@@ -30,6 +30,7 @@ Auth::routes();
 
 Route::get('empleados/propiedad', 'PropiedadEmpleadoController@index') -> name('empleados.propiedad.index');
 Route::get('empleados/busqueda', 'PropiedadEmpleadoController@busqueda') -> name('empleados.busqueda');
+Route::get('empleados/estadisticas', 'EstadisticasController@index') -> name('empleados.estadisticas');
 
 //Login Duenos y vistas
 Route::post('/propiedades','PropiedadDuenoController@store');
