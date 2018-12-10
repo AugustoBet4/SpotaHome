@@ -112,9 +112,9 @@ $factory->define(App\Multimedia::class, function (Faker $faker) {
 });
 $factory->define(App\Verificacion_Propiedad::class, function (Faker $faker) {
     return [
-        'estado'   => $faker->boolean,
+        'estado'   => $faker->randomElement($array = array('Verificado','No verificado')),
         'fecha'      => $faker->dateTime,
-        'hora'         => '12:30:00',
+        'hora'         => $faker->time(),
         'observaciones'         => $faker->text(100),
         'id_empleado'      => '1',//$faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
         'id_propiedad'      => '1',//$faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),

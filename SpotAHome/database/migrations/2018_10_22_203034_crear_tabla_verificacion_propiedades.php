@@ -15,7 +15,7 @@ class CrearTablaVerificacionPropiedades extends Migration
     {
         Schema::create('verificacion_propiedad', function (Blueprint $table) {
             $table->increments('id_verificacion_propiedad')->unique();
-            $table->boolean('estado');
+            $table->string('estado');
             $table->date('fecha');
             $table->time('hora');
             $table->string('observaciones');

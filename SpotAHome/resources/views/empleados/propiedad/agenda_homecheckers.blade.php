@@ -16,23 +16,25 @@
                             <div class="table-container">
                                 <table id="mytable" class="table table-bordred table-striped">
                                     <thead>
-                                    <th>Nombre</th>
-                                    <th>Apellidos</th>
-                                    <th>Email</th>
-                                    <th>Telefono</th>
-                                    <th>Usuario</th>
+                                    <th>Estado</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Observaciones</th>
+                                    <th>Empleado</th>
+                                    <th>Propiedad</th>
                                     <th>Editar</th>
                                     </thead>
                                     <tbody>
                                     @if($empleados->count())
                                         @foreach($empleados as $empleado)
                                             <tr>
+                                                <td>{{$empleado->estado}}</td>
+                                                <td>{{$empleado->fecha}}</td>
+                                                <td>{{$empleado->hora}}</td>
+                                                <td>{{$empleado->observaciones}}</td>
                                                 <td>{{$empleado->nombre}}</td>
-                                                <td>{{$empleado->apellidos}}</td>
-                                                <td>{{$empleado->email}}</td>
-                                                <td>{{$empleado->telefono}}</td>
-                                                <td>{{$empleado->usuario}}</td>
-                                                <td><a class="btn btn-primary btn-xs" href="{{action('EmpleadoController@edit', $empleado->id_empleado)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                                <td>{{$empleado->direccion}}</td>
+                                                <td><a class="btn btn-primary btn-xs" href="{{action('EmpleadoController@edit', $empleado->id_verificacion_propiedad)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
 
                                             </tr>
                                         @endforeach
