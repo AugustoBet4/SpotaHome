@@ -20,7 +20,7 @@ class EmpleadoHomecheckersController extends Controller
         $empleados = DB::table('verificacion_propiedad')
             ->join('empleado','verificacion_propiedad.id_empleado','=','empleado.id_empleado')
             ->join('propiedad','verificacion_propiedad.id_propiedad','=','propiedad.id_propiedad')
-            ->select('verificacion_propiedad.id_verificacion_propiedad','verificacion_propiedad.estado','verificacion_propiedad.fecha','verificacion_propiedad.hora','verificacion_propiedad.observaciones','empleado.nombre','propiedad.direccion')
+            ->select('verificacion_propiedad.id_verificacion_propiedad','verificacion_propiedad.estado','verificacion_propiedad.fecha','verificacion_propiedad.hora','verificacion_propiedad.observaciones','empleado.nombre','propiedad.direccion','verificacion_propiedad.id_propiedad')
             ->paginate(5);
 
         return view ('empleados.propiedad.agenda_homecheckers',compact('empleados'));
