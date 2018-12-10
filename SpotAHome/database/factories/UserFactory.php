@@ -114,7 +114,7 @@ $factory->define(App\Verificacion_Propiedad::class, function (Faker $faker) {
     return [
         'estado'   => $faker->boolean,
         'fecha'      => $faker->dateTime,
-        'hora'         => $faker->time(),
+        'hora'         => '12:30:00',
         'observaciones'         => $faker->text(100),
         'id_empleado'      => '1',//$faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
         'id_propiedad'      => '1',//$faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),

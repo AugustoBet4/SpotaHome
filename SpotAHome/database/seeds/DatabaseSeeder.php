@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AlquilerTableSeeder::class);
         $this->call(FechasTableSeeder::class);
         $this->call(MultimediaTableSeeder::class);
+        $this->call(VerificacionPropiedadTableSeeder::class);
 
-        
         /*$this -> call([
             UsersTableSeeder::class,
             AdminsTableSeeder::class,
