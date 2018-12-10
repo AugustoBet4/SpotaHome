@@ -77,5 +77,6 @@
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script id="dsq-count-scr" src="//spotahomesis.disqus.com/count.js" async></script>
 
 @endsection

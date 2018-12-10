@@ -29,7 +29,6 @@ class PropiedadDuenoController extends Controller
         $user = Auth::user();
         $propiedades = Propiedad::where('id_dueno', $user->id_dueno)->whereNull('deleted_at')->orderBy('direccion','ASC')->paginate(10);
         return view('duenos/propiedad', compact('propiedades', 'user'));
-        //return 'holo';
     }
     public function edit($id)
     {

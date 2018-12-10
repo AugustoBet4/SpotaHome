@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Alquiler;
 use App\Consulta;
+use App\Dueno;
 use App\Propiedad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,9 @@ class DuenoController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $duenos = Dueno::where('id_dueno', $user->id_dueno)->whereNull('deleted_at')->orderBy('nombre','ASC')->paginate(10);
+        return view('duenos/perfil', compact('duenos', 'user'));
     }
 
     /**
@@ -66,7 +69,10 @@ class DuenoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dueno = Dueno::find($id);
+        return view('duenos.edit', compact('dueno'));
+
+        //return $dueno->nombre;
     }
 
     /**
@@ -78,7 +84,9 @@ class DuenoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,['nombre' => 'required','apellidos' => 'required','genero' => 'required', 'nacionalidad' => 'required', 'fecha_nacimiento' => 'required|date_format:Y-m-d|before:yesterday', 'email' => 'required','telefono' => 'required','usuario' => 'required']);
+        Dueno::find($id)->update($request->all());
+        return redirect()->action('DuenoController@index')->with('success','Propiedad actualizada');
     }
 
     /**

@@ -23,9 +23,9 @@
                 <a href="{{ url('/duenos') }}"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
             </li>
 
-            <!--li>
-                <a href="{{ url('/duenos') }}"><i class="fa fa-history"></i> <span class="nav-label">Actualiza tus datos</span> </a>
-            </li-->
+            <li>
+                <a href="{{ url('/duenos/perfil') }}"><i class="fa fa-user-circle"></i> <span class="nav-label">Mi Perfil</span> </a>
+            </li>
 
             <li>
                 <a href="{{ url('/duenos/propiedad') }}"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Administra Viviendas</span> </a>
