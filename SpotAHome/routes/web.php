@@ -20,6 +20,7 @@ Route::get('/', 'HomeController@index')->name("welcome");
 Route::resource('empleados/duenos','DuenoEmpleadoController');
 Route::resource('empleados/propiedad','PropiedadEmpleadoController');
 Route::resource('empleados/empleado','EmpleadoController');
+Route::resource('empleados/agenda_homecheckers','EmpleadoHomecheckersController');
 //Route::resource('empleados/mapa','PropiedadEmpleadoController');
 
 //Login Empleados
@@ -31,6 +32,7 @@ Auth::routes();
 
 Route::get('empleados/propiedad', 'PropiedadEmpleadoController@index') -> name('empleados.propiedad.index');
 Route::get('empleados/empleado', 'EmpleadoController@index') -> name('empleados.index');
+Route::get('empleados/agenda_homecheckers', 'EmpleadoHomecheckersController@index') -> name('empleados.propiedad.homecheckers');
 Route::get('empleados/inquilino', 'InquilinoEmpleadoController@index') -> name('empleados.inquilino.index');
 Route::get('empleados/busqueda', 'PropiedadEmpleadoController@busqueda') -> name('empleados.busqueda');
 Route::get('empleados/busqueda_inquilino', 'InquilinoEmpleadoController@busqueda') -> name('empleados.inquilino.busqueda');

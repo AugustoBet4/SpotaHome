@@ -37,6 +37,9 @@
             <li >
                 <a href="{{ url('/empleados/empleado') }}"><i class="fa fa-pencil-square"></i> <span class="nav-label">Empleados</span> </a>
             </li>
+            <li >
+                <a href="{{ url('/empleados/agenda_homecheckers') }}"><i class="fa fa-pencil"></i> <span class="nav-label">Agenda HC</span> </a>
+            </li>
         </ul>
         <!-- Creando un cambio para que funcione en la lap-->
     </div>
