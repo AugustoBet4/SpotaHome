@@ -16,7 +16,7 @@ class Verificacion_Propiedad extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id_verificacion_propiedades','estado'
+        'id_verificacion_propiedades','estado','fecha','hora','observaciones','id_empleado','id_propiedad'
     ];
 
     protected $table = "verificacion_propiedad";
