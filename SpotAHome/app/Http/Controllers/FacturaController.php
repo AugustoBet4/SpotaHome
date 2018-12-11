@@ -7,6 +7,9 @@ use App\Propiedad;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\codigo_control\CodigoControlV7;
 use Illuminate\Support\Facades\Mail;
+use DateTime;
+use DateTimeZone;
+use App\HistoriaFactura;
 use App;
 use PDF;
 
@@ -32,20 +35,33 @@ class FacturaController extends Controller
     public function fin($id)
     {
         //
+        $tz = 'America/La_Paz';
+        $timestamp = time();
+        $dts = new DateTime("now", new DateTimeZone($tz));
+        $dts->setTimestamp($timestamp);
+
+
         $user = Auth::user();
         $item = Propiedad::find($id);
         $num = Propiedad::count();
         $prop = Propiedad::all();
         $cod = $this->codigo_control();
+        $historia = new HistoriaFactura();
+        $historia->usuario = $user->id_inquilino;
+        $historia->fecha = $dts->format('d-m-Y');
+        $historia->codigo = $cod;
+        $historia->costo = $item->costo;
+        $historia->save();
+
             $to_name = $user->nombre;
             $to_mail = $user->email;
 
         $data = array('infos' => $user->nombre);
-        Mail::send('emails.mailfactura', $data, function ($message) use ($to_name, $to_mail){
+        /*Mail::send('emails.mailfactura', $data, function ($message) use ($to_name, $to_mail){
             $message->to($to_mail, $to_name)
                 ->subject('Factura de reserva');
             $message->from('augusto.bet4@gmail.com', 'SpotaHome');
-        });
+        });*/
         return view('factura.create', ['num'=>$num, 'item'=>$item, 'cod'=>$cod, 'user'=>$user]);
     }
 
@@ -72,5 +88,12 @@ class FacturaController extends Controller
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('factura.create', ['num'=>$num, 'item'=>$item, 'cod'=>$cod, 'user'=>$user]);
         return $pdf->stream();
+    }
+
+    public function hist()
+    {
+        $user = Auth::user();
+        $histo = HistoriaFactura::where('usuario', $user->id_inquilino)->get();
+        return view('factura.historial', ['user'=>$user, 'histo'=>$histo]);
     }
 }
