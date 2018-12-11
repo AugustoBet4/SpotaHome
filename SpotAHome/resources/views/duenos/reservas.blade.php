@@ -31,6 +31,7 @@
                                         <th>Fecha Final</th>
                                         <th>Estado</th>
                                         <th>Propiedad - Direccion</th>
+                                        <th>Usuario</th>
                                     </tr>
                                     </thead>
                                     <tr>
@@ -54,6 +55,14 @@
                                                     </td>
                                                 @endif
                                             <td>{{ $reserva->direccion }}</td>
+
+                                                <td>
+                                                    @foreach($inquilino as $inq )
+                                                        @if($inq->id_inquilino == $reserva->id_inquilino)
+                                                    <a href="{{action('DuenoController@usuario', $inq->id_inquilino)}}">{{ $inq->nombre}}</a>
+                                                </td>
+                                            @endif
+                                            @endforeach
                                         </tr>
                                         @endforeach
                                     @else

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Alquiler;
 use App\Consulta;
 use App\Dueno;
+use App\Inquilino;
 use App\Propiedad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -116,15 +117,26 @@ class DuenoController extends Controller
     public function reservas()
     {
         $user = Auth::user();
+        $inquilino=DB::table('inquilino')->orderBy('id_inquilino','asc')
+                    ->get();
 
         $reservas = DB::table('alquiler')
             ->join('propiedad', 'propiedad.id_propiedad', '=', 'alquiler.id_propiedad')
             ->where('propiedad.id_dueno', '=', $user->id_dueno)
-            ->select('alquiler.fecha_inicio', 'alquiler.fecha_fin', 'alquiler.status_alquiler', 'propiedad.direccion', 'alquiler.id_alquiler', 'propiedad.id_dueno', 'alquiler.updated_at')
+            ->select('alquiler.fecha_inicio', 'alquiler.fecha_fin', 'alquiler.status_alquiler', 'propiedad.direccion', 'alquiler.id_alquiler', 'propiedad.id_dueno', 'alquiler.updated_at','alquiler.id_inquilino' )
             ->orderBy('alquiler.id_alquiler', 'ASC')
             ->paginate(10);
 
-        return view('duenos/reservas', compact('user','reservas'));
+        return view('duenos/reservas', compact('user','reservas', 'inquilino'));
+
+    }
+    public function usuario($id){
+
+        $user = Auth::user();
+      $inquilino = Inquilino::find($id);
+
+        return view('duenos/inquilino', compact('inquilino', 'user'));
+
 
     }
 }
