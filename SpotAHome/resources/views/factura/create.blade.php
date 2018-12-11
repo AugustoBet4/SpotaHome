@@ -177,5 +177,6 @@
             <strong>Esta factura contribuye al desarrollo del pais, el uso ilicito de esta sera sancionada de acuerdo a la ley.</strong>
     <br><br>
     <button class="btn btn-info" onClick="window.print()">Imprimir</button>
+    <a href="{{action('FacturaController@print', $item->id_propiedad)}}" class="btn btn-link">PDF</a>
     <center><a href="{{ url('/factura/form') }}" class="btn btn-info" role="button">Regresar</a></center>
 </div>
