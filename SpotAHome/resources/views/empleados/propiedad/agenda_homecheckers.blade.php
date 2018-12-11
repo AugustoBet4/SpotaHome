@@ -22,7 +22,7 @@
                                     <th>Observaciones</th>
                                     <th>Empleado</th>
                                     <th>Propiedad</th>
-                                    <th>Editar</th>
+                                    <th>Ver en Mapa</th>
                                     </thead>
                                     <tbody>
                                     @if($empleados->count())
@@ -34,8 +34,9 @@
                                                 <td>{{$empleado->observaciones}}</td>
                                                 <td>{{$empleado->nombre}}</td>
                                                 <td>{{$empleado->direccion}}</td>
-                                                <td><a class="btn btn-primary btn-xs" href="{{action('EmpleadoController@edit', $empleado->id_verificacion_propiedad)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
-
+                                                <td>
+                                                    <a class="btn btn-primary btn-xs" href="{{action('MapaEmpleadoController@location', $empleado->id_propiedad)}}" ><span class="glyphicon glyphicon-flag "></span></a>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     @else
