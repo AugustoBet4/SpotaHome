@@ -26,11 +26,11 @@ $factory->define(App\User::class, function (Faker $faker) {
 $factory->define(App\Dueno::class, function (Faker $faker) {
 
     return [
-        'nombre'            => 'Pedro Jonas',
-        'apellidos'         =>'De Pruebas Menores',
-        'email'             => 'dueno@dueno.com',
-        'telefono'          => $faker->phoneNumber,
-        'fecha_nacimiento'  =>'1980-06-20',
+        'nombre'            => 'David',
+        'apellidos'         =>'Alfaro',
+        'email'             => 'daalfaro96@gmail.com',
+        'telefono'          => '67067892',
+        'fecha_nacimiento'  =>'1996-07-13',
         'genero'            =>' M',
         'nacionalidad'      =>'Boliviana',
         'usuario'           =>$faker->userName,
@@ -40,13 +40,13 @@ $factory->define(App\Dueno::class, function (Faker $faker) {
 
 $factory->define(App\Inquilino::class, function (Faker $faker) {
     return [
-        'nombre'            => $faker->name,
-        'apellidos'         =>$faker->lastName,
-        'email'             => 'inquilino@inquilino.com',
+        'nombre'            => 'Daniel',
+        'apellidos'         =>'Gironas',
+        'email'             => 'dngip96@gmail.com',
         'telefono'          => $faker->phoneNumber,
-        'fecha_nacimiento'  => $faker->dateTime,
-        'genero'            => $faker->randomElement($array = array('M','F')),
-        'nacionalidad'      => $faker->country,
+        'fecha_nacimiento'  => '1996-09-17',
+        'genero'            => 'M',
+        'nacionalidad'      => 'Boliviana',
         'usuario'           => $faker->userName,
         'contraseña'        => bcrypt('000'), // secret
     ];
