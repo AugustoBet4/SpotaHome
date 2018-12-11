@@ -52,6 +52,7 @@ Route::get('/duenos', 'SesionDuenoController@index');
 
 Route::resource('duenos/propiedad','PropiedadDuenoController');
 Route::resource('duenos/perfil','DuenoController');
+Route::get('duenos/usuario/{id}','DuenoController@usuario');
 
 Route::post('/hola','PropiedadDuenoController@store');
 Route::post('/fechas','PropiedadDuenoController@updatefechas');
