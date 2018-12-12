@@ -26,8 +26,7 @@ class DuenoController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $duenos = Dueno::where('id_dueno', $user->id_dueno)->whereNull('deleted_at')->orderBy('nombre','ASC')->paginate(10);
-        return view('duenos/perfil', compact('duenos', 'user'));
+        return view('duenos/perfil', compact('user'));
     }
 
     /**
