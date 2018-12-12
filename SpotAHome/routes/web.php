@@ -163,4 +163,4 @@ Route::get('admin/home', 'HomeAdminController@index')->name('home.admin');
 Route::get('/factura/form', array('as'=>'factura.form', 'uses'=>'FacturaController@factura'));
 Route::get('/factura/fin/{id}', array('as'=>'factura.fin', 'uses'=>'FacturaController@fin'));
 Route::get('/factura/print/{id}', array('as'=>'factura.print', 'uses'=>'FacturaController@print'));
-Route::get('/factura/hist', array('as'=>'factura.hist', 'uses'=>'FacturaController@hist'));
+Route::any('/factura/hist', array('as'=>'factura.hist', 'uses'=>'FacturaController@hist'));

@@ -11,6 +11,7 @@ use DateTime;
 use DateTimeZone;
 use App\HistoriaFactura;
 use App;
+use Carbon\Carbon;
 use PDF;
 
 class FacturaController extends Controller
@@ -90,10 +91,20 @@ class FacturaController extends Controller
         return $pdf->stream();
     }
 
-    public function hist()
+    public function hist(Request $request)
     {
+        $filt = $request['filt'];
+        if($filt==0 || $filt==null) {
+            $y = 0;
+            $fecha = "2010-11-01";
+        }
+        else {
+            $y = 1;
+            $fecha = Carbon::CreateFromFormat('Y-m-d', $request['datef'])->format('Y-d-m');
+        }
         $user = Auth::user();
         $histo = HistoriaFactura::where('usuario', $user->id_inquilino)->get();
-        return view('factura.historial', ['user'=>$user, 'histo'=>$histo]);
+        $histo2 = HistoriaFactura::where('usuario', $user->id_inquilino)->where('fecha', $fecha)->get();
+        return view('factura.historial', ['user'=>$user, 'histo'=>$histo, 'histo2'=>$histo2, 'y'=>$y]);
     }
 }
