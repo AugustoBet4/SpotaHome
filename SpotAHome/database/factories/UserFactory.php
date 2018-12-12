@@ -83,7 +83,7 @@ $factory->define(App\Empleado::class, function (Faker $faker) {
     return [
         'nombre'            => $faker->name,
         'apellidos'         =>$faker->lastName,
-        'email'             => 'empleado@empleado.com',
+        'email'             => $faker->email,//'empleado@empleado.com',
         'telefono'          => $faker->phoneNumber,
         'usuario'           =>$faker->userName,
         'contrasena'        => bcrypt('000'), // secret
@@ -116,7 +116,7 @@ $factory->define(App\Verificacion_Propiedad::class, function (Faker $faker) {
         'fecha'      => $faker->dateTime,
         'hora'         => $faker->time(),
         'observaciones'         => $faker->text(100),
-        'id_empleado'      => '1',//$faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
+        'id_empleado'      => $faker->randomElement($array = array ('1','2','3'), $count = 1),
         'id_propiedad'      => '1',//$faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
     ];
 });

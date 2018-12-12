@@ -32,7 +32,9 @@ Auth::routes();
 
 Route::get('empleados/propiedad', 'PropiedadEmpleadoController@index') -> name('empleados.propiedad.index');
 Route::get('empleados/empleado', 'EmpleadoController@index') -> name('empleados.index');
-Route::get('empleados/agenda_homecheckers', 'EmpleadoHomecheckersController@index') -> name('empleados.propiedad.homecheckers');
+Route::get('empleados/homecheckers', 'EmpleadoHomecheckersController@index') -> name('empleados.propiedad.homecheckers');
+Route::get('empleados/agenda', 'AgendaHomecheckersController@index') -> name('empleados.propiedad.agenda');
+Route::get('empleados/hc_propiedad/{id}', 'AgendaPropiedadController@index') -> name('empleados.propiedad.agenda_propiedad');
 Route::get('empleados/inquilino', 'InquilinoEmpleadoController@index') -> name('empleados.inquilino.index');
 Route::get('empleados/busqueda', 'PropiedadEmpleadoController@busqueda') -> name('empleados.busqueda');
 Route::get('empleados/busqueda_inquilino', 'InquilinoEmpleadoController@busqueda') -> name('empleados.inquilino.busqueda');
