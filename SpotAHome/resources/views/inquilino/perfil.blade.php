@@ -20,8 +20,7 @@
                             <STRONG> Nacionalidad:</STRONG> {{$user->nacionalidad}}<BR>
                             </div>
                             <div class="col-md-6">
-                                FOTO
-
+                                <img width="150px" height="150px" src="{{ URL::to('/uploads/' . $user->foto) }}"/>
                             </div>
 
                             <a href="{{action('InquilinoController@edit', $user->id_inquilino)}}" class="btn btn-default pull-right">Editar</a>

@@ -24,6 +24,7 @@ class CrearTablaInquilinos extends Migration
             $table->string('nacionalidad');
             $table->string('usuario');
             $table->string('contraseña');
+            $table->string('foto');
             $table->timestamps();
             $table->softDeletes();
         });

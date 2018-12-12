@@ -20,8 +20,7 @@
                             <STRONG> Nacionalidad:</STRONG> {{$inquilino->nacionalidad}}<BR>
                             </div>
                             <div class="col-md-6">
-                                FOTO
-
+                                <img width="150px" height="150px" src="{{ URL::to('/uploads/' . $inquilino->foto) }}"/>
                             </div>
 
                     </div>

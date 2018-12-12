@@ -19,7 +19,7 @@ class Dueno extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nombre', 'apellidos', 'email', 'telefono', 'fecha_nacimiento','genero','nacionalidad','usuario',
+        'nombre', 'apellidos', 'email', 'telefono', 'fecha_nacimiento','genero','nacionalidad','usuario', 'foto',
     ];
 
     /**

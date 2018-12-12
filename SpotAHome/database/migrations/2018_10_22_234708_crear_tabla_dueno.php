@@ -24,6 +24,7 @@ class CrearTablaDueno extends Migration
             $table->string('nacionalidad');
             $table->string('usuario');
             $table->string('contrasena');
+            $table->string('foto');
             $table->timestamps();
             $table->softDeletes();
         });

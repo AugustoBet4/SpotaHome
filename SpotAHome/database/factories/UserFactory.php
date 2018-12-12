@@ -35,6 +35,7 @@ $factory->define(App\Dueno::class, function (Faker $faker) {
         'nacionalidad'      =>'Boliviana',
         'usuario'           =>$faker->userName,
         'contrasena'        => bcrypt('000'), // secret
+        'foto'              => 'user.png'
     ];
 });
 
@@ -49,6 +50,7 @@ $factory->define(App\Inquilino::class, function (Faker $faker) {
         'nacionalidad'      => 'Boliviana',
         'usuario'           => $faker->userName,
         'contraseña'        => bcrypt('000'), // secret
+        'foto'              => 'user.png'
     ];
 });
 
