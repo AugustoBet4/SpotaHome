@@ -16,6 +16,9 @@
             <li >
                 <a href="{{ url('/inquilino') }}"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
             </li>
+            <li >
+                <a href="{{ url('/inquilino/perfil') }}"><i class="fa fa-user-circle"></i> <span class="nav-label">Mi Perfil</span></a>
+            </li>
             <li>
                 <a href="{{ url('/inquilino/busqueda') }}"><i class="fa fa-search"></i> <span class="nav-label">Busqueda</span></a>
             </li>

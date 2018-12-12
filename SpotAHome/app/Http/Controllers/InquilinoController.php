@@ -27,6 +27,12 @@ class InquilinoController extends Controller
         $user = Auth::user();
         return view('inquilino/index', compact('user'));
     }
+    public function perfil(){
+
+        $user = Auth::user();
+        return view('inquilino/perfil', compact('user'));
+
+    }
 
     public function reservas()
     {
