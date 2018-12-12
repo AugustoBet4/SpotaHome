@@ -22,6 +22,8 @@
                                 FOTO
 
                             </div>
+                            <a href="{{action('DuenoController@edit', $user->id_dueno)}}" class="btn btn-default pull-right">Editar</a>
+
 
                         </div>
                     </div>

@@ -117,6 +117,8 @@ Route::get('empleados/propiedad/mapa', function(){
 //Inquilinos
 
 Route::get('inquilino/perfil','InquilinoController@perfil');
+//Route::get('inquilino/edit/{id}','InquilinoController@edit');
+Route::resource('Inquilino/perfiles','InquilinoController');
 
 Route::resource('inquilino/busqueda','AlquilerController');
 

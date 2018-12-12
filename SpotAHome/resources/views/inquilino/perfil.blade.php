@@ -24,6 +24,8 @@
 
                             </div>
 
+                            <a href="{{action('InquilinoController@edit', $user->id_inquilino)}}" class="btn btn-default pull-right">Editar</a>
+
                     </div>
                 </div>
                 </div>

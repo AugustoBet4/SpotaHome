@@ -9,9 +9,10 @@ use App\Inquilino;
 use App\Propiedad;
 use App\Valoracion_Inquilino_Propiedad;
 use Illuminate\Support\Facades\Auth;
-use Request;
+use Illuminate\Http\Request;
 Use DB;
 use App\Multimedia;
+
 
 
 class InquilinoController extends Controller
@@ -32,6 +33,21 @@ class InquilinoController extends Controller
         $user = Auth::user();
         return view('inquilino/perfil', compact('user'));
 
+    }
+    public function edit($id){
+
+        $user = Inquilino::find($id);
+        return view('inquilino.edit', compact('user'));
+        //return 'editame';
+
+    }
+    public function update(Request $request, $id)
+    {
+        $this->validate($request,['nombre' => 'required','apellidos' => 'required','genero' => 'required', 'nacionalidad' => 'required', 'fecha_nacimiento' => 'required|date_format:Y-m-d|before:yesterday', 'email' => 'required','telefono' => 'required','usuario' => 'required']);
+        Inquilino::find($id)->update($request->all());
+        return redirect()->action('InquilinoController@perfil')->with('success','Perfil actualizado');
+       /*$inqui = Inquilino::find($id);
+       return $inqui->nombre;*/
     }
 
     public function reservas()
