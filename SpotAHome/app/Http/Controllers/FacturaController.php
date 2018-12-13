@@ -58,11 +58,11 @@ class FacturaController extends Controller
             $to_mail = $user->email;
 
         $data = array('infos' => $user->nombre);
-        /*Mail::send('emails.mailfactura', $data, function ($message) use ($to_name, $to_mail){
+        Mail::send('emails.mailfactura', $data, function ($message) use ($to_name, $to_mail){
             $message->to($to_mail, $to_name)
                 ->subject('Factura de reserva');
             $message->from('augusto.bet4@gmail.com', 'SpotaHome');
-        });*/
+        });
         return view('factura.create', ['num'=>$num, 'item'=>$item, 'cod'=>$cod, 'user'=>$user]);
     }
 
