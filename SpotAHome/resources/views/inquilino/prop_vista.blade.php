@@ -18,6 +18,7 @@
         <div class="text-center m-t-lg">
         </div>
         <div class="centrar">
+        <h2 align="center"> Informacion Vivienda </h2>
             <form method="POST" action="" role="form">
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">

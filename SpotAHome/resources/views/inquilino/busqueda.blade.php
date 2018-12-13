@@ -41,6 +41,7 @@
           <div class="row">
           <input type="hidden" name="min" class="form-control input-sm" id="min" value="0" >
           <input type="hidden" name="max" class="form-control input-sm" id="max" value="2500">
+          
             <div class="col-md-3"></div>
             <div class="col-md-6">
               <table class="table table-striped table-bordered table-hover dataTables-example table-responsive" > 
