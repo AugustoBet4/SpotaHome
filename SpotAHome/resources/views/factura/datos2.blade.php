@@ -16,7 +16,7 @@
                                 <label class="col-md-4 control-label">Nombre y Apellido:</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="days" id="days" value="{{ old('days') }}">
+                                    <input type="text" class="form-control" name="days" id="nombre" value="{{ old('days') }}">
 
                                     @if ($errors->has('name'))
                                         <span class="help-block">
@@ -31,7 +31,7 @@
                                 <label class="col-md-4 control-label">Email:</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="days" id="days" value="{{ old('days') }}">
+                                    <input type="text" class="form-control" name="days" id="email" value="{{ old('days') }}">
 
                                     @if ($errors->has('section'))
                                         <span class="help-block">
@@ -46,7 +46,7 @@
                                 <label class="col-md-4 control-label">Telefono:</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="days" id="days" value="{{ old('days') }}">
+                                    <input type="text" class="form-control" name="days" id="telefono" value="{{ old('days') }}" onkeypress="javascript:return isNumber(event)">
 
                                     @if ($errors->has('name'))
                                         <span class="help-block">
@@ -61,7 +61,7 @@
                                 <label class="col-md-4 control-label">Fecha de Nacimiento:</label>
 
                                 <div class="col-md-6">
-                                    <input type="datetime-local" name="stdt" id="stdt">
+                                    <input type="date" name="stdt" id="fecha">
 
                                     @if ($errors->has('manager'))
                                         <span class="help-block">
@@ -76,8 +76,8 @@
                                 <label class="col-md-4 control-label">Sexo:</label>
 
                                 <div class="col-md-6">
-                                    <select name="reason" id="reason" onclick="da()">
-                                        <option selected disabled>Elija:</option>
+                                    <select name="reason" id="sexo" onclick="da()">
+                                        <option selected disabled value="">Elija:</option>
                                                 <option value="0">Maculino</option>
                                                 <option value="1">Femenino</option>
                                     </select>
@@ -95,8 +95,8 @@
                                 <label class="col-md-4 control-label">Nacionalidad:</label>
 
                                 <div class="col-md-6">
-                                    <select name="reason" id="reason" onclick="da()">
-                                        <option selected disabled>Elija:</option>
+                                    <select name="reason" id="nacionalidad" onclick="da()">
+                                        <option selected disabled value="">Elija:</option>
                                         <option value="0">Boliviana</option>
                                         <option value="1">Extranjera</option>
                                     </select>
@@ -114,16 +114,58 @@
                                 <label class="col-md-4 control-label">Acepto los servicios y condiciones</label>
 
                                 <div class="col-md-6">
-                                    <input type="checkbox" name="terminos" value="1">Si acepto<br>
+                                    <input type="checkbox" name="terminos" id="terminos" value="1">Si acepto<br>
                                 </div>
                             </div>
 
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <a href="{{action('FacturaController@fin', $id2)}}" class="btn btn-link">Reservar</a>
+                                    <a href="{{action('FacturaController@fin', $id2)}}" class="btn btn-link" onclick="return validation()">Reservar</a>
                                 </div>
                             </div>
+
+                            <script>
+                                function validation() {
+                                    if (document.getElementById("nombre").value == ""){
+                                        alert("Se debe llenar el campo Nombre");
+                                        return false;
+                                    }
+                                    if (document.getElementById("email").value == ""){
+                                        alert("Se debe llenar el campo Email");
+                                        return false;
+                                    }
+                                    if (document.getElementById("telefono").value == ""){
+                                        alert("Se debe llenar el campo Telefono");
+                                        return false;
+                                    }
+
+                                    if (document.getElementById("fecha").value == ""){
+                                        alert("Se debe llenar el campo Fecha");
+                                        return false;
+                                    }
+                                    if (document.getElementById("sexo").value == ""){
+                                        alert("Se debe llenar el campo Sexo");
+                                        return false;
+                                    }
+                                    if (document.getElementById("nacionalidad").value == ""){
+                                        alert("Se debe llenar el campo Nacionalidad");
+                                        return false;
+                                    }
+                                    if (document.getElementById("terminos").checked == false){
+                                        alert("Se debe aceptar los Terminos");
+                                        return false;
+                                    }
+                                }
+
+                                function isNumber(evt) {
+                                    var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+                                    if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+                                        return false;
+
+                                    return true;
+                                }
+                            </script>
 
                         </div>
                     </div>

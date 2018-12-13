@@ -25,7 +25,7 @@ class FacturaController extends Controller
 
     public function factura()
     {
-        //gg
+        //gggggg
 
         $user = Auth::user();
         $num = Propiedad::count();
