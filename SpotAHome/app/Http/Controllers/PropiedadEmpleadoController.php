@@ -134,7 +134,7 @@ class PropiedadEmpleadoController extends Controller
             ->join('dueno','propiedad.id_dueno','=','dueno.id_dueno')
             //->join('alquiler','alquiler.id_propiedad','=','propiedad.id_propiedad')
             ->orWhere('propiedad.ciudad', '=', $ciudad)
-            ->orWhere('propiedad.costo', '=', $costo)
+            ->orWhere('propiedad.costo', '<=', $costo)
             ->orWhere('propiedad.zona', '=', $zona)
             ->select('propiedad.id_propiedad','propiedad.direccion','propiedad.ciudad','propiedad.zona','dueno.nombre','propiedad.descripcion','propiedad.costo','propiedad.estadia_max')
             ->get();

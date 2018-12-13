@@ -15,29 +15,39 @@
                             <div align="center">
                                 <form method="get" action="{{ action('PropiedadEmpleadoController@busqueda') }}">
                                 <div class="col-md-2 col-md-offset-0" align="center">
+                                    <!--
                                     <input type="text" id="precio" name="precio" placeholder="Costo" class="form-control input-sm">
+                                    -->
+                                    <select class="form-control" name="precio" id="precio" >
+                                        <option>5000</option>
+                                        <option>2500</option>
+                                        <option>2000</option>
+                                        <option>1500</option>
+                                        <option>1000</option>
+                                        <option>500</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-2 col-md-offset-0">
-                                    <!--
-                                    <select  class="form-control" name="city" id="city">
+                                    <select  class="form-control" name="city" id="city" >
                                         <option>Seleccione ciudad</option>
                                         @foreach($ciudades as $ciudad)
-                                            <option value="{//{ $ciudad->id_propiedad }}"> {//{ $ciudad->ciudad }}</option>
+                                            <option value="{{ $ciudad->id_propiedad }}"> {{ $ciudad->ciudad }}</option>
                                         @endforeach
                                     </select>
-                                    -->
+                                    <!--
                                         <input type="text" id="city" name="city" placeholder="Ciudad" class="form-control input-sm">
+                                        -->
                                 </div>
                                 <div class="col-md-2 col-md-offset-0">
-                                    <!--
                                     <select  class="form-control" name="zone" id="zone">
                                         <option>Seleccione zona</option>
                                         @foreach($zonas as $zona)
                                             <option value="{{ $zona->id_propiedad }}"> {{ $zona->zona }}</option>
                                         @endforeach
                                     </select>
-                                    -->
+                                    <!--
                                         <input type="text" id="zone" name="zone" placeholder="Zona" class="form-control input-sm">
+                                        -->
                                 </div>
                                 <div class="col-md-2 col-md-offset-0">
                                     <button type="submit" class="btn btn-primary" >Buscar</button>
