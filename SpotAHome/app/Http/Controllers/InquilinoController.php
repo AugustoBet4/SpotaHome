@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 Use DB;
 use App\Multimedia;
-
+use Illuminate\Validation\Rules\In;
 
 
 class InquilinoController extends Controller
@@ -43,8 +43,30 @@ class InquilinoController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $this->validate($request,['nombre' => 'required','apellidos' => 'required','genero' => 'required', 'nacionalidad' => 'required', 'fecha_nacimiento' => 'required|date_format:Y-m-d|before:yesterday', 'email' => 'required','telefono' => 'required','usuario' => 'required']);
-        Inquilino::find($id)->update($request->all());
+        $this->validate($request,['nombre' => 'required','apellidos' => 'required','genero' => 'required', 'nacionalidad' => 'required', 'fecha_nacimiento' => 'required|date_format:Y-m-d|before:yesterday', 'email' => 'required','telefono' => 'required','usuario' => 'required', 'fotos' => 'image']);
+        $nombre = $request->input('nombre');
+        $apellidos = $request->input('apellidos');
+        $email = $request->input('email');
+        $telefono = $request->input('telefono');
+        $fecha_nacimiento = $request->input('fecha_nacimiento');
+        $genero = $request->input('genero');
+        $nacionalidad = $request->input('nacionalidad');
+        $usuario = $request->input('usuario');
+
+        if ($request->hasFile('fotos')){
+            $image = $request->file('fotos');
+            $image->move('uploads', $image->getClientOriginalName());
+            Inquilino::where('id_inquilino', $id)->update(array('nombre' => $nombre,'apellidos' => $apellidos,
+                'genero' => $genero, 'nacionalidad' => $nacionalidad, 'fecha_nacimiento' => $fecha_nacimiento, 'email' => $email,'telefono' => $telefono,
+                'usuario' => $usuario, 'foto' => $image->getClientOriginalName()));
+            // return 'hay foto';
+        }else{
+
+            $foto = 'user.png';
+            Inquilino::where('id_inquilino', $id)->update(array('nombre' => $nombre,'apellidos' => $apellidos,
+                'genero' => $genero, 'nacionalidad' => $nacionalidad, 'fecha_nacimiento' => $fecha_nacimiento, 'email' => $email,'telefono' => $telefono,'usuario' => $usuario, 'foto' => $foto));
+            //return 'no hay foto';
+        }
         return redirect()->action('InquilinoController@perfil')->with('success','Perfil actualizado');
        /*$inqui = Inquilino::find($id);
        return $inqui->nombre;*/

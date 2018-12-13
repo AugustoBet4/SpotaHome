@@ -30,12 +30,12 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
-                                <form method="POST" action="{{action('DuenoController@update', $dueno->id_dueno)}}"  role="form">
+                                <form method="POST" action="{{action('DuenoController@update', $dueno->id_dueno)}}"  role="form" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <input name="_method" type="hidden" value="PATCH">
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group">
+                                            <div class="form-group" >
                                                 <label for="" class="col-form-label">Nombre</label>
                                                 <input type="text" name="nombre" id="nombre" class="form-control input-sm" value="{{$dueno->nombre}}">
                                             </div>
@@ -95,6 +95,13 @@
                                         <div class="form-group">
                                             <label for="" class="col-form-label">Usuario</label>
                                             <input type="text" name="usuario" id="usuario" class="form-control input-sm" value="{{$dueno->usuario}}">
+                                        </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Cambia tu Foto de Perfil</label><br>
+                                            <img width="150px" height="150px" src="{{ URL::to('/uploads/' . $dueno->foto) }}"/>
+                                            <input class="form-control input-sm" accept="image/*" type="file" class="-file-photo-o" name="fotos" id="fotos">
                                         </div>
                                         </div>
 
