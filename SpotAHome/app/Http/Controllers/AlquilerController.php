@@ -45,13 +45,30 @@ class AlquilerController extends Controller
     {
         $propiedad = Propiedad::find($request->id_propiedad);
         $estadia = $propiedad->estadia_max;
-
-
         $this->validate($request,['status_alquiler' => 'required',
             'fecha_inicio' => 'required|date|date_format:Y-m-d|after:yesterday',
             'fecha_fin' => 'required|date_format:Y-m-d|after:fecha_inicio|before:'.$estadia.' months']);
         Alquiler::create($request->all());
-      return redirect()->route('reservas')->with('success','Reserva registrada');
+        
+        $infos = DB::table('dueno')
+            ->join('propiedad', 'propiedad.id_dueno', '=', 'dueno.id_dueno')
+            ->join('alquiler', 'alquiler.id_propiedad', '=', 'propiedad.id_propiedad')
+            ->where('alquiler.id_alquiler' , '=', $request->id_alquiler)
+            ->where('propiedad.id_propiedad', '=', $request->id_propiedad)
+            ->select('dueno.nombre', 'dueno.apellidos', 'dueno.email', 'propiedad.direccion', 'alquiler.fecha_inicio', 'alquiler.fecha_fin')
+            ->get();
+        
+            $to_name = 'David';
+            $to_mail = 'daalfaro96@gmail.com';
+        
+        $data = array('infos' => $infos);
+        Mail::send('emails.mail_reserva', $data, function ($message) use ($to_name, $to_mail){
+            $message->to($to_mail, $to_name)
+                    ->subject('Su propiedad fue reservada');
+            $message->from('dangip96@gmail.com', 'SpotaHome');
+        });
+
+        return redirect()->route('reservas')->with('success','Reserva registrada');
     }
 
 

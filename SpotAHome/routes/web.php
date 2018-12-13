@@ -175,3 +175,5 @@ Route::get('/factura/form', array('as'=>'factura.form', 'uses'=>'FacturaControll
 Route::get('/factura/fin/{id}', array('as'=>'factura.fin', 'uses'=>'FacturaController@fin'));
 Route::get('/factura/print/{id}', array('as'=>'factura.print', 'uses'=>'FacturaController@print'));
 Route::any('/factura/hist', array('as'=>'factura.hist', 'uses'=>'FacturaController@hist'));
+Route::get('/factura/datos', array('as'=>'factura.datos', 'uses'=>'FacturaController@datos'));
+Route::get('/factura/datos2/{id}', array('as'=>'factura.datos2', 'uses'=>'FacturaController@datos2'));
