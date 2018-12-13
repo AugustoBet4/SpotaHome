@@ -10,11 +10,14 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="col-xs-4 col-sm-4 col-md-4">
                                     <a href="{{action('PropiedadDuenoController@create')}}" class="btn btn-success btn-block">Agregar Propiedad</a>
                                 </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <a href="{{ route('dueno.mapageneral', $user->id_dueno) }}" class="btn btn-info btn-block" >Ver Mapa</a>
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+                                    <a href="{{action('VerificarPropiedadController@create')}}" class="btn btn-info btn-block" >Verificar propiedades</a>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+                                    <a href="{{ route('dueno.mapageneral', $user->id_dueno) }}" class="btn btn-success btn-block" >Ver Mapa</a>
                                 </div>
 
                             </div>

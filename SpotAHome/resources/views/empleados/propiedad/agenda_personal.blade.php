@@ -29,8 +29,6 @@
                                                 <td>{{$empleado->direccion}}</td>
                                                 <td>{{$empleado->fecha}}</td>
                                                 <td>{{$empleado->hora}}</td>
-
-                                                <td>{{$empleado->id_verificacion_propiedad}}</td>
                                                 <td>
                                                     <a class="btn btn-primary btn-xs" href="{{action('MapaEmpleadoController@location', $empleado->id_propiedad)}}" ><span class="glyphicon glyphicon-flag "></span></a>
                                                 </td>

@@ -118,5 +118,4 @@ class PropiedadDuenoController extends Controller
         return back();
 
     }
-
 }

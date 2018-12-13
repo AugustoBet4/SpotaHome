@@ -20,7 +20,7 @@ Route::get('/', 'HomeController@index')->name("welcome");
 Route::resource('empleados/duenos','DuenoEmpleadoController');
 Route::resource('empleados/propiedad','PropiedadEmpleadoController');
 Route::resource('empleados/empleado','EmpleadoController');
-Route::resource('empleados/agenda_homecheckers','EmpleadoHomecheckersController');
+Route::resource('empleados/homecheckers','EmpleadoHomecheckersController');
 //Route::resource('empleados/mapa','PropiedadEmpleadoController');
 
 //Login Empleados
@@ -54,6 +54,10 @@ Route::get('/duenos', 'SesionDuenoController@index');
 
 Route::resource('duenos/propiedad','PropiedadDuenoController');
 Route::resource('duenos/perfil','DuenoController');
+
+
+Route::resource('duenos/verificar','VerificarPropiedadController');
+
 Route::get('duenos/usuario/{id}','DuenoController@usuario');
 
 Route::post('/hola','PropiedadDuenoController@store');
@@ -66,8 +70,8 @@ Route::get('duenos/reservas', 'DuenoController@reservas');
 Route::resource('duenos/enviarConsulta', 'ConsultaController');
 Route::get('/duenos/mapa/{id}', 'MapaDuenoController@location')->name("dueno.mapa");
 Route::get('/duenos/mapageneral/{id}', 'MapaDuenoController@mapageneral')->name("dueno.mapageneral");
-
-
+//Route::post('/duenos/verificar', 'VerificarPropiedadController@index')->name("dueno.verificar");
+//Route::post('/duenos/propiedad','VerificarPropiedadController@store');
 //Demas rutas empleados
 
 //Route::get('/empleados',function (){return view('empleados/sesion');});
@@ -87,7 +91,7 @@ Route::get('/empleados/mapageneral', 'MapaEmpleadoController@mapageneral')->name
 Route::get('empleados/propiedad/mapa', function(){
     $config = array();
     $config['center'] = '-16.4897, -68.1193';
-  //  $config['center'] = $datos;
+    //  $config['center'] = $datos;
     $config['zoom'] = 'auto';
     $config['onboundschanged'] = 'if (!centreGot) {
             var mapCentre = map.getCenter();
@@ -170,5 +174,3 @@ Route::get('/factura/form', array('as'=>'factura.form', 'uses'=>'FacturaControll
 Route::get('/factura/fin/{id}', array('as'=>'factura.fin', 'uses'=>'FacturaController@fin'));
 Route::get('/factura/print/{id}', array('as'=>'factura.print', 'uses'=>'FacturaController@print'));
 Route::any('/factura/hist', array('as'=>'factura.hist', 'uses'=>'FacturaController@hist'));
-Route::get('/factura/datos', array('as'=>'factura.datos', 'uses'=>'FacturaController@datos'));
-Route::get('/factura/datos2/{id}', array('as'=>'factura.datos2', 'uses'=>'FacturaController@datos2'));

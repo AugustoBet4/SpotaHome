@@ -6,6 +6,7 @@ use App\Empleado;
 use App\Propiedad;
 use App\Fecha_Disponible;
 use App\Multimedia;
+use App\Verificacion_Propiedad;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request as HttpRequest;
@@ -40,19 +41,12 @@ class AgendaPropiedadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $empleados = DB::table('empleado')
-            ->select('id_empleado','nombre', 'apellidos','email','telefono','usuario')
-            ->get();
 
-        return view ('empleados.propiedad.create_empleado',compact('empleados'));
-    }
 
     public function store(HttpRequest $request)
     {
-        $this->validate($request,['nombre' => 'required','apellidos' => 'required','email' => 'required','telefono' => 'required','usuario' => 'required','contrasena' => 'required']);
-        Empleado::create($request->all());
+        $this->validate($request,['estado' => 'required']);
+        Verificacion_Propiedad::create($request->all());
         return redirect()->action('EmpleadoController@index')->with('success','Propiedad registrada');
         // return redirect()->url('empleados/propiedad/index')->with('success','Propiedad registrada');
     }
@@ -90,10 +84,11 @@ class AgendaPropiedadController extends Controller
 
     public function update(HttpRequest $request, $id)
     {
-        $this->validate($request,['nombre' => 'required','apellidos' => 'required','email' => 'required','telefono' => 'required','usuario' => 'required','contrasena' => 'required']);
-        Empleado::find($id)->update($request->all());
-        return redirect()->action('EmpleadoController@index')->with('success','Propiedad actualizada');
-        //return redirect()->route('empleados/propiedad/index')->with('success','Propiedad actualizada');
+        $estado = request::input('estado');
+        $up = Verificacion_Propiedad::find($id);
+        $up->estado = $estado;
+        $up->save();
+        return redirect()->view('empleados.propiedad.agenda')->with('success','Propiedad actualizada');
     }
 
     /**
@@ -106,6 +101,14 @@ class AgendaPropiedadController extends Controller
     {
         Empleado::find($id)->delete();
         return redirect()->route('empleado.index')->with('success','Registro eliminado logicamente');
+    }
+    public function actualizar(HttpRequest $request, $id)
+    {
+        $estado = request::input('estado');
+        $up = Verificacion_Propiedad::find($id);
+        $up->estado = $estado;
+        $up->save();
+        return redirect()->view('empleados.propiedad.agenda_propiedad')->with('success','Propiedad actualizada');
     }
 
 }

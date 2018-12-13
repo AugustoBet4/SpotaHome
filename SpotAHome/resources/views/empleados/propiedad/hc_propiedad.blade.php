@@ -6,44 +6,72 @@
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <section class="content">
-                <div class="col-md-10 col-md-offset-2">
+                <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <div class="col-sm-4">
-                            </div>
-                            <div class="form-group">
-                                <h3>
-                                    {{$propiedad->direccion}}
-                                </h3>
-                                <h3>
-                                    {{$propiedad->zona}}
-                                </h3> <p>
-                                    <h>Ciudad:</h> {{$propiedad->ciudad}}<br>
-                                    <h>Fecha homecheck:</h> {{$propiedad->fecha}}<br> Arreglarlo en tablita
-                                    <h>Hora homecheck:</h> {{$propiedad->hora}}<br> Ya me dio sueño bye
-                                    <h>Estado homecheck:</h> {{$propiedad->estado}}<br>Volverlo combo box
-
-                                <h3>Fotograf&iacute;a</h3>
+                            <div class="col-sm-6">
+                                <form method="post" action="{{action('AgendaPropiedadController@actualizar', $propiedad->id_verificacion_propiedad)}}">
+                                <h2>Homecheck # {{$propiedad->id_verificacion_propiedad}}</h2>
+                                <table width="800px" height="300px">
+                                    <tr></tr>
+                                    <td><b> Dirección: </b></td>
+                                    <td>{{$propiedad->direccion}}</td>
+                                    <tr></tr>
+                                    <td><b> Ciudad: </b></td>
+                                    <td>{{$propiedad->ciudad}}</td>
+                                    <tr></tr>
+                                    <td><b> Zona: </b></td>
+                                    <td>{{$propiedad->zona}}</td>
+                                    <tr></tr>
+                                    <td><b> Fecha programada homecheck: </b></td>
+                                    <td>{{$propiedad->fecha}}</td>
+                                    <tr></tr>
+                                    <td><b> Hora programada homecheck: </b></td>
+                                    <td>{{$propiedad->hora}}</td>
+                                    <tr></tr>
+                                    <td><b> Estado homecheck: </b></td>
+                                    <td>
+                                        <div class="col-sm-8">
+                                            <select  class="form-control" name="estado" id="estado">
+                                                <option>No verificado</option>
+                                                <option>Verificado</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </table>
                                 <br>
-                                @if (empty($propiedad->uri))
-                                    <div class="panel-body">
-                                        <h1> No Subiste fotografia</h1>
-                                    </div>
-                                @else
-                                    <img width="500px" height="300px" src="{{ URL::to('/uploads/' . $propiedad->uri) }}"/>
-                                @endif
-                            </div>
-                            <h3>Video</h3>
-                            <br>
-                            @if (empty($propiedad->youtube))
-                                <div class="panel-body">
-                                    <h1> No Agregaste Enlace</h1>
+                                <div align="center" class="col-md-10 col-md-offset-6">
+                                    <button type="submit" class="btn btn-primary">Verificar</button>
                                 </div>
-                            @else
-                                <iframe width="500" height="300" src="{{$propiedad->youtube}}" ></iframe>
-                            @endif
-
-
+                                </form>
+                                <br>
+                                <table width="800px" height="300px" align="center">
+                                    <tr>
+                                    <td><h3>Fotografía</h3></td>
+                                        <td><h3>Video</h3></td>
+                                        </tr>
+                                    <tr>
+                                        <td>
+                                            @if (empty($propiedad->uri))
+                                                <div class="panel-body">
+                                                    <h1> No Subiste fotografia</h1>
+                                                </div>
+                                            @else
+                                                <img width="400px" height="200px" src="{{ URL::to('/uploads/' . $propiedad->uri) }}"/>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if (empty($propiedad->youtube))
+                                                <div class="panel-body">
+                                                    <h1> No Agregaste Enlace</h1>
+                                                </div>
+                                            @else
+                                                <iframe width="400" height="200" src="{{$propiedad->youtube}}" ></iframe>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

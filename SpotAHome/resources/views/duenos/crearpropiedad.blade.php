@@ -178,6 +178,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                     <button type="submit"  class="btn btn-primary">Crear</button>
                 </form>
             </div>
+
         </div>
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
