@@ -52,8 +52,11 @@
                             <h4>Tiempo de Estadia Maximo: {{ $propiedad->estadia_max }} meses</h4>
                             <h1>Bs.{{ $propiedad->costo}}</h1>
                             <br><br>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalReserva">
                                 Reservar
+                            </button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+                                Ver informacion Propietario
                             </button>
                             <br><br>
                             <h2>Video</h2>
@@ -67,53 +70,90 @@
                 </div>
             </form>
         </div>
-        <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content animated bounceInRight">
-                    <div class="modal-header">
-                        <b>Verifica la disponibilidad</b>
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                    class="sr-only">Close</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="POST" action="{{ action('AlquilerController@store') }}" role="form">
-                            {{ csrf_field() }}
-                            <div class="form row">
-                                <input type="hidden" name="id_propiedad" class="form-control input-sm" id="id_propiedad"
-                                       value="{{ $propiedad->id_propiedad }}">
-                                <input type="hidden" name="id_inquilino" class="form-control input-sm" id="id_inquilino"
-                                       value="{{ $user->id_inquilino }}">
-                                <input type="hidden" name="status_alquiler" class="form-control input-sm"
-                                       id="status_alquiler" value="Reservado">
-                                <input type="hidden" name="estadia" class="form-control input-sm" id="estadia">
-                                <label for="fecha_inicio">Fecha de Inicio: </label>
-                                <input type="date" name="fecha_inicio" min='2018-11-29' class="form-control input-sm" id="fecha_inicio" 
-                                value="{{old('fecha_inicio')}}" required>
-                                @foreach ($errors->get('fecha_inicio') as $error)
+        <div class="modal fade" id="ModalReserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{{ action('AlquilerController@store') }}" role="form">
+                        {{ csrf_field() }}
+                        <div class="form row">
+                            <input type="hidden" name="id_propiedad" class="form-control input-sm" id="id_propiedad"
+                                    value="{{ $propiedad->id_propiedad }}">
+                            <input type="hidden" name="id_inquilino" class="form-control input-sm" id="id_inquilino"
+                                    value="{{ $user->id_inquilino }}">
+                            <input type="hidden" name="status_alquiler" class="form-control input-sm"
+                                    id="status_alquiler" value="Reservado">
+                            <input type="hidden" name="estadia" class="form-control input-sm" id="estadia">
+                            <label for="fecha_inicio">Fecha de Inicio: </label>
+                            <input type="date" name="fecha_inicio" min='2018-12-13' class="form-control input-sm" id="fecha_inicio" 
+                            value="{{old('fecha_inicio')}}" required>
+                            @foreach ($errors->get('fecha_inicio') as $error)
+                                <div class="alert alert-danger">
+                                    <li>{{ $error }}</li>
+                                </div>
+                            @endforeach
+                            <div class="form-group">
+                                <label for="fecha_fin">Fecha Final: </label>
+                                @foreach ($fechas as $fecha)
+                                    <input type="date" name="fecha_fin"  max="{{$fecha->fecha_fin}}" class="form-control input-sm" id="fecha_fin" 
+                                    value="{{old('fecha_fin')}}" required>
+                                @endforeach    
+                                @foreach ($errors->get('fecha_fin') as $error)
                                     <div class="alert alert-danger">
                                         <li>{{ $error }}</li>
                                     </div>
                                 @endforeach
-                                <div class="form-group">
-                                    <label for="fecha_fin">Fecha Final: </label>
-                                    @foreach ($fechas as $fecha)
-                                        <input type="date" name="fecha_fin"  max="{{$fecha->fecha_fin}}" class="form-control input-sm" id="fecha_fin" 
-                                        value="{{old('fecha_fin')}}" required>
-                                    @endforeach    
-                                    @foreach ($errors->get('fecha_fin') as $error)
-                                        <div class="alert alert-danger">
-                                            <li>{{ $error }}</li>
-                                        </div>
-                                    @endforeach
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" value="Guardar" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        
+                        </div>
+                    </form>
+                    </div>
+                    
+                    </div>
+                </div>
+                </div>
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle">Informacion del Propietario</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @foreach($dueno as $prop)
+                        @if($propiedad->id_dueno == $prop->id_dueno)
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <STRONG>Nombre:</STRONG> {{$prop->nombre}} {{$prop->apellidos}}<BR><BR>
+                                    
+                                    <STRONG> Correo Electronico:</STRONG> {{$prop->email}}<BR><BR>
+                                    <STRONG> Telefono:</STRONG> {{$prop->telefono}}<BR><BR>
+                                    <STRONG> Nacionalidad:</STRONG> {{$prop->nacionalidad}}
+                                </div> 
+                                <div class="col-md-4">
+                                    <img width="120px" height="120px" src="{{ URL::to('/uploads/' . $user->foto) }}"/>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <input type="submit" value="Guardar" class="btn btn-success">
-                                <button type="button" class="btn btn-white" data-dismiss="modal">Cerrar</button>
-                                <br>
-                            </div>
-                        </form>
-                    </div>
+                        @endif
+                    @endforeach
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div>
                 </div>
             </div>
         </div>

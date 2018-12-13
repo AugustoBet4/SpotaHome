@@ -23,7 +23,7 @@
         <div id="page-wrapper" class="gray-bg">
 
             <!-- Page wrapper -->
-            @include('layouts.topnavbar')
+            @include('layouts.topnavbar_dueno')
 
             <!-- Main view  -->
             @yield('content')

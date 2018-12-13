@@ -201,9 +201,14 @@ class InquilinoController extends Controller
         $fechas = DB::table('fecha_disponibilidad')
                                 ->orderBy('id_fecha_disponibilidad', 'asc')
                                 ->get();
+
+        $dueno = DB::table('dueno')
+                                ->orderBy('id_dueno', 'asc')
+                                ->get();
+
         //echo $multimedia;
         $map = \Gmaps::create_map();
-        return view('inquilino/prop_vista', compact('user', 'propiedad', 'map', 'multimedia', 'fechas'));
+        return view('inquilino/prop_vista', compact('user', 'propiedad', 'map', 'multimedia', 'fechas', 'dueno'));
     }
 
 
