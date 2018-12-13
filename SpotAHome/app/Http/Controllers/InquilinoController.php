@@ -9,7 +9,7 @@ use App\Inquilino;
 use App\Propiedad;
 use App\Valoracion_Inquilino_Propiedad;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
+use Request;
 Use DB;
 use App\Multimedia;
 use Illuminate\Validation\Rules\In;
@@ -110,13 +110,13 @@ class InquilinoController extends Controller
 
     public function busqueda_prop(Request $request)
     {
-        $user = Auth::user();
-        $ciudad = request::input('ciudad');
+        $user = Auth::user();        
+        $ciudad = request::input('ciudad');        
         $min = request::input('min');
         $max = request::input('max');
         $startdate = request::input('startDate');
         $enddate = request::input('endDate');
-
+        $status = 'reservado';
         //  $propiedad = Propiedad::where('ciudad', '=', $ciudad)->where('costo', '=', $min)->where('costo', '=', $max)->orderBy('id_propiedad', 'ASC')->paginate(10);
         $propiedad = DB::table('propiedad')
                                 ->where('ciudad', '=', $ciudad)
@@ -129,10 +129,13 @@ class InquilinoController extends Controller
                                 ->get();
         $fechas = DB::table('fecha_disponibilidad')
                                 ->whereBetween('fecha_inicio', [$startdate, $enddate])
-                                
-                                ->get();                                
-        
-        return view('inquilino/propiedades', compact('user', 'propiedad', 'multimedia', 'fechas'));
+                                ->get();
+        $alquiler = DB::table('alquiler') 
+                                ->where('status_alquiler', '<>', $status)
+                                ->orderBy('id_alquiler', 'asc')
+                                ->get();                                                             
+        //echo($alquiler);
+        return view('inquilino/propiedades', compact('user', 'propiedad', 'multimedia', 'fechas', 'alquiler'));
     }
 
     public function location($id)

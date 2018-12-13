@@ -1,4 +1,4 @@
-@extends('layouts.app_duenos')
+@extends('layouts.app_inquilino')
 
 @section('title', 'Editar Datos')
 

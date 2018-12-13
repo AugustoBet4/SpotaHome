@@ -126,55 +126,55 @@
                               @foreach($propiedad as $key=>$prop)
                                 @foreach ($fechas as $fecha)  
                                   @if($fecha->id_propiedad == $prop->id_propiedad)  
-                                    <tr>
-                                      <th width="150">
-                                        @foreach ($multimedia as $multi)
-                                          @if($multi->id_propiedad == $prop->id_propiedad)
-                                            <img src="{{ URL::to('/uploads/' . $multi->uri) }}" width='250'>
-                                          @endif
-                                        @endforeach
-                                      </th>
-                                      <th rowspan="1" colspan="2" width="400">{{$prop->descripcion}}</th>
-                                      
-                                    </tr>
-                                    
-                                    <tr>
-                                      <td>{{$prop->ciudad}}</td>
-                                      
-                                      <td>
-                                        <h4>
-                                          Fecha de Inicio: 
+                                    @foreach ($alquiler as $alq) 
+                                      @if($alq->id_propiedad == $prop->id_propiedad) <!-- Filtro por reserva aqui!!!! -->
+                                        <tr>
+                                          <th width="150">
+                                            @foreach ($multimedia as $multi)
+                                              @if($multi->id_propiedad == $prop->id_propiedad)
+                                                <img src="{{ URL::to('/uploads/' . $multi->uri) }}" width='250'>
+                                              @endif
+                                            @endforeach
+                                          </th>
+                                          <th rowspan="1" colspan="2" width="400">{{$prop->descripcion}}</th>
                                           
-                                            @if($fecha->id_propiedad == $prop->id_propiedad)
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td>{{$prop->ciudad}}</td>
+                                          
+                                          <td>
+                                            <h4>
+                                              Fecha de Inicio: 
                                               
-                                              {{$fecha->fecha_inicio}}
+                                                @if($fecha->id_propiedad == $prop->id_propiedad)
+                                                  
+                                                  {{$fecha->fecha_inicio}}
+                                                  
+                                                @endif
                                               
-                                            @endif
-                                          
-                                        </h4> 
-                                      </td>
-                                      <td>
-                                        <h4>
-                                          Fecha Limite: 
-                                          
-                                              {{$fecha->fecha_fin}}
-                                          
-                                        </h4> 
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td>{{$prop->zona}}</td>
-                                      <td ><h3>{{$prop->costo}} Bs.</h3></td>
-                                      <td align="center">
-                                        <button type="button" class="btn btn-primary"
-                                          onclick="window.location='{{ action('InquilinoController@getPropiedad', $prop->id_propiedad) }}'">
-                                          <i class="far fa-eye">Ver</i>
-                                      </td>
-                                    </tr>
-                                  @else  
-                                    <tr>
-                                      <td >No se encontraron Propiedades</td>
-                                    </tr>
+                                            </h4> 
+                                          </td>
+                                          <td>
+                                            <h4>
+                                              Fecha Limite: 
+                                              
+                                                  {{$fecha->fecha_fin}}
+                                              
+                                            </h4> 
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>{{$prop->zona}}</td>
+                                          <td ><h3>{{$prop->costo}} Bs.</h3></td>
+                                          <td align="center">
+                                            <button type="button" class="btn btn-primary"
+                                              onclick="window.location='{{ action('InquilinoController@getPropiedad', $prop->id_propiedad) }}'">
+                                              <i class="far fa-eye">Ver</i>
+                                          </td>
+                                        </tr>
+                                      @endif  
+                                    @endforeach
                                   @endif  
                                 @endforeach
                               @endforeach
