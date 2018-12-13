@@ -107,4 +107,14 @@ class FacturaController extends Controller
         $histo2 = HistoriaFactura::where('usuario', $user->id_inquilino)->where('fecha', $fecha)->get();
         return view('factura.historial', ['user'=>$user, 'histo'=>$histo, 'histo2'=>$histo2, 'y'=>$y]);
     }
+
+    public function datos()
+    {
+        return view('factura.datos');
+    }
+
+    public function datos2()
+    {
+        return view('factura.datos2');
+    }
 }
