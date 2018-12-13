@@ -49,7 +49,7 @@ class FacturaController extends Controller
         $cod = $this->codigo_control();
         $historia = new HistoriaFactura();
         $historia->usuario = $user->id_inquilino;
-        $historia->fecha = $dts->format('d-m-Y');
+        $historia->fecha = $dts->format('Y-m-d');
         $historia->codigo = $cod;
         $historia->costo = $item->costo;
         $historia->save();
@@ -100,7 +100,7 @@ class FacturaController extends Controller
         }
         else {
             $y = 1;
-            $fecha = Carbon::CreateFromFormat('Y-m-d', $request['datef'])->format('Y-d-m');
+            $fecha = Carbon::CreateFromFormat('Y-m-d', $request['datef'])->format('Y-m-d');
         }
         $user = Auth::user();
         $histo = HistoriaFactura::where('usuario', $user->id_inquilino)->get();
@@ -110,11 +110,14 @@ class FacturaController extends Controller
 
     public function datos()
     {
-        return view('factura.datos');
+        $user = Auth::user();
+        return view('factura.datos', ['user'=>$user]);
     }
 
-    public function datos2()
+    public function datos2($id)
     {
-        return view('factura.datos2');
+        $user = Auth::user();
+        $idt = $id;
+        return view('factura.datos2', ['user'=>$user, 'id2'=>$idt]);
     }
 }

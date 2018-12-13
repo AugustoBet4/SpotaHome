@@ -41,7 +41,7 @@
 
                                             <td>{{$propi->costo}}</td>
                                             <td>
-                                                <a href="{{action('FacturaController@fin', $propi->id_propiedad)}}" class="btn btn-link">Reservar</a>
+                                                <a href="{{action('FacturaController@datos2', $propi->id_propiedad)}}" class="btn btn-link">Reservar</a>
                                             </td>
 
                                         </tr>
