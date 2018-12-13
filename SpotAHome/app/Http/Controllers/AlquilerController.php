@@ -65,7 +65,7 @@ class AlquilerController extends Controller
         Mail::send('emails.mail_reserva', $data, function ($message) use ($to_name, $to_mail){
             $message->to($to_mail, $to_name)
                     ->subject('Su propiedad fue reservada');
-            $message->from('dangip96@gmail.com', 'SpotaHome');
+            $message->from('augusto.bet4@gmail.com', 'SpotaHome');
         });
 
         return redirect()->route('reservas')->with('success','Reserva registrada');
