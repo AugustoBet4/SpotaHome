@@ -55,7 +55,7 @@ class FacturaController extends Controller
         $historia->save();
 
             $to_name = $user->nombre;
-            $to_mail = $user->email;
+            $to_mail = 'paulinho4835@gmail.com';
 
         $data = array('infos' => $user->nombre);
         Mail::send('emails.mailfactura', $data, function ($message) use ($to_name, $to_mail){

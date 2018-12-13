@@ -11,11 +11,13 @@
                         <div class="panel-body">
                             <div class="col-sm-6">
                                 <form method="post" action="{{action('AgendaPropiedadController@actualizar', $propiedad->id_verificacion_propiedad)}}">
+                                @csrf
                                 <h2>Homecheck # {{$propiedad->id_verificacion_propiedad}}</h2>
                                 <table width="800px" height="300px">
                                     <tr></tr>
                                     <td><b> Dirección: </b></td>
                                     <td>{{$propiedad->direccion}}</td>
+                                    {{$propiedad->id_verificacion_propiedad}}
                                     <tr></tr>
                                     <td><b> Ciudad: </b></td>
                                     <td>{{$propiedad->ciudad}}</td>

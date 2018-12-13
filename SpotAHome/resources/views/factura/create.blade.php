@@ -4,6 +4,13 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
+<style>
+@media print{
+  .oculto-impresion, .oculto-impresion *{
+    display: none !important;
+  }
+}
+</style>
     <div class="row">
         <div class="col-xs-12">
             <hr>
@@ -13,7 +20,7 @@
                         <strong><h2>SpotAHome</h2></strong><br>
                         Empresa X<br>
                         CASA MATRIZ 25 de Mayo<br>
-                        2031, La Paz Bolivia<br>
+                        2018, La Paz Bolivia<br>
                     </address>
                 </div>
                 <div class="col-xs-6 text-right">
@@ -176,7 +183,7 @@
 
             <strong>Esta factura contribuye al desarrollo del pais, el uso ilicito de esta sera sancionada de acuerdo a la ley.</strong>
     <br><br>
-    <button class="btn btn-info" onClick="window.print()">Imprimir</button>
-    <a href="{{action('FacturaController@print', $item->id_propiedad)}}" class="btn btn-link">PDF</a>
+    <button class="oculto-impresion" onClick="window.print()">Imprimir</button>
+    <a href="{{action('FacturaController@print', $item->id_propiedad)}}" class="oculto-impresion">PDF</a>
     <center><a href="{{ url('/factura/form') }}" class="btn btn-info" role="button">Regresar</a></center>
 </div>

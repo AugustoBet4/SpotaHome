@@ -34,6 +34,7 @@ Route::get('empleados/propiedad', 'PropiedadEmpleadoController@index') -> name('
 Route::get('empleados/empleado', 'EmpleadoController@index') -> name('empleados.index');
 Route::get('empleados/homecheckers', 'EmpleadoHomecheckersController@index') -> name('empleados.propiedad.homecheckers');
 Route::get('empleados/agenda', 'AgendaHomecheckersController@index') -> name('empleados.propiedad.agenda');
+//Route::get('empleados/agenda/{1}', 'AgendaHomecheckersController@actualizar') -> name('empleados.propiedad.agenda');
 Route::post('agendas', 'AgendaPropiedadController@actualizar');
 Route::get('empleados/hc_propiedad/{id}', 'AgendaPropiedadController@index') -> name('empleados.propiedad.agenda_propiedad');
 Route::get('empleados/inquilino', 'InquilinoEmpleadoController@index') -> name('empleados.inquilino.index');
@@ -151,7 +152,7 @@ Route::get('/inquilino/prop_vista/{id}', 'InquilinoController@getPropiedad')->na
 /*
 Route::get('/', function () {
     return view('welcome');
-});
+}); 
 
 Route::get('/admin', function () {
     return view('welcome_admin');

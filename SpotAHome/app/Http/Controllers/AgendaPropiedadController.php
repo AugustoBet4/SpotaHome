@@ -46,6 +46,7 @@ class AgendaPropiedadController extends Controller
     public function store(HttpRequest $request)
     {
         $this->validate($request,['estado' => 'required']);
+        dd($this);
         Verificacion_Propiedad::create($request->all());
         return redirect()->action('EmpleadoController@index')->with('success','Propiedad registrada');
         // return redirect()->url('empleados/propiedad/index')->with('success','Propiedad registrada');
@@ -102,13 +103,14 @@ class AgendaPropiedadController extends Controller
         Empleado::find($id)->delete();
         return redirect()->route('empleado.index')->with('success','Registro eliminado logicamente');
     }
-    public function actualizar(HttpRequest $request, $id)
+    public function actualizar(Request $request, $id)
     {
+        
         $estado = request::input('estado');
         $up = Verificacion_Propiedad::find($id);
         $up->estado = $estado;
         $up->save();
-        return redirect()->view('empleados.propiedad.agenda_propiedad')->with('success','Propiedad actualizada');
+        return redirect()->view('empleados.propiedad.agenda_personal')->with('success','Propiedad actualizada');
     }
 
 }
