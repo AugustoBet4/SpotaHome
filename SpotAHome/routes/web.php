@@ -34,6 +34,7 @@ Route::get('empleados/propiedad', 'PropiedadEmpleadoController@index') -> name('
 Route::get('empleados/empleado', 'EmpleadoController@index') -> name('empleados.index');
 Route::get('empleados/homecheckers', 'EmpleadoHomecheckersController@index') -> name('empleados.propiedad.homecheckers');
 Route::get('empleados/agenda', 'AgendaHomecheckersController@index') -> name('empleados.propiedad.agenda');
+Route::post('agendas', 'AgendaPropiedadController@actualizar');
 Route::get('empleados/hc_propiedad/{id}', 'AgendaPropiedadController@index') -> name('empleados.propiedad.agenda_propiedad');
 Route::get('empleados/inquilino', 'InquilinoEmpleadoController@index') -> name('empleados.inquilino.index');
 Route::get('empleados/busqueda', 'PropiedadEmpleadoController@busqueda') -> name('empleados.busqueda');
@@ -71,7 +72,7 @@ Route::resource('duenos/enviarConsulta', 'ConsultaController');
 Route::get('/duenos/mapa/{id}', 'MapaDuenoController@location')->name("dueno.mapa");
 Route::get('/duenos/mapageneral/{id}', 'MapaDuenoController@mapageneral')->name("dueno.mapageneral");
 //Route::post('/duenos/verificar', 'VerificarPropiedadController@index')->name("dueno.verificar");
-//Route::post('/duenos/propiedad','VerificarPropiedadController@store');
+Route::post('/storing','VerificarPropiedadController@store');
 //Demas rutas empleados
 
 //Route::get('/empleados',function (){return view('empleados/sesion');});

@@ -5,7 +5,8 @@ use App\Alquiler;
 use App\Empleado;
 use App\Multimedia;
 use App\Verificacion_Propiedad;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request as HttpRequest;
+use Illuminate\Support\Facades\Request;
 use App\Propiedad;
 use Auth;
 use App\Fecha_Disponible;
@@ -42,7 +43,7 @@ class VerificarPropiedadController extends Controller
         $fechas = Fecha_Disponible::where('id_propiedad','=',$id)->get()->first();
         return view('duenos.editverificacion', compact('propiedades', 'empleado'));
     }
-    public function update(Request $request, $id)
+    public function update(HttpRequest $request, $id)
     {
      //   $this->validate($request,['estado' => 'required','fecha' => 'required','hora' => 'required','observaciones' => 'required','id_empleado' => 'required','id_propiedad' => 'required']);
         //$this->validate($request,['fecha_inicio' => 'required','fecha_fin' => 'required']);
@@ -61,11 +62,22 @@ class VerificarPropiedadController extends Controller
             ->get();
         return view('duenos.editverificacion', compact('user','propiedades','empleado'));
     }
-    public function store(PropiedadRequest $request)
+    public function store(HttpRequest $request)
     {
-        $this->validate($request,['estado' => 'required','fecha' => 'required','hora' => 'required','observaciones' => 'required','id_empleado' => 'required','id_propiedad' => 'required']);
+        /*
+        $estado = request::input('estado');
+        $fecha = request::input('fecha');
+        $hora = request::input('hora');
+        $observaciones = request::input('observaciones');
+        $id_propiedad = request::input('id_propiedad');
+        $id_empleado = request::input('id_empleado');
+        $id = DB::table('verificacion_propiedad')->insertGetId(
+            ['estado' => $estado, 'fecha' => $fecha, 'hora' => $hora, 'observaciones' => $observaciones, 'id_propiedad' => $id_propiedad, 'id_empleado' => $id_empleado]
+        );
+        $id->save();*/
+        $this->validate($request,['estado' => 'required','fecha' => 'required|date|date_format:Y-m-d|after:yesterday','hora' => 'required','observaciones' => 'required','id_empleado' => 'required','id_propiedad' => 'required']);
         Verificacion_Propiedad::create($request->all());
-        return redirect()->view('duenos.propiedad')->with('info', 'Verificacion ready');
+        return redirect()->route('verificar.index')->with('info', 'Verificacion ready');
     }
     public  function show($id){
 

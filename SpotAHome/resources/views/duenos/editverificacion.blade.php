@@ -33,7 +33,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="table-container">
-                            <form method="post" action="{{action('VerificarPropiedadController@store')}}"  role="form">
+                            <form method="POST" action="storing"  role="form">
                                 {{ csrf_field() }}
                                 <input name="_method" type="hidden" value="PATCH">
                                 <div class="row">
@@ -49,9 +49,10 @@
                                             </select> </div>
                                         <div class="form-group"></div>
                                         <div class="form-group">
-                                            <label for="" class="col-form-label">Zona</label>
+                                            <label for="" class="col-form-label">Hora y fecha de la cita</label>
                                             <input type="hidden" name="observaciones" id="observaciones" class="form-control input-sm" value="Sin observaciones">
-                                            <input type="hidden" name="estado" id="estado" class="form-control input-sm" value="No verificado"><input type="hidden" name="id_empleado" id="id_empleado" class="form-control input-sm" value="{{$empleado}}">
+                                            <input type="hidden" name="estado" id="estado" class="form-control input-sm" value="No verificado">
+                                            <input type="hidden" name="id_empleado" id="id_empleado" class="form-control input-sm" value="{{$empleado}}">
                                         </div>
                                         <div class="form-group">
                                             <h3>Fecha:</h3>
@@ -69,7 +70,6 @@
                                     <div class="col-xs-6 col-sm-6 col-md-6">
                                         <a href="{{ route('propiedad.index') }}" class="btn btn-info btn-block" >Atrás</a>
                                     </div>
-
                                 </div>
                             </form>
                         </div>
