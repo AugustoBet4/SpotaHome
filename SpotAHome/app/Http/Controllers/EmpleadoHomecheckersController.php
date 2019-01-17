@@ -102,5 +102,10 @@ class EmpleadoHomecheckersController extends Controller
         return redirect()->route('empleado.index')->with('success','Registro eliminado logicamente');
     }
 
+    public function cita()
+    {
+        return view('empleados.propiedad.cita');
+    }
+
 }
 

@@ -80,6 +80,7 @@
                                     -->
                                     <th>Editar</th>
                                     <th>Ver en Mapa</th>
+                                    <th>Homechecker</th>
                                     <!--
                                     <th>Eliminar</th>
                                     -->
@@ -108,7 +109,10 @@
                                         </td>
 -->
                                                 <td>
-                                                    <a class="btn btn-primary btn-xs" href="{{action('MapaEmpleadoController@location', $propiedad->id_propiedad)}}" ><span class="glyphicon glyphicon-flag "></span></a>
+                                                    <a class="btn btn-primary btn-xs" href="{{action('MapaEmpleadoController@location', $propiedad->id_propiedad)}}" ><span class="glyphicon glyphicon-flag "></span></a></td>
+
+                                                <td>
+                                                    <a class="btn btn-primary btn-xs" href="{{action('EmpleadoHomecheckersController@cita')}}" ><span class="glyphicon glyphicon-flag "></span></a></td>
                                                 <!--
                                                     <a class="btn btn-primary btn-xs" href="{{route('empleados.mapa')}}" ><span class="glyphicon glyphicon-flag "></span></a>
                                                 -->

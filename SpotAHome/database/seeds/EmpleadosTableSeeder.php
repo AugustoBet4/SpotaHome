@@ -14,5 +14,15 @@ class EmpleadosTableSeeder extends Seeder
     public function run()
     {
         factory(Empleado::class, 3)->create();
+
+        DB::table('empleado') -> insert([
+            'nombre' => 'Dan',
+            'apellidos' => 'as',
+            'email' => 'dan@gmail.com',
+            'telefono' => '75643276',
+            'usuario' => 'dan',
+            'contrasena' => bcrypt('123456'),
+
+        ]);
     }
 }

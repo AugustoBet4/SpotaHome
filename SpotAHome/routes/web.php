@@ -178,3 +178,6 @@ Route::get('/factura/print/{id}', array('as'=>'factura.print', 'uses'=>'FacturaC
 Route::any('/factura/hist', array('as'=>'factura.hist', 'uses'=>'FacturaController@hist'));
 Route::get('/factura/datos', array('as'=>'factura.datos', 'uses'=>'FacturaController@datos'));
 Route::get('/factura/datos2/{id}', array('as'=>'factura.datos2', 'uses'=>'FacturaController@datos2'));
+
+
+Route::get('/propiedad/cita', array('as'=>'propiedad.cita', 'uses'=>'EmpleadoHomecheckersController@cita'));
