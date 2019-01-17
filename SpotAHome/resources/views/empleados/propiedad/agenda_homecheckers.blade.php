@@ -23,6 +23,7 @@
                                     <th>Empleado</th>
                                     <th>Propiedad</th>
                                     <th>Ver en Mapa</th>
+                                    <th>Verificar</th>
                                     </thead>
                                     <tbody>
                                     @if($empleados->count())
@@ -37,6 +38,16 @@
                                                 <td>
                                                     <a class="btn btn-primary btn-xs" href="{{action('MapaEmpleadoController@location', $empleado->id_propiedad)}}" ><span class="glyphicon glyphicon-flag "></span></a>
                                                 </td>
+                                                @if($empleado->estado!="Verificado")
+                                                <td>
+                                                    <form action="{{ url('/propiedad/verif') }}" method="POST" role="form">
+                                                        {{ csrf_field() }}
+
+                                                        <input type="hidden" name="id" value={{ $empleado->id_verificacion_propiedad }}>
+                                                        <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-flag "></span></button>
+                                                    </form>
+                                                </td>
+                                                    @endif
                                             </tr>
                                         @endforeach
                                     @else

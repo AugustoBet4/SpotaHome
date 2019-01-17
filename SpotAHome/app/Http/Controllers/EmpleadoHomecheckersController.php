@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Empleado;
 use App\Verificacion_Propiedad;
+use App\Checklist;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request as HttpRequest;
@@ -124,6 +125,38 @@ class EmpleadoHomecheckersController extends Controller
         $homecheck->id_empleado = '4';
         $homecheck->save();
         return redirect()->route('empleados.propiedad.index');
+    }
+
+    public function verif(HttpRequest $request)
+    {
+        $id = $request['id'];
+        return view('empleados.propiedad.checklist', ['id'=>$id]);
+    }
+
+    public function regverif(HttpRequest $request)
+    {
+        $id = $request['id'];
+        $sala = $request['sala'];
+        $cocina = $request['cocina'];
+        $bano = $request['bano'];
+        $masbano = $request['masbano'];
+        $luz = $request['luz'];
+        $agua = $request['agua'];
+        $patio = $request['patio'];
+        $amoblado = $request['amoblado'];
+        $verifhc = new Checklist;
+        $verifhc->sala = $sala;
+        $verifhc->cocina = $cocina;
+        $verifhc->baño = $bano;
+        $verifhc->masbaño = $masbano;
+        $verifhc->id_hc = $id;
+        $verifhc->luz = $luz;
+        $verifhc->agua = $agua;
+        $verifhc->patio = $patio;
+        $verifhc->amoblado = $amoblado;
+        $verifhc->save();
+        Verificacion_Propiedad::where('id_verificacion_propiedad', $id)->update(['estado'=>'Verificado']);
+        return redirect()->route('empleados.propiedad.homecheckers');
     }
 
 }

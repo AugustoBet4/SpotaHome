@@ -1,6 +1,6 @@
 @extends('layouts.app_empleado')
 
-@section('title', 'Inicio de Empleado')
+@section('title', 'Creacion de Cita Homechecker')
 
 @section('content')
     <div class="wrapper wrapper-content animated fadeInRight">
