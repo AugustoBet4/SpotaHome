@@ -23,22 +23,24 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="/duenos" method="POST" role="form">
+                            <form action="{{ url('/regcita') }}" method="POST" role="form">
                                 {{ csrf_field() }}
                                 <legend>Registra la cita</legend>
 
                                 <div class="form-group">
                                     <label for="">Fecha de Revision</label>
-                                    <input required value="{{old('fecha_nacimiento')}}" max="2000-11-27" type="date" class="form-control" name="fecha" id="fecha" >
+                                    <input required value="{{old('fecha_nacimiento')}}" min="2019-01-01" type="date" class="form-control" name="fecha" id="fecha" >
                                 </div>
                                 <div class="form-group">
                                     <label for="">Hora de Revision</label>
-                                    <input required value="{{old('fecha_nacimiento')}}" max="2000-11-27" type="time" class="form-control" name="hora" id="hora" >
+                                    <input required value="{{old('hora')}}" type="time" class="form-control" name="hora" id="hora" >
                                 </div>
                                 <div class="form-group">
                                     <label for="">Observaciones</label>
                                     <input value="{{old('nacionalidad')}}" type="text" class="form-control" name="obs" id="obs" >
                                 </div>
+
+                                <input type="hidden" name="id" value={{ $id }}>
 
                                 <button type="submit"  class="btn btn-primary">Confirmar</button>
                             </form>

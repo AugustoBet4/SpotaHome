@@ -69,6 +69,7 @@
                             <div class="table-container">
                                 <table id="mytable" class="table table-bordred table-striped">
                                     <thead>
+                                    <th>ID</th>
                                     <th>Direccion</th>
                                     <th>Ciudad</th>
                                     <th>Zona</th>
@@ -89,6 +90,7 @@
                                     @if($propiedades->count())
                                         @foreach($propiedades as $propiedad)
                                             <tr>
+                                                <td>{{$propiedad->id_propiedad}}</td>
                                                 <td>{{$propiedad->direccion}}</td>
                                                 <td>{{$propiedad->ciudad}}</td>
                                                 <td>{{$propiedad->zona}}</td>
@@ -112,7 +114,13 @@
                                                     <a class="btn btn-primary btn-xs" href="{{action('MapaEmpleadoController@location', $propiedad->id_propiedad)}}" ><span class="glyphicon glyphicon-flag "></span></a></td>
 
                                                 <td>
-                                                    <a class="btn btn-primary btn-xs" href="{{action('EmpleadoHomecheckersController@cita')}}" ><span class="glyphicon glyphicon-flag "></span></a></td>
+
+                                                    <form action="{{ url('/propiedad/cita') }}" method="POST" role="form">
+                                                        {{ csrf_field() }}
+
+                                                        <input type="hidden" name="id" value={{ $propiedad->id_propiedad }}>
+                                                        <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-flag "></span></button>
+                                                    </form></td>
                                                 <!--
                                                     <a class="btn btn-primary btn-xs" href="{{route('empleados.mapa')}}" ><span class="glyphicon glyphicon-flag "></span></a>
                                                 -->

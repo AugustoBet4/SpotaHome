@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Empleado;
+use App\Verificacion_Propiedad;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request as HttpRequest;
@@ -102,9 +103,27 @@ class EmpleadoHomecheckersController extends Controller
         return redirect()->route('empleado.index')->with('success','Registro eliminado logicamente');
     }
 
-    public function cita()
+    public function cita(HttpRequest $request)
     {
-        return view('empleados.propiedad.cita');
+        $id = $request['id'];
+        return view('empleados.propiedad.cita', ['id'=>$id]);
+    }
+
+    public function regcita(HttpRequest $request)
+    {
+        $id = $request['id'];
+        $fecha = $request['fecha'];
+        $hora = $request['hora'];
+        $obs = $request['obs'];
+        $homecheck = new Verificacion_Propiedad;
+        $homecheck->fecha = $fecha;
+        $homecheck->estado = 'No verificado';
+        $homecheck->hora = $hora;
+        $homecheck->observaciones = $obs;
+        $homecheck->id_propiedad = $id;
+        $homecheck->id_empleado = '4';
+        $homecheck->save();
+        return redirect()->route('empleados.propiedad.index');
     }
 
 }

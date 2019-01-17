@@ -180,4 +180,5 @@ Route::get('/factura/datos', array('as'=>'factura.datos', 'uses'=>'FacturaContro
 Route::get('/factura/datos2/{id}', array('as'=>'factura.datos2', 'uses'=>'FacturaController@datos2'));
 
 
-Route::get('/propiedad/cita', array('as'=>'propiedad.cita', 'uses'=>'EmpleadoHomecheckersController@cita'));
+Route::post('/propiedad/cita', array('as'=>'propiedad.cita', 'uses'=>'EmpleadoHomecheckersController@cita'));
+Route::post('/regcita', array('as'=>'propiedad.regcita', 'uses'=>'EmpleadoHomeCheckersController@regcita'));
